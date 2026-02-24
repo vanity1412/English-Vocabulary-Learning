@@ -40,27 +40,32 @@ const STORAGE_KEYS = {
     SETTINGS: 'appSettings'
 };
 
+// Current app mode
+let currentAppMode = null; // 'vocabulary', 'grammar', 'exam'
+
 // Initialize app
 document.addEventListener('DOMContentLoaded', async () => {
     // Preload voices
     initializeVoices();
     
-    // Show intro screen for 1.5 seconds (faster loading)
+    // Show intro screen for 1.5 seconds then show mode selection
     setTimeout(() => {
         document.getElementById('introScreen').classList.add('fade-out');
         setTimeout(() => {
             document.getElementById('introScreen').style.display = 'none';
-            document.getElementById('mainApp').style.display = 'block';
-            document.getElementById('mainApp').classList.add('fade-in-app');
+            document.getElementById('modeSelectionScreen').classList.remove('hidden');
+            document.getElementById('modeSelectionScreen').classList.add('fade-in-app');
         }, 600);
     }, 1500);
     
+    // Initialize mode selection listeners
+    initializeModeSelection();
+    
+    // Preload vocabulary data
     await loadVocabulary();
     loadProgress();
     loadSettings();
     initializeEventListeners();
-    showFlashcard();
-    updateProgress();
 });
 
 // Load vocabulary from JSON
@@ -1450,4 +1455,371 @@ function initializeVoices() {
     setTimeout(loadVoices, 100);
     setTimeout(loadVoices, 500);
     setTimeout(loadVoices, 1000);
+}
+
+
+// Mode Selection Functions
+function initializeModeSelection() {
+    document.querySelectorAll('.mode-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const mode = this.dataset.mode;
+            selectAppMode(mode);
+        });
+    });
+}
+
+function selectAppMode(mode) {
+    currentAppMode = mode;
+    
+    // Hide mode selection
+    document.getElementById('modeSelectionScreen').classList.add('fade-out');
+    
+    setTimeout(() => {
+        document.getElementById('modeSelectionScreen').style.display = 'none';
+        
+        if (mode === 'vocabulary') {
+            // Show vocabulary app
+            document.getElementById('mainApp').style.display = 'block';
+            document.getElementById('mainApp').classList.add('fade-in-app');
+            showFlashcard();
+            updateProgress();
+        } else if (mode === 'grammar') {
+            // Show grammar app
+            document.getElementById('grammarApp').style.display = 'block';
+            document.getElementById('grammarApp').classList.add('fade-in-app');
+            loadGrammarTopics();
+        } else if (mode === 'exam') {
+            // Show exam app
+            document.getElementById('examApp').style.display = 'block';
+            document.getElementById('examApp').classList.add('fade-in-app');
+            showExamSelection();
+        }
+    }, 600);
+}
+
+// Grammar App Functions
+let grammarTopics = [];
+let currentGrammarTopic = null;
+let grammarExercises = [];
+let currentExerciseIndex = 0;
+let grammarScore = 0;
+
+async function loadGrammarTopics() {
+    try {
+        const response = await fetch('grammar/grammar_topics.json');
+        const data = await response.json();
+        grammarTopics = data.topics;
+        displayGrammarTopics();
+    } catch (error) {
+        console.error('Error loading grammar topics:', error);
+        alert('Không thể tải dữ liệu ngữ pháp!');
+    }
+}
+
+function displayGrammarTopics() {
+    const container = document.getElementById('grammarTopicsList');
+    container.innerHTML = grammarTopics.map((topic, index) => `
+        <div class="grammar-topic-card" onclick="selectGrammarTopic(${index})">
+            <div class="topic-icon">${topic.icon}</div>
+            <h3>${topic.title}</h3>
+            <p>${topic.description}</p>
+            <div class="topic-level">Cấp độ: ${topic.level}</div>
+        </div>
+    `).join('');
+}
+
+function selectGrammarTopic(index) {
+    currentGrammarTopic = grammarTopics[index];
+    document.getElementById('grammarTopicsView').style.display = 'none';
+    document.getElementById('grammarLessonView').style.display = 'block';
+    displayGrammarLesson();
+}
+
+function displayGrammarLesson() {
+    const topic = currentGrammarTopic;
+    document.getElementById('grammarLessonTitle').textContent = topic.title;
+    document.getElementById('grammarTheory').innerHTML = topic.theory;
+    
+    // Display examples
+    const examplesHtml = topic.examples.map(ex => `
+        <div class="grammar-example">
+            <p class="example-sentence">${ex.sentence}</p>
+            <p class="example-translation">${ex.translation}</p>
+            <p class="example-explanation">${ex.explanation}</p>
+        </div>
+    `).join('');
+    document.getElementById('grammarExamples').innerHTML = examplesHtml;
+}
+
+async function startGrammarExercise() {
+    try {
+        const response = await fetch(`grammar/exercises/${currentGrammarTopic.id}.json`);
+        const data = await response.json();
+        grammarExercises = data.exercises;
+        currentExerciseIndex = 0;
+        grammarScore = 0;
+        
+        document.getElementById('grammarLessonView').style.display = 'none';
+        document.getElementById('grammarExerciseView').style.display = 'block';
+        showGrammarExercise();
+    } catch (error) {
+        console.error('Error loading exercises:', error);
+        alert('Không thể tải bài tập!');
+    }
+}
+
+function showGrammarExercise() {
+    if (currentExerciseIndex >= grammarExercises.length) {
+        showGrammarResults();
+        return;
+    }
+    
+    const exercise = grammarExercises[currentExerciseIndex];
+    document.getElementById('grammarExerciseQuestion').textContent = exercise.question;
+    document.getElementById('grammarExerciseCurrent').textContent = currentExerciseIndex + 1;
+    document.getElementById('grammarExerciseTotal').textContent = grammarExercises.length;
+    document.getElementById('grammarScore').textContent = grammarScore;
+    
+    const optionsHtml = exercise.options.map((option, index) => `
+        <div class="grammar-option" onclick="selectGrammarOption(${index})">
+            ${option}
+        </div>
+    `).join('');
+    document.getElementById('grammarOptions').innerHTML = optionsHtml;
+    document.getElementById('grammarFeedback').textContent = '';
+    document.getElementById('grammarFeedback').className = 'grammar-feedback';
+}
+
+function selectGrammarOption(selectedIndex) {
+    const exercise = grammarExercises[currentExerciseIndex];
+    const options = document.querySelectorAll('.grammar-option');
+    
+    options.forEach(opt => {
+        opt.style.pointerEvents = 'none';
+    });
+    
+    if (selectedIndex === exercise.correctAnswer) {
+        options[selectedIndex].classList.add('correct');
+        grammarScore++;
+        document.getElementById('grammarScore').textContent = grammarScore;
+        document.getElementById('grammarFeedback').className = 'grammar-feedback correct';
+        document.getElementById('grammarFeedback').textContent = `✅ Chính xác! ${exercise.explanation}`;
+    } else {
+        options[selectedIndex].classList.add('wrong');
+        options[exercise.correctAnswer].classList.add('correct');
+        document.getElementById('grammarFeedback').className = 'grammar-feedback wrong';
+        document.getElementById('grammarFeedback').textContent = `❌ Sai rồi! ${exercise.explanation}`;
+    }
+    
+    setTimeout(() => {
+        currentExerciseIndex++;
+        showGrammarExercise();
+    }, 3000);
+}
+
+function showGrammarResults() {
+    const percentage = Math.round((grammarScore / grammarExercises.length) * 100);
+    let message = '';
+    
+    if (percentage >= 80) message = '🎉 Xuất sắc!';
+    else if (percentage >= 60) message = '👍 Tốt lắm!';
+    else if (percentage >= 40) message = '💪 Cố gắng thêm!';
+    else message = '📚 Hãy ôn lại nhé!';
+    
+    document.getElementById('grammarOptions').innerHTML = `
+        <div style="text-align: center; padding: 40px;">
+            <h2>${message}</h2>
+            <p style="font-size: 24px; margin: 20px 0;">
+                Điểm: ${grammarScore}/${grammarExercises.length} (${percentage}%)
+            </p>
+            <button class="btn btn-primary" onclick="backToGrammarTopics()">Chọn chủ đề khác</button>
+            <button class="btn btn-secondary" onclick="startGrammarExercise()" style="margin-left: 10px;">Làm lại</button>
+        </div>
+    `;
+    document.getElementById('grammarFeedback').textContent = '';
+}
+
+function backToGrammarTopics() {
+    document.getElementById('grammarExerciseView').style.display = 'none';
+    document.getElementById('grammarLessonView').style.display = 'none';
+    document.getElementById('grammarTopicsView').style.display = 'block';
+}
+
+function backToGrammarLesson() {
+    document.getElementById('grammarExerciseView').style.display = 'none';
+    document.getElementById('grammarLessonView').style.display = 'block';
+}
+
+// Exam Format Functions
+let currentExam = null;
+let examQuestions = [];
+let currentExamQuestionIndex = 0;
+let examAnswers = [];
+let examStartTime = null;
+
+function showExamSelection() {
+    // Display available exams
+    const exams = [
+        { id: 'part5', name: 'Part 5 - Incomplete Sentences', questions: 30, time: 15 },
+        { id: 'part6', name: 'Part 6 - Text Completion', questions: 16, time: 10 },
+        { id: 'part7', name: 'Part 7 - Reading Comprehension', questions: 54, time: 55 }
+    ];
+    
+    const container = document.getElementById('examList');
+    container.innerHTML = exams.map(exam => `
+        <div class="exam-card" onclick="selectExam('${exam.id}')">
+            <h3>${exam.name}</h3>
+            <div class="exam-info">
+                <span>📝 ${exam.questions} câu</span>
+                <span>⏱️ ${exam.time} phút</span>
+            </div>
+            <button class="btn btn-primary">Bắt đầu thi</button>
+        </div>
+    `).join('');
+}
+
+async function selectExam(examId) {
+    try {
+        const response = await fetch(`exams/${examId}.json`);
+        const data = await response.json();
+        currentExam = data;
+        examQuestions = data.questions;
+        currentExamQuestionIndex = 0;
+        examAnswers = new Array(examQuestions.length).fill(null);
+        examStartTime = Date.now();
+        
+        document.getElementById('examSelectionView').style.display = 'none';
+        document.getElementById('examTestView').style.display = 'block';
+        showExamQuestion();
+        startExamTimer();
+    } catch (error) {
+        console.error('Error loading exam:', error);
+        alert('Không thể tải đề thi!');
+    }
+}
+
+function showExamQuestion() {
+    const question = examQuestions[currentExamQuestionIndex];
+    document.getElementById('examQuestionNumber').textContent = currentExamQuestionIndex + 1;
+    document.getElementById('examTotalQuestions').textContent = examQuestions.length;
+    
+    // Display passage if exists
+    if (question.passage) {
+        document.getElementById('examPassage').style.display = 'block';
+        document.getElementById('examPassageText').textContent = question.passage;
+    } else {
+        document.getElementById('examPassage').style.display = 'none';
+    }
+    
+    document.getElementById('examQuestion').textContent = question.question;
+    
+    const optionsHtml = question.options.map((option, index) => {
+        const letter = String.fromCharCode(65 + index);
+        const isSelected = examAnswers[currentExamQuestionIndex] === index;
+        return `
+            <div class="exam-option ${isSelected ? 'selected' : ''}" onclick="selectExamAnswer(${index})">
+                <span class="option-letter">${letter}</span>
+                <span class="option-text">${option}</span>
+            </div>
+        `;
+    }).join('');
+    document.getElementById('examOptions').innerHTML = optionsHtml;
+}
+
+function selectExamAnswer(answerIndex) {
+    examAnswers[currentExamQuestionIndex] = answerIndex;
+    showExamQuestion();
+}
+
+function navigateExamQuestion(direction) {
+    currentExamQuestionIndex += direction;
+    if (currentExamQuestionIndex < 0) currentExamQuestionIndex = 0;
+    if (currentExamQuestionIndex >= examQuestions.length) currentExamQuestionIndex = examQuestions.length - 1;
+    showExamQuestion();
+}
+
+function startExamTimer() {
+    const timeLimit = currentExam.timeLimit * 60 * 1000; // Convert to milliseconds
+    
+    const timerInterval = setInterval(() => {
+        const elapsed = Date.now() - examStartTime;
+        const remaining = timeLimit - elapsed;
+        
+        if (remaining <= 0) {
+            clearInterval(timerInterval);
+            submitExam();
+            return;
+        }
+        
+        const minutes = Math.floor(remaining / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+        document.getElementById('examTimer').textContent = 
+            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }, 1000);
+}
+
+function submitExam() {
+    if (!confirm('Bạn có chắc muốn nộp bài?')) {
+        return;
+    }
+    
+    let correctCount = 0;
+    examQuestions.forEach((question, index) => {
+        if (examAnswers[index] === question.correctAnswer) {
+            correctCount++;
+        }
+    });
+    
+    const percentage = Math.round((correctCount / examQuestions.length) * 100);
+    
+    document.getElementById('examTestView').style.display = 'none';
+    document.getElementById('examResultView').style.display = 'block';
+    
+    document.getElementById('examResultScore').textContent = `${correctCount}/${examQuestions.length}`;
+    document.getElementById('examResultPercentage').textContent = `${percentage}%`;
+    
+    displayExamReview();
+}
+
+function displayExamReview() {
+    const reviewHtml = examQuestions.map((question, index) => {
+        const userAnswer = examAnswers[index];
+        const isCorrect = userAnswer === question.correctAnswer;
+        const userAnswerLetter = userAnswer !== null ? String.fromCharCode(65 + userAnswer) : '-';
+        const correctAnswerLetter = String.fromCharCode(65 + question.correctAnswer);
+        
+        return `
+            <div class="exam-review-item ${isCorrect ? 'correct' : 'wrong'}">
+                <div class="review-header">
+                    <span>Câu ${index + 1}</span>
+                    <span>${isCorrect ? '✅' : '❌'}</span>
+                </div>
+                <p class="review-question">${question.question}</p>
+                <p class="review-answer">
+                    Bạn chọn: <strong>${userAnswerLetter}</strong> | 
+                    Đáp án đúng: <strong>${correctAnswerLetter}</strong>
+                </p>
+                ${question.explanation ? `<p class="review-explanation">${question.explanation}</p>` : ''}
+            </div>
+        `;
+    }).join('');
+    
+    document.getElementById('examReviewList').innerHTML = reviewHtml;
+}
+
+function backToExamSelection() {
+    document.getElementById('examResultView').style.display = 'none';
+    document.getElementById('examSelectionView').style.display = 'block';
+    showExamSelection();
+}
+
+function backToModeSelection() {
+    // Hide all apps
+    document.getElementById('mainApp').style.display = 'none';
+    document.getElementById('grammarApp').style.display = 'none';
+    document.getElementById('examApp').style.display = 'none';
+    
+    // Show mode selection
+    document.getElementById('modeSelectionScreen').style.display = 'flex';
+    document.getElementById('modeSelectionScreen').classList.remove('fade-out');
 }

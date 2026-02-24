@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "I like tea _____ coffee.",
+      "options": [
+        "but",
+        "and",
+        "or",
+        "so"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'and' để nối hai từ ngang hàng (cả hai đều thích)."
+    },
+    {
+      "question": "The meal was expensive _____ not very nice.",
+      "options": [
+        "and",
+        "but",
+        "or",
+        "so"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'but' để nối hai ý đối lập (đắt nhưng không ngon)."
+    },
+    {
+      "question": "_____ it was raining, we enjoyed our holiday.",
+      "options": [
+        "Because",
+        "Although",
+        "So",
+        "If"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'although' để diễn tả sự đối lập (mặc dù mưa nhưng vẫn vui)."
+    },
+    {
+      "question": "I stayed at work late _____ complete the report.",
+      "options": [
+        "in order to",
+        "because",
+        "although",
+        "when"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dùng 'in order to + V' để diễn tả mục đích."
+    },
+    {
+      "question": "_____ my mother arrived, I won't be able to meet you.",
+      "options": [
+        "Although",
+        "Because",
+        "If",
+        "When"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'because' để diễn tả lý do."
+    },
+    {
+      "question": "We were delayed _____ an accident.",
+      "options": [
+        "because",
+        "because of",
+        "although",
+        "despite"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'because of + cụm danh từ' để diễn tả lý do."
+    },
+    {
+      "question": "_____ the fact that it rained, we went out.",
+      "options": [
+        "Because",
+        "Despite",
+        "Because of",
+        "Due to"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'despite the fact that + mệnh đề' để diễn tả sự đối lập."
+    },
+    {
+      "question": "Call me _____ you arrive at the office.",
+      "options": [
+        "as soon as",
+        "until",
+        "before",
+        "since"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dùng 'as soon as' để diễn tả 'ngay khi'."
+    },
+    {
+      "question": "I've been busy _____ I started my new job.",
+      "options": [
+        "when",
+        "while",
+        "since",
+        "until"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'since' với thì hiện tại hoàn thành để diễn tả 'kể từ khi'."
+    },
+    {
+      "question": "You can borrow my car _____ you drive carefully.",
+      "options": [
+        "unless",
+        "if",
+        "although",
+        "because"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'if' để diễn tả điều kiện."
+    },
+    {
+      "question": "_____ Dave was eating, the doorbell rang.",
+      "options": [
+        "While",
+        "During",
+        "For",
+        "Since"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dùng 'while + mệnh đề' để diễn tả hành động đang diễn ra thì có hành động khác xen vào."
+    },
+    {
+      "question": "I can't let you in _____ you give the password.",
+      "options": [
+        "if",
+        "unless",
+        "when",
+        "as"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'unless' (trừ khi) để diễn tả điều kiện phủ định."
+    },
+    {
+      "question": "_____ budget cuts, we have less money to spend.",
+      "options": [
+        "Because",
+        "Although",
+        "Due to",
+        "Despite"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'due to + cụm danh từ' để diễn tả lý do."
+    },
+    {
+      "question": "I'll wait _____ you finish your work.",
+      "options": [
+        "while",
+        "during",
+        "until",
+        "since"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'until' để diễn tả 'cho đến khi'."
+    },
+    {
+      "question": "You can play here _____ you don't make a mess.",
+      "options": [
+        "unless",
+        "if",
+        "as long as",
+        "although"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'as long as' (miễn là) để diễn tả điều kiện."
+    }
+  ]
+}

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Vocabulary Learning App</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Vũ Văn Thông - Cùng Học TOEIC</title>
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
     <!-- Intro Screen -->
@@ -22,457 +22,48 @@
         </div>
     </div>
 
-    <div class="container" id="mainApp" style="display: none;">
-        <header>
-            <h1>📚 Học Từ Vựng Tiếng Anh</h1>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-                <span class="progress-text" id="progressText">0/0 từ đã học</span>
-            </div>
-            <div class="header-actions">
-                <div class="keyboard-shortcuts">
-                    <button class="shortcuts-toggle" id="shortcutsToggle">⌨️ Phím tắt</button>
-                    <div class="shortcuts-panel hidden" id="shortcutsPanel">
-                        <h4>Phím tắt</h4>
-                        <div class="shortcut-list">
-                            <div class="shortcut-item">
-                                <kbd>←</kbd> <kbd>→</kbd>
-                                <span>Chuyển thẻ</span>
-                            </div>
-                            <div class="shortcut-item">
-                                <kbd>↑</kbd> <kbd>↓</kbd> <kbd>Space</kbd>
-                                <span>Lật thẻ</span>
-                            </div>
-                            <div class="shortcut-item">
-                                <kbd>\</kbd>
-                                <span>Phát âm</span>
-                            </div>
-                            <div class="shortcut-item">
-                                <kbd>Enter</kbd>
-                                <span>Đánh dấu đã nhớ</span>
-                            </div>
-                        </div>
-                        <p class="shortcut-note">💡 Tắt UniKey để phím tắt hoạt động chính xác</p>
-                    </div>
+    <!-- Mode Selection Screen -->
+    <div class="mode-selection-screen hidden" id="modeSelectionScreen">
+        <div class="mode-selection-content">
+            <h1 class="selection-title">Chọn chế độ học</h1>
+            <p class="selection-subtitle">Bạn muốn học gì hôm nay?</p>
+            <div class="mode-cards">
+                <div class="mode-card" onclick="navigateToMode('vocabulary')">
+                    <div class="mode-card-icon">📖</div>
+                    <h3>Học Từ Vựng</h3>
+                    <p>Flashcard, Quiz, Typing Practice với 1200+ từ TOEIC</p>
+                    <button class="mode-card-btn">Bắt đầu</button>
                 </div>
-                <button class="settings-btn" id="settingsBtn">⚙️ Cài đặt</button>
-            </div>
-        </header>
-
-        <!-- Settings Modal -->
-        <div class="modal hidden" id="settingsModal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>⚙️ Cài đặt</h3>
-                    <button class="modal-close" id="closeSettings">✕</button>
+                <div class="mode-card" onclick="navigateToMode('grammar')">
+                    <div class="mode-card-icon">📝</div>
+                    <h3>Học Ngữ Pháp</h3>
+                    <p>Lý thuyết, Bài tập, Ví dụ thực tế theo chủ đề</p>
+                    <button class="mode-card-btn">Bắt đầu</button>
                 </div>
-                <div class="modal-body">
-                    <div class="setting-group">
-                        <label>🔊 Tốc độ phát âm:</label>
-                        <input type="range" id="speechRate" min="0.5" max="1.5" step="0.1" value="0.8">
-                        <span id="speechRateValue">0.8x</span>
-                    </div>
-                    <div class="setting-group">
-                        <label>🎨 Chế độ tối:</label>
-                        <label class="toggle-label">
-                            <input type="checkbox" id="darkModeToggle">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-                    <div class="setting-group">
-                        <label>🔄 Tự động phát âm khi lật thẻ:</label>
-                        <label class="toggle-label">
-                            <input type="checkbox" id="autoSpeakToggle">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-                    <div class="setting-group">
-                        <label>📊 Hiển thị tiến độ chi tiết:</label>
-                        <label class="toggle-label">
-                            <input type="checkbox" id="detailedProgressToggle" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-                    <div class="setting-group">
-                        <button class="btn btn-secondary btn-block" id="resetProgressBtn">🔄 Reset tiến độ học</button>
-                        <button class="btn btn-secondary btn-block" id="exportProgressBtn">💾 Xuất dữ liệu</button>
-                        <button class="btn btn-secondary btn-block" id="importProgressBtn">📥 Nhập dữ liệu</button>
-                        <input type="file" id="importFileInput" accept=".json" style="display: none;">
-                    </div>
+                <div class="mode-card" onclick="navigateToMode('exam')">
+                    <div class="mode-card-icon">📋</div>
+                    <h3>Format Đề Thi</h3>
+                    <p>Luyện thi theo format TOEIC chuẩn Part 5, 6, 7</p>
+                    <button class="mode-card-btn">Bắt đầu</button>
                 </div>
-            </div>
-        </div>
-
-        <div class="list-selector">
-            <label>📚 Chọn danh sách:</label>
-            <select id="vocabListSelect">
-                <option value="vocab/vocab_1.json">List 1</option>
-                <option value="vocab/vocab_2.json">List 2</option>
-                <option value="vocab/vocab_3.json">List 3</option>
-                <option value="vocab/vocab_4.json">List 4</option>
-                <option value="vocab/vocab_5.json">List 5</option>
-                <option value="vocab/vocab_6.json">List 6</option>
-                <option value="vocab/vocab_7.json">List 7</option>
-                <option value="vocab/vocab_8.json">List 8</option>
-                <option value="vocab/vocab_9.json">List 9</option>
-                <option value="vocab/vocab_10.json">List 10</option>
-                <option value="vocab/vocab_11.json">List 11</option>
-                <option value="vocab/vocab_12.json">List 12</option>
-                <option value="vocab/vocab_13.json">List 13</option>
-                <option value="vocab/vocab_14.json">List 14</option>
-                <option value="vocab/vocab_15.json">List 15</option>
-                <option value="vocab/vocab_16.json">List 16</option>
-                <option value="vocab/vocab_17.json">List 17</option>
-                <option value="vocab/vocab_18.json">List 18</option>
-                <option value="vocab/vocab_19.json">List 19</option>
-                <option value="vocab/vocab_20.json">List 20</option>
-                <option value="vocab/vocab_21.json">List 21</option>
-                <option value="vocab/vocab_22.json">List 22</option>
-                <option value="vocab/vocab_23.json">List 23</option>
-            </select>
-            <button class="btn-reload" id="reloadList">🔄 Tải lại</button>
-        </div>
-
-        <nav class="mode-selector">
-            <button class="mode-btn active" data-mode="flashcard">🎴 Flashcard</button>
-            <button class="mode-btn" data-mode="vocabulary">📖 Xem từ vựng</button>
-            <button class="mode-btn" data-mode="quiz">🎯 Quiz</button>
-            <button class="mode-btn" data-mode="typing">⌨️ Luyện gõ</button>
-            <button class="mode-btn" data-mode="search">🔍 Tìm kiếm</button>
-            <button class="mode-btn" data-mode="review">📅 Ôn tập</button>
-        </nav>
-
-        <!-- Flashcard Mode -->
-        <div class="mode-content active" id="flashcard-mode">
-            <div class="flashcard" id="flashcard">
-                <div class="card-front">
-                    <img id="wordImage" class="word-image" src="" alt="" onerror="this.style.display='none'">
-                    <h2 class="word" id="word"></h2>
-                    <p class="phonetic" id="phonetic"></p>
-                    <button class="speak-btn" id="speakBtn">🔊 Phát âm</button>
-                    <p class="hint">👆 Click để xem nghĩa</p>
-                    <div class="voice-loading hidden" id="voiceLoading">
-                        <small>⏳ Đang tải giọng đọc...</small>
-                    </div>
-                </div>
-                <div class="card-back hidden">
-                    <img id="wordImageBack" class="word-image" src="" alt="" onerror="this.style.display='none'">
-                    <p class="meaning" id="meaning"></p>
-                    <div class="example">
-                        <p class="example-en" id="exampleEn"></p>
-                        <p class="example-vi" id="exampleVi"></p>
-                    </div>
-                    <p class="memory-tip" id="memoryTip"></p>
-                </div>
-            </div>
-            <div class="flashcard-controls">
-                <button class="btn btn-secondary" id="prevCard">⬅️ Trước</button>
-                <button class="btn btn-primary" id="markLearned">✅ Đã nhớ</button>
-                <button class="btn btn-secondary" id="nextCard">Sau ➡️</button>
-            </div>
-        </div>
-
-        <!-- Vocabulary View Mode -->
-        <div class="mode-content" id="vocabulary-mode">
-            <div class="vocabulary-container">
-                <div class="vocabulary-header">
-                    <h3>📖 Xem danh sách từ vựng</h3>
-                    <div class="vocabulary-controls">
-                        <div class="list-selection">
-                            <label>Chọn list (có thể chọn nhiều):</label>
-                            <div class="checkbox-group" id="vocabCheckboxGroup">
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_1.json" class="vocab-checkbox">
-                                    <span>List 1</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_2.json" class="vocab-checkbox">
-                                    <span>List 2</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_3.json" class="vocab-checkbox">
-                                    <span>List 3</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_4.json" class="vocab-checkbox">
-                                    <span>List 4</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_5.json" class="vocab-checkbox">
-                                    <span>List 5</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_6.json" class="vocab-checkbox">
-                                    <span>List 6</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_7.json" class="vocab-checkbox">
-                                    <span>List 7</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_8.json" class="vocab-checkbox">
-                                    <span>List 8</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_9.json" class="vocab-checkbox">
-                                    <span>List 9</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_10.json" class="vocab-checkbox">
-                                    <span>List 10</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_11.json" class="vocab-checkbox">
-                                    <span>List 11</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_12.json" class="vocab-checkbox">
-                                    <span>List 12</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_13.json" class="vocab-checkbox">
-                                    <span>List 13</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_14.json" class="vocab-checkbox">
-                                    <span>List 14</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_15.json" class="vocab-checkbox">
-                                    <span>List 15</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_16.json" class="vocab-checkbox">
-                                    <span>List 16</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_17.json" class="vocab-checkbox">
-                                    <span>List 17</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_18.json" class="vocab-checkbox">
-                                    <span>List 18</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_19.json" class="vocab-checkbox">
-                                    <span>List 19</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_20.json" class="vocab-checkbox">
-                                    <span>List 20</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_21.json" class="vocab-checkbox">
-                                    <span>List 21</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_22.json" class="vocab-checkbox">
-                                    <span>List 22</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" value="vocab/vocab_23.json" class="vocab-checkbox">
-                                    <span>List 23</span>
-                                </label>
-                            </div>
-                            <div class="list-actions">
-                                <button class="btn btn-secondary" id="selectAllLists">✓ Chọn tất cả</button>
-                                <button class="btn btn-secondary" id="clearAllLists">✗ Bỏ chọn tất cả</button>
-                                <button class="btn btn-primary" id="loadSelectedLists">📥 Tải từ vựng</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="vocabulary-stats" id="vocabularyStats" style="display: none;">
-                    <p>Tổng số từ: <strong id="totalWords">0</strong> | 
-                       Đã học: <strong id="learnedCount">0</strong> | 
-                       Chưa học: <strong id="unlearnedCount">0</strong></p>
-                </div>
-
-                <div class="vocabulary-list" id="vocabularyList"></div>
-
-                <div class="pagination" id="vocabularyPagination" style="display: none;">
-                    <button class="btn btn-secondary" id="prevPage">⬅️ Trang trước</button>
-                    <span id="pageInfo">Trang 1 / 1</span>
-                    <button class="btn btn-secondary" id="nextPage">Trang sau ➡️</button>
-                </div>
-
-                <div class="practice-actions" id="practiceActions" style="display: none;">
-                    <button class="btn btn-primary btn-large" id="startPracticeFlashcard">🎴 Luyện Flashcard</button>
-                    <button class="btn btn-primary btn-large" id="startPracticeQuiz">🎯 Luyện Quiz</button>
-                    <button class="btn btn-primary btn-large" id="startPracticeTyping">⌨️ Luyện gõ</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Quiz Mode -->
-        <div class="mode-content" id="quiz-mode">
-            <div class="quiz-container">
-                <div class="quiz-type-selector">
-                    <div class="quiz-settings-row">
-                        <label>Chọn dạng bài:</label>
-                        <select id="quizTypeSelect">
-                            <option value="meaning">1️⃣ Chọn nghĩa đúng</option>
-                            <option value="fillblank">2️⃣ Điền từ vào chỗ trống</option>
-                            <option value="listening">3️⃣ Nghe audio rồi chọn từ</option>
-                        </select>
-                    </div>
-                    <div class="quiz-settings-row">
-                        <label>Chọn list:</label>
-                        <select id="quizListSelect">
-                            <option value="current">List hiện tại</option>
-                            <option value="vocab/vocab_1.json">List 1</option>
-                            <option value="vocab/vocab_2.json">List 2</option>
-                            <option value="vocab/vocab_3.json">List 3</option>
-                            <option value="vocab/vocab_4.json">List 4</option>
-                            <option value="vocab/vocab_5.json">List 5</option>
-                            <option value="vocab/vocab_6.json">List 6</option>
-                            <option value="vocab/vocab_7.json">List 7</option>
-                            <option value="vocab/vocab_8.json">List 8</option>
-                            <option value="vocab/vocab_9.json">List 9</option>
-                            <option value="vocab/vocab_10.json">List 10</option>
-                            <option value="vocab/vocab_11.json">List 11</option>
-                            <option value="vocab/vocab_12.json">List 12</option>
-                            <option value="vocab/vocab_13.json">List 13</option>
-                            <option value="vocab/vocab_14.json">List 14</option>
-                            <option value="vocab/vocab_15.json">List 15</option>
-                            <option value="vocab/vocab_16.json">List 16</option>
-                            <option value="vocab/vocab_17.json">List 17</option>
-                            <option value="vocab/vocab_18.json">List 18</option>
-                            <option value="vocab/vocab_19.json">List 19</option>
-                            <option value="vocab/vocab_20.json">List 20</option>
-                            <option value="vocab/vocab_21.json">List 21</option>
-                            <option value="vocab/vocab_22.json">List 22</option>
-                            <option value="vocab/vocab_23.json">List 23</option>
-                        </select>
-                    </div>
-                    <div class="quiz-settings-row">
-                        <label>Số từ:</label>
-                        <select id="quizWordCount">
-                            <option value="5">5 từ</option>
-                            <option value="10" selected>10 từ</option>
-                            <option value="15">15 từ</option>
-                            <option value="20">20 từ</option>
-                            <option value="all">Tất cả</option>
-                        </select>
-                    </div>
-                    <div class="quiz-settings-row">
-                        <label>Chọn từ:</label>
-                        <select id="quizWordFilter">
-                            <option value="all">Tất cả từ</option>
-                            <option value="learned">Chỉ từ đã học</option>
-                            <option value="unlearned">Chỉ từ chưa học</option>
-                        </select>
-                    </div>
-                    <div class="quiz-settings-row">
-                        <label class="toggle-label">
-                            <input type="checkbox" id="autoNextToggle" checked>
-                            <span class="toggle-slider"></span>
-                            <span class="toggle-text">Tự động chuyển câu</span>
-                        </label>
-                    </div>
-                    <button class="btn btn-primary" id="startQuizBtn">🎯 Bắt đầu Quiz</button>
-                </div>
-
-                <div class="quiz-content hidden" id="quizContent">
-                    <div class="quiz-header">
-                        <h3>
-                            <span id="quizTypeLabel"></span> - 
-                            Câu <span id="quizCurrent">1</span>/<span id="quizTotal">10</span>
-                        </h3>
-                        <p class="score">Điểm: <span id="score">0</span></p>
-                    </div>
-
-                    <!-- Type 1: Choose meaning -->
-                    <div class="quiz-question" id="quizMeaningType">
-                        <img id="quizImage" class="word-image" src="" alt="" onerror="this.style.display='none'">
-                        <h2 id="quizWord"></h2>
-                        <p id="quizPhonetic"></p>
-                        <button class="speak-btn" id="quizSpeakBtn">🔊 Phát âm</button>
-                        <p class="quiz-instruction">Chọn nghĩa đúng của từ trên:</p>
-                    </div>
-
-                    <!-- Type 2: Fill in the blank -->
-                    <div class="quiz-question hidden" id="quizFillBlankType">
-                        <img id="quizImageFill" class="word-image" src="" alt="" onerror="this.style.display='none'">
-                        <p class="quiz-instruction">Điền từ vào chỗ trống:</p>
-                        <p class="quiz-sentence" id="quizSentence"></p>
-                        <p class="quiz-hint" id="quizHintFill"></p>
-                        <input type="text" id="fillBlankInput" class="fill-blank-input" placeholder="Nhập từ..." autocomplete="off">
-                        <button class="btn btn-primary" id="checkFillBtn">✓ Kiểm tra</button>
-                    </div>
-
-                    <!-- Type 3: Listening -->
-                    <div class="quiz-question hidden" id="quizListeningType">
-                        <div class="listening-controls">
-                            <button class="btn-listen" id="listenBtn">🔊 Nghe</button>
-                            <button class="btn-listen-slow" id="listenSlowBtn">🐌 Nghe chậm</button>
-                        </div>
-                        <p class="quiz-instruction">Chọn từ bạn vừa nghe:</p>
-                        <p class="quiz-hint" id="quizHintListen"></p>
-                    </div>
-
-                    <div class="quiz-options" id="quizOptions"></div>
-                    <div class="quiz-feedback" id="quizFeedback"></div>
-                    <button class="btn btn-primary hidden" id="nextQuiz">Câu tiếp theo</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Typing Practice Mode -->
-        <div class="mode-content" id="typing-mode">
-            <div class="typing-container">
-                <div class="typing-header">
-                    <h3>⌨️ Luyện gõ từ vựng</h3>
-                    <div class="typing-stats">
-                        <span>Đúng: <strong id="typingCorrect">0</strong></span>
-                        <span>Sai: <strong id="typingWrong">0</strong></span>
-                        <span>Độ chính xác: <strong id="typingAccuracy">0%</strong></span>
-                    </div>
-                </div>
-
-                <div class="typing-card">
-                    <img id="typingImage" class="word-image" src="" alt="" onerror="this.style.display='none'">
-                    <p class="typing-meaning" id="typingMeaning"></p>
-                    <p class="typing-phonetic" id="typingPhonetic"></p>
-                    <p class="typing-example" id="typingExample"></p>
-                    
-                    <div class="typing-input-area">
-                        <label>Gõ từ tiếng Anh:</label>
-                        <input type="text" id="typingInput" class="typing-input" placeholder="Nhập từ vựng..." autocomplete="off">
-                        <div id="typingFeedback" class="typing-feedback"></div>
-                    </div>
-
-                    <div class="typing-hint hidden" id="typingHint">
-                        <p>💡 Gợi ý: <span id="typingHintText"></span></p>
-                    </div>
-                </div>
-
-                <div class="typing-controls">
-                    <button class="btn btn-secondary" id="typingShowHint">💡 Gợi ý</button>
-                    <button class="btn btn-secondary" id="typingSkip">⏭️ Bỏ qua</button>
-                    <button class="btn btn-primary" id="typingCheck">✓ Kiểm tra</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Search Mode -->
-        <div class="mode-content" id="search-mode">
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Nhập từ tiếng Anh cần tìm..." class="search-input">
-                <div id="searchResults" class="search-results"></div>
-            </div>
-        </div>
-
-        <!-- Review Mode (Spaced Repetition) -->
-        <div class="mode-content" id="review-mode">
-            <div class="review-container">
-                <h3>📅 Lịch ôn tập theo Spaced Repetition</h3>
-                <div id="reviewList" class="review-list"></div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Show intro then mode selection
+        setTimeout(() => {
+            document.getElementById('introScreen').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('introScreen').style.display = 'none';
+                document.getElementById('modeSelectionScreen').classList.remove('hidden');
+                document.getElementById('modeSelectionScreen').classList.add('fade-in-app');
+            }, 600);
+        }, 750);
+
+        function navigateToMode(mode) {
+            window.location.href = `${mode}.html`;
+        }
+    </script>
 </body>
 </html>

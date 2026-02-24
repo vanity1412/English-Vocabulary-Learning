@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "The company's new _____ will take effect next month.",
+      "options": [
+        "policy",
+        "politic",
+        "political",
+        "politically"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cần danh từ sau tính từ 'new'. 'Policy' (chính sách) là danh từ phù hợp."
+    },
+    {
+      "question": "She speaks English very _____.",
+      "options": [
+        "good",
+        "well",
+        "better",
+        "best"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cần trạng từ để bổ nghĩa cho động từ 'speaks'. 'Well' là trạng từ của 'good'."
+    },
+    {
+      "question": "Julia is _____ in politics.",
+      "options": [
+        "interesting",
+        "interested",
+        "interest",
+        "interests"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tính từ dạng phân từ '-ed' diễn tả cảm xúc của Julia khi bị tác động. 'Interested' = thích thú."
+    },
+    {
+      "question": "The movie was very _____.",
+      "options": [
+        "bored",
+        "boring",
+        "bore",
+        "bores"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tính từ dạng phân từ '-ing' diễn tả tính chất của chủ thể 'movie'. 'Boring' = chán."
+    },
+    {
+      "question": "He is a _____ child.",
+      "options": [
+        "well-behave",
+        "well-behaved",
+        "good-behave",
+        "behave-well"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tính từ ghép 'well-behaved' (adv + -ed) = ngoan ngoãn."
+    },
+    {
+      "question": "I want something _____ for my birthday.",
+      "options": [
+        "special",
+        "specially",
+        "specialize",
+        "specialist"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Tính từ 'special' đứng sau đại từ bất định 'something'."
+    },
+    {
+      "question": "This tea tastes _____.",
+      "options": [
+        "strangely",
+        "strange",
+        "stranger",
+        "strangest"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tính từ 'strange' đứng sau động từ nối 'tastes' làm bổ ngữ cho chủ ngữ."
+    },
+    {
+      "question": "He made me _____.",
+      "options": [
+        "angrily",
+        "anger",
+        "angry",
+        "angrier"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tính từ 'angry' làm bổ ngữ cho tân ngữ 'me' sau động từ nối 'made'."
+    },
+    {
+      "question": "The book was _____ good that I couldn't put it down.",
+      "options": [
+        "so",
+        "such",
+        "very",
+        "too"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cấu trúc 'so + adj + that': quá...đến nỗi mà..."
+    },
+    {
+      "question": "She's not old _____ to have a driving license.",
+      "options": [
+        "so",
+        "too",
+        "enough",
+        "very"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc 'adj + enough + to V': đủ...để làm gì."
+    },
+    {
+      "question": "It was _____ a good book that I read it twice.",
+      "options": [
+        "so",
+        "such",
+        "very",
+        "too"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cấu trúc 'such + a/an + adj + N + that': quá...đến nỗi mà..."
+    },
+    {
+      "question": "That shirt is _____ small for you.",
+      "options": [
+        "so",
+        "such",
+        "too",
+        "enough"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc 'too + adj + for sb': quá...đối với ai đó."
+    },
+    {
+      "question": "She bought a _____ dress.",
+      "options": [
+        "beautiful long red silk",
+        "long beautiful silk red",
+        "red silk beautiful long",
+        "silk red long beautiful"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Thứ tự tính từ: opinion (beautiful) - size (long) - color (red) - material (silk)."
+    },
+    {
+      "question": "The news was _____.",
+      "options": [
+        "shocked",
+        "shocking",
+        "shock",
+        "shocks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tính từ dạng phân từ '-ing' diễn tả tính chất của 'news'. 'Shocking' = gây choáng."
+    },
+    {
+      "question": "I was _____ when I heard the news.",
+      "options": [
+        "shocking",
+        "shocked",
+        "shock",
+        "shocks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tính từ dạng phân từ '-ed' diễn tả cảm xúc của 'I' khi bị tác động. 'Shocked' = bị choáng."
+    }
+  ]
+}

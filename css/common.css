@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Intro Screen Styles */
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+}
+
+.intro-content {
+    text-align: center;
+    color: white;
+}
+
+.intro-logo {
+    font-size: 120px;
+    margin-bottom: 30px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.intro-title {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    letter-spacing: 3px;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(255,255,255,0.5),
+                     0 0 30px rgba(255,255,255,0.3),
+                     0 5px 15px rgba(0,0,0,0.3);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255,255,255,0.8),
+                     0 0 50px rgba(255,255,255,0.5),
+                     0 5px 15px rgba(0,0,0,0.3);
+    }
+}
+
+.intro-subtitle {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+}
+
+.intro-tagline {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.loading-dots span {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+}
+
+/* Fade animations */
+.fade-in-1 {
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.fade-in-2 {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.fade-in-3 {
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.fade-in-4 {
+    animation: fadeInUp 1s ease-out 1.4s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-screen.fade-out {
+    animation: fadeOut 0.6s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+}
+
+.fade-in-app {
+    animation: fadeInApp 0.6s ease-out;
+}
+
+@keyframes fadeInApp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Mode Selection Screen */
+.mode-selection-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    overflow-y: auto;
+}
+
+.mode-selection-content {
+    text-align: center;
+    color: white;
+    max-width: 1200px;
+    padding: 40px 20px;
+    margin: auto;
+}
+
+.selection-title {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.selection-subtitle {
+    font-size: 24px;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.mode-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.mode-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    flex: 0 1 320px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mode-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.mode-card-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.mode-card h3 {
+    color: #667eea;
+    font-size: 26px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.mode-card p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 20px;
+    min-height: 60px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.mode-card-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mode-card-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Common button styles */
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #28a745;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #218838;
+}
+
+.btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+}
+
+.btn-large {
+    padding: 18px 40px;
+    font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .mode-cards {
+        gap: 20px;
+    }
+    
+    .mode-card {
+        flex: 0 1 280px;
+        max-width: 280px;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .selection-title {
+        font-size: 32px;
+    }
+    
+    .selection-subtitle {
+        font-size: 18px;
+    }
+    
+    .mode-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mode-card {
+        flex: 0 1 auto;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .intro-title {
+        font-size: 48px;
+    }
+    
+    .intro-subtitle {
+        font-size: 32px;
+    }
+}

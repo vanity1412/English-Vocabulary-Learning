@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "You must _____ tired after traveling all day.",
+      "options": [
+        "be",
+        "to be",
+        "being",
+        "been"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Động từ khuyết thiếu 'must' + V inf (be)."
+    },
+    {
+      "question": "You'd better _____ now before the traffic gets too bad.",
+      "options": [
+        "to go",
+        "go",
+        "going",
+        "gone"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Had better + V inf (go): lời khuyên."
+    },
+    {
+      "question": "He lets us _____ some of his land.",
+      "options": [
+        "use",
+        "to use",
+        "using",
+        "used"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Let + O + V inf (use): cho phép ai làm gì."
+    },
+    {
+      "question": "You can't make a cat _____ anything it doesn't want to do.",
+      "options": [
+        "to do",
+        "do",
+        "doing",
+        "done"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Make + O + V inf (do): bắt ai phải làm gì."
+    },
+    {
+      "question": "I had John _____ my car.",
+      "options": [
+        "wash",
+        "to wash",
+        "washing",
+        "washed"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Have + O + V inf (wash): nhờ ai làm gì cho mình (chủ động nhờ)."
+    },
+    {
+      "question": "We saw her _____ off the bus.",
+      "options": [
+        "get",
+        "to get",
+        "getting",
+        "got"
+      ],
+      "correctAnswer": 0,
+      "explanation": "See + O + V inf (get): nhìn thấy toàn bộ hành động từ đầu đến cuối."
+    },
+    {
+      "question": "Jane heard him _____ out at eight o'clock.",
+      "options": [
+        "go",
+        "to go",
+        "going",
+        "went"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Hear + O + V inf (go): nghe thấy toàn bộ hành động."
+    },
+    {
+      "question": "He helped me _____ the bag.",
+      "options": [
+        "carry",
+        "to carry",
+        "Both A and B",
+        "carrying"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Help + O + V inf hoặc to V: cả hai đều đúng. 'Carry' và 'to carry' đều được chấp nhận."
+    },
+    {
+      "question": "I'd rather _____ a taxi than take the bus.",
+      "options": [
+        "get",
+        "to get",
+        "getting",
+        "got"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Would rather + V inf (get): thích cái này hơn cái kia."
+    },
+    {
+      "question": "We used to _____ to the seaside every summer.",
+      "options": [
+        "go",
+        "going",
+        "went",
+        "gone"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Used to + V inf (go): thói quen trong quá khứ mà bây giờ không còn."
+    },
+    {
+      "question": "I suggest that we _____ a while before making any decisions.",
+      "options": [
+        "wait",
+        "to wait",
+        "waiting",
+        "waited"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Suggest + (that) + S + (should) + V inf (wait): đưa ra gợi ý."
+    },
+    {
+      "question": "Do we have to _____ our shoes off?",
+      "options": [
+        "take",
+        "to take",
+        "taking",
+        "took"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Have to + V inf (take): sự bắt buộc."
+    },
+    {
+      "question": "Could you _____ me a favor?",
+      "options": [
+        "do",
+        "to do",
+        "doing",
+        "done"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Động từ khuyết thiếu 'could' + V inf (do)."
+    },
+    {
+      "question": "I'd rather not _____ out tonight.",
+      "options": [
+        "go",
+        "to go",
+        "going",
+        "went"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Would rather not + V inf (go): không thích làm gì."
+    },
+    {
+      "question": "She was seen _____ off the bus.",
+      "options": [
+        "get",
+        "to get",
+        "getting",
+        "got"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dạng bị động của 'see + O + V inf' là 'be seen + to V' (không phải V inf)."
+    }
+  ]
+}

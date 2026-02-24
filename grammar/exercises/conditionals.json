@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "If you _____ it, can you call me?",
+      "options": [
+        "find",
+        "found",
+        "will find",
+        "would find"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Câu điều kiện loại I: If + hiện tại đơn, will/can + V. Giả định có khả năng xảy ra."
+    },
+    {
+      "question": "If you _____ a wallet in the street, what would you do?",
+      "options": [
+        "find",
+        "found",
+        "will find",
+        "have found"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Câu điều kiện loại II: If + quá khứ đơn, would + V. Giả định không có thật ở hiện tại."
+    },
+    {
+      "question": "If I _____ you, I wouldn't buy that coat.",
+      "options": [
+        "am",
+        "was",
+        "were",
+        "will be"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Câu điều kiện loại II: động từ 'be' thường dùng 'were' cho tất cả các ngôi."
+    },
+    {
+      "question": "If I _____ a camera with me, I would have taken some pictures.",
+      "options": [
+        "have",
+        "had",
+        "had had",
+        "would have"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Câu điều kiện loại III: If + had + VPII, would have + VPII. Giả định không có thật trong quá khứ."
+    },
+    {
+      "question": "I didn't go out last night. I _____ out if I hadn't been so tired.",
+      "options": [
+        "will go",
+        "would go",
+        "would have gone",
+        "had gone"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Câu điều kiện loại III: would have + VPII. Kết quả không xảy ra trong quá khứ."
+    },
+    {
+      "question": "I wish I _____ how to use this DVD player.",
+      "options": [
+        "know",
+        "knew",
+        "have known",
+        "had known"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Wish + quá khứ đơn: ước muốn thay đổi sự thật ở hiện tại."
+    },
+    {
+      "question": "I wish I _____ that Gary was ill.",
+      "options": [
+        "know",
+        "knew",
+        "have known",
+        "had known"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Wish + quá khứ hoàn thành: ước muốn về điều đã xảy ra trong quá khứ."
+    },
+    {
+      "question": "If you park here, they _____ your wheels.",
+      "options": [
+        "clamp",
+        "will clamp",
+        "would clamp",
+        "clamped"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Câu điều kiện loại 0: If + hiện tại đơn, hiện tại đơn. Diễn tả sự thật luôn đúng."
+    },
+    {
+      "question": "_____ I don't arrive till after midnight, will the guest-house still be open?",
+      "options": [
+        "If",
+        "Unless",
+        "Supposing",
+        "Should"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Supposing = giả sử, dùng để đặt giả định trong câu điều kiện."
+    },
+    {
+      "question": "_____ I phone you, you can assume the train's on time.",
+      "options": [
+        "If",
+        "Unless",
+        "Should",
+        "Were"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Unless = if...not (trừ khi). Unless I phone = If I don't phone."
+    },
+    {
+      "question": "If I _____ Charles, I wouldn't be here now.",
+      "options": [
+        "didn't meet",
+        "don't meet",
+        "hadn't met",
+        "haven't met"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Câu điều kiện kết hợp: If + quá khứ hoàn thành (loại III), would + V (loại II). Giả định quá khứ, kết quả hiện tại."
+    },
+    {
+      "question": "_____ the Prime Minister to resign, there would have to be an election.",
+      "options": [
+        "If",
+        "Should",
+        "Were",
+        "Had"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Were + S + to V: dạng đảo ngữ trang trọng của câu điều kiện loại II, nói về khả năng ít xảy ra."
+    },
+    {
+      "question": "You can play here _____ you don't make a mess.",
+      "options": [
+        "if",
+        "unless",
+        "as long as",
+        "supposing"
+      ],
+      "correctAnswer": 2,
+      "explanation": "As long as = miễn là, với điều kiện. Liên từ chỉ điều kiện."
+    },
+    {
+      "question": "_____ May realized she would travel alone, she would never have agreed.",
+      "options": [
+        "If",
+        "Should",
+        "Were",
+        "Had"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Had + S + VPII: dạng đảo ngữ của If + had + VPII (câu điều kiện loại III)."
+    },
+    {
+      "question": "If I won a lot of money, I _____ buy a house.",
+      "options": [
+        "will",
+        "would",
+        "might",
+        "can"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Câu điều kiện loại II có thể dùng 'might' thay 'would' để diễn tả khả năng không chắc chắn."
+    }
+  ]
+}

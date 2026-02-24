@@ -1,0 +1,40 @@
+{
+  "id": "part5",
+  "name": "Part 5 - Incomplete Sentences",
+  "timeLimit": 15,
+  "questions": [
+    {
+      "question": "The company's new policy will _____ effect next month.",
+      "options": [
+        "take",
+        "make",
+        "do",
+        "have"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Take effect' là cụm từ cố định nghĩa là 'có hiệu lực'"
+    },
+    {
+      "question": "All employees are required to _____ the safety training.",
+      "options": [
+        "attend",
+        "attending",
+        "attended",
+        "attendance"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Sau 'to' cần động từ nguyên mẫu"
+    },
+    {
+      "question": "The meeting has been _____ until next week.",
+      "options": [
+        "postpone",
+        "postponed",
+        "postponing",
+        "postpones"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Câu bị động: has been + V3/ed"
+    }
+  ]
+}

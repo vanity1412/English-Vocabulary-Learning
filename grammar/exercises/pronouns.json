@@ -1,0 +1,169 @@
+{
+  "exercises": [
+    {
+      "question": "Ms. Jenny was not satisfied with the purchase. _____ wants a refund.",
+      "options": [
+        "He",
+        "She",
+        "It",
+        "They"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đại từ nhân xưng 'She' thay thế cho 'Ms. Jenny' (nữ) làm chủ ngữ."
+    },
+    {
+      "question": "Although our new computer is faster, _____ has more features.",
+      "options": [
+        "their",
+        "them",
+        "theirs",
+        "they"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đại từ sở hữu 'theirs' = their computer, đóng vai trò chủ ngữ trong câu."
+    },
+    {
+      "question": "I kept telling _____ that nothing was wrong.",
+      "options": [
+        "me",
+        "mine",
+        "my",
+        "myself"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đại từ phản thân 'myself' vì chủ ngữ và tân ngữ cùng chỉ một đối tượng (I)."
+    },
+    {
+      "question": "She decorated the cake _____.",
+      "options": [
+        "her",
+        "hers",
+        "herself",
+        "she"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đại từ phản thân 'herself' dùng để nhấn mạnh, có nghĩa là 'tự tay cô ấy'."
+    },
+    {
+      "question": "When each passenger arrives, we ask _____ to fill in a form.",
+      "options": [
+        "him",
+        "her",
+        "them",
+        "it"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Đại từ tân ngữ 'them' thay thế cho 'each passenger' (có thể là nam hoặc nữ)."
+    },
+    {
+      "question": "This year's distribution surpassed _____ of last year.",
+      "options": [
+        "this",
+        "that",
+        "these",
+        "those"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đại từ chỉ định 'that' thay thế cho 'distribution' (số ít) đã nhắc trước đó."
+    },
+    {
+      "question": "Our products are better than _____ of our competitors.",
+      "options": [
+        "this",
+        "that",
+        "these",
+        "those"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Đại từ chỉ định 'those' thay thế cho 'products' (số nhiều) đã nhắc trước đó."
+    },
+    {
+      "question": "_____ who load the truck must be careful.",
+      "options": [
+        "This",
+        "That",
+        "These",
+        "Those"
+      ],
+      "correctAnswer": 3,
+      "explanation": "'Those who' = những người mà..., dùng để chỉ nhiều người."
+    },
+    {
+      "question": "_____ makes mistakes.",
+      "options": [
+        "Everyone",
+        "Every one",
+        "Every",
+        "All"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Đại từ bất định 'Everyone' (một từ), động từ chia số ít 'makes'."
+    },
+    {
+      "question": "Some of the answers _____ correct.",
+      "options": [
+        "is",
+        "are",
+        "was",
+        "be"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Some of + N số nhiều (answers)', động từ chia số nhiều 'are'."
+    },
+    {
+      "question": "All _____ the workers were given a pay-rise.",
+      "options": [
+        "of",
+        "in",
+        "at",
+        "on"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cấu trúc 'All of the + N' hoặc 'All the + N' (có thể có hoặc không có 'of')."
+    },
+    {
+      "question": "Neither of my brothers _____ at home any more.",
+      "options": [
+        "live",
+        "lives",
+        "living",
+        "lived"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Neither of + N số nhiều' nhưng động từ chia số ít 'lives'."
+    },
+    {
+      "question": "A few of his films _____ seen abroad.",
+      "options": [
+        "was",
+        "were",
+        "is",
+        "be"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'A few of + N số nhiều (films)', động từ chia số nhiều 'were'."
+    },
+    {
+      "question": "He repaired his bike by _____.",
+      "options": [
+        "him",
+        "his",
+        "himself",
+        "he"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cụm 'by oneself' = tự mình (without help), dùng đại từ phản thân 'himself'."
+    },
+    {
+      "question": "We developed two products. We will release one and then _____.",
+      "options": [
+        "another",
+        "the other",
+        "others",
+        "the others"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Với hai đối tượng: 'one... the other' (một cái... cái còn lại)."
+    }
+  ]
+}

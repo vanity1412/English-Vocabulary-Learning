@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "It is always _____ to hear other people's point of view.",
+      "options": [
+        "interest",
+        "interesting",
+        "interested",
+        "interests"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Phân từ hiện tại 'interesting' (-ing) làm tính từ, mang nghĩa chủ động."
+    },
+    {
+      "question": "Don't forget to fill in the form _____ to the letter.",
+      "options": [
+        "attach",
+        "attaching",
+        "attached",
+        "to attach"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Phân từ quá khứ 'attached' (-ed) đứng sau danh từ 'form' để bổ nghĩa, mang nghĩa bị động."
+    },
+    {
+      "question": "Kate is in the kitchen _____ coffee.",
+      "options": [
+        "make",
+        "making",
+        "made",
+        "to make"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cấu trúc phân từ 'making coffee' diễn tả hành động xảy ra đồng thời với hành động chính."
+    },
+    {
+      "question": "Joe hurt his knee _____ football.",
+      "options": [
+        "play",
+        "playing",
+        "played",
+        "to play"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cấu trúc phân từ 'playing football' làm bối cảnh cho hành động chính (= while he was playing)."
+    },
+    {
+      "question": "Be careful when _____ the road.",
+      "options": [
+        "cross",
+        "crossing",
+        "crossed",
+        "to cross"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Giữ lại liên từ 'when' + cấu trúc phân từ 'crossing' (= when you are crossing)."
+    },
+    {
+      "question": "_____ a hotel, we looked for somewhere to have dinner.",
+      "options": [
+        "Find",
+        "Finding",
+        "Having found",
+        "To find"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Having + VPII diễn tả hành động hoàn thành trước hành động khác."
+    },
+    {
+      "question": "_____ tired, I went to bed early.",
+      "options": [
+        "Feel",
+        "Feeling",
+        "Felt",
+        "To feel"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cấu trúc phân từ 'Feeling tired' diễn tả lý do cho hành động chính."
+    },
+    {
+      "question": "_____ a car, she finds it difficult to get around.",
+      "options": [
+        "Not have",
+        "Not having",
+        "Not had",
+        "Not to have"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dạng phủ định 'Not having' diễn tả lý do."
+    },
+    {
+      "question": "_____ by local volunteers, staff at the museum have spent many years sorting photos.",
+      "options": [
+        "Help",
+        "Helping",
+        "Helped",
+        "To help"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Phân từ quá khứ 'Helped' (bị động) diễn tả lý do."
+    },
+    {
+      "question": "Although _____, Mark did not feel quite as tired.",
+      "options": [
+        "exhaust",
+        "exhausting",
+        "exhausted",
+        "to exhaust"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Liên từ 'although' + phân từ quá khứ 'exhausted' (= although he was exhausted)."
+    },
+    {
+      "question": "The proposal, if _____ by Parliament, will mean fundamental changes.",
+      "options": [
+        "accept",
+        "accepting",
+        "accepted",
+        "to accept"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Liên từ 'if' + phân từ quá khứ 'accepted' (= if it is accepted)."
+    },
+    {
+      "question": "Don't just stand there _____ nothing!",
+      "options": [
+        "do",
+        "doing",
+        "done",
+        "to do"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cấu trúc phân từ 'doing nothing' diễn tả hành động xảy ra đồng thời."
+    },
+    {
+      "question": "_____ her work, she went home.",
+      "options": [
+        "Finish",
+        "Finishing",
+        "Having finished",
+        "To finish"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Having + VPII (Having finished) diễn tả hành động hoàn thành trước."
+    },
+    {
+      "question": "_____ unemployed, he doesn't have much money.",
+      "options": [
+        "Be",
+        "Being",
+        "Been",
+        "To be"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cấu trúc phân từ 'Being unemployed' diễn tả lý do."
+    },
+    {
+      "question": "Did you cut yourself _____?",
+      "options": [
+        "shave",
+        "shaving",
+        "shaved",
+        "to shave"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cấu trúc phân từ 'shaving' làm bối cảnh (= while you were shaving)."
+    }
+  ]
+}

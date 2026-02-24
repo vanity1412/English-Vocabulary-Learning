@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "Many accidents _____ by careless driving.",
+      "options": [
+        "cause",
+        "causes",
+        "are caused",
+        "is caused"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì hiện tại đơn bị động: are + VPII. Chủ ngữ 'accidents' số nhiều nên dùng 'are'."
+    },
+    {
+      "question": "We're already _____, thanks.",
+      "options": [
+        "serving",
+        "served",
+        "being served",
+        "been served"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì hiện tại tiếp diễn bị động: are being + VPII (served)."
+    },
+    {
+      "question": "The story _____ in yesterday's paper.",
+      "options": [
+        "reported",
+        "was reported",
+        "is reported",
+        "reports"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì quá khứ đơn bị động với 'yesterday': was + VPII (reported)."
+    },
+    {
+      "question": "The trip _____ canceled.",
+      "options": [
+        "has",
+        "have been",
+        "has been",
+        "had"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì hiện tại hoàn thành bị động: has been + VPII. Chủ ngữ 'trip' số ít nên dùng 'has'."
+    },
+    {
+      "question": "This room _____ cleaned later.",
+      "options": [
+        "will",
+        "will be",
+        "will been",
+        "is"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì tương lai đơn bị động: will be + VPII (cleaned)."
+    },
+    {
+      "question": "I don't like _____ what to do.",
+      "options": [
+        "telling",
+        "told",
+        "being told",
+        "to tell"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Bị động với Ving: being + VPII (told). 'I don't like being told' = Tôi không thích bị bảo."
+    },
+    {
+      "question": "The windows _____ broken.",
+      "options": [
+        "get",
+        "got",
+        "getting",
+        "gets"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Bị động với get (quá khứ): got + VPII (broken). Thường dùng trong văn nói."
+    },
+    {
+      "question": "Where did you _____ your hair _____?",
+      "options": [
+        "have / cut",
+        "have / cutting",
+        "had / cut",
+        "having / cut"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cấu trúc have something done: have + object + VPII. Việc được làm bởi người khác."
+    },
+    {
+      "question": "She _____ to run ten miles a day.",
+      "options": [
+        "says",
+        "is said",
+        "said",
+        "saying"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Câu tường thuật bị động: S + be said + to V. 'She is said to run' = Cô ấy được nói rằng chạy."
+    },
+    {
+      "question": "They _____ carefully at that moment.",
+      "options": [
+        "were watching",
+        "watched",
+        "were being watched",
+        "are being watched"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì quá khứ tiếp diễn bị động với 'at that moment': were being + VPII (watched)."
+    },
+    {
+      "question": "The vegetables didn't taste good. They _____ too long.",
+      "options": [
+        "cooked",
+        "had cooked",
+        "had been cooked",
+        "were cooking"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì quá khứ hoàn thành bị động: had been + VPII. Hành động nấu xảy ra trước khi ăn."
+    },
+    {
+      "question": "A mystery is something that can't _____.",
+      "options": [
+        "explain",
+        "explained",
+        "be explained",
+        "explaining"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Động từ khuyết thiếu bị động: can't be + VPII (explained)."
+    },
+    {
+      "question": "The assignment should _____ finished yesterday.",
+      "options": [
+        "have",
+        "have been",
+        "has been",
+        "be"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Động từ khuyết thiếu hoàn thành bị động: should have been + VPII (finished)."
+    },
+    {
+      "question": "Steve hates _____ waiting.",
+      "options": [
+        "keeping",
+        "kept",
+        "being kept",
+        "to keep"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Bị động với Ving: being + VPII (kept). 'Being kept waiting' = bị bắt chờ đợi."
+    },
+    {
+      "question": "The police _____ the information.",
+      "options": [
+        "gave",
+        "were given",
+        "was given",
+        "giving"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Câu có 2 tân ngữ chuyển sang bị động: 'The police' (số nhiều) + were given + object."
+    }
+  ]
+}

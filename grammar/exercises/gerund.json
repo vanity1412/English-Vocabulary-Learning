@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "I enjoy _____ books in my free time.",
+      "options": [
+        "read",
+        "to read",
+        "reading",
+        "reads"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Động từ 'enjoy' + Ving (reading)."
+    },
+    {
+      "question": "Would you mind _____ the door?",
+      "options": [
+        "close",
+        "to close",
+        "closing",
+        "closed"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Động từ 'mind' + Ving (closing)."
+    },
+    {
+      "question": "I remember _____ the door. (Tôi nhớ là đã khóa cửa rồi)",
+      "options": [
+        "lock",
+        "to lock",
+        "locking",
+        "locked"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Remember + Ving: nhớ đã làm gì (đã làm rồi)."
+    },
+    {
+      "question": "I must remember _____ the door before going out. (Tôi phải nhớ khóa cửa)",
+      "options": [
+        "lock",
+        "to lock",
+        "locking",
+        "locked"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Remember + to V: nhớ phải làm gì (chưa làm)."
+    },
+    {
+      "question": "She stopped _____ as soon as she saw her mother.",
+      "options": [
+        "cry",
+        "to cry",
+        "crying",
+        "cried"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Stop + Ving: dừng việc gì (dừng việc khóc)."
+    },
+    {
+      "question": "We stopped _____ some water at the supermarket.",
+      "options": [
+        "buy",
+        "to buy",
+        "buying",
+        "bought"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Stop + to V: dừng lại để làm gì (dừng lại để mua nước)."
+    },
+    {
+      "question": "Are you interested in _____ for us?",
+      "options": [
+        "work",
+        "to work",
+        "working",
+        "worked"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Giới từ 'in' + Ving (working)."
+    },
+    {
+      "question": "Thank you very much for _____ me to your party.",
+      "options": [
+        "invite",
+        "to invite",
+        "inviting",
+        "invited"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Giới từ 'for' + Ving (inviting)."
+    },
+    {
+      "question": "Before _____ out, I phoned Sarah.",
+      "options": [
+        "go",
+        "to go",
+        "going",
+        "went"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Giới từ 'before' + Ving tạo thành cụm giới từ làm sung ngữ."
+    },
+    {
+      "question": "I'm looking forward to _____ her.",
+      "options": [
+        "meet",
+        "to meet",
+        "meeting",
+        "met"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Look forward to + Ving (to là giới từ, không phải to V)."
+    },
+    {
+      "question": "It's no use _____ about it.",
+      "options": [
+        "worry",
+        "to worry",
+        "worrying",
+        "worried"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc It's no use + Ving: tốn công vô ích khi làm gì."
+    },
+    {
+      "question": "She couldn't help _____.",
+      "options": [
+        "laugh",
+        "to laugh",
+        "laughing",
+        "laughed"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc can't help + Ving: không thể nhịn/kiềm chế được."
+    },
+    {
+      "question": "I had no trouble _____ a place to stay.",
+      "options": [
+        "find",
+        "to find",
+        "finding",
+        "found"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc have trouble + Ving: gặp khó khăn khi làm gì."
+    },
+    {
+      "question": "He spent hours _____ to repair the clock.",
+      "options": [
+        "try",
+        "to try",
+        "trying",
+        "tried"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc spend time + Ving: dành thời gian làm gì."
+    },
+    {
+      "question": "I prefer _____ home to going out.",
+      "options": [
+        "stay",
+        "to stay",
+        "staying",
+        "stayed"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc prefer Ving 1 to Ving 2: thích cái gì hơn cái gì."
+    }
+  ]
+}

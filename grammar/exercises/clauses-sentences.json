@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "She _____ a teacher at a local school.",
+      "options": [
+        "is",
+        "are",
+        "be",
+        "being"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cấu trúc S + V + C: 'is' là động từ be, 'a teacher' là bổ ngữ cho chủ ngữ 'She'."
+    },
+    {
+      "question": "I can't _____ my wallet anywhere.",
+      "options": [
+        "find",
+        "found",
+        "finding",
+        "finds"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'Find' là ngoại động từ, cần tân ngữ 'my wallet' đi kèm. Sau 'can't' dùng động từ nguyên mẫu."
+    },
+    {
+      "question": "_____ you finish your homework yet?",
+      "options": [
+        "Do",
+        "Does",
+        "Did",
+        "Have"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Mệnh đề nghi vấn với 'yet' dùng thì Present Perfect: Have/Has + S + V3?"
+    },
+    {
+      "question": "_____ sit down, please.",
+      "options": [
+        "Do",
+        "Does",
+        "Did",
+        "Done"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Mệnh đề mệnh lệnh lịch sự: 'Do + V' để thể hiện sự lịch sự trong yêu cầu."
+    },
+    {
+      "question": "I went to the store _____ I needed some milk.",
+      "options": [
+        "and",
+        "but",
+        "because",
+        "or"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Câu phức: liên từ phụ thuộc 'because' nối mệnh đề chính với mệnh đề phụ thuộc chỉ lý do."
+    },
+    {
+      "question": "She put the book _____ the table.",
+      "options": [
+        "on",
+        "in",
+        "at",
+        "to"
+      ],
+      "correctAnswer": 0,
+      "explanation": "'On the table' là bổ ngữ bắt buộc cho động từ 'put'. Nếu bỏ đi câu sẽ không đủ nghĩa."
+    },
+    {
+      "question": "_____ beautiful flowers they are!",
+      "options": [
+        "How",
+        "What",
+        "Which",
+        "Where"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mệnh đề cảm thán: What + (a/an) + adj + N + S + V!"
+    },
+    {
+      "question": "He _____ me angry yesterday.",
+      "options": [
+        "make",
+        "made",
+        "makes",
+        "making"
+      ],
+      "correctAnswer": 1,
+      "explanation": "S + V + O + C: 'angry' là bổ ngữ cho tân ngữ 'me'. Dùng thì quá khứ với 'yesterday'."
+    },
+    {
+      "question": "I like coffee _____ my sister prefers tea.",
+      "options": [
+        "because",
+        "but",
+        "if",
+        "although"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Câu ghép: liên từ kết hợp 'but' nối 2 mệnh đề chính có ý nghĩa đối lập."
+    },
+    {
+      "question": "_____ go to the cinema tonight!",
+      "options": [
+        "Let's",
+        "Let",
+        "Lets",
+        "Letting"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Mệnh đề mệnh lệnh với 'Let's' (Let us) để đưa ra lời rủ, gợi ý."
+    },
+    {
+      "question": "She quickly _____ the problem.",
+      "options": [
+        "solve",
+        "solved",
+        "solving",
+        "solves"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Quickly' là sung ngữ (có thể bỏ đi). Câu ở thì quá khứ nên dùng 'solved'."
+    },
+    {
+      "question": "_____ she come to the party tomorrow?",
+      "options": [
+        "Will",
+        "Does",
+        "Is",
+        "Do"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Mệnh đề nghi vấn ở thì tương lai: Will + S + V?"
+    },
+    {
+      "question": "The food _____ delicious.",
+      "options": [
+        "taste",
+        "tastes",
+        "tasting",
+        "tasted"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Taste' là động từ nối, 'delicious' là bổ ngữ cho chủ ngữ. Chủ ngữ số ít nên thêm 's'."
+    },
+    {
+      "question": "_____ open the window, please.",
+      "options": [
+        "Not",
+        "Don't",
+        "Doesn't",
+        "Didn't"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mệnh đề mệnh lệnh phủ định: Don't + V"
+    },
+    {
+      "question": "If it rains tomorrow, we _____ stay home.",
+      "options": [
+        "will",
+        "would",
+        "can",
+        "could"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Câu phức với câu điều kiện loại 1: If + S + V (hiện tại), S + will + V"
+    }
+  ]
+}

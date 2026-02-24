@@ -1648,3 +1648,630 @@ body.dark-mode .modal {
     opacity: 0.6;
     cursor: not-allowed;
 }
+
+
+/* Mode Selection Screen */
+.mode-selection-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+}
+
+.mode-selection-content {
+    text-align: center;
+    color: white;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.selection-title {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.selection-subtitle {
+    font-size: 24px;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.mode-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.mode-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.mode-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.mode-card-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.mode-card h3 {
+    color: #667eea;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.mode-card p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 25px;
+    min-height: 48px;
+}
+
+.mode-card-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mode-card-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Grammar App Styles */
+.grammar-topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.grammar-topic-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.grammar-topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.topic-icon {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.grammar-topic-card h3 {
+    color: #667eea;
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.grammar-topic-card p {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.topic-level {
+    text-align: center;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.grammar-lesson-container {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.grammar-lesson-container h2 {
+    color: #667eea;
+    font-size: 32px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.grammar-section {
+    margin: 30px 0;
+}
+
+.grammar-section h3 {
+    color: #667eea;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.grammar-theory {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.grammar-theory ul {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.grammar-theory li {
+    margin-bottom: 10px;
+}
+
+.grammar-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grammar-example {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #ffc107;
+}
+
+.example-sentence {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.example-translation {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.example-explanation {
+    font-size: 14px;
+    color: #856404;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.grammar-exercise-container {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.exercise-header h3 {
+    color: #667eea;
+    font-size: 24px;
+}
+
+.exercise-question {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.exercise-question p {
+    font-size: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.grammar-options {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.grammar-option {
+    padding: 20px;
+    background: #f5f5f5;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 18px;
+}
+
+.grammar-option:hover {
+    background: #e0e0e0;
+    transform: translateX(5px);
+}
+
+.grammar-option.correct {
+    background: #d4edda;
+    border-color: #28a745;
+}
+
+.grammar-option.wrong {
+    background: #f8d7da;
+    border-color: #dc3545;
+}
+
+.grammar-feedback {
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 60px;
+}
+
+.grammar-feedback.correct {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+}
+
+.grammar-feedback.wrong {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+/* Exam App Styles */
+.exam-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.exam-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.exam-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.exam-card h3 {
+    color: #667eea;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.exam-info {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.exam-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.exam-progress {
+    font-size: 20px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.exam-timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+.exam-content {
+    margin-bottom: 30px;
+}
+
+.exam-passage {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.exam-passage h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.exam-passage p {
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+}
+
+.exam-question-section {
+    background: white;
+    padding: 20px;
+}
+
+.exam-question {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.exam-options {
+    display: grid;
+    gap: 12px;
+}
+
+.exam-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 20px;
+    background: #f5f5f5;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.exam-option:hover {
+    background: #e0e0e0;
+    border-color: #667eea;
+}
+
+.exam-option.selected {
+    background: #e8f5e9;
+    border-color: #28a745;
+}
+
+.option-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.exam-option.selected .option-letter {
+    background: #28a745;
+}
+
+.option-text {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+}
+
+.exam-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.exam-result-container {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.exam-result-container h2 {
+    color: #667eea;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.result-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.result-score, .result-percentage {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.result-score h3, .result-percentage h3 {
+    color: #667eea;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.result-score p, .result-percentage p {
+    font-size: 48px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.exam-review-list {
+    max-height: 600px;
+    overflow-y: auto;
+    margin-bottom: 30px;
+}
+
+.exam-review-item {
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border-left: 4px solid;
+}
+
+.exam-review-item.correct {
+    background: #d4edda;
+    border-color: #28a745;
+}
+
+.exam-review-item.wrong {
+    background: #f8d7da;
+    border-color: #dc3545;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.review-question {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.review-answer {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.review-explanation {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    font-style: italic;
+}
+
+.btn-large {
+    padding: 18px 40px;
+    font-size: 20px;
+    display: block;
+    margin: 30px auto 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .selection-title {
+        font-size: 32px;
+    }
+    
+    .selection-subtitle {
+        font-size: 18px;
+    }
+    
+    .mode-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .grammar-topics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .exam-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .exam-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .exam-navigation {
+        flex-direction: column;
+    }
+    
+    .result-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark mode for new sections */
+body.dark-mode .mode-card,
+body.dark-mode .grammar-topic-card,
+body.dark-mode .grammar-lesson-container,
+body.dark-mode .grammar-exercise-container,
+body.dark-mode .exam-card,
+body.dark-mode .exam-container,
+body.dark-mode .exam-result-container {
+    background: #2d2d44;
+    color: #e0e0e0;
+}
+
+body.dark-mode .grammar-theory,
+body.dark-mode .exam-header,
+body.dark-mode .exam-passage {
+    background: #1a1a2e;
+}
+
+body.dark-mode .grammar-option,
+body.dark-mode .exam-option {
+    background: #3d3d5c;
+    color: #e0e0e0;
+}
+
+body.dark-mode .grammar-option:hover,
+body.dark-mode .exam-option:hover {
+    background: #4d4d6c;
+}

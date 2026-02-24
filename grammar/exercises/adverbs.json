@@ -1,0 +1,145 @@
+﻿{
+  "topic": "Trạng từ (Adverbs)",
+  "questions": [
+    {
+      "id": 1,
+      "question": "She spoke very _____ at the meeting.",
+      "options": ["loud", "loudly", "loudness", "louder"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ 'loudly' (loud + -ly) bổ nghĩa cho động từ 'spoke'. Đáp án A 'loud' là tính từ."
+    },
+    {
+      "id": 2,
+      "question": "I could _____ hear what she was saying.",
+      "options": ["hard", "hardly", "hardness", "harder"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ 'hardly' có nghĩa là 'hầu như không' (≠ hard). 'Hard' là tính từ/trạng từ có nghĩa 'cứng/mạnh'."
+    },
+    {
+      "id": 3,
+      "question": "I haven't been feeling well _____.",
+      "options": ["late", "lately", "later", "latest"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ 'lately' có nghĩa là 'gần đây' (= recently). 'Late' có nghĩa là 'muộn'."
+    },
+    {
+      "id": 4,
+      "question": "Turn the handle _____ to open the door.",
+      "options": ["clock", "clockwise", "clocking", "clocked"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ đuôi -wise: 'clockwise' (theo chiều kim đồng hồ)."
+    },
+    {
+      "id": 5,
+      "question": "You have to work _____ to succeed.",
+      "options": ["hard", "hardly", "hardness", "harder"],
+      "correctAnswer": 0,
+      "explanation": "Trạng từ giống tính từ: 'hard' vừa là tính từ vừa là trạng từ (chăm chỉ/mạnh). 'Hardly' có nghĩa khác (hầu như không)."
+    },
+    {
+      "id": 6,
+      "question": "My company pays me _____.",
+      "options": ["month", "monthly", "months", "monthlies"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ chỉ thời gian: 'monthly' (hằng tháng) vừa là tính từ vừa là trạng từ."
+    },
+    {
+      "id": 7,
+      "question": "I went to the cinema on my own _____.",
+      "options": ["recent", "recently", "recentness", "recenter"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ chỉ thời gian 'recently' (gần đây) bổ nghĩa cho cả câu."
+    },
+    {
+      "id": 8,
+      "question": "There was somebody standing _____.",
+      "options": ["near", "nearly", "nearby", "nearing"],
+      "correctAnswer": 2,
+      "explanation": "Trạng từ chỉ địa điểm 'nearby' (gần đây). 'Nearly' có nghĩa khác (gần như)."
+    },
+    {
+      "id": 9,
+      "question": "She _____ folded the letter and put it in her pocket.",
+      "options": ["careful", "carefully", "carefulness", "care"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ chỉ cách thức 'carefully' (careful + -ly) bổ nghĩa cho động từ 'folded'."
+    },
+    {
+      "id": 10,
+      "question": "It all happened _____ quickly.",
+      "options": ["pretty", "prettily", "prettier", "prettiness"],
+      "correctAnswer": 0,
+      "explanation": "Trạng từ chỉ mức độ 'pretty' (khá) bổ nghĩa cho trạng từ 'quickly'."
+    },
+    {
+      "id": 11,
+      "question": "They invited her to speak, _____ because of her experience.",
+      "options": ["special", "specially", "especially", "especial"],
+      "correctAnswer": 2,
+      "explanation": "Trạng từ nhấn mạnh 'especially' (đặc biệt là) nhấn mạnh lý do."
+    },
+    {
+      "id": 12,
+      "question": "_____, I didn't have my credit card with me.",
+      "options": ["Unfortunate", "Unfortunately", "Unfortunateness", "Unfortunates"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ chỉ sự đánh giá 'Unfortunately' (thật không may) bổ nghĩa cho cả câu, thường đứng đầu câu."
+    },
+    {
+      "id": 13,
+      "question": "_____, I think the show was great.",
+      "options": ["Personal", "Personally", "Person", "Personality"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ chỉ góc nhìn 'Personally' (cá nhân mà nói) diễn tả ý kiến từ góc nhìn cá nhân."
+    },
+    {
+      "id": 14,
+      "question": "We talked until the early hours and _____ I overslept.",
+      "options": ["consequent", "consequently", "consequence", "consequential"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ liên kết 'consequently' (kết quả là) thể hiện mối quan hệ nguyên nhân - kết quả."
+    },
+    {
+      "id": 15,
+      "question": "Time goes very _____.",
+      "options": ["quick", "quickly", "quickness", "quicker"],
+      "correctAnswer": 1,
+      "explanation": "Cụm trạng từ: 'very' (phụ từ chỉ mức độ) + 'quickly' (trạng từ chính)."
+    },
+    {
+      "id": 16,
+      "question": "I don't think he's worked hard _____.",
+      "options": ["too", "very", "enough", "much"],
+      "correctAnswer": 2,
+      "explanation": "Cụm trạng từ: 'hard' (trạng từ chính) + 'enough' (phụ từ đứng sau) = đủ chăm."
+    },
+    {
+      "id": 17,
+      "question": "I'm _____.",
+      "options": ["upstair", "upstairs", "upstaired", "upstairing"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ chỉ địa điểm 'upstairs' đứng sau động từ 'be' làm bổ ngữ cho chủ ngữ."
+    },
+    {
+      "id": 18,
+      "question": "Claire was _____ quiet.",
+      "options": ["rather", "ratherly", "ratherness", "rathering"],
+      "correctAnswer": 0,
+      "explanation": "Trạng từ chỉ mức độ 'rather' (khá) bổ nghĩa cho tính từ 'quiet'."
+    },
+    {
+      "id": 19,
+      "question": "_____, she did well in the exam.",
+      "options": ["Astonish", "Astonishing", "Astonishingly", "Astonished"],
+      "correctAnswer": 2,
+      "explanation": "Trạng từ 'Astonishingly' (ngạc nhiên thay) bổ nghĩa cho cả câu, thường đứng đầu câu."
+    },
+    {
+      "id": 20,
+      "question": "We will be taking off _____.",
+      "options": ["short", "shortly", "shorter", "shortness"],
+      "correctAnswer": 1,
+      "explanation": "Trạng từ 'shortly' có nghĩa là 'sớm' (= soon), khác với 'short' (ngắn)."
+    }
+  ]
+}

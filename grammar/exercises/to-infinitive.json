@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "We decided _____ a taxi home.",
+      "options": [
+        "take",
+        "to take",
+        "taking",
+        "took"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Động từ 'decided' + to V (to take)."
+    },
+    {
+      "question": "They seem _____ plenty of money.",
+      "options": [
+        "have",
+        "to have",
+        "having",
+        "had"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Động từ 'seem' + to V (to have), không có tân ngữ."
+    },
+    {
+      "question": "We asked how _____ to the station.",
+      "options": [
+        "get",
+        "to get",
+        "getting",
+        "got"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Động từ 'asked' + từ để hỏi (how) + to V (to get)."
+    },
+    {
+      "question": "Can you remind me _____ Sam tomorrow?",
+      "options": [
+        "call",
+        "to call",
+        "calling",
+        "called"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Động từ 'remind' + O (me) + to V (to call), bắt buộc có tân ngữ."
+    },
+    {
+      "question": "I remember _____ the door. (Tôi nhớ là đã khóa cửa rồi)",
+      "options": [
+        "lock",
+        "to lock",
+        "locking",
+        "locked"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Remember + Ving: nhớ đã làm gì (đã làm rồi)."
+    },
+    {
+      "question": "I must remember _____ the door before going out. (Tôi phải nhớ khóa cửa)",
+      "options": [
+        "lock",
+        "to lock",
+        "locking",
+        "locked"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Remember + to V: nhớ phải làm gì (chưa làm)."
+    },
+    {
+      "question": "She stopped _____ as soon as she saw her mother.",
+      "options": [
+        "cry",
+        "to cry",
+        "crying",
+        "cried"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Stop + Ving: dừng việc gì (dừng việc khóc)."
+    },
+    {
+      "question": "We stopped _____ some water at the supermarket.",
+      "options": [
+        "buy",
+        "to buy",
+        "buying",
+        "bought"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Stop + to V: dừng lại để làm gì (dừng lại để mua nước)."
+    },
+    {
+      "question": "Would you like something _____?",
+      "options": [
+        "eat",
+        "to eat",
+        "eating",
+        "ate"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Danh từ 'something' + to V (to eat) để bổ nghĩa."
+    },
+    {
+      "question": "It's safe _____ this water.",
+      "options": [
+        "drink",
+        "to drink",
+        "drinking",
+        "drank"
+      ],
+      "correctAnswer": 1,
+      "explanation": "It's + adj (safe) + to V (to drink): đánh giá về tính chất."
+    },
+    {
+      "question": "It was nice of you _____ me to the airport.",
+      "options": [
+        "take",
+        "to take",
+        "taking",
+        "took"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Nice + of (you) + to V: đánh giá người khác từ hành động của họ."
+    },
+    {
+      "question": "I'm sorry _____ that your mother isn't well.",
+      "options": [
+        "hear",
+        "to hear",
+        "hearing",
+        "heard"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Sorry + to V: cảm thấy tiếc/buồn khi nghe/biết điều gì."
+    },
+    {
+      "question": "She's not old enough _____ a driving license.",
+      "options": [
+        "have",
+        "to have",
+        "having",
+        "had"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Adj + enough + to V: đủ...để làm gì."
+    },
+    {
+      "question": "You will be the first person _____.",
+      "options": [
+        "know",
+        "to know",
+        "knowing",
+        "knew"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The first/next/last/only + to V: người đầu tiên/tiếp theo/cuối cùng/duy nhất làm việc gì."
+    },
+    {
+      "question": "I tried _____ him an email but it bounced back.",
+      "options": [
+        "send",
+        "to send",
+        "sending",
+        "sent"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Try + to V: cố gắng làm việc gì (nhưng không thành công)."
+    }
+  ]
+}

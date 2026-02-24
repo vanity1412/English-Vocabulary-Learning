@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "The sun _____ in the East.",
+      "options": [
+        "rise",
+        "rises",
+        "is rising",
+        "has risen"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì hiện tại đơn diễn tả chân lý, sự thật hiển nhiên. Chủ ngữ 'the sun' số ít nên thêm 's'."
+    },
+    {
+      "question": "She _____ the button right now but nothing is happening.",
+      "options": [
+        "presses",
+        "pressed",
+        "is pressing",
+        "has pressed"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì hiện tại tiếp diễn với 'right now': hành động đang xảy ra tại thời điểm nói."
+    },
+    {
+      "question": "I _____ there a couple of times before.",
+      "options": [
+        "went",
+        "have been",
+        "had been",
+        "am going"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì hiện tại hoàn thành với 'before': kinh nghiệm, thời gian không rõ ràng."
+    },
+    {
+      "question": "I _____ just _____ the car.",
+      "options": [
+        "have / cleaned",
+        "have / been cleaning",
+        "had / cleaned",
+        "am / cleaning"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì hiện tại hoàn thành tiếp diễn với 'just': hành động vừa kết thúc, kết quả còn ở hiện tại."
+    },
+    {
+      "question": "_____ you watch that film yesterday?",
+      "options": [
+        "Do",
+        "Did",
+        "Have",
+        "Had"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì quá khứ đơn với 'yesterday': hành động xác định trong quá khứ."
+    },
+    {
+      "question": "Lisa _____ to school when she saw the accident.",
+      "options": [
+        "cycled",
+        "cycles",
+        "was cycling",
+        "has cycled"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì quá khứ tiếp diễn: hành động đang diễn ra (làm nền) khi hành động khác xen vào."
+    },
+    {
+      "question": "When Sarah arrived, Paul _____ already _____ home.",
+      "options": [
+        "has / gone",
+        "had / gone",
+        "was / going",
+        "is / going"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì quá khứ hoàn thành: hành động hoàn thành trước một thời điểm trong quá khứ."
+    },
+    {
+      "question": "We _____ for half an hour when it started to rain.",
+      "options": [
+        "played",
+        "were playing",
+        "had played",
+        "had been playing"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Thì quá khứ hoàn thành tiếp diễn: hành động kéo dài đến một thời điểm trong quá khứ."
+    },
+    {
+      "question": "There _____ strong winds tomorrow.",
+      "options": [
+        "are",
+        "were",
+        "will be",
+        "are going to be"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì tương lai đơn với 'will': dự đoán tương lai."
+    },
+    {
+      "question": "I _____ look for a new place next month.",
+      "options": [
+        "will",
+        "am going to",
+        "am",
+        "have"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì tương lai gần 'be going to': dự định có kế hoạch từ trước."
+    },
+    {
+      "question": "Mr. Smith usually _____ to work by car.",
+      "options": [
+        "go",
+        "goes",
+        "is going",
+        "went"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì hiện tại đơn với 'usually': thói quen, hành động thường xuyên."
+    },
+    {
+      "question": "The company _____ so well this year.",
+      "options": [
+        "doesn't do",
+        "isn't doing",
+        "hasn't done",
+        "didn't do"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thì hiện tại tiếp diễn với 'this year': trạng thái tạm thời quanh thời điểm nói."
+    },
+    {
+      "question": "I _____ here for three years.",
+      "options": [
+        "work",
+        "am working",
+        "have worked",
+        "worked"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì hiện tại hoàn thành với 'for': hành động bắt đầu trong quá khứ và kéo dài đến hiện tại."
+    },
+    {
+      "question": "He _____ play football, but he's too old now.",
+      "options": [
+        "use to",
+        "used to",
+        "is used to",
+        "was used to"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cấu trúc 'used to + V': thói quen trong quá khứ mà bây giờ không còn nữa."
+    },
+    {
+      "question": "This time next week, I _____ photographs with my new camera.",
+      "options": [
+        "take",
+        "will take",
+        "will be taking",
+        "will have taken"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Thì tương lai tiếp diễn: hành động sẽ đang diễn ra tại một thời điểm trong tương lai."
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "There are three _____ in the garden.",
+      "options": [
+        "childs",
+        "child",
+        "children",
+        "childrens"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Child' là danh từ bất quy tắc, số nhiều là 'children'."
+    },
+    {
+      "question": "I need to buy _____ for my trip.",
+      "options": [
+        "a luggage",
+        "luggages",
+        "some luggage",
+        "some luggages"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Luggage' là danh từ không đếm được, dùng 'some' để chỉ số lượng."
+    },
+    {
+      "question": "She bought two _____ of jeans yesterday.",
+      "options": [
+        "pair",
+        "pairs",
+        "piece",
+        "pieces"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Jeans' là danh từ chỉ có dạng số nhiều, dùng 'pairs of' để đếm."
+    },
+    {
+      "question": "_____ is my favorite sport.",
+      "options": [
+        "Gymnastic",
+        "Gymnastics",
+        "The gymnastic",
+        "The gymnastics"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Gymnastics' là danh từ không đếm được kết thúc bằng -s, động từ chia số ít."
+    },
+    {
+      "question": "Can you give me _____ advice?",
+      "options": [
+        "an",
+        "some",
+        "a",
+        "many"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Advice' là danh từ không đếm được, dùng 'some' chứ không dùng 'a/an'."
+    },
+    {
+      "question": "I go to _____ cinema once a week.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "no article"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'the' với địa điểm biểu diễn như cinema, theater."
+    },
+    {
+      "question": "_____ are usually paid more than teachers.",
+      "options": [
+        "Doctor",
+        "Doctors",
+        "The doctor",
+        "A doctor"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Danh từ nói chung (không xác định) ở dạng số nhiều, không dùng mạo từ."
+    },
+    {
+      "question": "This is _____ book.",
+      "options": [
+        "John",
+        "Johns",
+        "John's",
+        "Johns'"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Sở hữu cách: tên riêng số ít + 's"
+    },
+    {
+      "question": "I don't have _____ time to finish this.",
+      "options": [
+        "many",
+        "much",
+        "a lot",
+        "few"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Time' là danh từ không đếm được, dùng 'much' trong câu phủ định."
+    },
+    {
+      "question": "The _____ are playing in the park.",
+      "options": [
+        "childs",
+        "child",
+        "children",
+        "childrens"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Danh từ bất quy tắc: child → children"
+    },
+    {
+      "question": "She works at _____ hospital.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "no article"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dùng 'a' khi nói về nơi làm việc (địa điểm cụ thể), không phải hoạt động."
+    },
+    {
+      "question": "I need _____ of water.",
+      "options": [
+        "a bottle",
+        "bottle",
+        "bottles",
+        "the bottle"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dùng 'a bottle of' để định lượng danh từ không đếm được 'water'."
+    },
+    {
+      "question": "_____ rich should help _____ poor.",
+      "options": [
+        "A / a",
+        "The / the",
+        "A / the",
+        "The / a"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The + tính từ = nhóm người: the rich (người giàu), the poor (người nghèo)"
+    },
+    {
+      "question": "There are many _____ in the library.",
+      "options": [
+        "book",
+        "books",
+        "a book",
+        "the book"
+      ],
+      "correctAnswer": 1,
+      "explanation": "'Many' đi với danh từ đếm được số nhiều 'books'."
+    },
+    {
+      "question": "I had _____ for breakfast.",
+      "options": [
+        "a bread",
+        "breads",
+        "some bread",
+        "some breads"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Bread' là danh từ không đếm được, dùng 'some' để chỉ số lượng."
+    }
+  ]
+}

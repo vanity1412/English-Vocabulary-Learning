@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "You're _____ than me.",
+      "options": [
+        "old",
+        "older",
+        "oldest",
+        "more old"
+      ],
+      "correctAnswer": 1,
+      "explanation": "So sánh hơn với tính từ ngắn: thêm -er. 'Old' → 'older'."
+    },
+    {
+      "question": "The exam is _____ than I expected.",
+      "options": [
+        "difficult",
+        "difficulter",
+        "more difficult",
+        "most difficult"
+      ],
+      "correctAnswer": 2,
+      "explanation": "So sánh hơn với tính từ dài: more + tính từ. 'Difficult' có 3 âm tiết."
+    },
+    {
+      "question": "She's the _____ accountant in the company.",
+      "options": [
+        "young",
+        "younger",
+        "youngest",
+        "most young"
+      ],
+      "correctAnswer": 2,
+      "explanation": "So sánh nhất với tính từ ngắn: the + tính từ + -est. 'Young' → 'youngest'."
+    },
+    {
+      "question": "What was the _____ holiday you've ever had?",
+      "options": [
+        "enjoyable",
+        "more enjoyable",
+        "enjoyablest",
+        "most enjoyable"
+      ],
+      "correctAnswer": 3,
+      "explanation": "So sánh nhất với tính từ dài: the most + tính từ."
+    },
+    {
+      "question": "This food is _____ better than yesterday.",
+      "options": [
+        "very",
+        "much",
+        "more",
+        "most"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'much' để nhấn mạnh mức độ so sánh hơn (much better = tốt hơn nhiều)."
+    },
+    {
+      "question": "The weather is getting _____ and _____.",
+      "options": [
+        "hot / hot",
+        "hotter / hotter",
+        "more hot / more hot",
+        "hottest / hottest"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cấu trúc -er and -er: càng ngày càng. 'Hotter and hotter' = càng ngày càng nóng."
+    },
+    {
+      "question": "The more electricity you use, _____ your bill will be.",
+      "options": [
+        "high",
+        "higher",
+        "the higher",
+        "the highest"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc the more..., the more...: càng... thì càng..."
+    },
+    {
+      "question": "He's as _____ as his father now.",
+      "options": [
+        "tall",
+        "taller",
+        "tallest",
+        "more tall"
+      ],
+      "correctAnswer": 0,
+      "explanation": "So sánh ngang bằng: as + tính từ gốc + as."
+    },
+    {
+      "question": "Birmingham is the _____ biggest city in England.",
+      "options": [
+        "two",
+        "second",
+        "twice",
+        "double"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng số thứ tự (second, third...) trước so sánh nhất: 'the second biggest' = lớn thứ hai."
+    },
+    {
+      "question": "Petrol is _____ as expensive as it was a few years ago.",
+      "options": [
+        "two",
+        "double",
+        "twice",
+        "second"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc twice as...as: gấp hai lần. 'Twice as expensive' = đắt gấp đôi."
+    },
+    {
+      "question": "Laura's salary is the same _____ mine.",
+      "options": [
+        "as",
+        "than",
+        "like",
+        "with"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cấu trúc the same as: giống như, bằng với."
+    },
+    {
+      "question": "This method is _____ the least complicated.",
+      "options": [
+        "very",
+        "much",
+        "by far",
+        "more"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'by far' để nhấn mạnh so sánh nhất: by far the least = cho đến nay là ít nhất."
+    },
+    {
+      "question": "Can you send me the information as soon as _____?",
+      "options": [
+        "can",
+        "could",
+        "possible",
+        "possibly"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Cấu trúc as...as possible: nhất có thể. 'As soon as possible' = sớm nhất có thể."
+    },
+    {
+      "question": "Their house is about three times as _____ as ours.",
+      "options": [
+        "big",
+        "bigger",
+        "biggest",
+        "more big"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cấu trúc three times as...as: gấp ba lần. Dùng tính từ gốc sau 'as'."
+    },
+    {
+      "question": "The second method was _____ complicated than the first one.",
+      "options": [
+        "more",
+        "less",
+        "least",
+        "most"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'less' để so sánh kém: less complicated = ít phức tạp hơn."
+    }
+  ]
+}

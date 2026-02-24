@@ -1,0 +1,114 @@
+{
+  "exercises": [
+    {
+      "question": "The company's new _____ will take effect next month.",
+      "options": [
+        "policy",
+        "politic",
+        "political",
+        "politically"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cần danh từ sau tính từ sở hữu 'company's' và tính từ 'new'. 'Policy' (chính sách) là danh từ phù hợp."
+    },
+    {
+      "question": "She speaks English very _____.",
+      "options": [
+        "good",
+        "well",
+        "better",
+        "best"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cần trạng từ để bổ nghĩa cho động từ 'speaks'. 'Well' là trạng từ của 'good'."
+    },
+    {
+      "question": "This is _____ interesting book I've ever read.",
+      "options": [
+        "a most",
+        "the most",
+        "most",
+        "more"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cần từ hạn định 'the' trước so sánh nhất 'most' và tính từ 'interesting' bổ nghĩa cho danh từ 'book'."
+    },
+    {
+      "question": "My teacher helped me a lot. _____ is very kind.",
+      "options": [
+        "He",
+        "She",
+        "They",
+        "It"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Đại từ 'She' thay thế cho 'My teacher' (nữ) đã được nhắc đến trước đó."
+    },
+    {
+      "question": "The meeting will start _____ 3 p.m.",
+      "options": [
+        "in",
+        "on",
+        "at",
+        "by"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Giới từ 'at' dùng với giờ cụ thể (3 p.m.)."
+    },
+    {
+      "question": "I want to buy a new car _____ I don't have enough money.",
+      "options": [
+        "and",
+        "but",
+        "or",
+        "so"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Liên từ 'but' nối hai mệnh đề có ý nghĩa đối lập (muốn mua nhưng không đủ tiền)."
+    },
+    {
+      "question": "The _____ of this product is very high.",
+      "options": [
+        "qualify",
+        "quality",
+        "qualified",
+        "qualitative"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cần danh từ làm chủ ngữ trong câu. 'Quality' (chất lượng) là danh từ."
+    },
+    {
+      "question": "She is _____ tired to continue working.",
+      "options": [
+        "too",
+        "very",
+        "so",
+        "much"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cấu trúc 'too + adj + to V': quá...để làm gì. 'Too' là trạng từ bổ nghĩa cho tính từ 'tired'."
+    },
+    {
+      "question": "_____ amazing! You did a great job.",
+      "options": [
+        "How",
+        "What",
+        "Wow",
+        "Which"
+      ],
+      "correctAnswer": 2,
+      "explanation": "'Wow' là thán từ thể hiện sự ngạc nhiên, thán phục."
+    },
+    {
+      "question": "The chairman _____ the company arrives tomorrow.",
+      "options": [
+        "in",
+        "at",
+        "of",
+        "on"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Giới từ 'of' tạo thành cụm giới từ 'of the company' bổ nghĩa cho danh từ 'chairman'."
+    }
+  ]
+}

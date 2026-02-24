@@ -1,0 +1,145 @@
+﻿{
+  "topic": "Giới từ (Prepositions)",
+  "questions": [
+    {
+      "id": 1,
+      "question": "I'll meet you _____ the cafe opposite the cinema.",
+      "options": ["in", "on", "at", "by"],
+      "correctAnswer": 0,
+      "explanation": "Giới từ 'in' dùng với nơi chốn (trong một không gian cụ thể như quán cà phê, tòa nhà...)."
+    },
+    {
+      "id": 2,
+      "question": "The meeting is scheduled _____ March 28.",
+      "options": ["in", "on", "at", "by"],
+      "correctAnswer": 1,
+      "explanation": "Giới từ 'on' dùng với ngày cụ thể trong tháng (on March 28, on Monday...)."
+    },
+    {
+      "id": 3,
+      "question": "We usually have lunch _____ noon.",
+      "options": ["in", "on", "at", "by"],
+      "correctAnswer": 2,
+      "explanation": "Giới từ 'at' dùng với thời điểm cụ thể trong ngày (at noon, at night, at 7 o'clock...)."
+    },
+    {
+      "id": 4,
+      "question": "I was born _____ 2000.",
+      "options": ["in", "on", "at", "by"],
+      "correctAnswer": 0,
+      "explanation": "Giới từ 'in' dùng với năm, tháng, mùa (in 2000, in March, in spring...)."
+    },
+    {
+      "id": 5,
+      "question": "We go hiking _____ Saturday.",
+      "options": ["in", "on", "at", "every"],
+      "correctAnswer": 3,
+      "explanation": "Không dùng giới từ trước 'every'. Đáp án đúng là 'every Saturday' (không có 'on')."
+    },
+    {
+      "id": 6,
+      "question": "I have been working here _____ five years.",
+      "options": ["for", "during", "since", "from"],
+      "correctAnswer": 0,
+      "explanation": "Giới từ 'for' + khoảng thời gian (for five years, for three months...)."
+    },
+    {
+      "id": 7,
+      "question": "It was difficult to sleep _____ the flight.",
+      "options": ["for", "during", "since", "from"],
+      "correctAnswer": 1,
+      "explanation": "Giới từ 'during' + sự kiện, tình huống (during the meeting, during the flight...)."
+    },
+    {
+      "id": 8,
+      "question": "Tickets have been on sale _____ Monday.",
+      "options": ["for", "during", "since", "from"],
+      "correctAnswer": 2,
+      "explanation": "Giới từ 'since' + mốc thời gian, diễn tả hành động kéo dài từ quá khứ đến hiện tại và vẫn tiếp diễn."
+    },
+    {
+      "id": 9,
+      "question": "He will complete the inquiry _____ Thursday.",
+      "options": ["by", "until", "till", "in"],
+      "correctAnswer": 0,
+      "explanation": "Giới từ 'by' + mốc thời gian: hành động sẽ hoàn tất trước hoặc chậm nhất là đến thời hạn đó."
+    },
+    {
+      "id": 10,
+      "question": "Our service center is open _____ 6 o'clock.",
+      "options": ["by", "until", "since", "from"],
+      "correctAnswer": 1,
+      "explanation": "Giới từ 'until/till' + mốc thời gian: trạng thái được duy trì cho đến một thời điểm cụ thể."
+    },
+    {
+      "id": 11,
+      "question": "There's a book _____ the desk.",
+      "options": ["in", "on", "at", "above"],
+      "correctAnswer": 1,
+      "explanation": "Giới từ 'on' dùng khi vật ở trên bề mặt của vật khác (on the desk, on the table...)."
+    },
+    {
+      "id": 12,
+      "question": "There's a mirror _____ the sink.",
+      "options": ["on", "above", "over", "under"],
+      "correctAnswer": 1,
+      "explanation": "Giới từ 'above' dùng khi vật ở phía trên, cao hơn một vật nào đó (không chạm vào bề mặt)."
+    },
+    {
+      "id": 13,
+      "question": "They stood _____ a tree to avoid getting wet.",
+      "options": ["below", "under", "above", "on"],
+      "correctAnswer": 1,
+      "explanation": "Giới từ 'under' dùng khi vật ở bên dưới và bị vật khác che phủ."
+    },
+    {
+      "id": 14,
+      "question": "They traveled around Canada _____ train.",
+      "options": ["by", "with", "in", "on"],
+      "correctAnswer": 0,
+      "explanation": "Giới từ 'by' + phương tiện đi lại (by train, by car, by bus...)."
+    },
+    {
+      "id": 15,
+      "question": "They were unable to attend _____ the bad weather.",
+      "options": ["because", "because of", "due", "owing"],
+      "correctAnswer": 1,
+      "explanation": "Cụm giới từ 'because of' (bởi vì) + danh từ/cụm danh từ. 'Because' là liên từ, không phải giới từ."
+    },
+    {
+      "id": 16,
+      "question": "_____ our records, you owe us $130.",
+      "options": ["According", "According to", "Accord to", "Accord"],
+      "correctAnswer": 1,
+      "explanation": "Cụm giới từ 'according to' (theo như) + danh từ/cụm danh từ."
+    },
+    {
+      "id": 17,
+      "question": "The company is being questioned _____ its employment policy.",
+      "options": ["regard", "regarding", "regards", "regarded"],
+      "correctAnswer": 1,
+      "explanation": "Giới từ 'regarding' (về việc) có đuôi -ing nhưng là giới từ, không phải danh động từ."
+    },
+    {
+      "id": 18,
+      "question": "Somebody broke _____ his car and stole his radio.",
+      "options": ["in", "into", "to", "at"],
+      "correctAnswer": 1,
+      "explanation": "Cụm động từ kèm giới từ 'break into' (đột nhập vào)."
+    },
+    {
+      "id": 19,
+      "question": "I'm interested _____ playing games.",
+      "options": ["in", "on", "at", "with"],
+      "correctAnswer": 0,
+      "explanation": "Tính từ + giới từ: 'interested in' (thích thú với)."
+    },
+    {
+      "id": 20,
+      "question": "Exercise is good _____ everyone.",
+      "options": ["to", "at", "for", "with"],
+      "correctAnswer": 2,
+      "explanation": "Tính từ + giới từ: 'good for' (tốt cho)."
+    }
+  ]
+}

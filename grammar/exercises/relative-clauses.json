@@ -1,0 +1,169 @@
+﻿{
+  "exercises": [
+    {
+      "question": "The woman _____ lives next door is a doctor.",
+      "options": [
+        "who",
+        "which",
+        "where",
+        "when"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dùng 'who' cho danh từ chỉ người làm chủ ngữ trong mệnh đề quan hệ."
+    },
+    {
+      "question": "Here are some cells _____ show abnormality.",
+      "options": [
+        "who",
+        "which",
+        "where",
+        "whose"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'which' cho danh từ chỉ vật làm chủ ngữ trong mệnh đề quan hệ."
+    },
+    {
+      "question": "The woman _____ I wanted to see was away on holiday.",
+      "options": [
+        "who",
+        "which",
+        "what",
+        "whose"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dùng 'who' cho danh từ chỉ người làm tân ngữ (có thể bỏ 'who' trong trường hợp này)."
+    },
+    {
+      "question": "I recently went back to the town _____ I grew up.",
+      "options": [
+        "which",
+        "when",
+        "where",
+        "that"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'where' để thêm thông tin về địa điểm (= in which)."
+    },
+    {
+      "question": "Tim, _____ short film won awards, was chosen to direct the movie.",
+      "options": [
+        "who",
+        "which",
+        "whose",
+        "that"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'whose' để thay thế tính từ sở hữu, đằng sau 'whose' là danh từ."
+    },
+    {
+      "question": "There isn't a day _____ I don't feel rushed.",
+      "options": [
+        "which",
+        "where",
+        "when",
+        "whose"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'when' để thêm thông tin về thời gian (= on which)."
+    },
+    {
+      "question": "Do you know the reason _____ the shop is closed today?",
+      "options": [
+        "which",
+        "where",
+        "when",
+        "why"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Dùng 'why' để thêm thông tin về lý do (= for which)."
+    },
+    {
+      "question": "Clare, _____ I work with, is doing the London marathon.",
+      "options": [
+        "who",
+        "which",
+        "that",
+        "whose"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Dùng 'who' trong mệnh đề quan hệ không xác định (có dấu phẩy). Không dùng 'that'."
+    },
+    {
+      "question": "Joe got the job, _____ surprised everybody.",
+      "options": [
+        "who",
+        "which",
+        "that",
+        "what"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'which' để thay thế cho cả mệnh đề phía trước."
+    },
+    {
+      "question": "The boy injured in the accident _____ to hospital.",
+      "options": [
+        "took",
+        "was taken",
+        "takes",
+        "is taking"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mệnh đề quan hệ rút gọn dạng bị động: 'who was injured' → 'injured'."
+    },
+    {
+      "question": "Do you know the woman _____ to Tom?",
+      "options": [
+        "talk",
+        "talked",
+        "talking",
+        "to talk"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Mệnh đề quan hệ rút gọn dạng chủ động: 'who is talking' → 'talking'."
+    },
+    {
+      "question": "Most of the goods _____ in this factory are exported.",
+      "options": [
+        "make",
+        "made",
+        "making",
+        "to make"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mệnh đề quan hệ rút gọn dạng bị động: 'that are made' → 'made'."
+    },
+    {
+      "question": "_____ happened was my fault.",
+      "options": [
+        "That",
+        "Which",
+        "What",
+        "Who"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Dùng 'What' (= the thing that) làm chủ ngữ, không phải đại từ quan hệ."
+    },
+    {
+      "question": "The hall _____ you're giving your talk has a good sound system.",
+      "options": [
+        "which",
+        "where",
+        "when",
+        "who"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dùng 'where' cho địa điểm (= at which/in which)."
+    },
+    {
+      "question": "Mr Lee, to _____ I spoke at the meeting, is very interested.",
+      "options": [
+        "who",
+        "whom",
+        "which",
+        "that"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Sau giới từ 'to' phải dùng 'whom', không dùng 'who'."
+    }
+  ]
+}
