@@ -17,6 +17,14 @@ let allVocabularyWords = [];
 let currentPage = 1;
 let wordsPerPage = 20;
 
+// Settings
+let speechRate = 0.8;
+let darkMode = false;
+let autoSpeak = false;
+let detailedProgress = true;
+let selectedVoice = null;
+let voicesLoaded = false;
+
 // Typing practice variables
 let typingWords = [];
 let currentTypingIndex = 0;
@@ -28,23 +36,28 @@ let currentTypingWord = null;
 const STORAGE_KEYS = {
     LEARNED: 'learnedWords',
     REVIEW_SCHEDULE: 'reviewSchedule',
-    NOTES: 'vocabularyNotes'
+    NOTES: 'vocabularyNotes',
+    SETTINGS: 'appSettings'
 };
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', async () => {
-    // Show intro screen for 3.5 seconds
+    // Preload voices
+    initializeVoices();
+    
+    // Show intro screen for 1.5 seconds (faster loading)
     setTimeout(() => {
         document.getElementById('introScreen').classList.add('fade-out');
         setTimeout(() => {
             document.getElementById('introScreen').style.display = 'none';
             document.getElementById('mainApp').style.display = 'block';
             document.getElementById('mainApp').classList.add('fade-in-app');
-        }, 800);
-    }, 3500);
+        }, 600);
+    }, 1500);
     
     await loadVocabulary();
     loadProgress();
+    loadSettings();
     initializeEventListeners();
     showFlashcard();
     updateProgress();
@@ -156,6 +169,33 @@ function initializeEventListeners() {
     document.getElementById('startPracticeFlashcard').addEventListener('click', startPracticeFromVocab('flashcard'));
     document.getElementById('startPracticeQuiz').addEventListener('click', startPracticeFromVocab('quiz'));
     document.getElementById('startPracticeTyping').addEventListener('click', startPracticeFromVocab('typing'));
+    
+    // Keyboard shortcuts toggle
+    document.getElementById('shortcutsToggle').addEventListener('click', toggleShortcutsPanel);
+    
+    // Settings
+    document.getElementById('settingsBtn').addEventListener('click', openSettings);
+    document.getElementById('closeSettings').addEventListener('click', closeSettings);
+    document.getElementById('speechRate').addEventListener('input', updateSpeechRate);
+    document.getElementById('darkModeToggle').addEventListener('change', toggleDarkMode);
+    document.getElementById('autoSpeakToggle').addEventListener('change', toggleAutoSpeak);
+    document.getElementById('detailedProgressToggle').addEventListener('change', toggleDetailedProgress);
+    document.getElementById('resetProgressBtn').addEventListener('click', resetProgress);
+    document.getElementById('exportProgressBtn').addEventListener('click', exportProgress);
+    document.getElementById('importProgressBtn').addEventListener('click', () => {
+        document.getElementById('importFileInput').click();
+    });
+    document.getElementById('importFileInput').addEventListener('change', importProgress);
+    
+    // Close modal when clicking outside
+    document.getElementById('settingsModal').addEventListener('click', (e) => {
+        if (e.target.id === 'settingsModal') {
+            closeSettings();
+        }
+    });
+    
+    // Keyboard shortcuts
+    document.addEventListener('keydown', handleKeyboardShortcuts);
 }
 
 // Switch between modes
@@ -242,6 +282,11 @@ function flipCard() {
     } else {
         front.classList.add('hidden');
         back.classList.remove('hidden');
+        
+        // Auto speak if enabled
+        if (autoSpeak) {
+            speakWord();
+        }
     }
 }
 
@@ -269,9 +314,61 @@ function markAsLearned() {
 
 function speakWord() {
     const word = vocabulary[currentIndex].word;
-    const utterance = new SpeechSynthesisUtterance(word);
+    speak(word);
+}
+
+function speak(text, rate = null) {
+    // Cancel any ongoing speech
+    speechSynthesis.cancel();
+    
+    const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'en-US';
-    utterance.rate = 0.8;
+    utterance.rate = rate || speechRate;
+    
+    // Use selected voice if available
+    if (selectedVoice) {
+        utterance.voice = selectedVoice;
+    } else if (voicesLoaded) {
+        // Try to find a good English voice
+        const voices = speechSynthesis.getVoices();
+        const englishVoice = voices.find(v => 
+            v.lang.startsWith('en') && (v.name.includes('Google') || v.name.includes('Microsoft'))
+        ) || voices.find(v => v.lang.startsWith('en'));
+        
+        if (englishVoice) {
+            utterance.voice = englishVoice;
+            selectedVoice = englishVoice;
+        }
+    }
+    
+    // Add visual feedback
+    const speakBtn = document.getElementById('speakBtn');
+    if (speakBtn) {
+        speakBtn.textContent = '🔊 Đang phát...';
+        speakBtn.disabled = true;
+    }
+    
+    utterance.onend = () => {
+        if (speakBtn) {
+            speakBtn.textContent = '🔊 Phát âm';
+            speakBtn.disabled = false;
+        }
+    };
+    
+    utterance.onerror = (e) => {
+        console.error('Speech error:', e);
+        if (speakBtn) {
+            speakBtn.textContent = '🔊 Phát âm';
+            speakBtn.disabled = false;
+        }
+        // Retry once if error
+        if (e.error === 'network') {
+            setTimeout(() => {
+                speechSynthesis.speak(utterance);
+            }, 500);
+        }
+    };
+    
     speechSynthesis.speak(utterance);
 }
 
@@ -824,18 +921,12 @@ function showTypingResults() {
 
 function speakQuizWord() {
     const word = currentQuizWord.word;
-    const utterance = new SpeechSynthesisUtterance(word);
-    utterance.lang = 'en-US';
-    utterance.rate = 0.8;
-    speechSynthesis.speak(utterance);
+    speak(word);
 }
 
 function speakListeningWord(rate = 1) {
     const word = currentQuizWord.word;
-    const utterance = new SpeechSynthesisUtterance(word);
-    utterance.lang = 'en-US';
-    utterance.rate = rate;
-    speechSynthesis.speak(utterance);
+    speak(word, rate);
 }
 
 function checkFillBlank() {
@@ -1041,4 +1132,322 @@ function startPracticeFromVocab(mode) {
         }
         // Quiz sẽ hiển thị form cài đặt
     };
+}
+
+
+// Keyboard shortcuts
+function toggleShortcutsPanel() {
+    const panel = document.getElementById('shortcutsPanel');
+    panel.classList.toggle('hidden');
+}
+
+function handleKeyboardShortcuts(e) {
+    // Không xử lý phím tắt khi đang nhập text
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+        return;
+    }
+    
+    const activeMode = document.querySelector('.mode-btn.active')?.dataset.mode;
+    
+    // Phím tắt cho Flashcard mode
+    if (activeMode === 'flashcard') {
+        switch(e.key) {
+            case 'ArrowLeft':
+                e.preventDefault();
+                navigateCard(-1);
+                break;
+            case 'ArrowRight':
+                e.preventDefault();
+                navigateCard(1);
+                break;
+            case 'ArrowUp':
+            case 'ArrowDown':
+            case ' ':
+                e.preventDefault();
+                flipCard();
+                break;
+            case '\\':
+                e.preventDefault();
+                speakWord();
+                break;
+            case 'Enter':
+                e.preventDefault();
+                markAsLearned();
+                break;
+        }
+    }
+    
+    // Phím tắt cho Quiz mode
+    if (activeMode === 'quiz') {
+        const quizContent = document.getElementById('quizContent');
+        if (!quizContent.classList.contains('hidden')) {
+            switch(e.key) {
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                    e.preventDefault();
+                    const options = document.querySelectorAll('.quiz-option:not(.disabled)');
+                    const index = parseInt(e.key) - 1;
+                    if (options[index]) {
+                        options[index].click();
+                    }
+                    break;
+                case 'Enter':
+                    e.preventDefault();
+                    const nextBtn = document.getElementById('nextQuiz');
+                    if (!nextBtn.classList.contains('hidden')) {
+                        nextQuizQuestion();
+                    }
+                    break;
+                case '\\':
+                    e.preventDefault();
+                    const speakBtn = document.getElementById('quizSpeakBtn');
+                    if (speakBtn && speakBtn.offsetParent !== null) {
+                        speakQuizWord();
+                    }
+                    break;
+            }
+        }
+    }
+    
+    // Phím tắt cho Typing mode
+    if (activeMode === 'typing') {
+        switch(e.key) {
+            case '\\':
+                e.preventDefault();
+                const word = currentTypingWord?.word;
+                if (word) {
+                    speak(word);
+                }
+                break;
+        }
+    }
+    
+    // Phím tắt chung - chuyển mode
+    if (e.ctrlKey || e.metaKey) {
+        switch(e.key) {
+            case '1':
+                e.preventDefault();
+                switchMode('flashcard');
+                break;
+            case '2':
+                e.preventDefault();
+                switchMode('vocabulary');
+                break;
+            case '3':
+                e.preventDefault();
+                switchMode('quiz');
+                break;
+            case '4':
+                e.preventDefault();
+                switchMode('typing');
+                break;
+            case '5':
+                e.preventDefault();
+                switchMode('search');
+                break;
+            case '6':
+                e.preventDefault();
+                switchMode('review');
+                break;
+        }
+    }
+}
+
+
+// Settings Functions
+function loadSettings() {
+    const saved = localStorage.getItem(STORAGE_KEYS.SETTINGS);
+    if (saved) {
+        const settings = JSON.parse(saved);
+        speechRate = settings.speechRate || 0.8;
+        darkMode = settings.darkMode || false;
+        autoSpeak = settings.autoSpeak || false;
+        detailedProgress = settings.detailedProgress !== undefined ? settings.detailedProgress : true;
+        
+        // Apply settings
+        document.getElementById('speechRate').value = speechRate;
+        document.getElementById('speechRateValue').textContent = speechRate + 'x';
+        document.getElementById('darkModeToggle').checked = darkMode;
+        document.getElementById('autoSpeakToggle').checked = autoSpeak;
+        document.getElementById('detailedProgressToggle').checked = detailedProgress;
+        
+        if (darkMode) {
+            document.body.classList.add('dark-mode');
+        }
+    }
+}
+
+function saveSettings() {
+    const settings = {
+        speechRate,
+        darkMode,
+        autoSpeak,
+        detailedProgress
+    };
+    localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(settings));
+}
+
+function openSettings() {
+    document.getElementById('settingsModal').classList.remove('hidden');
+}
+
+function closeSettings() {
+    document.getElementById('settingsModal').classList.add('hidden');
+}
+
+function updateSpeechRate(e) {
+    speechRate = parseFloat(e.target.value);
+    document.getElementById('speechRateValue').textContent = speechRate + 'x';
+    saveSettings();
+}
+
+function toggleDarkMode(e) {
+    darkMode = e.target.checked;
+    document.body.classList.toggle('dark-mode', darkMode);
+    saveSettings();
+}
+
+function toggleAutoSpeak(e) {
+    autoSpeak = e.target.checked;
+    saveSettings();
+}
+
+function toggleDetailedProgress(e) {
+    detailedProgress = e.target.checked;
+    updateProgress();
+    saveSettings();
+}
+
+function resetProgress() {
+    if (confirm('Bạn có chắc muốn xóa toàn bộ tiến độ học? Hành động này không thể hoàn tác!')) {
+        learnedWords.clear();
+        localStorage.removeItem(STORAGE_KEYS.LEARNED);
+        localStorage.removeItem(STORAGE_KEYS.REVIEW_SCHEDULE);
+        updateProgress();
+        showFlashcard();
+        alert('✅ Đã reset tiến độ học!');
+    }
+}
+
+function exportProgress() {
+    const data = {
+        learnedWords: [...learnedWords],
+        reviewSchedule: JSON.parse(localStorage.getItem(STORAGE_KEYS.REVIEW_SCHEDULE) || '{}'),
+        settings: {
+            speechRate,
+            darkMode,
+            autoSpeak,
+            detailedProgress
+        },
+        exportDate: new Date().toISOString()
+    };
+    
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `toeic-vocab-backup-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    
+    alert('✅ Đã xuất dữ liệu thành công!');
+}
+
+function importProgress(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        try {
+            const data = JSON.parse(event.target.result);
+            
+            // Import learned words
+            if (data.learnedWords) {
+                learnedWords = new Set(data.learnedWords);
+                saveProgress();
+            }
+            
+            // Import review schedule
+            if (data.reviewSchedule) {
+                localStorage.setItem(STORAGE_KEYS.REVIEW_SCHEDULE, JSON.stringify(data.reviewSchedule));
+            }
+            
+            // Import settings
+            if (data.settings) {
+                speechRate = data.settings.speechRate || 0.8;
+                darkMode = data.settings.darkMode || false;
+                autoSpeak = data.settings.autoSpeak || false;
+                detailedProgress = data.settings.detailedProgress !== undefined ? data.settings.detailedProgress : true;
+                saveSettings();
+                loadSettings();
+            }
+            
+            updateProgress();
+            showFlashcard();
+            alert('✅ Đã nhập dữ liệu thành công!');
+            
+        } catch (error) {
+            alert('❌ Lỗi: File không hợp lệ!');
+            console.error(error);
+        }
+    };
+    reader.readAsText(file);
+    
+    // Reset input
+    e.target.value = '';
+}
+
+
+// Voice initialization
+function initializeVoices() {
+    // Show loading indicator
+    const loadingIndicator = document.getElementById('voiceLoading');
+    if (loadingIndicator) {
+        loadingIndicator.classList.remove('hidden');
+    }
+    
+    // Load voices
+    function loadVoices() {
+        const voices = speechSynthesis.getVoices();
+        if (voices.length > 0) {
+            voicesLoaded = true;
+            
+            // Try to find best English voice
+            selectedVoice = voices.find(v => 
+                v.lang.startsWith('en') && (v.name.includes('Google') || v.name.includes('Microsoft'))
+            ) || voices.find(v => v.lang.startsWith('en-US')) || voices.find(v => v.lang.startsWith('en'));
+            
+            console.log('Voices loaded:', voices.length);
+            console.log('Selected voice:', selectedVoice?.name);
+            
+            // Hide loading indicator
+            if (loadingIndicator) {
+                loadingIndicator.classList.add('hidden');
+            }
+            
+            // Preload by speaking empty text
+            if (selectedVoice) {
+                const utterance = new SpeechSynthesisUtterance('');
+                utterance.voice = selectedVoice;
+                utterance.volume = 0;
+                speechSynthesis.speak(utterance);
+            }
+        }
+    }
+    
+    // Load immediately if available
+    loadVoices();
+    
+    // Also listen for voiceschanged event (some browsers need this)
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = loadVoices;
+    }
+    
+    // Fallback: try loading after a delay
+    setTimeout(loadVoices, 100);
+    setTimeout(loadVoices, 500);
+    setTimeout(loadVoices, 1000);
 }
