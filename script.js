@@ -11,6 +11,12 @@ let currentQuizType = 'meaning';
 let currentQuizWord = null;
 let autoNextEnabled = true;
 
+// Vocabulary view variables
+let selectedVocabularyLists = [];
+let allVocabularyWords = [];
+let currentPage = 1;
+let wordsPerPage = 20;
+
 // Typing practice variables
 let typingWords = [];
 let currentTypingIndex = 0;
@@ -27,6 +33,16 @@ const STORAGE_KEYS = {
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', async () => {
+    // Show intro screen for 3.5 seconds
+    setTimeout(() => {
+        document.getElementById('introScreen').classList.add('fade-out');
+        setTimeout(() => {
+            document.getElementById('introScreen').style.display = 'none';
+            document.getElementById('mainApp').style.display = 'block';
+            document.getElementById('mainApp').classList.add('fade-in-app');
+        }, 800);
+    }, 3500);
+    
     await loadVocabulary();
     loadProgress();
     initializeEventListeners();
@@ -130,6 +146,16 @@ function initializeEventListeners() {
     document.getElementById('typingCheck').addEventListener('click', checkTyping);
     document.getElementById('typingSkip').addEventListener('click', skipTyping);
     document.getElementById('typingShowHint').addEventListener('click', showTypingHint);
+
+    // Vocabulary view
+    document.getElementById('selectAllLists').addEventListener('click', selectAllVocabLists);
+    document.getElementById('clearAllLists').addEventListener('click', clearAllVocabLists);
+    document.getElementById('loadSelectedLists').addEventListener('click', loadSelectedVocabLists);
+    document.getElementById('prevPage').addEventListener('click', () => changePage(-1));
+    document.getElementById('nextPage').addEventListener('click', () => changePage(1));
+    document.getElementById('startPracticeFlashcard').addEventListener('click', startPracticeFromVocab('flashcard'));
+    document.getElementById('startPracticeQuiz').addEventListener('click', startPracticeFromVocab('quiz'));
+    document.getElementById('startPracticeTyping').addEventListener('click', startPracticeFromVocab('typing'));
 }
 
 // Switch between modes
@@ -150,8 +176,13 @@ function switchMode(mode) {
         case 'flashcard':
             showFlashcard();
             break;
+        case 'vocabulary':
+            // Không làm gì, chỉ hiển thị form chọn list
+            break;
         case 'quiz':
-            startQuiz();
+            // Hiện form cài đặt quiz, không tự động bắt đầu
+            document.querySelector('.quiz-type-selector').style.display = 'block';
+            document.getElementById('quizContent').classList.add('hidden');
             break;
         case 'search':
             document.getElementById('searchInput').focus();
@@ -850,7 +881,164 @@ function checkFillBlank() {
 }
 
 function resetQuiz() {
-    document.querySelector('.quiz-type-selector').style.display = 'flex';
+    document.querySelector('.quiz-type-selector').style.display = 'block';
     document.getElementById('quizContent').classList.add('hidden');
     document.getElementById('quizOptions').innerHTML = '';
+    
+    // Reset về giá trị mặc định
+    document.getElementById('quizTypeSelect').value = 'meaning';
+    document.getElementById('quizListSelect').value = 'current';
+    document.getElementById('quizWordCount').value = '10';
+    document.getElementById('quizWordFilter').value = 'all';
+    document.getElementById('autoNextToggle').checked = true;
+    autoNextEnabled = true;
+}
+
+
+// Vocabulary View Functions
+function selectAllVocabLists() {
+    document.querySelectorAll('.vocab-checkbox').forEach(cb => cb.checked = true);
+}
+
+function clearAllVocabLists() {
+    document.querySelectorAll('.vocab-checkbox').forEach(cb => cb.checked = false);
+}
+
+async function loadSelectedVocabLists() {
+    const checkboxes = document.querySelectorAll('.vocab-checkbox:checked');
+    
+    if (checkboxes.length === 0) {
+        alert('Vui lòng chọn ít nhất một list!');
+        return;
+    }
+    
+    allVocabularyWords = [];
+    selectedVocabularyLists = [];
+    
+    // Show loading
+    document.getElementById('vocabularyList').innerHTML = '<p style="text-align: center; padding: 40px;">⏳ Đang tải từ vựng...</p>';
+    
+    try {
+        for (const checkbox of checkboxes) {
+            const listPath = checkbox.value;
+            selectedVocabularyLists.push(listPath);
+            
+            const response = await fetch(listPath);
+            const data = await response.json();
+            
+            // Thêm thông tin list vào mỗi từ
+            const listNumber = listPath.match(/vocab_(\d+)\.json/)?.[1] || '?';
+            data.vocabulary.forEach(word => {
+                word.listNumber = listNumber;
+                word.imagesFolder = `images/images_${listNumber}`;
+            });
+            
+            allVocabularyWords = allVocabularyWords.concat(data.vocabulary);
+        }
+        
+        // Hiển thị thống kê
+        updateVocabularyStats();
+        
+        // Hiển thị trang đầu tiên
+        currentPage = 1;
+        displayVocabularyPage();
+        
+        // Hiển thị pagination và nút luyện tập
+        document.getElementById('vocabularyPagination').style.display = 'flex';
+        document.getElementById('practiceActions').style.display = 'flex';
+        
+    } catch (error) {
+        console.error('Error loading vocabulary:', error);
+        alert('Có lỗi khi tải từ vựng!');
+    }
+}
+
+function updateVocabularyStats() {
+    const total = allVocabularyWords.length;
+    const learned = allVocabularyWords.filter(w => learnedWords.has(w.id)).length;
+    const unlearned = total - learned;
+    
+    document.getElementById('totalWords').textContent = total;
+    document.getElementById('learnedCount').textContent = learned;
+    document.getElementById('unlearnedCount').textContent = unlearned;
+    document.getElementById('vocabularyStats').style.display = 'block';
+}
+
+function displayVocabularyPage() {
+    const startIndex = (currentPage - 1) * wordsPerPage;
+    const endIndex = startIndex + wordsPerPage;
+    const pageWords = allVocabularyWords.slice(startIndex, endIndex);
+    
+    const totalPages = Math.ceil(allVocabularyWords.length / wordsPerPage);
+    
+    // Update page info
+    document.getElementById('pageInfo').textContent = `Trang ${currentPage} / ${totalPages}`;
+    
+    // Enable/disable buttons
+    document.getElementById('prevPage').disabled = currentPage === 1;
+    document.getElementById('nextPage').disabled = currentPage === totalPages;
+    
+    // Display words
+    const listContainer = document.getElementById('vocabularyList');
+    listContainer.innerHTML = pageWords.map(word => {
+        const isLearned = learnedWords.has(word.id);
+        const imagePath = word.image || `${word.imagesFolder}/${word.word}.png`;
+        
+        return `
+            <div class="vocab-card ${isLearned ? 'learned' : ''}">
+                <div class="vocab-card-header">
+                    <span class="vocab-list-badge">List ${word.listNumber}</span>
+                    ${isLearned ? '<span class="learned-badge">✓ Đã học</span>' : ''}
+                </div>
+                <img src="${imagePath}" alt="${word.word}" class="vocab-card-image" onerror="this.style.display='none'">
+                <h3 class="vocab-card-word">${word.word}</h3>
+                <p class="vocab-card-phonetic">${word.phonetic}</p>
+                <p class="vocab-card-meaning">${word.meaning}</p>
+                <div class="vocab-card-example">
+                    <p class="example-en">${word.example_en}</p>
+                    <p class="example-vi">${word.example_vi}</p>
+                </div>
+                <div class="vocab-card-tip">
+                    💡 ${word.memory_tip}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function changePage(direction) {
+    const totalPages = Math.ceil(allVocabularyWords.length / wordsPerPage);
+    currentPage += direction;
+    
+    if (currentPage < 1) currentPage = 1;
+    if (currentPage > totalPages) currentPage = totalPages;
+    
+    displayVocabularyPage();
+    
+    // Scroll to top
+    document.getElementById('vocabularyList').scrollIntoView({ behavior: 'smooth' });
+}
+
+function startPracticeFromVocab(mode) {
+    return function() {
+        if (allVocabularyWords.length === 0) {
+            alert('Chưa có từ vựng nào!');
+            return;
+        }
+        
+        // Set vocabulary to practice
+        vocabulary = allVocabularyWords;
+        currentIndex = 0;
+        
+        // Switch to practice mode
+        switchMode(mode);
+        
+        // Start practice
+        if (mode === 'flashcard') {
+            showFlashcard();
+        } else if (mode === 'typing') {
+            startTypingPractice();
+        }
+        // Quiz sẽ hiển thị form cài đặt
+    };
 }

@@ -7,7 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <!-- Intro Screen -->
+    <div class="intro-screen" id="introScreen">
+        <div class="intro-content">
+            <div class="intro-logo">📚</div>
+            <h1 class="intro-title fade-in-1">Vũ Văn Thông</h1>
+            <h2 class="intro-subtitle fade-in-2">Cùng Học TOEIC</h2>
+            <div class="intro-tagline fade-in-3">Chinh phục TOEIC một cách dễ dàng</div>
+            <div class="loading-dots fade-in-4">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="mainApp" style="display: none;">
         <header>
             <h1>📚 Học Từ Vựng Tiếng Anh</h1>
             <div class="progress-bar">
@@ -48,6 +63,7 @@
 
         <nav class="mode-selector">
             <button class="mode-btn active" data-mode="flashcard">🎴 Flashcard</button>
+            <button class="mode-btn" data-mode="vocabulary">📖 Xem từ vựng</button>
             <button class="mode-btn" data-mode="quiz">🎯 Quiz</button>
             <button class="mode-btn" data-mode="typing">⌨️ Luyện gõ</button>
             <button class="mode-btn" data-mode="search">🔍 Tìm kiếm</button>
@@ -78,6 +94,139 @@
                 <button class="btn btn-secondary" id="prevCard">⬅️ Trước</button>
                 <button class="btn btn-primary" id="markLearned">✅ Đã nhớ</button>
                 <button class="btn btn-secondary" id="nextCard">Sau ➡️</button>
+            </div>
+        </div>
+
+        <!-- Vocabulary View Mode -->
+        <div class="mode-content" id="vocabulary-mode">
+            <div class="vocabulary-container">
+                <div class="vocabulary-header">
+                    <h3>📖 Xem danh sách từ vựng</h3>
+                    <div class="vocabulary-controls">
+                        <div class="list-selection">
+                            <label>Chọn list (có thể chọn nhiều):</label>
+                            <div class="checkbox-group" id="vocabCheckboxGroup">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_1.json" class="vocab-checkbox">
+                                    <span>List 1</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_2.json" class="vocab-checkbox">
+                                    <span>List 2</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_3.json" class="vocab-checkbox">
+                                    <span>List 3</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_4.json" class="vocab-checkbox">
+                                    <span>List 4</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_5.json" class="vocab-checkbox">
+                                    <span>List 5</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_6.json" class="vocab-checkbox">
+                                    <span>List 6</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_7.json" class="vocab-checkbox">
+                                    <span>List 7</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_8.json" class="vocab-checkbox">
+                                    <span>List 8</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_9.json" class="vocab-checkbox">
+                                    <span>List 9</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_10.json" class="vocab-checkbox">
+                                    <span>List 10</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_11.json" class="vocab-checkbox">
+                                    <span>List 11</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_12.json" class="vocab-checkbox">
+                                    <span>List 12</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_13.json" class="vocab-checkbox">
+                                    <span>List 13</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_14.json" class="vocab-checkbox">
+                                    <span>List 14</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_15.json" class="vocab-checkbox">
+                                    <span>List 15</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_16.json" class="vocab-checkbox">
+                                    <span>List 16</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_17.json" class="vocab-checkbox">
+                                    <span>List 17</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_18.json" class="vocab-checkbox">
+                                    <span>List 18</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_19.json" class="vocab-checkbox">
+                                    <span>List 19</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_20.json" class="vocab-checkbox">
+                                    <span>List 20</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_21.json" class="vocab-checkbox">
+                                    <span>List 21</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_22.json" class="vocab-checkbox">
+                                    <span>List 22</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="vocab/vocab_23.json" class="vocab-checkbox">
+                                    <span>List 23</span>
+                                </label>
+                            </div>
+                            <div class="list-actions">
+                                <button class="btn btn-secondary" id="selectAllLists">✓ Chọn tất cả</button>
+                                <button class="btn btn-secondary" id="clearAllLists">✗ Bỏ chọn tất cả</button>
+                                <button class="btn btn-primary" id="loadSelectedLists">📥 Tải từ vựng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vocabulary-stats" id="vocabularyStats" style="display: none;">
+                    <p>Tổng số từ: <strong id="totalWords">0</strong> | 
+                       Đã học: <strong id="learnedCount">0</strong> | 
+                       Chưa học: <strong id="unlearnedCount">0</strong></p>
+                </div>
+
+                <div class="vocabulary-list" id="vocabularyList"></div>
+
+                <div class="pagination" id="vocabularyPagination" style="display: none;">
+                    <button class="btn btn-secondary" id="prevPage">⬅️ Trang trước</button>
+                    <span id="pageInfo">Trang 1 / 1</span>
+                    <button class="btn btn-secondary" id="nextPage">Trang sau ➡️</button>
+                </div>
+
+                <div class="practice-actions" id="practiceActions" style="display: none;">
+                    <button class="btn btn-primary btn-large" id="startPracticeFlashcard">🎴 Luyện Flashcard</button>
+                    <button class="btn btn-primary btn-large" id="startPracticeQuiz">🎯 Luyện Quiz</button>
+                    <button class="btn btn-primary btn-large" id="startPracticeTyping">⌨️ Luyện gõ</button>
+                </div>
             </div>
         </div>
 
