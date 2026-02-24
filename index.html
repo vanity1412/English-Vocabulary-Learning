@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Vocabulary Learning App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Học Từ Vựng Tiếng Anh</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+                <span class="progress-text" id="progressText">0/0 từ đã học</span>
+            </div>
+        </header>
+
+        <div class="list-selector">
+            <label>📚 Chọn danh sách:</label>
+            <select id="vocabListSelect">
+                <option value="vocab/vocab_1.json">List 1</option>
+                <option value="vocab/vocab_2.json">List 2</option>
+                <option value="vocab/vocab_3.json">List 3</option>
+                <option value="vocab/vocab_4.json">List 4</option>
+                <option value="vocab/vocab_5.json">List 5</option>
+                <option value="vocab/vocab_6.json">List 6</option>
+                <option value="vocab/vocab_7.json">List 7</option>
+                <option value="vocab/vocab_8.json">List 8</option>
+                <option value="vocab/vocab_9.json">List 9</option>
+                <option value="vocab/vocab_10.json">List 10</option>
+                <option value="vocab/vocab_11.json">List 11</option>
+                <option value="vocab/vocab_12.json">List 12</option>
+                <option value="vocab/vocab_13.json">List 13</option>
+                <option value="vocab/vocab_14.json">List 14</option>
+                <option value="vocab/vocab_15.json">List 15</option>
+                <option value="vocab/vocab_16.json">List 16</option>
+                <option value="vocab/vocab_17.json">List 17</option>
+                <option value="vocab/vocab_18.json">List 18</option>
+                <option value="vocab/vocab_19.json">List 19</option>
+                <option value="vocab/vocab_20.json">List 20</option>
+                <option value="vocab/vocab_21.json">List 21</option>
+                <option value="vocab/vocab_22.json">List 22</option>
+                <option value="vocab/vocab_23.json">List 23</option>
+            </select>
+            <button class="btn-reload" id="reloadList">🔄 Tải lại</button>
+        </div>
+
+        <nav class="mode-selector">
+            <button class="mode-btn active" data-mode="flashcard">🎴 Flashcard</button>
+            <button class="mode-btn" data-mode="quiz">🎯 Quiz</button>
+            <button class="mode-btn" data-mode="typing">⌨️ Luyện gõ</button>
+            <button class="mode-btn" data-mode="search">🔍 Tìm kiếm</button>
+            <button class="mode-btn" data-mode="review">📅 Ôn tập</button>
+        </nav>
+
+        <!-- Flashcard Mode -->
+        <div class="mode-content active" id="flashcard-mode">
+            <div class="flashcard" id="flashcard">
+                <div class="card-front">
+                    <img id="wordImage" class="word-image" src="" alt="" onerror="this.style.display='none'">
+                    <h2 class="word" id="word"></h2>
+                    <p class="phonetic" id="phonetic"></p>
+                    <button class="speak-btn" id="speakBtn">🔊 Phát âm</button>
+                    <p class="hint">👆 Click để xem nghĩa</p>
+                </div>
+                <div class="card-back hidden">
+                    <img id="wordImageBack" class="word-image" src="" alt="" onerror="this.style.display='none'">
+                    <p class="meaning" id="meaning"></p>
+                    <div class="example">
+                        <p class="example-en" id="exampleEn"></p>
+                        <p class="example-vi" id="exampleVi"></p>
+                    </div>
+                    <p class="memory-tip" id="memoryTip"></p>
+                </div>
+            </div>
+            <div class="flashcard-controls">
+                <button class="btn btn-secondary" id="prevCard">⬅️ Trước</button>
+                <button class="btn btn-primary" id="markLearned">✅ Đã nhớ</button>
+                <button class="btn btn-secondary" id="nextCard">Sau ➡️</button>
+            </div>
+        </div>
+
+        <!-- Quiz Mode -->
+        <div class="mode-content" id="quiz-mode">
+            <div class="quiz-container">
+                <div class="quiz-type-selector">
+                    <div class="quiz-settings-row">
+                        <label>Chọn dạng bài:</label>
+                        <select id="quizTypeSelect">
+                            <option value="meaning">1️⃣ Chọn nghĩa đúng</option>
+                            <option value="fillblank">2️⃣ Điền từ vào chỗ trống</option>
+                            <option value="listening">3️⃣ Nghe audio rồi chọn từ</option>
+                        </select>
+                    </div>
+                    <div class="quiz-settings-row">
+                        <label>Chọn list:</label>
+                        <select id="quizListSelect">
+                            <option value="current">List hiện tại</option>
+                            <option value="vocab/vocab_1.json">List 1</option>
+                            <option value="vocab/vocab_2.json">List 2</option>
+                            <option value="vocab/vocab_3.json">List 3</option>
+                            <option value="vocab/vocab_4.json">List 4</option>
+                            <option value="vocab/vocab_5.json">List 5</option>
+                            <option value="vocab/vocab_6.json">List 6</option>
+                            <option value="vocab/vocab_7.json">List 7</option>
+                            <option value="vocab/vocab_8.json">List 8</option>
+                            <option value="vocab/vocab_9.json">List 9</option>
+                            <option value="vocab/vocab_10.json">List 10</option>
+                            <option value="vocab/vocab_11.json">List 11</option>
+                            <option value="vocab/vocab_12.json">List 12</option>
+                            <option value="vocab/vocab_13.json">List 13</option>
+                            <option value="vocab/vocab_14.json">List 14</option>
+                            <option value="vocab/vocab_15.json">List 15</option>
+                            <option value="vocab/vocab_16.json">List 16</option>
+                            <option value="vocab/vocab_17.json">List 17</option>
+                            <option value="vocab/vocab_18.json">List 18</option>
+                            <option value="vocab/vocab_19.json">List 19</option>
+                            <option value="vocab/vocab_20.json">List 20</option>
+                            <option value="vocab/vocab_21.json">List 21</option>
+                            <option value="vocab/vocab_22.json">List 22</option>
+                            <option value="vocab/vocab_23.json">List 23</option>
+                        </select>
+                    </div>
+                    <div class="quiz-settings-row">
+                        <label>Số từ:</label>
+                        <select id="quizWordCount">
+                            <option value="5">5 từ</option>
+                            <option value="10" selected>10 từ</option>
+                            <option value="15">15 từ</option>
+                            <option value="20">20 từ</option>
+                            <option value="all">Tất cả</option>
+                        </select>
+                    </div>
+                    <div class="quiz-settings-row">
+                        <label>Chọn từ:</label>
+                        <select id="quizWordFilter">
+                            <option value="all">Tất cả từ</option>
+                            <option value="learned">Chỉ từ đã học</option>
+                            <option value="unlearned">Chỉ từ chưa học</option>
+                        </select>
+                    </div>
+                    <div class="quiz-settings-row">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="autoNextToggle" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Tự động chuyển câu</span>
+                        </label>
+                    </div>
+                    <button class="btn btn-primary" id="startQuizBtn">🎯 Bắt đầu Quiz</button>
+                </div>
+
+                <div class="quiz-content hidden" id="quizContent">
+                    <div class="quiz-header">
+                        <h3>
+                            <span id="quizTypeLabel"></span> - 
+                            Câu <span id="quizCurrent">1</span>/<span id="quizTotal">10</span>
+                        </h3>
+                        <p class="score">Điểm: <span id="score">0</span></p>
+                    </div>
+
+                    <!-- Type 1: Choose meaning -->
+                    <div class="quiz-question" id="quizMeaningType">
+                        <img id="quizImage" class="word-image" src="" alt="" onerror="this.style.display='none'">
+                        <h2 id="quizWord"></h2>
+                        <p id="quizPhonetic"></p>
+                        <button class="speak-btn" id="quizSpeakBtn">🔊 Phát âm</button>
+                        <p class="quiz-instruction">Chọn nghĩa đúng của từ trên:</p>
+                    </div>
+
+                    <!-- Type 2: Fill in the blank -->
+                    <div class="quiz-question hidden" id="quizFillBlankType">
+                        <img id="quizImageFill" class="word-image" src="" alt="" onerror="this.style.display='none'">
+                        <p class="quiz-instruction">Điền từ vào chỗ trống:</p>
+                        <p class="quiz-sentence" id="quizSentence"></p>
+                        <p class="quiz-hint" id="quizHintFill"></p>
+                        <input type="text" id="fillBlankInput" class="fill-blank-input" placeholder="Nhập từ..." autocomplete="off">
+                        <button class="btn btn-primary" id="checkFillBtn">✓ Kiểm tra</button>
+                    </div>
+
+                    <!-- Type 3: Listening -->
+                    <div class="quiz-question hidden" id="quizListeningType">
+                        <div class="listening-controls">
+                            <button class="btn-listen" id="listenBtn">🔊 Nghe</button>
+                            <button class="btn-listen-slow" id="listenSlowBtn">🐌 Nghe chậm</button>
+                        </div>
+                        <p class="quiz-instruction">Chọn từ bạn vừa nghe:</p>
+                        <p class="quiz-hint" id="quizHintListen"></p>
+                    </div>
+
+                    <div class="quiz-options" id="quizOptions"></div>
+                    <div class="quiz-feedback" id="quizFeedback"></div>
+                    <button class="btn btn-primary hidden" id="nextQuiz">Câu tiếp theo</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing Practice Mode -->
+        <div class="mode-content" id="typing-mode">
+            <div class="typing-container">
+                <div class="typing-header">
+                    <h3>⌨️ Luyện gõ từ vựng</h3>
+                    <div class="typing-stats">
+                        <span>Đúng: <strong id="typingCorrect">0</strong></span>
+                        <span>Sai: <strong id="typingWrong">0</strong></span>
+                        <span>Độ chính xác: <strong id="typingAccuracy">0%</strong></span>
+                    </div>
+                </div>
+
+                <div class="typing-card">
+                    <img id="typingImage" class="word-image" src="" alt="" onerror="this.style.display='none'">
+                    <p class="typing-meaning" id="typingMeaning"></p>
+                    <p class="typing-phonetic" id="typingPhonetic"></p>
+                    <p class="typing-example" id="typingExample"></p>
+                    
+                    <div class="typing-input-area">
+                        <label>Gõ từ tiếng Anh:</label>
+                        <input type="text" id="typingInput" class="typing-input" placeholder="Nhập từ vựng..." autocomplete="off">
+                        <div id="typingFeedback" class="typing-feedback"></div>
+                    </div>
+
+                    <div class="typing-hint hidden" id="typingHint">
+                        <p>💡 Gợi ý: <span id="typingHintText"></span></p>
+                    </div>
+                </div>
+
+                <div class="typing-controls">
+                    <button class="btn btn-secondary" id="typingShowHint">💡 Gợi ý</button>
+                    <button class="btn btn-secondary" id="typingSkip">⏭️ Bỏ qua</button>
+                    <button class="btn btn-primary" id="typingCheck">✓ Kiểm tra</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Mode -->
+        <div class="mode-content" id="search-mode">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Nhập từ tiếng Anh cần tìm..." class="search-input">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+
+        <!-- Review Mode (Spaced Repetition) -->
+        <div class="mode-content" id="review-mode">
+            <div class="review-container">
+                <h3>📅 Lịch ôn tập theo Spaced Repetition</h3>
+                <div id="reviewList" class="review-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
