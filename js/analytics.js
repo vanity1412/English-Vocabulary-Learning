@@ -4,7 +4,7 @@
 // ============================================
 
 // Google Analytics 4 Configuration
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Thay bằng ID của bạn từ Google Analytics
+const GA_MEASUREMENT_ID = 'G-755RB1KGKZ'; // VVT TOEIC Learning Website
 
 // Khởi tạo Google Analytics
 function initGoogleAnalytics() {
@@ -20,10 +20,12 @@ function initGoogleAnalytics() {
     gtag('js', new Date());
     gtag('config', GA_MEASUREMENT_ID, {
         'send_page_view': true,
-        'anonymize_ip': true // Tuân thủ GDPR
+        'anonymize_ip': true, // Tuân thủ GDPR
+        'cookie_flags': 'SameSite=None;Secure'
     });
     
     window.gtag = gtag;
+    console.log('✅ Google Analytics initialized with ID:', GA_MEASUREMENT_ID);
 }
 
 // ============================================
@@ -292,9 +294,7 @@ let localAnalytics;
 
 document.addEventListener('DOMContentLoaded', () => {
     // Khởi tạo Google Analytics
-    if (GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
-        initGoogleAnalytics();
-    }
+    initGoogleAnalytics();
     
     // Khởi tạo trackers
     analyticsTracker = new AnalyticsTracker();
@@ -307,7 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageName = document.title;
     analyticsTracker.trackPageView(pageName);
     
-    console.log('📊 Analytics initialized');
+    console.log('📊 Analytics initialized successfully!');
+    console.log('🌐 Website:', 'https://vanity1412.github.io/English-Vocabulary-Learning/');
+    console.log('📈 Measurement ID:', GA_MEASUREMENT_ID);
 });
 
 // Export để sử dụng trong các file khác
