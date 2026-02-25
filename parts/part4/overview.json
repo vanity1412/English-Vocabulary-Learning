@@ -1,0 +1,104 @@
+{
+  "title": "Part 4: Talks - Nghe hiểu bài nói",
+  "description": "Phần thi nghe hiểu bài nói của một người và trả lời các câu hỏi liên quan.",
+  "topics": [
+    {
+      "id": "overview",
+      "title": "Tổng quan",
+      "type": "theory",
+      "file": "overview.json"
+    },
+    {
+      "id": "question-types",
+      "title": "Các dạng câu hỏi trong bài nói",
+      "type": "category",
+      "subtopics": [
+        {
+          "id": "topic-purpose",
+          "title": "Câu hỏi về chủ đề, mục đích",
+          "type": "theory",
+          "file": "topic-purpose.json"
+        },
+        {
+          "id": "identity-location",
+          "title": "Câu hỏi về danh tính, địa điểm",
+          "type": "theory",
+          "file": "identity-location.json"
+        },
+        {
+          "id": "details",
+          "title": "Câu hỏi về chi tiết",
+          "type": "theory",
+          "file": "details.json"
+        },
+        {
+          "id": "request-suggestion",
+          "title": "Câu hỏi yêu cầu, gợi ý",
+          "type": "theory",
+          "file": "request-suggestion.json"
+        },
+        {
+          "id": "future-action",
+          "title": "Câu hỏi về hành động tương lai",
+          "type": "theory",
+          "file": "future-action.json"
+        },
+        {
+          "id": "implication",
+          "title": "Câu hỏi về hàm ý câu nói",
+          "type": "theory",
+          "file": "implication.json"
+        },
+        {
+          "id": "visual-question",
+          "title": "Câu hỏi kết hợp bảng biểu",
+          "type": "theory",
+          "file": "visual-question.json"
+        }
+      ]
+    },
+    {
+      "id": "talk-types",
+      "title": "Các dạng bài trong Part 4",
+      "type": "category",
+      "subtopics": [
+        {
+          "id": "telephone-message",
+          "title": "Telephone message - Tin nhắn thoại",
+          "type": "theory",
+          "file": "telephone-message.json"
+        },
+        {
+          "id": "advertisement",
+          "title": "Advertisement - Quảng cáo",
+          "type": "theory",
+          "file": "advertisement.json"
+        },
+        {
+          "id": "announcement",
+          "title": "Announcement - Thông báo",
+          "type": "theory",
+          "file": "announcement.json"
+        },
+        {
+          "id": "talk",
+          "title": "Talk - Bài phát biểu, diễn văn",
+          "type": "theory",
+          "file": "talk.json"
+        },
+        {
+          "id": "news-report",
+          "title": "News report, Broadcast - Bản tin",
+          "type": "theory",
+          "file": "news-report.json"
+        },
+        {
+          "id": "meeting-excerpt",
+          "title": "Excerpt from a meeting - Trích dẫn từ buổi họp",
+          "type": "theory",
+          "file": "meeting-excerpt.json"
+        }
+      ]
+    }
+  ]
+}

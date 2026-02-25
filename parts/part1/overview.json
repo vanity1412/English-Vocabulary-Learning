@@ -1,0 +1,30 @@
+{
+  "title": "Part 1: Photographs - Nghe tranh",
+  "description": "Phần thi nghe mô tả tranh ảnh. Bạn sẽ nghe 4 câu mô tả và chọn câu phù hợp nhất với bức tranh.",
+  "topics": [
+    {
+      "id": "overview",
+      "title": "Tổng quan",
+      "type": "theory",
+      "file": "overview.json"
+    },
+    {
+      "id": "people",
+      "title": "Tranh tả người",
+      "type": "theory",
+      "file": "people.json"
+    },
+    {
+      "id": "objects",
+      "title": "Tranh tả vật",
+      "type": "theory",
+      "file": "objects.json"
+    },
+    {
+      "id": "both",
+      "title": "Tranh tả cả người và vật",
+      "type": "theory",
+      "file": "both.json"
+    }
+  ]
+}

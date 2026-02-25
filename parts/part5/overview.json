@@ -1,0 +1,37 @@
+{
+  "title": "Part 5: Incomplete Sentences - Điền từ vào câu",
+  "description": "Phần thi điền từ vào chỗ trống trong câu. Bạn cần chọn đáp án đúng nhất trong 4 lựa chọn.",
+  "topics": [
+    {
+      "id": "overview",
+      "title": "Tổng quan",
+      "type": "theory",
+      "file": "overview.json"
+    },
+    {
+      "id": "question-types",
+      "title": "Các dạng câu hỏi chính",
+      "type": "category",
+      "subtopics": [
+        {
+          "id": "word-form",
+          "title": "Câu hỏi từ loại",
+          "type": "theory",
+          "file": "word-form.json"
+        },
+        {
+          "id": "grammar",
+          "title": "Câu hỏi ngữ pháp",
+          "type": "theory",
+          "file": "grammar.json"
+        },
+        {
+          "id": "vocabulary",
+          "title": "Câu hỏi từ vựng",
+          "type": "theory",
+          "file": "vocabulary.json"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Các Part TOEIC</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/parts.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="back-btn" onclick="window.location.href='index.html'">← Quay lại</button>
+            <h1>Ôn Tập Các Part TOEIC</h1>
+        </header>
+
+        <div class="parts-container">
+            <!-- Listening Section -->
+            <div class="section">
+                <h2 class="section-title">🎧 Phần Nghe (Listening)</h2>
+                <div class="parts-grid">
+                    <div class="part-card" onclick="selectPart(1)">
+                        <div class="part-number">Part 1</div>
+                        <h3>Photographs</h3>
+                        <p>Nghe tranh - 6 câu</p>
+                        <div class="part-topics">4 dạng</div>
+                    </div>
+                    <div class="part-card" onclick="selectPart(2)">
+                        <div class="part-number">Part 2</div>
+                        <h3>Question - Response</h3>
+                        <p>Hỏi đáp - 25 câu</p>
+                        <div class="part-topics">12 dạng</div>
+                    </div>
+                    <div class="part-card" onclick="selectPart(3)">
+                        <div class="part-number">Part 3</div>
+                        <h3>Conversations</h3>
+                        <p>Hội thoại - 39 câu</p>
+                        <div class="part-topics">16 dạng</div>
+                    </div>
+                    <div class="part-card" onclick="selectPart(4)">
+                        <div class="part-number">Part 4</div>
+                        <h3>Talks</h3>
+                        <p>Độc thoại - 30 câu</p>
+                        <div class="part-topics">13 dạng</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reading Section -->
+            <div class="section">
+                <h2 class="section-title">📖 Phần Đọc (Reading)</h2>
+                <div class="parts-grid">
+                    <div class="part-card" onclick="selectPart(5)">
+                        <div class="part-number">Part 5</div>
+                        <h3>Incomplete Sentences</h3>
+                        <p>Điền vào chỗ trống - 30 câu</p>
+                        <div class="part-topics">4 dạng</div>
+                    </div>
+                    <div class="part-card" onclick="selectPart(6)">
+                        <div class="part-number">Part 6</div>
+                        <h3>Text Completion</h3>
+                        <p>Hoàn thành đoạn văn - 16 câu</p>
+                        <div class="part-topics">10 dạng</div>
+                    </div>
+                    <div class="part-card" onclick="selectPart(7)">
+                        <div class="part-number">Part 7</div>
+                        <h3>Reading Comprehension</h3>
+                        <p>Đọc hiểu - 54 câu</p>
+                        <div class="part-topics">13 dạng</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/parts.js"></script>
+</body>
+</html>

@@ -1244,8 +1244,6 @@ h1 {
 /* Keyboard Shortcuts Styles */
 .keyboard-shortcuts {
     position: relative;
-    margin-top: 15px;
-    text-align: center;
 }
 
 .shortcuts-toggle {

@@ -1,0 +1,104 @@
+{
+  "title": "Part 7: Reading Comprehension - Đọc hiểu văn bản",
+  "description": "Phần thi đọc hiểu các văn bản đơn, đôi hoặc ba văn bản và trả lời các câu hỏi liên quan.",
+  "topics": [
+    {
+      "id": "overview",
+      "title": "Tổng quan",
+      "type": "theory",
+      "file": "overview.json"
+    },
+    {
+      "id": "question-types",
+      "title": "Các dạng câu hỏi trong Part 7",
+      "type": "category",
+      "subtopics": [
+        {
+          "id": "topic-purpose",
+          "title": "Câu hỏi về chủ đề, mục đích",
+          "type": "theory",
+          "file": "topic-purpose.json"
+        },
+        {
+          "id": "find-information",
+          "title": "Câu hỏi tìm thông tin",
+          "type": "theory",
+          "file": "find-information.json"
+        },
+        {
+          "id": "inference",
+          "title": "Câu hỏi suy luận",
+          "type": "theory",
+          "file": "inference.json"
+        },
+        {
+          "id": "synonym",
+          "title": "Câu hỏi tìm từ đồng nghĩa",
+          "type": "theory",
+          "file": "synonym.json"
+        },
+        {
+          "id": "implication",
+          "title": "Câu hỏi về hàm ý câu nói",
+          "type": "theory",
+          "file": "implication.json"
+        },
+        {
+          "id": "not-true",
+          "title": "Câu hỏi tìm chi tiết sai",
+          "type": "theory",
+          "file": "not-true.json"
+        },
+        {
+          "id": "sentence-insertion",
+          "title": "Câu hỏi điền câu",
+          "type": "theory",
+          "file": "sentence-insertion.json"
+        }
+      ]
+    },
+    {
+      "id": "text-types",
+      "title": "Các dạng văn bản trong Part 7",
+      "type": "category",
+      "subtopics": [
+        {
+          "id": "article-review",
+          "title": "Article / Review - Bài báo, bài đánh giá",
+          "type": "theory",
+          "file": "article-review.json"
+        },
+        {
+          "id": "announcement-notice",
+          "title": "Announcement / Notice - Thông báo",
+          "type": "theory",
+          "file": "announcement-notice.json"
+        },
+        {
+          "id": "email-letter",
+          "title": "Email / Letter - Thư điện tử, thư tay",
+          "type": "theory",
+          "file": "email-letter.json"
+        },
+        {
+          "id": "advertisement",
+          "title": "Advertisement - Quảng cáo",
+          "type": "theory",
+          "file": "advertisement.json"
+        },
+        {
+          "id": "form",
+          "title": "Form - Biểu mẫu",
+          "type": "theory",
+          "file": "form.json"
+        },
+        {
+          "id": "text-message",
+          "title": "Text message chain - Chuỗi tin nhắn",
+          "type": "theory",
+          "file": "text-message.json"
+        }
+      ]
+    }
+  ]
+}

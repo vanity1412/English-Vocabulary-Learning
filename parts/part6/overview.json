@@ -1,0 +1,80 @@
+{
+  "title": "Part 6: Text Completion - Điền từ vào đoạn văn",
+  "description": "Phần thi điền từ vào chỗ trống trong đoạn văn. Bạn cần đọc hiểu ngữ cảnh và chọn đáp án đúng nhất.",
+  "topics": [
+    {
+      "id": "overview",
+      "title": "Tổng quan",
+      "type": "theory",
+      "file": "overview.json"
+    },
+    {
+      "id": "question-types",
+      "title": "Các dạng câu hỏi chính",
+      "type": "category",
+      "subtopics": [
+        {
+          "id": "word-form",
+          "title": "Câu hỏi từ loại",
+          "type": "theory",
+          "file": "word-form.json"
+        },
+        {
+          "id": "grammar",
+          "title": "Câu hỏi ngữ pháp",
+          "type": "theory",
+          "file": "grammar.json"
+        },
+        {
+          "id": "vocabulary",
+          "title": "Câu hỏi từ vựng",
+          "type": "theory",
+          "file": "vocabulary.json"
+        },
+        {
+          "id": "sentence-insertion",
+          "title": "Câu hỏi điền câu vào đoạn văn",
+          "type": "theory",
+          "file": "sentence-insertion.json"
+        }
+      ]
+    },
+    {
+      "id": "text-types",
+      "title": "Các dạng văn bản thường gặp",
+      "type": "category",
+      "subtopics": [
+        {
+          "id": "email-letter",
+          "title": "Thư điện tử / thư tay (Email / Letter)",
+          "type": "theory",
+          "file": "email-letter.json"
+        },
+        {
+          "id": "article",
+          "title": "Bài báo (Article / Review)",
+          "type": "theory",
+          "file": "article.json"
+        },
+        {
+          "id": "advertisement",
+          "title": "Quảng cáo (Advertisement)",
+          "type": "theory",
+          "file": "advertisement.json"
+        },
+        {
+          "id": "notice",
+          "title": "Thông báo / văn bản hướng dẫn (Notice / Announcement / Information)",
+          "type": "theory",
+          "file": "notice.json"
+        },
+        {
+          "id": "memo",
+          "title": "Thông báo nội bộ (Memo)",
+          "type": "theory",
+          "file": "memo.json"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "title": "Part 2: Question - Response (Hỏi - đáp)",
+  "description": "Phần thi nghe câu hỏi và chọn câu trả lời phù hợp nhất trong 3 đáp án.",
+  "topics": [
+    {
+      "id": "overview",
+      "title": "Tổng quan",
+      "type": "theory",
+      "file": "overview.json"
+    },
+    {
+      "id": "who",
+      "title": "Câu hỏi WHO",
+      "type": "theory",
+      "file": "who.json"
+    },
+    {
+      "id": "what",
+      "title": "Câu hỏi WHAT",
+      "type": "theory",
+      "file": "what.json"
+    },
+    {
+      "id": "where",
+      "title": "Câu hỏi WHERE",
+      "type": "theory",
+      "file": "where.json"
+    },
+    {
+      "id": "when",
+      "title": "Câu hỏi WHEN",
+      "type": "theory",
+      "file": "when.json"
+    },
+    {
+      "id": "why",
+      "title": "Câu hỏi WHY",
+      "type": "theory",
+      "file": "why.json"
+    },
+    {
+      "id": "how",
+      "title": "Câu hỏi HOW",
+      "type": "theory",
+      "file": "how.json"
+    },
+    {
+      "id": "yesno",
+      "title": "Câu hỏi YES/NO",
+      "type": "theory",
+      "file": "yesno.json"
+    },
+    {
+      "id": "choice",
+      "title": "Câu hỏi lựa chọn",
+      "type": "theory",
+      "file": "choice.json"
+    },
+    {
+      "id": "tag",
+      "title": "Câu hỏi đuôi (Tag questions)",
+      "type": "theory",
+      "file": "tag.json"
+    },
+    {
+      "id": "request",
+      "title": "Câu đề nghị, yêu cầu",
+      "type": "theory",
+      "file": "request.json"
+    },
+    {
+      "id": "statement",
+      "title": "Câu trần thuật",
+      "type": "theory",
+      "file": "statement.json"
+    }
+  ]
+}

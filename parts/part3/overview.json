@@ -1,0 +1,122 @@
+{
+  "title": "Part 3: Conversations - Nghe hiểu đối thoại",
+  "description": "Phần thi nghe hiểu đoạn hội thoại giữa 2-3 người và trả lời các câu hỏi liên quan.",
+  "topics": [
+    {
+      "id": "overview",
+      "title": "Tổng quan",
+      "type": "theory",
+      "file": "overview.json"
+    },
+    {
+      "id": "question-types",
+      "title": "Các dạng câu hỏi trong hội thoại",
+      "type": "category",
+      "subtopics": [
+        {
+          "id": "topic-purpose",
+          "title": "Câu hỏi về chủ đề, mục đích",
+          "type": "theory",
+          "file": "topic-purpose.json"
+        },
+        {
+          "id": "location",
+          "title": "Câu hỏi về địa điểm hội thoại",
+          "type": "theory",
+          "file": "location.json"
+        },
+        {
+          "id": "speaker-identity",
+          "title": "Câu hỏi về danh tính người nói",
+          "type": "theory",
+          "file": "speaker-identity.json"
+        },
+        {
+          "id": "details",
+          "title": "Câu hỏi về chi tiết cuộc hội thoại",
+          "type": "theory",
+          "file": "details.json"
+        },
+        {
+          "id": "future-action",
+          "title": "Câu hỏi về hành động tương lai",
+          "type": "theory",
+          "file": "future-action.json"
+        },
+        {
+          "id": "request-suggestion",
+          "title": "Câu hỏi về yêu cầu, gợi ý",
+          "type": "theory",
+          "file": "request-suggestion.json"
+        },
+        {
+          "id": "implication",
+          "title": "Câu hỏi về hàm ý câu nói",
+          "type": "theory",
+          "file": "implication.json"
+        },
+        {
+          "id": "visual-question",
+          "title": "Câu hỏi kết hợp bảng biểu",
+          "type": "theory",
+          "file": "visual-question.json"
+        }
+      ]
+    },
+    {
+      "id": "conversation-topics",
+      "title": "Chủ đề các cuộc đối thoại",
+      "type": "category",
+      "subtopics": [
+        {
+          "id": "company-general",
+          "title": "Company - General Office Work",
+          "type": "theory",
+          "file": "company-general.json"
+        },
+        {
+          "id": "company-personnel",
+          "title": "Company - Personnel",
+          "type": "theory",
+          "file": "company-personnel.json"
+        },
+        {
+          "id": "company-business",
+          "title": "Company - Business, Marketing",
+          "type": "theory",
+          "file": "company-business.json"
+        },
+        {
+          "id": "company-event",
+          "title": "Company - Event, Project",
+          "type": "theory",
+          "file": "company-event.json"
+        },
+        {
+          "id": "company-facility",
+          "title": "Company - Facility",
+          "type": "theory",
+          "file": "company-facility.json"
+        },
+        {
+          "id": "shopping-service",
+          "title": "Shopping, Service",
+          "type": "theory",
+          "file": "shopping-service.json"
+        },
+        {
+          "id": "order-delivery",
+          "title": "Order, Delivery",
+          "type": "theory",
+          "file": "order-delivery.json"
+        },
+        {
+          "id": "housing",
+          "title": "Housing",
+          "type": "theory",
+          "file": "housing.json"
+        }
+      ]
+    }
+  ]
+}

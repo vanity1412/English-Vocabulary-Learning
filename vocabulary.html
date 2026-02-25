@@ -159,8 +159,180 @@
             </div>
         </div>
 
-        <!-- Other modes continue... (Quiz, Typing, Search, Review, Vocabulary View) -->
-        <!-- Copy từ file cũ các phần còn lại -->
+        <!-- Vocabulary View Mode -->
+        <div class="mode-content" id="vocabulary-mode">
+            <div class="vocab-list" id="vocabList"></div>
+        </div>
+
+        <!-- Quiz Mode -->
+        <div class="mode-content" id="quiz-mode">
+            <div class="quiz-settings">
+                <div class="quiz-settings-row">
+                    <label>Dạng bài tập:</label>
+                    <select id="quizType">
+                        <option value="meaning">1️⃣ Chọn nghĩa đúng</option>
+                        <option value="fillblank">2️⃣ Điền từ vào chỗ trống</option>
+                        <option value="listening">3️⃣ Nghe audio rồi chọn từ</option>
+                    </select>
+                </div>
+                <div class="quiz-settings-row">
+                    <label>Số câu hỏi:</label>
+                    <select id="quizQuestionCount">
+                        <option value="10">10 câu</option>
+                        <option value="20" selected>20 câu</option>
+                        <option value="30">30 câu</option>
+                        <option value="50">50 câu</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary btn-large" id="startQuiz">🎯 Bắt đầu Quiz</button>
+            </div>
+            <div class="quiz-container hidden" id="quizContainer">
+                <div class="quiz-header">
+                    <div class="quiz-progress">
+                        <span id="quizProgress">Câu 1/20</span>
+                        <span id="quizScore">Điểm: 0</span>
+                    </div>
+                    <div class="quiz-timer" id="quizTimer">⏱️ 00:00</div>
+                </div>
+                
+                <!-- Meaning Quiz Type -->
+                <div class="quiz-question" id="meaningQuiz">
+                    <img id="quizImage" class="quiz-image" src="" alt="" onerror="this.style.display='none'">
+                    <h3 id="quizWord"></h3>
+                    <p id="quizPhonetic" class="quiz-phonetic"></p>
+                    <button class="speak-btn" id="quizSpeakBtn">🔊 Phát âm</button>
+                    <p class="quiz-question-text">Chọn nghĩa đúng:</p>
+                    <div class="quiz-options" id="quizOptions"></div>
+                </div>
+                
+                <!-- Fill Blank Quiz Type -->
+                <div class="quiz-question hidden" id="fillBlankQuiz">
+                    <img id="fillBlankImage" class="quiz-image" src="" alt="" onerror="this.style.display='none'">
+                    <p class="quiz-hint">💡 <span id="fillBlankHint"></span></p>
+                    <p class="quiz-sentence" id="fillBlankSentence"></p>
+                    <input type="text" id="fillBlankInput" class="fill-blank-input" placeholder="Nhập từ tiếng Anh..." autocomplete="off">
+                    <button class="btn btn-primary" id="checkFillBlank">Kiểm tra</button>
+                    <div class="fill-blank-feedback hidden" id="fillBlankFeedback"></div>
+                </div>
+                
+                <!-- Listening Quiz Type -->
+                <div class="quiz-question hidden" id="listeningQuiz">
+                    <div class="listening-controls">
+                        <button class="btn btn-primary" id="listenNormal">🔊 Nghe lại</button>
+                        <button class="btn btn-secondary" id="listenSlow">🐌 Nghe chậm</button>
+                    </div>
+                    <p class="quiz-hint">💡 Gợi ý: <span id="listeningHint"></span></p>
+                    <p class="quiz-question-text">Chọn từ bạn vừa nghe:</p>
+                    <div class="quiz-options" id="listeningOptions"></div>
+                </div>
+                
+                <button class="btn btn-primary btn-large hidden" id="nextQuizBtn">Câu tiếp theo ➡️</button>
+            </div>
+            <div class="quiz-result hidden" id="quizResult">
+                <h2>🎉 Hoàn thành!</h2>
+                <div class="result-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Điểm số:</span>
+                        <span class="stat-value" id="finalScore">0/20</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Thời gian:</span>
+                        <span class="stat-value" id="finalTime">00:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Độ chính xác:</span>
+                        <span class="stat-value" id="accuracy">0%</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-large" id="retryQuiz">🔄 Làm lại</button>
+            </div>
+        </div>
+
+        <!-- Typing Practice Mode -->
+        <div class="mode-content" id="typing-mode">
+            <div class="typing-settings">
+                <div class="quiz-settings-row">
+                    <label>Số từ luyện tập:</label>
+                    <select id="typingWordCount">
+                        <option value="10">10 từ</option>
+                        <option value="20" selected>20 từ</option>
+                        <option value="30">30 từ</option>
+                        <option value="50">50 từ</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary btn-large" id="startTyping">⌨️ Bắt đầu luyện gõ</button>
+            </div>
+            <div class="typing-container hidden" id="typingContainer">
+                <div class="typing-header">
+                    <div class="typing-progress">
+                        <span id="typingProgress">Từ 1/20</span>
+                        <span id="typingScore">Điểm: 0</span>
+                    </div>
+                    <div class="typing-timer" id="typingTimer">⏱️ 00:00</div>
+                </div>
+                <div class="typing-word-display">
+                    <p class="typing-meaning" id="typingMeaning"></p>
+                    <p class="typing-phonetic" id="typingPhonetic"></p>
+                    <button class="speak-btn" id="typingSpeakBtn">🔊 Phát âm</button>
+                </div>
+                <div class="typing-input-area">
+                    <input type="text" id="typingInput" class="typing-input" placeholder="Nhập từ tiếng Anh..." autocomplete="off">
+                    <div class="typing-feedback hidden" id="typingFeedback"></div>
+                </div>
+                <button class="btn btn-primary btn-large hidden" id="nextTypingBtn">Từ tiếp theo ➡️</button>
+            </div>
+            <div class="typing-result hidden" id="typingResult">
+                <h2>🎉 Hoàn thành!</h2>
+                <div class="result-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Điểm số:</span>
+                        <span class="stat-value" id="typingFinalScore">0/20</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Thời gian:</span>
+                        <span class="stat-value" id="typingFinalTime">00:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Độ chính xác:</span>
+                        <span class="stat-value" id="typingAccuracy">0%</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-large" id="retryTyping">🔄 Làm lại</button>
+            </div>
+        </div>
+
+        <!-- Search Mode -->
+        <div class="mode-content" id="search-mode">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="🔍 Tìm kiếm từ vựng...">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </div>
+
+        <!-- Review Mode -->
+        <div class="mode-content" id="review-mode">
+            <div class="review-container">
+                <div class="review-stats">
+                    <div class="stat-card">
+                        <h3>📚 Tổng số từ</h3>
+                        <p class="stat-number" id="totalWords">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>✅ Đã học</h3>
+                        <p class="stat-number" id="learnedWords">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>📖 Chưa học</h3>
+                        <p class="stat-number" id="unlearnedWords">0</p>
+                    </div>
+                </div>
+                <div class="review-actions">
+                    <button class="btn btn-primary btn-large" id="reviewLearnedBtn">📝 Ôn tập từ đã học</button>
+                    <button class="btn btn-secondary btn-large" id="reviewUnlearnedBtn">📚 Học từ chưa biết</button>
+                </div>
+                <div class="learned-words-list" id="learnedWordsList"></div>
+            </div>
+        </div>
         
     </div>
 
