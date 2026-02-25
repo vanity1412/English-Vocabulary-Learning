@@ -1,4 +1,258 @@
 {
   "title": "Announcement - Thông báo",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung của Announcement",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>🎯 Mục đích thông báo</strong><br>Announcement thường dùng để:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Thông báo thay đổi, cập nhật thông tin",
+            "Hướng dẫn sử dụng cơ sở vật chất",
+            "Thông báo quy định, luật lệ, hướng dẫn an toàn",
+            "Cung cấp thông tin sự kiện, lịch trình, chuyến bay, chuyến tàu"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>👥 Mối quan hệ giữa người nói và người nghe</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Sân bay / nhà ga – Hành khách",
+            "Cửa hàng – Khách hàng",
+            "Công ty / phòng ban – Nhân viên",
+            "Ban tổ chức – Người tham gia sự kiện"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>🔗 Mạch nói chuẩn của Announcement</strong><br>Thông báo thường theo trình tự:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Chào hỏi / Thu hút sự chú ý",
+            "Thông báo chủ đề / vấn đề chính",
+            "Chi tiết cụ thể (thời gian, địa điểm, thay đổi, quy định)",
+            "Yêu cầu / đề nghị người nghe làm gì",
+            "Cảm ơn / xin lỗi / kết thúc"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Lưu ý quan trọng",
+          "content": "• Đây là cấu trúc chuẩn giúp xác định vị trí đáp án"
+        }
+      ]
+    },
+    {
+      "heading": "2. Quy tắc làm bài Announcement",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>1. Xác định địa điểm thông báo</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Thường nằm ngay đầu đoạn."
+        },
+        {
+          "type": "list",
+          "title": "Câu hỏi điển hình:",
+          "items": [
+            "Where is the announcement most likely being made?"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>2. Xác định danh tính người nói</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Suy ra từ bối cảnh: sân bay → phi công, tàu → nhân viên tàu, công ty → quản lý, HR…"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3. Xác định thông tin chi tiết</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Nằm ở phần chi tiết thông báo."
+        },
+        {
+          "type": "list",
+          "title": "Từ khóa quan trọng:",
+          "items": [
+            "When, Where, Why, How, What, Which"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>4. Xác định yêu cầu / đề nghị</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Thường nằm ở cuối đoạn."
+        },
+        {
+          "type": "list",
+          "title": "Dấu hiệu ngôn ngữ:",
+          "items": [
+            "Please …",
+            "We recommend …",
+            "You should / You need to …"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Các trường hợp cụ thể của Announcement",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>✅ 1. THÔNG BÁO NỘI BỘ (INTERNAL ANNOUNCEMENT)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Mạch nói:",
+          "items": [
+            "Chào hỏi / giới thiệu người nói",
+            "Mục đích thông báo",
+            "Thông tin chi tiết",
+            "Yêu cầu / đề nghị nhân viên"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Dấu hiệu ngôn ngữ:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Giới thiệu người nói:</strong> This is…, My name is…, I'm a…",
+            "<strong>Mục đích thông báo:</strong> I'll…, I'd like to…, I need to…",
+            "<strong>Yêu cầu / đề nghị:</strong> Let's…, Please…, It is necessary to…"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>✅ 2. THÔNG BÁO TRÊN MÁY BAY (FLIGHT ANNOUNCEMENT)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc chuẩn:",
+          "items": [
+            "<strong>1️⃣ Chào mừng / giới thiệu:</strong> Welcome to flight…, This is your captain…",
+            "<strong>2️⃣ Mục đích thông báo:</strong> Cung cấp thông tin chuyến bay (Thời gian bay, Điểm đến, Thời tiết, Độ cao)",
+            "<strong>3️⃣ Yêu cầu an toàn:</strong> Thắt dây an toàn, Điều chỉnh ghế, Tắt thiết bị điện tử, Gọi tiếp viên khi cần",
+            "<strong>4️⃣ Lời nhắn kết thúc:</strong> Cảm ơn, Giới thiệu dịch vụ trên chuyến bay"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>✅ 3. THÔNG BÁO LÊN TÀU / XE / MÁY BAY (BOARDING ANNOUNCEMENT)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc:",
+          "items": [
+            "Kêu gọi sự chú ý (Attention, Passengers…)",
+            "Mục đích thông báo (lên tàu, hoãn, hủy)",
+            "Thông tin chi tiết (cổng, giờ, quy định)",
+            "Yêu cầu hành động tiếp theo"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Mục đích phổ biến:",
+          "items": [
+            "Boarding (lên máy bay / tàu)",
+            "Delay (hoãn)",
+            "Cancellation (hủy chuyến)"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>✅ 4. THÔNG BÁO SỰ KIỆN (EVENT ANNOUNCEMENT)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc:",
+          "items": [
+            "Chào mừng + giới thiệu người nói",
+            "Mục đích sự kiện",
+            "Lịch trình chi tiết",
+            "Yêu cầu / đề xuất người nghe"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Nội dung thường gặp:",
+          "items": [
+            "Lịch trình chương trình",
+            "Hoạt động",
+            "Ưu đãi, quà tặng",
+            "Hướng dẫn đăng ký"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Bản dịch thuật ngữ quan trọng",
+      "content": [
+        {
+          "type": "list",
+          "items": [
+            "<strong>Announcement:</strong> Thông báo",
+            "<strong>Passenger:</strong> Hành khách",
+            "<strong>Flight:</strong> Chuyến bay",
+            "<strong>Boarding:</strong> Lên máy bay / tàu",
+            "<strong>Delay:</strong> Hoãn",
+            "<strong>Cancel:</strong> Hủy",
+            "<strong>Schedule:</strong> Lịch trình",
+            "<strong>Facility:</strong> Cơ sở vật chất",
+            "<strong>Regulation:</strong> Quy định",
+            "<strong>Staff:</strong> Nhân viên",
+            "<strong>Gate:</strong> Cổng",
+            "<strong>Terminal:</strong> Nhà ga",
+            "<strong>Event:</strong> Sự kiện",
+            "<strong>Recommend:</strong> Đề nghị",
+            "<strong>Request:</strong> Yêu cầu"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "5. Mẹo ghi nhớ (cực quan trọng)",
+      "content": [
+        {
+          "type": "list",
+          "title": "✅ Các mẹo quan trọng:",
+          "items": [
+            "<strong>Mẹo 1: Nhớ mạch Announcement</strong><br>→ CHÀO → THÔNG BÁO → CHI TIẾT → YÊU CẦU → KẾT THÚC",
+            "<strong>Mẹo 2: Đầu đoạn = địa điểm</strong><br>Nghe 5–10 giây đầu là xác định được bối cảnh (sân bay, công ty, nhà ga).",
+            "<strong>Mẹo 3: Cuối đoạn = hành động</strong><br>Câu cuối thường chứa đáp án yêu cầu người nghe làm gì.",
+            "<strong>Mẹo 4: Keyword quan trọng hơn nghe hết</strong><br>Chỉ cần bắt từ khóa trong câu hỏi, không cần hiểu toàn bộ bài nghe.",
+            "<strong>Mẹo 5: Announcement thường có giọng trang trọng</strong><br>→ Nếu nghe giọng đọc trang trọng, nhiều yêu cầu → khả năng cao là Announcement."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt siêu ngắn dạng thi",
+      "content": [
+        {
+          "type": "tip",
+          "title": "Announcement",
+          "content": "Xác định địa điểm đầu đoạn + bắt chi tiết giữa đoạn + tìm yêu cầu cuối đoạn."
+        }
+      ]
+    }
+  ]
 }

@@ -1,4 +1,290 @@
 {
-  "title": "Email / Letter - Thư điện tử, thư tay",
-  "content": ""
+  "title": "Email/Letter - Thư điện tử/Thư tay",
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Letter (thư tín) và Email (thư điện tử) là dạng bài đọc thường xuất hiện nhất ở phần đọc hiểu trong bài thi TOEIC. Thư tín được trình bày theo trình tự: người gửi, ngày tháng viết thư, người nhận, nội dung chính. Với thư điện tử thì cách trình bày đơn giản hơn: phần trên cùng là các ô trống gồm các mục To (người nhận), From (người gửi), Subject (chủ đề) và phần tiếp theo là nội dung chính."
+        },
+        {
+          "type": "structure",
+          "title": "Cấu trúc của bài Email/Letter:",
+          "parts": [
+            {
+              "section": "Phần mở đầu",
+              "items": [
+                "Mail người nhận: abc@riid.com",
+                "Mail người gửi: xyz@riid.com",
+                "Ngày gửi: May 15",
+                "Chủ đề: RE: Summer workshop schedule",
+                "Lời chào"
+              ]
+            },
+            {
+              "section": "Phần thân",
+              "items": [
+                "Chủ đề/Mục đích gửi thư",
+                "Thông tin chi tiết",
+                "Điều khoản cần truyền đạt",
+                "Các vấn đề",
+                "Tài liệu đính kèm ~ Thông tin cho các tài liệu liên quan"
+              ]
+            },
+            {
+              "section": "Phần cuối",
+              "items": [
+                "Lời đề nghị, yêu cầu về gửi tài liệu liên quan",
+                "Thông tin cần chú ý",
+                "Các hành động trong tương lai",
+                "Thông tin của người gửi"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Các loại câu hỏi xuất hiện",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "2.1. Hỏi mục đích email/letter",
+          "content": [
+            {
+              "type": "text",
+              "content": "Nội dung có thể suy ra từ phần đầu của email (chú ý tiêu đề, người gửi). Có thể xuất hiện trong phần nội dung email."
+            },
+            {
+              "type": "common-content",
+              "title": "Các nội dung thường gặp:",
+              "categories": [
+                {
+                  "topic": "Sự thăng tiến",
+                  "phrases": [
+                    "Be promoted to + chức danh",
+                    "Get a promotion + chức danh",
+                    "Take over as + chức danh",
+                    "Assume the position of + chức danh",
+                    "Accept the position of + chức danh"
+                  ]
+                },
+                {
+                  "topic": "Tiệc chào mừng, chia tay",
+                  "phrases": [
+                    "To acknowledge ~ hard work/contribution",
+                    "To celebrate - accomplishment",
+                    "To hold a farewell/retirement party"
+                  ]
+                },
+                {
+                  "topic": "Sự kiện của công ty/đoàn thể",
+                  "phrases": [
+                    "To celebrate - accomplishments",
+                    "A corporate event",
+                    "A company outing",
+                    "Award ceremony",
+                    "To celebrate the anniversary"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.2. Hỏi về nhân vật",
+          "content": [
+            {
+              "type": "question-patterns",
+              "patterns": [
+                "To whom is the letter most likely sent?",
+                "Who is Dominic Halls?"
+              ]
+            },
+            {
+              "type": "tips",
+              "items": [
+                "Chú ý đến các phần thông tin chỉ người như người gửi, người nhận",
+                "Tìm kiếm các tên riêng trong bài và tìm manh mối thông tin xung quanh",
+                "Thường tên sẽ đi kèm với vị trí, chức vụ công việc tương ứng"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.3. Hỏi về các tệp đính kèm",
+          "content": [
+            {
+              "type": "text",
+              "content": "Nội dung nằm ở phần thân, thường xuất hiện các từ enclosed, attached, included."
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.4. Hỏi về các hành động tương lai",
+          "content": [
+            {
+              "type": "text",
+              "content": "Nằm ở phần cuối thư. Chú ý các cấu trúc tương lai, cấu trúc yêu cầu, đề nghị."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Bài đọc mẫu",
+      "content": [
+        {
+          "type": "example",
+          "passage": {
+            "type": "letter",
+            "sender": {
+              "name": "Barbara Dardina",
+              "address": "416 Elm Drive\nFairview, TX 74111"
+            },
+            "recipient": {
+              "name": "Bikes for Kids Company",
+              "address": "5582 Westerland Rd.\nSiphon, IN 33749"
+            },
+            "date": "April 17, 2009",
+            "salutation": "Dear Customer Service Representative:",
+            "body": "I purchased one of your company's Toddler Bikes for my child. However, when I opened the box to begin putting the bike together, I discovered that several of the parts were missing. Also, the instructions booklet appears to be incomplete, because the only directions are in Spanish.\n\nI would appreciate it if your company could send me replacements for the parts that are missing as well as an English-language copy of the assembly directions. I have included my sales receipt and a list of the missing parts with this letter.",
+            "closing": "Sincerely,",
+            "signature": "Barbara Dardina"
+          },
+          "annotations": [
+            {
+              "number": 1,
+              "label": "Tên và địa chỉ của người gửi",
+              "note": "Phần này được viết ở trên cùng và thường được lược bỏ."
+            },
+            {
+              "number": 2,
+              "label": "Ngày tháng viết thư"
+            },
+            {
+              "number": 3,
+              "label": "Tên và địa chỉ của người nhận",
+              "note": "Phần này được viết bên dưới thông tin về người gửi"
+            },
+            {
+              "number": 4,
+              "label": "Lời chào và tên người nhận",
+              "note": "Có thể kèm theo thông tin về chức vụ, công việc"
+            },
+            {
+              "number": 5,
+              "label": "Lý do, mục đích gửi thư",
+              "note": "Trình bày sự việc đã xảy ra trước đó và những mong muốn của người gửi"
+            },
+            {
+              "number": 6,
+              "label": "Phần kết thúc thư",
+              "note": "Sử dụng những từ như Sincerely (yours), Yours (truly), (Best) regards… và tên người gửi"
+            }
+          ],
+          "questions": [
+            {
+              "type": "general",
+              "title": "Câu hỏi về thông tin khái quát",
+              "examples": [
+                "Why did Ms. Dardina send this letter?",
+                "What is the main purpose of this letter?",
+                "What problem is discussed in this letter?"
+              ]
+            },
+            {
+              "type": "specific",
+              "title": "Câu hỏi về thông tin cụ thể",
+              "examples": [
+                "What does Ms. Dardina want the company to do?",
+                "Which of these is NOT a problem mentioned in this letter?",
+                "What accompanied this letter?"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Từ vựng thường gặp",
+      "content": [
+        {
+          "type": "vocabulary-list",
+          "categories": [
+            {
+              "title": "Kinh doanh & Phát triển",
+              "words": [
+                {
+                  "word": "Expand",
+                  "meaning": "mở rộng"
+                },
+                {
+                  "word": "Establish",
+                  "meaning": "thiết lập"
+                },
+                {
+                  "word": "Acquire",
+                  "meaning": "giành được, thu được"
+                },
+                {
+                  "word": "Overseas",
+                  "meaning": "ở nước ngoài, hải ngoại"
+                },
+                {
+                  "word": "Bid",
+                  "meaning": "bỏ thầu"
+                },
+                {
+                  "word": "Implement",
+                  "meaning": "thực hiện"
+                },
+                {
+                  "word": "Overcome",
+                  "meaning": "vượt qua"
+                },
+                {
+                  "word": "Profitable",
+                  "meaning": "có lợi, có lãi"
+                }
+              ]
+            },
+            {
+              "title": "Xu hướng & Thảo luận",
+              "words": [
+                {
+                  "word": "Fast growing industry",
+                  "meaning": "các ngành công nghiệp đang phát triển nhanh"
+                },
+                {
+                  "word": "Soar",
+                  "meaning": "tăng vọt"
+                },
+                {
+                  "word": "Steadily",
+                  "meaning": "đều đặn"
+                },
+                {
+                  "word": "Rewarding discussion",
+                  "meaning": "buổi thảo luận có chất lượng"
+                },
+                {
+                  "word": "Mutually acceptable",
+                  "meaning": "thỏa đáng ở cả đôi bên"
+                },
+                {
+                  "word": "Agreement",
+                  "meaning": "sự đồng ý, sự thỏa thuận"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

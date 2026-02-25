@@ -5,65 +5,533 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vũ Văn Thông - Cùng Học TOEIC</title>
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/responsive-improvements.css">
+    <link rel="stylesheet" href="css/donation-modal.css">
+    <style>
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
+        }
+
+        /* Header */
+        .hero-header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 48px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo-text h1 {
+            color: white;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 5px 0 0 0;
+            font-size: 14px;
+        }
+
+        .hero-nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-nav-btn:hover {
+            background: white;
+            color: #667eea;
+            border-color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hero Content */
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-title {
+            color: white;
+            font-size: 56px;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 24px;
+            margin: 0 0 40px 0;
+            text-align: center;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            color: white;
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            margin: 5px 0 0 0;
+        }
+
+        /* Mode Cards */
+        .mode-cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .mode-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mode-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .mode-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .mode-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .mode-card-icon {
+            font-size: 72px;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .mode-card:hover .mode-card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .mode-card h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .mode-card p {
+            color: #7f8c8d;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 25px 0;
+        }
+
+        .mode-card-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mode-card-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Features Section */
+        .features-section {
+            background: #f8f9fa;
+            padding: 80px 20px;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-title {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+
+        .features-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 18px;
+            margin: 0 0 60px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h4 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin: 0 0 15px 0;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #7f8c8d;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .mode-cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .logo-text h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Intro Screen -->
-    <div class="intro-screen" id="introScreen">
-        <div class="intro-content">
-            <div class="intro-logo">📚</div>
-            <h1 class="intro-title fade-in-1">Vũ Văn Thông</h1>
-            <h2 class="intro-subtitle fade-in-2">Cùng Học TOEIC</h2>
-            <div class="intro-tagline fade-in-3">Chinh phục TOEIC một cách dễ dàng</div>
-            <div class="loading-dots fade-in-4">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Header -->
+        <div class="hero-header">
+            <div class="logo-section">
+                <div class="logo-icon">📚</div>
+                <div class="logo-text">
+                    <h1>Vũ Văn Thông</h1>
+                    <p>Cùng Học TOEIC</p>
+                </div>
+            </div>
+            <div class="hero-nav">
+                <button class="hero-nav-btn" onclick="window.location.href='vocabulary.html'">📖 Từ vựng</button>
+                <button class="hero-nav-btn" onclick="window.location.href='grammar.html'">📝 Ngữ pháp</button>
+                <button class="hero-nav-btn" onclick="window.location.href='parts.html'">🎯 Parts</button>
+                <button class="donate-btn" onclick="if(typeof donationModal !== 'undefined') donationModal.forceShow()" style="margin-left: 10px;">
+                    💝 Ủng hộ
+                </button>
             </div>
         </div>
-    </div>
 
-    <!-- Mode Selection Screen -->
-    <div class="mode-selection-screen hidden" id="modeSelectionScreen">
-        <div class="mode-selection-content">
-            <h1 class="selection-title">Chọn chế độ học</h1>
-            <p class="selection-subtitle">Bạn muốn học gì hôm nay?</p>
-            <div class="mode-cards">
-                <div class="mode-card" onclick="navigateToMode('vocabulary')">
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">Chinh Phục TOEIC Dễ Dàng</h1>
+            <p class="hero-subtitle">Học từ vựng, ngữ pháp và luyện tập 7 Part TOEIC hiệu quả</p>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <p class="stat-number">1200+</p>
+                    <p class="stat-label">Từ vựng TOEIC</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-number">17</p>
+                    <p class="stat-label">Chủ đề ngữ pháp</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-number">7</p>
+                    <p class="stat-label">Part TOEIC</p>
+                </div>
+            </div>
+
+            <div class="mode-cards-container">
+                <div class="mode-card" onclick="window.location.href='vocabulary.html'">
                     <div class="mode-card-icon">📖</div>
                     <h3>Học Từ Vựng</h3>
-                    <p>Flashcard, Quiz, Typing Practice với 1200+ từ TOEIC</p>
-                    <button class="mode-card-btn">Bắt đầu</button>
+                    <p>Flashcard, Quiz, Typing Practice với 1200+ từ TOEIC thiết yếu</p>
+                    <button class="mode-card-btn">Bắt đầu học →</button>
                 </div>
-                <div class="mode-card" onclick="navigateToMode('grammar')">
+
+                <div class="mode-card" onclick="window.location.href='grammar.html'">
                     <div class="mode-card-icon">📝</div>
                     <h3>Học Ngữ Pháp</h3>
-                    <p>Lý thuyết, Bài tập, Ví dụ thực tế theo chủ đề</p>
-                    <button class="mode-card-btn">Bắt đầu</button>
+                    <p>17 chủ đề ngữ pháp với lý thuyết, ví dụ và bài tập thực hành</p>
+                    <button class="mode-card-btn">Bắt đầu học →</button>
                 </div>
-                <div class="mode-card" onclick="navigateToMode('parts')">
+
+                <div class="mode-card" onclick="window.location.href='parts.html'">
                     <div class="mode-card-icon">🎯</div>
                     <h3>Ôn Tập Các Part</h3>
-                    <p>Lý thuyết và kỹ thuật làm bài cho 7 Part TOEIC</p>
-                    <button class="mode-card-btn">Bắt đầu</button>
+                    <p>Lý thuyết và kỹ thuật làm bài cho cả 7 Part TOEIC</p>
+                    <button class="mode-card-btn">Bắt đầu học →</button>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        // Show intro then mode selection
-        setTimeout(() => {
-            document.getElementById('introScreen').classList.add('fade-out');
-            setTimeout(() => {
-                document.getElementById('introScreen').style.display = 'none';
-                document.getElementById('modeSelectionScreen').classList.remove('hidden');
-                document.getElementById('modeSelectionScreen').classList.add('fade-in-app');
-            }, 600);
-        }, 750);
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features-container">
+            <h2 class="features-title">Tại Sao Chọn Chúng Tôi?</h2>
+            <p class="features-subtitle">Những tính năng nổi bật giúp bạn học TOEIC hiệu quả</p>
 
-        function navigateToMode(mode) {
-            window.location.href = `${mode}.html`;
-        }
-    </script>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Học Theo Mục Tiêu</h4>
+                    <p>Chương trình học được thiết kế theo từng mục tiêu cụ thể, giúp bạn tập trung vào những gì quan trọng nhất.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4>Theo Dõi Tiến Độ</h4>
+                    <p>Hệ thống theo dõi tiến độ học tập chi tiết, giúp bạn biết mình đã học được bao nhiêu và cần cải thiện ở đâu.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h4>Học Thông Minh</h4>
+                    <p>Phương pháp học tập khoa học với flashcard, quiz và typing practice giúp ghi nhớ lâu hơn.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h4>Giao Diện Thân Thiện</h4>
+                    <p>Thiết kế đẹp mắt, dễ sử dụng, tạo trải nghiệm học tập thoải mái và hiệu quả.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h4>Học Mọi Lúc Mọi Nơi</h4>
+                    <p>Tương thích với mọi thiết bị, bạn có thể học bất cứ khi nào và ở đâu bạn muốn.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h4>Cập Nhật Liên Tục</h4>
+                    <p>Nội dung được cập nhật thường xuyên theo xu hướng đề thi TOEIC mới nhất.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📚 Về Chúng Tôi</h3>
+                    <p>Nền tảng học TOEIC trực tuyến với hơn 1200+ từ vựng, 17 chủ đề ngữ pháp và lý thuyết đầy đủ cho 7 Part TOEIC.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/thong.vu.871003" target="_blank" class="social-btn facebook" title="Facebook">📘</a>
+                        <a href="https://github.com/vanity1412" target="_blank" class="social-btn github" title="GitHub">💻</a>
+                        <a href="tel:0968046024" class="social-btn phone" title="Điện thoại">📞</a>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📞</span>
+                            <a href="tel:0968046024">0968 046 024</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>👤</span>
+                            <span>Vũ Văn Thông</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>🔗 Liên Kết Nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="vocabulary.html">📖 Học Từ Vựng</a></li>
+                        <li><a href="grammar.html">📝 Học Ngữ Pháp</a></li>
+                        <li><a href="parts.html">🎯 Ôn Tập Các Part</a></li>
+                        <li><a href="#" onclick="alert('Tính năng đang phát triển!')">📊 Thống Kê Học Tập</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>📈 Thống Kê</h3>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <p class="stat-number">1200+</p>
+                            <p class="stat-label">Từ vựng</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number">17</p>
+                            <p class="stat-label">Chủ đề ngữ pháp</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number">7</p>
+                            <p class="stat-label">Part TOEIC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Vũ Văn Thông - Cùng Học TOEIC. Made with <span class="footer-heart">❤️</span></p>
+                <div class="footer-credits">
+                    <a href="#">Điều khoản sử dụng</a>
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/donation-modal.js"></script>
 </body>
 </html>

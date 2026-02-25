@@ -1,4 +1,336 @@
 {
   "title": "Excerpt from a meeting - Trích dẫn từ buổi họp",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Dạng bài này là đoạn trích từ một cuộc họp, hội thảo hoặc buổi thảo luận nhóm. Người nói thường là một thành viên trong nhóm đang trình bày ý kiến, báo cáo tiến độ, hoặc thảo luận về một vấn đề cụ thể."
+        },
+        {
+          "type": "text",
+          "content": "Đặc điểm của dạng bài này là ngôn ngữ mang tính tương tác, có thể đề cập đến ý kiến của người khác, và thường có các cụm từ chuyển tiếp giữa các ý."
+        }
+      ]
+    },
+    {
+      "heading": "2. Cấu trúc thông tin thường gặp",
+      "content": [
+        {
+          "type": "structure",
+          "title": "Bố cục điển hình của đoạn trích cuộc họp:",
+          "parts": [
+            {
+              "section": "Phần mở đầu",
+              "description": "Giới thiệu chủ đề hoặc vấn đề đang thảo luận",
+              "items": [
+                "Nhắc lại mục đích cuộc họp",
+                "Đề cập đến vấn đề cần giải quyết",
+                "Tham chiếu đến cuộc họp trước hoặc thông tin đã biết"
+              ]
+            },
+            {
+              "section": "Phần giữa",
+              "description": "Trình bày chi tiết, ý kiến, hoặc đề xuất",
+              "items": [
+                "Báo cáo tiến độ công việc",
+                "Đưa ra ý kiến, đề xuất giải pháp",
+                "Thảo luận về các lựa chọn khác nhau",
+                "Đề cập đến số liệu, thời gian cụ thể"
+              ]
+            },
+            {
+              "section": "Phần kết",
+              "description": "Kết luận và hành động tiếp theo",
+              "items": [
+                "Tóm tắt các điểm chính",
+                "Đưa ra quyết định hoặc kế hoạch hành động",
+                "Phân công nhiệm vụ",
+                "Đề cập đến cuộc họp tiếp theo"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Các dạng câu hỏi thường gặp",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "3.1. Câu hỏi về chủ đề cuộc họp",
+          "content": [
+            {
+              "type": "question-patterns",
+              "title": "Các mẫu câu hỏi:",
+              "patterns": [
+                "What is the meeting mainly about?",
+                "What is being discussed?",
+                "What is the purpose of the meeting?"
+              ]
+            },
+            {
+              "type": "tips",
+              "title": "Cách làm:",
+              "items": [
+                "Chú ý nghe phần mở đầu của bài nói",
+                "Tìm các từ khóa về chủ đề chính",
+                "Loại trừ các đáp án chỉ đề cập đến chi tiết nhỏ"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "3.2. Câu hỏi về vấn đề/thách thức",
+          "content": [
+            {
+              "type": "question-patterns",
+              "title": "Các mẫu câu hỏi:",
+              "patterns": [
+                "What problem is mentioned?",
+                "What issue does the speaker discuss?",
+                "What challenge is the team facing?"
+              ]
+            },
+            {
+              "type": "tips",
+              "title": "Cách làm:",
+              "items": [
+                "Lắng nghe các từ khóa về vấn đề: problem, issue, challenge, concern, difficulty",
+                "Chú ý các cụm từ phủ định hoặc thể hiện khó khăn",
+                "Thông tin thường ở đầu hoặc giữa bài"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "3.3. Câu hỏi về đề xuất/giải pháp",
+          "content": [
+            {
+              "type": "question-patterns",
+              "title": "Các mẫu câu hỏi:",
+              "patterns": [
+                "What does the speaker suggest?",
+                "What solution is proposed?",
+                "What recommendation does the speaker make?"
+              ]
+            },
+            {
+              "type": "tips",
+              "title": "Cách làm:",
+              "items": [
+                "Chú ý các động từ đề xuất: suggest, propose, recommend, should, could",
+                "Thông tin thường ở giữa hoặc cuối bài",
+                "Có thể có nhiều đề xuất, chọn đáp án phù hợp với câu hỏi"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "3.4. Câu hỏi về hành động tiếp theo",
+          "content": [
+            {
+              "type": "question-patterns",
+              "title": "Các mẫu câu hỏi:",
+              "patterns": [
+                "What will the listeners probably do next?",
+                "What does the speaker ask the listeners to do?",
+                "What action will be taken?"
+              ]
+            },
+            {
+              "type": "tips",
+              "title": "Cách làm:",
+              "items": [
+                "Chú ý nghe phần cuối của bài nói",
+                "Tìm các động từ chỉ hành động tương lai: will, going to, plan to, need to",
+                "Chú ý các yêu cầu: please, I'd like you to, make sure to"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "3.5. Câu hỏi về chi tiết cụ thể",
+          "content": [
+            {
+              "type": "question-patterns",
+              "title": "Các mẫu câu hỏi:",
+              "patterns": [
+                "When will...?",
+                "How much/many...?",
+                "Who is responsible for...?",
+                "Where will...?"
+              ]
+            },
+            {
+              "type": "tips",
+              "title": "Cách làm:",
+              "items": [
+                "Xác định từ khóa trong câu hỏi (thời gian, số lượng, người, địa điểm)",
+                "Nghe kỹ phần có chứa từ khóa đó",
+                "Cẩn thận với các con số và thời gian tương tự"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Từ vựng và cụm từ thường gặp",
+      "content": [
+        {
+          "type": "vocabulary-list",
+          "categories": [
+            {
+              "title": "Mở đầu cuộc họp:",
+              "words": [
+                { "word": "As you know", "meaning": "Như các bạn đã biết" },
+                { "word": "Let's get started", "meaning": "Chúng ta bắt đầu nào" },
+                { "word": "The purpose of this meeting is...", "meaning": "Mục đích của cuộc họp này là..." },
+                { "word": "We're here to discuss...", "meaning": "Chúng ta ở đây để thảo luận về..." },
+                { "word": "I'd like to talk about...", "meaning": "Tôi muốn nói về..." }
+              ]
+            },
+            {
+              "title": "Trình bày ý kiến:",
+              "words": [
+                { "word": "In my opinion", "meaning": "Theo ý kiến của tôi" },
+                { "word": "I think/believe that...", "meaning": "Tôi nghĩ/tin rằng..." },
+                { "word": "It seems to me that...", "meaning": "Có vẻ như..." },
+                { "word": "From my perspective", "meaning": "Từ góc nhìn của tôi" },
+                { "word": "I'd like to suggest...", "meaning": "Tôi muốn đề xuất..." }
+              ]
+            },
+            {
+              "title": "Báo cáo tiến độ:",
+              "words": [
+                { "word": "We've completed...", "meaning": "Chúng tôi đã hoàn thành..." },
+                { "word": "We're currently working on...", "meaning": "Chúng tôi hiện đang làm việc về..." },
+                { "word": "We're making progress on...", "meaning": "Chúng tôi đang tiến triển về..." },
+                { "word": "We've run into some issues with...", "meaning": "Chúng tôi gặp một số vấn đề với..." },
+                { "word": "We're on schedule/behind schedule", "meaning": "Chúng tôi đúng tiến độ/chậm tiến độ" }
+              ]
+            },
+            {
+              "title": "Đề xuất giải pháp:",
+              "words": [
+                { "word": "I suggest/propose that...", "meaning": "Tôi đề xuất rằng..." },
+                { "word": "We should/could...", "meaning": "Chúng ta nên/có thể..." },
+                { "word": "One option would be to...", "meaning": "Một lựa chọn là..." },
+                { "word": "Why don't we...?", "meaning": "Tại sao chúng ta không...?" },
+                { "word": "It might be a good idea to...", "meaning": "Có thể là ý tưởng tốt để..." }
+              ]
+            },
+            {
+              "title": "Kết thúc và hành động:",
+              "words": [
+                { "word": "To sum up", "meaning": "Tóm lại" },
+                { "word": "In conclusion", "meaning": "Kết luận" },
+                { "word": "Let's move forward with...", "meaning": "Hãy tiến hành với..." },
+                { "word": "Please make sure to...", "meaning": "Hãy chắc chắn rằng..." },
+                { "word": "We'll meet again next...", "meaning": "Chúng ta sẽ họp lại vào..." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "5. Chiến lược làm bài",
+      "content": [
+        {
+          "type": "list",
+          "title": "Các bước làm bài hiệu quả:",
+          "items": [
+            "<strong>Bước 1:</strong> Đọc nhanh 3 câu hỏi để biết cần nghe thông tin gì",
+            "<strong>Bước 2:</strong> Chú ý nghe phần mở đầu để xác định chủ đề cuộc họp",
+            "<strong>Bước 3:</strong> Nghe theo thứ tự và chọn đáp án cho từng câu hỏi",
+            "<strong>Bước 4:</strong> Đặc biệt chú ý phần cuối về hành động tiếp theo"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Lưu ý quan trọng:",
+          "content": "• Thông tin thường xuất hiện theo thứ tự câu hỏi<br>• Chú ý các từ tín hiệu chuyển ý: first, next, also, finally, however, but<br>• Đừng bỏ lỡ phần cuối vì thường có thông tin về hành động tiếp theo<br>• Cẩn thận với các con số, thời gian được đề cập nhiều lần"
+        }
+      ]
+    },
+    {
+      "heading": "6. Ví dụ minh họa",
+      "content": [
+        {
+          "type": "example",
+          "title": "Ví dụ 1: Cuộc họp về dự án",
+          "passage": {
+            "type": "Meeting excerpt",
+            "content": "Good morning, everyone. As you know, we're here today to discuss the progress of our new website redesign project. I'm pleased to report that we've completed the initial design phase ahead of schedule. However, we've encountered some technical issues with the mobile version. Our IT team is working on resolving these problems, but it may delay our launch by about two weeks. I'd like to suggest that we use this extra time to conduct more user testing. This will help us ensure that the final product meets our customers' needs. Please send me your feedback by Friday, and we'll finalize our plan at next week's meeting."
+          },
+          "question": {
+            "text": "What does the speaker suggest doing?",
+            "translation": "Người nói đề xuất làm gì?",
+            "options": [
+              {
+                "key": "A",
+                "text": "Hiring more IT staff",
+                "translation": "Thuê thêm nhân viên IT"
+              },
+              {
+                "key": "B",
+                "text": "Conducting more user testing",
+                "translation": "Tiến hành thêm kiểm tra người dùng",
+                "correct": true
+              },
+              {
+                "key": "C",
+                "text": "Postponing the project indefinitely",
+                "translation": "Hoãn dự án vô thời hạn"
+              },
+              {
+                "key": "D",
+                "text": "Changing the design completely",
+                "translation": "Thay đổi hoàn toàn thiết kế"
+              }
+            ]
+          },
+          "solution": {
+            "steps": [
+              {
+                "step": "Xác định từ khóa",
+                "content": "Câu hỏi hỏi về đề xuất (suggest) của người nói."
+              },
+              {
+                "step": "Tìm thông tin trong bài",
+                "content": "Người nói nói: \"I'd like to suggest that we use this extra time to conduct more user testing.\" (Tôi muốn đề xuất rằng chúng ta sử dụng thời gian thêm này để tiến hành thêm kiểm tra người dùng.)"
+              },
+              {
+                "step": "Chọn đáp án",
+                "content": "Đáp án đúng là B - Conducting more user testing."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt",
+      "content": [
+        {
+          "type": "list",
+          "title": "Những điểm cần nhớ:",
+          "items": [
+            "Dạng bài trích đoạn cuộc họp thường có cấu trúc: mở đầu → nội dung chính → kết luận/hành động",
+            "Chú ý các từ khóa về vấn đề, đề xuất, và hành động tiếp theo",
+            "Nghe theo thứ tự thông tin, không bỏ lỡ phần cuối",
+            "Cẩn thận với các con số và thời gian được nhắc đến",
+            "Luyện tập nhận diện các cụm từ thường dùng trong cuộc họp"
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,4 +1,269 @@
 {
   "title": "Câu hỏi về chi tiết",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi chi tiết là dạng câu hỏi trọng tâm và xuất hiện trong mọi bài nghe Part 4. Thường là câu hỏi dạng 5W1H (What, When, Where, Who, Why, How). Phổ biến nhất là câu hỏi What."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Thông tin đáp án không có vị trí cố định. Có thể nằm ở đầu, giữa hoặc cuối bài nói tùy câu hỏi."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Detail question = câu hỏi chi tiết, hỏi thông tin cụ thể trong bài"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Không đoán vị trí, phải nghe toàn bài theo thứ tự câu hỏi<br>• Luôn xác định từ khóa trong câu hỏi trước khi nghe"
+        }
+      ]
+    },
+    {
+      "heading": "2. Cách làm câu hỏi chi tiết",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>2.1. Xác định KEYWORDS trong câu hỏi</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Keywords thường là: Tên riêng, Thời gian, Con số, Địa điểm, Động từ chính."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Ghi nhớ keyword trước khi nghe. Dùng keyword để phát hiện vị trí thông tin trong bài."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Keyword = từ khóa giúp tìm thông tin trong bài nghe"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Keyword càng cụ thể, càng dễ bắt đáp án<br>• Đừng cố nhớ toàn câu hỏi, chỉ cần nhớ từ khóa"
+        },
+        {
+          "type": "text",
+          "content": "<strong>2.2. Xác định VỊ TRÍ THÔNG TIN</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Chi tiết thường xuất hiện sau phần chủ đề/mục đích. Người nói sẽ cung cấp thông tin cụ thể sau khi giới thiệu chung."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Tập trung nghe phần nội dung sau Introduction. Nghe theo thứ tự câu hỏi (câu 1 → câu 2 → câu 3)."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Introduction = phần mở đầu | Main content = phần nội dung chính"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nếu đã qua phần chủ đề → chuẩn bị nghe chi tiết<br>• Không bỏ lỡ thông tin ở cuối bài"
+        },
+        {
+          "type": "text",
+          "content": "<strong>2.3. Nhận diện TỪ NỐI và DẤU HIỆU CHUYỂN Ý</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Người nói dùng từ nối để chuyển ý hoặc thêm thông tin."
+        },
+        {
+          "type": "list",
+          "title": "Các từ nối quan trọng:",
+          "items": [
+            "However, unfortunately, actually",
+            "In addition, as well as",
+            "By the way, I'm afraid, I'm sorry"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Transition words = từ nối chuyển ý"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Sau từ nối thường là thông tin mới hoặc thông tin quan trọng<br>• Cẩn thận với thông tin bị đảo chiều"
+        }
+      ]
+    },
+    {
+      "heading": "3. Các dạng câu hỏi chi tiết phổ biến",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>3.1. Câu hỏi về SỰ VIỆC / HÀNH ĐỘNG</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Hỏi về sự kiện đang diễn ra, kế hoạch, hành động cụ thể."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Tìm động từ chính chỉ hành động. Xác định thời điểm xảy ra."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Event/Action = sự kiện/hành động"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nghe động từ chính và trạng từ thời gian<br>• Phân biệt hiện tại – tương lai – quá khứ"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3.2. Câu hỏi về SỰ VẬT / THÔNG TIN CỤ THỂ</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Hỏi về ưu đãi, sản phẩm, vật thể, con số, chi tiết cụ thể."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Tập trung vào danh từ và con số. Chú ý thời điểm hoặc điều kiện (first day, tomorrow, next week)."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Specific information = thông tin cụ thể"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Con số và danh từ rất hay bị bẫy<br>• Nghe kỹ phần cuối bài vì chi tiết thường nằm ở cuối"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3.3. Câu hỏi về Ý KIẾN (OPINION)</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Hỏi người nói nhận xét hoặc đánh giá về ai/cái gì."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Nghe tính từ mô tả, nhận xét. Chú ý câu giải thích lý do."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Opinion = ý kiến, nhận xét"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Ý kiến thường đi sau câu giải thích hoặc đề xuất<br>• Cẩn thận với thông tin gián tiếp (không nói thẳng)"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3.4. Câu hỏi về CÁCH THỨC (HOW)</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Hỏi cách chứng minh, cách làm, cách thấy giá trị, cách thực hiện."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Tìm cụm từ chỉ phương tiện, cách thức, minh chứng."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Method = cách thức, phương pháp"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Cách thức thường được mô tả bằng ví dụ hoặc minh chứng<br>• Chú ý giới từ và cụm chỉ phương tiện"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3.5. Câu hỏi về DANH TÍNH NHÂN VẬT (WHO)</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Hỏi một nhân vật cụ thể là ai hoặc vai trò gì."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Nghe phần giới thiệu tên. Xác định vai trò, chức danh, chức năng."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Identity = danh tính | Role = vai trò"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Tên riêng luôn là keyword cực mạnh<br>• Sau tên thường là chức danh hoặc vai trò"
+        }
+      ]
+    },
+    {
+      "heading": "4. Lưu ý quan trọng khi làm câu hỏi chi tiết",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>4.1. Paraphrase (Diễn đạt lại)</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Đáp án thường không giống từ trong bài nghe. Thông tin được diễn đạt bằng từ đồng nghĩa."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Học synonym và collocation. Nhận diện ý tương đương."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Paraphrase = diễn đạt lại cùng một ý bằng cách khác"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Không tìm từ giống 100%<br>• Tìm ý nghĩa tương đương"
+        },
+        {
+          "type": "text",
+          "content": "<strong>4.2. Bẫy thông tin nhiễu</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Có nhiều chi tiết phụ không liên quan đến câu hỏi."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Chỉ chọn thông tin liên quan trực tiếp đến keyword. Bỏ qua chi tiết phụ."
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Keyword là \"la bàn\" tìm đáp án<br>• Nghe sai keyword → chọn sai đáp án"
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt mẹo học nhanh",
+      "content": [
+        {
+          "type": "list",
+          "title": "🧠 Các mẹo quan trọng:",
+          "items": [
+            "Câu hỏi chi tiết → nghe toàn bài theo thứ tự",
+            "Luôn xác định keyword trước khi nghe",
+            "Chú ý từ nối và dấu hiệu chuyển ý",
+            "Học paraphrase để tránh bẫy",
+            "Đừng đoán vị trí thông tin"
+          ]
+        }
+      ]
+    }
+  ]
 }

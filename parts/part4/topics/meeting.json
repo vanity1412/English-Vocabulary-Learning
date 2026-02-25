@@ -1,0 +1,161 @@
+{
+  "title": "Excerpt from a Meeting - Trích dẫn từ buổi họp",
+  "sections": [
+    {
+      "heading": "1. Lý thuyết chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>🎯 Mục đích của cuộc họp</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Tuyển dụng, đào tạo nhân viên",
+            "Thực hiện hoặc thay đổi chính sách nội bộ",
+            "Phân tích, triển khai chiến lược",
+            "Khảo sát khách hàng, phản hồi dịch vụ"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>👥 Mối quan hệ người nói – người nghe</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Người điều hành cuộc họp → Người tham gia họp",
+            "Manager / Supervisor → Staff / Team members"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>🔗 Mạch nói chuẩn trong đoạn họp</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Bước 1: Chào hỏi</strong> → Mở đầu cuộc họp",
+            "<strong>Bước 2: Giới thiệu chủ đề cuộc họp</strong> → Agenda / Topic / Purpose",
+            "<strong>Bước 3: Nội dung chi tiết</strong> → Thông tin, vấn đề, phân tích, kế hoạch",
+            "<strong>Bước 4: Yêu cầu</strong> → Đề nghị, chỉ đạo, giao nhiệm vụ",
+            "<strong>Bước 5: Hành động tiếp theo</strong> → Quyết định sau họp, lịch họp tiếp theo"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Quy tắc nhận diện dạng Meeting",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>✅ 1. Dấu hiệu nhận biết cuộc họp</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "agenda",
+            "meeting",
+            "discussion",
+            "decision",
+            "management",
+            "proposal"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Lưu ý",
+          "content": "• Nghe các từ này → chắc chắn là Meeting"
+        },
+        {
+          "type": "text",
+          "content": "<strong>✅ 2. Vị trí thông tin quan trọng</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Chủ đề họp:</strong> Đầu đoạn",
+            "<strong>Thông tin chi tiết:</strong> Phần giữa",
+            "<strong>Yêu cầu / nhiệm vụ:</strong> Sau phần nội dung",
+            "<strong>Hành động tiếp theo:</strong> Cuối đoạn"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Bản dịch cụm từ quan trọng",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>🔹 Từ vựng họp</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>agenda:</strong> chương trình nghị sự",
+            "<strong>meeting:</strong> cuộc họp",
+            "<strong>management:</strong> ban quản lý",
+            "<strong>proposal:</strong> đề xuất",
+            "<strong>decision:</strong> quyết định",
+            "<strong>budget reduction:</strong> cắt giảm ngân sách",
+            "<strong>equipment replacement:</strong> thay thế thiết bị",
+            "<strong>recommendation:</strong> đề xuất, kiến nghị",
+            "<strong>final decision:</strong> quyết định cuối cùng"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>🔹 Cụm từ thường gặp</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>The final item on our agenda:</strong> Mục cuối cùng trong chương trình họp",
+            "<strong>Let's end there:</strong> Kết thúc tại đây",
+            "<strong>Please send me your recommendations:</strong> Hãy gửi đề xuất cho tôi",
+            "<strong>I'll decide tomorrow:</strong> Tôi sẽ quyết định vào ngày mai"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Quy tắc nghe trong dạng Meeting",
+      "content": [
+        {
+          "type": "list",
+          "title": "✅ Các quy tắc quan trọng:",
+          "items": [
+            "<strong>1. Câu đầu = Chủ đề cuộc họp</strong><br>→ Xác định agenda là gì",
+            "<strong>2. Nghe phần phân tích vấn đề</strong><br>→ Nguyên nhân, thay đổi, kế hoạch",
+            "<strong>3. Nghe phần yêu cầu</strong><br>Dấu hiệu: I want you to…, Please…, You need to…",
+            "<strong>4. Nghe hành động tiếp theo</strong><br>Dấu hiệu: I'll decide…, We'll meet again…, Let's…"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "5. Mẹo ghi nhớ siêu nhanh",
+      "content": [
+        {
+          "type": "tip",
+          "title": "🧠 Công thức vàng dạng Meeting",
+          "content": "Greeting → Agenda → Details → Request → Next Action"
+        },
+        {
+          "type": "note",
+          "content": "<strong>⚠️ Tip TOEIC quan trọng:</strong><br>Nếu nghe management, budget, equipment, policy, decision → 99% là Excerpt from a Meeting"
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt siêu ngắn dạng thi",
+      "content": [
+        {
+          "type": "tip",
+          "title": "Excerpt from a Meeting",
+          "content": "Xác định agenda đầu đoạn + bắt chi tiết giữa đoạn + tìm yêu cầu và hành động tiếp theo cuối đoạn."
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,214 @@
 {
   "title": "Announcement / Notice - Thông báo",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Thông báo thường được đưa dưới dạng: instruction, notice, announcement. Cụ thể:"
+        },
+        {
+          "type": "subsection",
+          "title": "Các loại thông báo",
+          "items": [
+            {
+              "type": "definition",
+              "term": "Notice (thông báo)",
+              "definition": "Là văn bản được phổ biến rộng rãi cho mọi người nhằm truyền đạt thông tin nào đó. Thông báo có nội dung rất đa dạng, nó không chỉ đề cập đến những việc trong nội bộ một tổ chức mà còn đề cập đến những vấn đề khác trong cuộc sống hàng ngày."
+            },
+            {
+              "type": "definition",
+              "term": "Memo (thư báo)",
+              "definition": "Không phải là giấy tờ ghi chép công việc như chúng ta thường nghĩ mà là văn bản chính thức truyền đạt chỉ thị về công việc hoặc lời nhắc nhở về điều gì đó và được lưu hành trong nội bộ một tổ chức (chẳng hạn trong một công ty). Tương tự thư tín và thư điện tử, thư báo cũng được trình bày theo trình tự: người nhận, người gửi, chủ đề, nội dung chính và thường liên quan đến việc kinh doanh."
+            },
+            {
+              "type": "definition",
+              "term": "Instructions (bảng hướng dẫn)",
+              "definition": "Là văn bản trình bày các thông tin nhằm hướng dẫn khách hàng sử dụng sản phẩm hay dịch vụ khi khách hàng đặt mua sản phẩm hoặc yêu cầu được cung cấp dịch vụ. Các mục trong bảng hướng dẫn cung cấp nhiều thông tin và phần lớn câu hỏi đều hướng đến các thông tin đó. Bài đọc dạng này được trình bày theo trình tự: phần đầu giới thiệu sơ lược về sản phẩm hoặc dịch vụ, phần tiếp theo là lời chỉ dẫn (được chia thành nhiều mục) hoặc các bước cần tuân thủ khi sử dụng sản phẩm hay dịch vụ."
+            }
+          ]
+        },
+        {
+          "type": "structure",
+          "title": "Cấu trúc chung:",
+          "parts": [
+            {
+              "name": "Phần mở đầu",
+              "items": [
+                "Thông báo của công ty/đoàn thể/phòng ban",
+                "Đối tượng nhận thông báo (nhân viên, cư dân,...)",
+                "Nơi chốn",
+                "Tiêu đề/đề mục → Thể hiện chủ đề, mục đích"
+              ]
+            },
+            {
+              "name": "Phần thân",
+              "description": "Các thông tin chi tiết về thông báo. Ví dụ thông báo về sự kiện của công ty thì phần thân sẽ xuất hiện các chi tiết như:",
+              "items": [
+                "Thời gian và địa điểm",
+                "Những người phụ trách công việc liên quan",
+                "Nội dung cụ thể, chi tiết",
+                "Cung cấp các sự tiện lợi"
+              ]
+            },
+            {
+              "name": "Phần cuối",
+              "items": [
+                "Yêu cầu, đề nghị",
+                "Thông tin liên lạc",
+                "Lời chào"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Các loại câu hỏi xuất hiện",
+      "content": [
+        {
+          "type": "question-guide",
+          "questions": [
+            {
+              "type": "Hỏi sự kiện gì?",
+              "location": "Thông tin nằm ở phần mở đầu",
+              "tips": ["Chú ý tiêu đề"]
+            },
+            {
+              "type": "Hỏi về đối tượng trong sự kiện",
+              "location": "Thông tin nằm ở phần mở đầu",
+              "tips": ["Nắm bắt các từ vựng liên quan đến đối tượng, ví dụ như residents, staff, employees,..."]
+            },
+            {
+              "type": "Hỏi về thông tin chi tiết",
+              "location": "Thông tin nằm ở phần thân",
+              "tips": [
+                "Nắm bắt các từ khóa để tìm kiếm thông tin liên quan",
+                "Chú ý từ vựng: các cụm từ đồng nghĩa, paraphrase"
+              ]
+            },
+            {
+              "type": "Hỏi về yêu cầu/đề nghị",
+              "location": "Thông tin thường nằm ở phần cuối",
+              "tips": [
+                "Đọc kỹ khoảng 2-3 câu ngược từ dưới lên",
+                "Chú ý các cấu trúc yêu cầu, đề nghị xuất hiện"
+              ]
+            },
+            {
+              "type": "Câu hỏi sự nhất quán thông tin: tìm thông tin đúng/sai",
+              "location": "Thông tin có thể xuất hiện trong cả bài",
+              "tips": [
+                "Xác định từ khóa để tìm vị trí thông tin",
+                "Đọc hiểu kỹ ý các câu văn liên quan đến từ khóa",
+                "Đối chiếu các nội dung đáp án để chọn lựa"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Ví dụ chi tiết",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "3.1. Ví dụ dạng Notice",
+          "example": {
+            "title": "Special announcement from the office of the president:",
+            "content": "Isabella Rodriguez will soon be promoted to the position of senior vice president for Research and Development. She has been a dedicated member of this company for thirteen years, and I am confident that she will continue to help make Smithsonian Pharmaceuticals the number one brand in child medicine.\n\nMs. Rodriguez has worked for the past five years as science team manager. She has increased the efficiency of that department by 35%, enabling us to produce a steady flow of innovative medicines. As the head of Research and Development, she plans to perform a thorough analysis of all the departments' operations and make changes to insure that no resources are wasted.\n\nPlease join me and the rest of the administrative staff at 2:00 today in the cafeteria to celebrate the promotion of Ms. Isabella Rodriguez.\n\nThank you,\nGregory Anne Keaton\nPresident, Smithsonian Pharmaceuticals",
+            "structure": [
+              {"part": "Đề mục", "note": "Trong một số thông báo, đề mục bắt đầu bằng từ attention."},
+              {"part": "Lý do ra thông báo", "note": ""},
+              {"part": "Nội dung chính", "note": "Đôi khi thông báo được viết rất đơn giản, chỉ nêu nội dung chính mà không có phần trình bày lý do."},
+              {"part": "Phần kết thúc", "note": "Nêu tên và chức vụ của người ra thông báo cùng với lời cảm ơn. Tùy theo nội dung của thông báo mà phần này có thể được trình bày khác nhau hoặc được lược bỏ."}
+            ],
+            "common_questions": [
+              "For whom was this notice written?",
+              "What is this notice mainly about?",
+              "What kind of notice is this?",
+              "What was Ms. Rodriguez's previous position?",
+              "Which of the following did Ms. Rodriguez NOT do?",
+              "What is scheduled in the company cafeteria?"
+            ]
+          }
+        },
+        {
+          "type": "subsection",
+          "title": "3.2. Ví dụ dạng Memo",
+          "example": {
+            "headers": {
+              "to": "Members of Sales Department",
+              "from": "Rebecca Stanton, Sales Department Head",
+              "re": "Creation of new Online Sales Department"
+            },
+            "content": "As many of you know, the Sales Department will soon be undergoing a major organizational change. Due to the recent high growth of our online sales, the department is being split into two new teams: General Sales and Online Sales. This will allow us to focus more closely on specific aspects of the company's sales and marketing programs. I will continue working as director of the General Sales Department, and I am happy to announce that Daniel Kala has been promoted to head of the new Online Sales Department. Most of you who are currently working on Daniel's team will move over to Online Sales with him. I will provide more details about this change in the next few days. Thank you and have a great weekend!",
+            "structure": [
+              {"part": "To: người nhận, From: người gửi", "note": "Đôi khi thông tin về người gửi được lược bỏ."},
+              {"part": "Re: viết tắt của Regarding, chỉ đề mục", "note": "Có thể được thay bằng Subject."},
+              {"part": "Nội dung", "note": "Đặc điểm của thư báo là đề cập ngay nội dung cần thông báo và trình bày ngắn gọn."}
+            ],
+            "common_questions": [
+              "Why was this memo written?",
+              "Who will receive this memo?",
+              "Where would this memo most likely appear?",
+              "How is the Sales Department changing?",
+              "Who will work in the Online Sales Department?",
+              "Who will be in charge of the General Sales Department?",
+              "What piece of information is NOT included in this memo?"
+            ]
+          }
+        },
+        {
+          "type": "subsection",
+          "title": "3.3. Ví dụ dạng Instructions",
+          "example": {
+            "title": "Attention customers!",
+            "intro": "The Pizza Oven would like to announce the beginning of our new online ordering system. We hope that this tool will make your pizza ordering quicker, more reliable, and more convenient. To use The Pizza Oven online ordering system, just follow these simple steps:",
+            "steps": [
+              "Go to our website, www.thepizzaoven.com.",
+              "If this is your first time to use this system, you will need to select a user name and password and fill in your name, address, phone number, and payment details.",
+              "Choose from our full menu of delicious pizza options. Don't forget to add some of our mouth-watering side dishes and something to drink.",
+              "Finally, click the button for the correct type of order: delivery or takeout.",
+              "You will receive a confirmation code and approximate delivery time. Keep this information in case you need to call about your order later."
+            ],
+            "closing": "So log on to our website today and try out The Pizza Oven online ordering system. You'll love it. We promise!",
+            "structure": [
+              {"part": "Giới thiệu sản phẩm hoặc dịch vụ", "note": "Phần này giới thiệu tên sản phẩm hoặc dịch vụ và cho biết sản phẩm, dịch vụ đó dành cho đối tượng nào."},
+              {"part": "Nội dung chi tiết", "note": "Thông tin trong phần này được chia thành nhiều mục, được trình bày theo trình tự và được đánh số thứ tự. Bạn cần nắm vững những thông tin đó để có thể trả lời chính xác các câu hỏi."},
+              {"part": "Phần kết thúc", "note": "Phần này thường cho biết địa chỉ trang web hoặc số điện thoại liên lạc."}
+            ],
+            "common_questions": [
+              "What process is described in the numbered steps?",
+              "Why were these instructions made?",
+              "Why is a confirmation code provided?",
+              "Why was the online ordering system created?",
+              "Which of these is NOT a part of the online ordering process?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "heading": "4. Từ vựng thường gặp",
+      "content": [
+        {
+          "type": "vocabulary-list",
+          "items": [
+            {"term": "Strict regulation", "meaning": "quy định nghiêm ngặt"},
+            {"term": "Severe punishment", "meaning": "sự trừng phạt nghiêm khắc"},
+            {"term": "Mandatory", "meaning": "bắt buộc, có tính cưỡng chế"},
+            {"term": "Comply with", "meaning": "tuân thủ"},
+            {"term": "Administration", "meaning": "sự quản lý, chính quyền"},
+            {"term": "Municipal government", "meaning": "chính quyền thành phố"},
+            {"term": "Official", "meaning": "chính thức"},
+            {"term": "Ballot", "meaning": "phiếu bầu"},
+            {"term": "Health service", "meaning": "dịch vụ y tế"},
+            {"term": "Screening", "meaning": "việc kiểm tra sức khỏe"}
+          ]
+        }
+      ]
+    }
+  ]
 }

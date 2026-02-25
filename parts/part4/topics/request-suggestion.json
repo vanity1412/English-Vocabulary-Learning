@@ -1,4 +1,179 @@
 {
   "title": "Câu hỏi yêu cầu, gợi ý",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Đây là dạng câu hỏi yêu cầu người nghe xác định người nói yêu cầu hoặc gợi ý người nghe làm gì."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Câu hỏi thường có dạng:",
+          "patterns": [
+            "What are the listeners asked to do?",
+            "What does the speaker tell the listeners to do?",
+            "What does the speaker suggest doing?"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Đáp án thường là một hành động cụ thể. Vị trí thông tin thường nằm giữa hoặc cuối bài nói."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Request = yêu cầu | Suggest = gợi ý/đề xuất | Listener = người nghe"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Đây là dạng câu hỏi \"HÀNH ĐỘNG\" → tìm động từ chính<br>• Đáp án thường là việc người nghe phải làm ngay hoặc trong tương lai"
+        }
+      ]
+    },
+    {
+      "heading": "2. Dấu hiệu nhận biết câu yêu cầu / gợi ý",
+      "content": [
+        {
+          "type": "text",
+          "content": "Người nói thường dùng cấu trúc đặc biệt để đưa ra yêu cầu hoặc đề xuất."
+        },
+        {
+          "type": "text",
+          "content": "<strong>Các cấu trúc quan trọng:</strong>"
+        },
+        {
+          "type": "list",
+          "title": "✅ Cấu trúc yêu cầu trực tiếp:",
+          "items": [
+            "Please + V",
+            "We request that + S + V",
+            "I want you to + V",
+            "I need you to + V"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "✅ Cấu trúc mệnh lệnh gián tiếp:",
+          "items": [
+            "If + S + V, (then) + mệnh lệnh",
+            "For that reason, + mệnh lệnh"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "✅ Cấu trúc gợi ý / lời khuyên:",
+          "items": [
+            "You should / We should + V",
+            "You can / could + V",
+            "Why don't you + V",
+            "How about + V-ing"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "✅ Động từ mang nghĩa yêu cầu / gợi ý:",
+          "items": [
+            "request",
+            "recommend",
+            "suggest",
+            "encourage"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> You should = bạn nên | Why don't you = sao bạn không | How about = hay là | Recommend/suggest = đề xuất"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nghe thấy các cấu trúc này → chuẩn bị chọn đáp án hành động<br>• Sau cụm này thường là đáp án trực tiếp"
+        }
+      ]
+    },
+    {
+      "heading": "3. Vị trí thông tin trong bài nghe",
+      "content": [
+        {
+          "type": "text",
+          "content": "Người nói thường: Giới thiệu sự kiện/chủ đề → Đưa ra yêu cầu hoặc gợi ý."
+        },
+        {
+          "type": "list",
+          "title": "Thông tin yêu cầu thường xuất hiện:",
+          "items": [
+            "Sau phần giới thiệu",
+            "Giữa bài",
+            "Hoặc cuối bài"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Introduction = phần giới thiệu | Main instruction = chỉ dẫn chính"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Không bỏ lỡ giữa bài vì đây là vị trí đáp án phổ biến<br>• Cuối bài cũng hay có yêu cầu quan trọng"
+        }
+      ]
+    },
+    {
+      "heading": "4. Paraphrase trong câu hỏi yêu cầu",
+      "content": [
+        {
+          "type": "text",
+          "content": "Hành động trong đáp án thường được diễn đạt khác với bài nghe."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Nghe ý nghĩa thay vì nghe từ giống hệt. So sánh hành động trong bài với đáp án."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Paraphrase = diễn đạt lại bằng từ khác nhưng cùng nghĩa"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Bring personal items = Bringing personal belongings<br>• Turn off devices = Stop using electronic devices"
+        }
+      ]
+    },
+    {
+      "heading": "5. Lưu ý quan trọng",
+      "content": [
+        {
+          "type": "text",
+          "content": "Thông tin yêu cầu có thể xuất hiện rất nhanh."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Nghe theo thứ tự câu hỏi. Tập trung ngay sau phần giới thiệu."
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Dạng này dễ bỏ lỡ vì người nói nói rất nhanh<br>• Nghe thấy từ khóa yêu cầu → phải bắt đáp án ngay"
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt mẹo học nhanh",
+      "content": [
+        {
+          "type": "list",
+          "title": "🧠 Các mẹo quan trọng:",
+          "items": [
+            "Câu hỏi yêu cầu/gợi ý → tìm hành động người nghe phải làm",
+            "Đáp án thường ở giữa hoặc cuối bài",
+            "Nhận diện cấu trúc: Please, You should, Why don't you, request, suggest",
+            "Cẩn thận paraphrase giữa bài nghe và đáp án",
+            "Phải tập trung ngay sau phần giới thiệu"
+          ]
+        }
+      ]
+    }
+  ]
 }

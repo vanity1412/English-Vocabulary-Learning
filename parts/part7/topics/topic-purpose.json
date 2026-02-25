@@ -1,4 +1,259 @@
 {
   "title": "Câu hỏi về chủ đề, mục đích",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi về chủ đề, mục đích hỏi về nội dung chính, lý do mà văn bản được viết. Dạng câu hỏi này thường xuất hiện ở dạng bài Announcement/Notice (Thông báo), Email/Letter (Thư), Article (Bài báo)."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Câu hỏi chủ đề, mục đích Part 7 thường có dạng:",
+          "patterns": [
+            "What is the purpose of the announcement/the first email...?",
+            "What is one purpose of the notice/the advertisement...?",
+            "Why did Mr. Smith send the e-mail?",
+            "Why most likely was the article/the letter... written?"
+          ],
+          "note": "Các câu trả lời đều có dạng to V."
+        },
+        {
+          "type": "info-box",
+          "items": [
+            {
+              "label": "Vị trí câu hỏi",
+              "value": "Câu hỏi chủ đề, mục đích thường là câu hỏi đầu tiên của một đoạn văn bản"
+            },
+            {
+              "label": "Vị trí thông tin",
+              "value": "Thông tin chứa đáp án có khi nằm ở ngay câu đầu, có khi dàn trải trong toàn bộ văn bản"
+            },
+            {
+              "label": "Tần suất xuất hiện",
+              "value": "Dạng câu hỏi này chiếm từ 3-5/54 câu hỏi của Part 7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Phân tích ví dụ",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "2.1. Đối với đoạn văn bản ngắn, ít câu hỏi",
+          "examples": [
+            {
+              "id": "example1",
+              "title": "Example 1 (ETS 2022 - Test 1 - Q147)",
+              "passage": {
+                "type": "announcement",
+                "url": "http://www.moonglowairways.com.au",
+                "title": "Special Announcement by Geoff Clifford, President of Moon Glow Airways",
+                "content": "As many of you are aware, there was a problem with Pelman Technology, the system that handles our airline reservations. This outage has affected several airlines. It's been a rough week, but the good news is that it has been repaired, and we are re-setting our system. However, Moon Glow passengers may still face delays for a day or two. This most likely will include longer lines at airports. We have added more on-site customer service representatives at airports in all of our destination cities to assist customers with their flights and information. We appreciate your understanding and patience."
+              },
+              "question": {
+                "text": "What is the purpose of the announcement?",
+                "translation": "Mục đích của thông báo là gì?",
+                "options": [
+                  {
+                    "key": "A",
+                    "text": "To report on airport renovations",
+                    "translation": "Thông báo việc cải tạo sân bay"
+                  },
+                  {
+                    "key": "B",
+                    "text": "To give an update on a technical problem",
+                    "translation": "Cập nhật một vấn đề kỹ thuật",
+                    "correct": true
+                  },
+                  {
+                    "key": "C",
+                    "text": "To introduce a new reservation system",
+                    "translation": "Giới thiệu hệ thống đặt chỗ mới"
+                  },
+                  {
+                    "key": "D",
+                    "text": "To advertise airline routes to some new cities",
+                    "translation": "Quảng cáo đường bay tới những thành phố mới"
+                  }
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Đọc câu hỏi",
+                    "content": "Xác định dạng câu hỏi và nhớ ý chính 4 đáp án"
+                  },
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Chủ đề của dạng văn bản Announcement thường xuất hiện ở câu đầu tiên và câu cuối (nếu có) cũng sẽ nói lên mục đích của văn bản.",
+                    "analysis": [
+                      "Đọc câu đầu: 'As many of you are aware, there was a problem with Pelman Technology, the system that handles our airline reservations.' => Thông báo về vấn đề với hệ thống đặt chỗ => lỗi kỹ thuật",
+                      "Đọc câu cuối: 'We appreciate your understanding and patience' => câu kết thường xuất hiện trong những văn bản thông báo vấn đề, cáo lỗi",
+                      "Nội dung chính: thông báo về một lỗi kỹ thuật => dự đoán là đáp án (B)",
+                      "Đọc thêm thông tin sau câu đầu: 'but the good news is that it has been repaired, and we are re-setting our system.' => cập nhật thông tin nó đã được sửa và đang thiết lập lại hệ thống",
+                      "Nội dung chính: cập nhật về một lỗi kỹ thuật => Đáp án (B)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý 1",
+                    "content": "Một số cụm/mệnh đề là cách liên kết ý phổ biến: cụm mở đầu 'As many of you are aware' (Như quý vị đã biết) để thông báo tin tức, tiếp đó là 'but the good news is that' (nhưng tin tốt là) để cập nhật tin mới. Kết thúc văn bản là câu 'We appreciate your understanding and patience.' (Chúng tôi trân trọng sự thấu hiểu và kiên nhẫn của quý vị), thường xuất hiện trong những văn bản thông báo vấn đề, cáo lỗi. Các cụm/mệnh đề này không chứa thông tin chính nhưng dựa vào nó ta cũng sẽ khoanh vùng được đáp án."
+                  },
+                  {
+                    "title": "Lưu ý 2",
+                    "content": "Về thứ tự làm bài: đoạn văn này gồm 2 câu hỏi: câu hỏi về chủ đề, mục đích và câu hỏi về chi tiết, tìm thông tin. Câu thứ 2 lấy thông tin ở nửa sau của văn bản => nên làm bài theo thứ tự, tức là làm câu hỏi chủ đề, mục đích trước."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "example2",
+              "title": "Example 2 (ETS 2022 - Test 1 - Q188)",
+              "passage": {
+                "type": "notice",
+                "title": "Attention, Seminar Participants:",
+                "content": "Unfortunately, we do not have copies of Emilio Costa's book Branding Strategies in Graphic Design with us today. For those of you who have ordered it, please give your mailing address to the volunteer at the check-in desk, and the book will be mailed to your home at no cost to you. We will charge your credit card upon shipment. We are sorry for the inconvenience."
+              },
+              "question": {
+                "text": "What is the purpose of the notice?",
+                "translation": "Mục đích của thông báo là gì?",
+                "options": [
+                  {
+                    "key": "A",
+                    "text": "To explain a problem",
+                    "translation": "Giải thích một vấn đề",
+                    "correct": true
+                  },
+                  {
+                    "key": "B",
+                    "text": "To ask for volunteers",
+                    "translation": "Kêu gọi tình nguyện viên"
+                  },
+                  {
+                    "key": "C",
+                    "text": "To request payment",
+                    "translation": "Yêu cầu thanh toán"
+                  },
+                  {
+                    "key": "D",
+                    "text": "To promote a book",
+                    "translation": "Quảng bá một cuốn sách"
+                  }
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Đoạn rất ngắn nên có thể đọc rất nhanh và xác định ý chính.",
+                    "analysis": [
+                      "'we do not have copies of ...with us today.' => Không có sách => Thông báo vấn đề",
+                      "'For those of you who have ordered it, please give your mailing address,...the book will be mailed to your home...' => Ai đã đặt sách để lại địa chỉ để sách gửi đến nhà => Hướng giải quyết",
+                      "'We are sorry for the inconvenience.' => lời xin lỗi, kết lại thông báo về sự cố",
+                      "Nội dung chính: Thông báo một vấn đề phát sinh và hướng giải quyết => Đáp án (A)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý 1",
+                    "content": "Mở đầu và kết thúc của thông báo là 'Unfortunately' (Thật không may) và 'We are sorry for the inconvenience' (Chúng tôi xin lỗi vì sự bất tiện này) là từ và câu xuất hiện trong văn bản thông báo về vấn đề không may phát sinh. Đây cũng là yếu tố có thể giúp dự đoán được đáp án là (A)."
+                  },
+                  {
+                    "title": "Lưu ý 2",
+                    "content": "Đoạn văn bản này là đoạn thứ 2 trong cụm 3 đoạn 5 câu hỏi. Trước và sau chiếc notice ngắn là 2 email khá dài. Liên quan đến đoạn này chỉ có 1 câu hỏi như trên. => Trước khi làm, các bạn nên xem lướt 1 lượt 3 đoạn, nếu thấy xuất hiện đoạn văn ngắn => chọn làm trước."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.2. Đối với đoạn văn bản dài, nhiều câu hỏi",
+          "examples": [
+            {
+              "id": "example3",
+              "title": "Example 3 (ETS 2022 - Test 1 - Q168)",
+              "passage": {
+                "type": "letter",
+                "date": "March 29",
+                "recipient": "Dr. Maritza Geerlings\nPoseidon Straat 392\nParamaribo\nSurinam",
+                "content": "Dear Dr. Geerlings,\n\nI am writing to thank you for your years of service on the faculty of the Jamaican Agricultural Training Academy (JATA) and to let you know about some exciting developments. As you know, JATA was originally established as a vocational school for agriculture but now offers courses in a varied array of disciplines, including cybersecurity, electrical engineering, and health information management. Our student body, which for the first ten years consisted almost exclusively of locals, is now culturally diverse, with students from across the Americas and Europe. Today's students work with sophisticated equipment, much of which did not exist in our early days.\n\nTo reflect these and other significant changes that JATA has undergone over time, the Board of Trustees has approved a proposal by the Faculty Senate to rename the institution the Caribbean Academy of Science and Technology. As a result, a new institutional logo will be adopted. All students and faculty members, both current and former, are invited to participate in a logo design contest. Information about the contest will be forthcoming.\n\nThe renaming ceremony and the introduction of the new logo will take place at 11 A.M. on 1 June, the twentieth anniversary of the institution. We hope you will be able to join us.\n\nSincerely,\nAudley Bartlett\nVice President for Academic Affairs,\nJamaican Agricultural Training Academy"
+              },
+              "question": {
+                "text": "What is one purpose of the letter?",
+                "translation": "Một trong những mục đích của bức thư là gì?",
+                "note": "Lưu ý câu hỏi về một mục đích => thư sẽ có nhiều mục đích",
+                "options": [
+                  {
+                    "key": "A",
+                    "text": "To announce a name change",
+                    "translation": "Để thông báo thay đổi tên",
+                    "correct": true
+                  },
+                  {
+                    "key": "B",
+                    "text": "To honor distinguished alumni",
+                    "translation": "Để vinh danh cựu sinh viên tiêu biểu"
+                  },
+                  {
+                    "key": "C",
+                    "text": "To suggest revisions to a curriculum",
+                    "translation": "Để đề xuất sửa đổi một chương trình giảng dạy"
+                  },
+                  {
+                    "key": "D",
+                    "text": "To list an individual's accomplishments",
+                    "translation": "Để kể ra những thành tựu của một cá nhân"
+                  }
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Mục đích của dạng văn bản Letter (Thư tay) thường xuất hiện ở câu đầu.",
+                    "analysis": [
+                      "2 mục đích: 'thank you for your years of service on the faculty of the Jamaican Agricultural Training Academy (JATA)' => cảm ơn nhân viên",
+                      "'to let you know about some exciting developments' => thông báo về những sự phát triển mới",
+                      "Đối chiếu các đáp án:",
+                      "  • Câu (A): có thể là exciting development",
+                      "  • Câu (B): nói về sinh viên, không phải giảng viên => Loại",
+                      "  • Câu (C): mới chỉ là gợi ý, chưa phải development => Loại",
+                      "  • Câu (D): có thể xuất hiện nhưng không phải mục đích chính => Loại",
+                      "Dự đoán đáp án là (A)",
+                      "Scan thông tin về name change để chắc chắn hơn: thông tin xuất hiện ở đoạn 2 với từ khóa 'rename': 'To reflect these and other significant changes that JATA has undergone over time, The Board of Trustees has approved a proposal by the Faculty Senate to rename the institution the Caribbean Academy of Science and Technology' => đề xuất đổi tên đã được phê duyệt => Đáp án (A)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý 1",
+                    "content": "Cách mở đầu thư phổ biến nhất: 'I am writing to...' nói về mục đích viết thư. Tuy nhiên, phần này có thể chỉ đưa ra mục đích khái quát, chung chung, còn thông tin cụ thể cần đọc thêm phía sau. Nếu thư có nhiều hơn một đoạn thì có thể nội dung chính sẽ nằm ở đoạn sau."
+                  },
+                  {
+                    "title": "Lưu ý 2",
+                    "content": "Về thứ tự làm bài: Đoạn văn có 5 câu hỏi liên quan.",
+                    "questions": [
+                      "Q1: What is one purpose of the letter? => Câu hỏi chủ đề, mục đích",
+                      "Q2: The word 'established' in paragraph 1, line 3, is closest in meaning to... => Câu hỏi tìm từ đồng nghĩa",
+                      "Q3: What is suggested about Dr. Geerlings? => Câu hỏi suy luận",
+                      "Q4: What is NOT indicated about JATA in the letter? => Câu hỏi tìm chi tiết sai"
+                    ],
+                    "recommendation": "Ta có thể làm bài theo thứ tự: 2, 3, 4, 1. Làm các câu hỏi tìm thông tin trước rồi làm câu hỏi về chủ đề tổng quát sau, vì khi đó ta đã đọc gần hết các chi tiết trong bài."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

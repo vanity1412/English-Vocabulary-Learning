@@ -1,4 +1,182 @@
 {
   "title": "Article / Review - Bài báo, bài đánh giá",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Article (bài báo) là những bài viết đề cập đến tình hình kinh tế, các sự kiện ở khu vực nào đó hay xu hướng phát triển của các tổ chức... Các bài báo trong Part 7 của bài thi TOEIC thường liên quan đến lĩnh vực kinh tế, tương đối dài và sử dụng nhiều thuật ngữ; do vậy, đây là dạng bài khó đối với nhiều thí sinh."
+        }
+      ]
+    },
+    {
+      "heading": "2. Phân tích ví dụ",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "Example (ETS 2022 - Test 6 - Q158-Q161)",
+          "examples": [
+            {
+              "id": "article-example",
+              "title": "Craverton Returns to Business as Usual",
+              "author": "Brianna Wible, Staff Reporter",
+              "passage": {
+                "type": "article",
+                "content": "A power outage yesterday caused a number of businesses and area attractions in downtown Craverton to close. The cause of the outage is still unknown, but the early morning's stormy weather most likely played a part. -[1]-.\n\nSung Min Nam, who was leading a tour of some of the historic sites downtown, changed his itinerary. \"Fortunately, I know the area well,\" Mr. Nam said. \"I led the group back to the bus, and we headed to a different part of the city to discover alternative sites, such as Grantwood Park and Holtrop Tower.\" -[2]-.\n\nFor the Craverton Art Museum, the outage did not make a difference in earnings because its galleries are closed to the public on Tuesdays. -[3]-. Craverton University canceled its classes, but generators powered residence halls and cafeterias. Power was restored to most area businesses by late yesterday afternoon. -[4]-. And today Craverton returned to business as usual."
+              },
+              "structure": {
+                "parts": [
+                  {
+                    "number": "(1)",
+                    "name": "Tiêu đề",
+                    "description": "Tiêu đề khoanh vùng lĩnh vực mà bài báo viết về"
+                  },
+                  {
+                    "number": "(2)",
+                    "name": "Nội dung chính",
+                    "description": "Nội dung trọng tâm của bài báo nằm ở phần đầu. Đọc kỹ phần này để trả lời các câu hỏi liên quan đến chủ đề của bài báo."
+                  },
+                  {
+                    "number": "(3)",
+                    "name": "Nội dung chi tiết",
+                    "description": "Phần này trình bày các số liệu, tài liệu, các cuộc phỏng vấn...để làm rõ nội dung chính"
+                  }
+                ]
+              },
+              "questions": [
+                {
+                  "id": "Q158",
+                  "type": "Câu hỏi về chủ đề, mục đích",
+                  "text": "What is the main topic of the article?",
+                  "translation": "Chủ đề chính của bài báo là gì?",
+                  "options": [
+                    {"key": "A", "text": "Reasons to move to Craverton", "translation": "Những lý do để chuyển tới Craverton."},
+                    {"key": "B", "text": "An unexpected situation in Craverton", "translation": "Một tình huống bất ngờ ở Craverton.", "correct": true},
+                    {"key": "C", "text": "Reliable weather forecasting sources", "translation": "Những nguồn tin dự báo thời tiết đáng tin cậy."},
+                    {"key": "D", "text": "Possible sites for a tourist attraction", "translation": "Những địa điểm tiềm năng thu hút khách du lịch."}
+                  ],
+                  "solution": {
+                    "approach": "Dựa vào thông tin ở phần Tiêu đề và Nội dung chính để trả lời:",
+                    "analysis": [
+                      "(1) Tiêu đề: 'Craverton Returns to Business as Usual' (Creverton quay trở lại hoạt động như bình thường.) => trước đó phải xảy ra một sự kiện ảnh hưởng đến các hoạt động kinh doanh trên địa bàn Craverton.",
+                      "(2) Nội dung chính: 'A power outage yesterday caused a number of businesses and area attractions in downtown Craverton to close. The cause of the outage is still unknown, but the early morning's stormy weather most likely played a part.' (Một vụ mất điện ngày hôm qua đã khiến rất nhiều doanh nghiệp và các địa điểm du lịch ở trung tâm Craverton phải đóng cửa. Nguyên nhân của vụ việc vẫn chưa được làm rõ, nhưng thời tiết giông bão sáng sớm nay rất có thể là một phần nguyên nhân.)",
+                      "Bài báo viết về một vụ mất điện bất ngờ ở Craverton",
+                      "Đáp án (B)"
+                    ]
+                  }
+                },
+                {
+                  "id": "Q159",
+                  "type": "Câu hỏi về danh tính (câu hỏi suy luận)",
+                  "text": "Who most likely is Mr. Nam?",
+                  "translation": "Ông Nam rất có thể là ai?",
+                  "options": [
+                    {"key": "A", "text": "A reporter", "translation": "Phóng viên"},
+                    {"key": "B", "text": "A professor", "translation": "Giáo sư"},
+                    {"key": "C", "text": "An art historian", "translation": "Nhà lịch sử nghệ thuật"},
+                    {"key": "D", "text": "A tour guide", "translation": "Hướng dẫn viên du lịch", "correct": true}
+                  ],
+                  "solution": {
+                    "approach": "Tìm thông tin về Mr. Nam trong phần Nội dung chi tiết:",
+                    "analysis": [
+                      "'Sung Min Nam, who was leading a tour of some of the historic sites downtown, changed his itinerary.' (Sung Min Nam, người dẫn tour du lịch đến một vài di tích lịch sử ở trung tâm, đã phải thay đổi lịch trình của anh ấy.)",
+                      "Mr. Nam là một hướng dẫn viên du lịch",
+                      "Đáp án (D)"
+                    ]
+                  }
+                },
+                {
+                  "id": "Q160",
+                  "type": "Câu hỏi về chi tiết đúng (câu hỏi tìm thông tin/câu hỏi suy luận)",
+                  "text": "What does the article mention about the Craverton Art Museum?",
+                  "translation": "Bài báo nhắc gì đến Bảo tàng Nghệ thuật Craverton?",
+                  "options": [
+                    {"key": "A", "text": "It did not lose money yesterday.", "translation": "Nó không bị mất tiền ngày hôm qua.", "correct": true},
+                    {"key": "B", "text": "It is located near downtown Craverton.", "translation": "Nó được đặt ở gần trung tâm Craverton."},
+                    {"key": "C", "text": "It is open to visitors on Tuesdays.", "translation": "Nó mở cửa cho du khách vào thứ Ba."},
+                    {"key": "D", "text": "It will be starting a series of art classes.", "translation": "Nó sẽ bắt đầu một loạt các lớp học nghệ thuật."}
+                  ],
+                  "solution": {
+                    "approach": "Tìm thông tin về Craverton Art Museum ở đoạn tiếp theo trong phần Nội dung chi tiết:",
+                    "analysis": [
+                      "'For the Craverton Art Museum, the outage did not make a difference in earnings because its galleries are closed to the public on Tuesdays.' (Đối với Bảo tàng Nghệ thuật Craverton, vụ mất điện không làm thay đổi doanh thu bởi vì những triển lãm của nó đóng cửa vào thứ Ba.)",
+                      "Bảo tàng không bị giảm doanh thu vào hôm qua",
+                      "Đáp án (A)"
+                    ]
+                  }
+                },
+                {
+                  "id": "Q161",
+                  "type": "Câu hỏi điền câu",
+                  "text": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong? \"However, staff members did get the day off.\"",
+                  "translation": "Vị trí nào trong số các vị trí được đánh dấu [1], [2], [3], và [4] phù hợp nhất để điền câu sau? \"Tuy nhiên, nhân viên đã có ngày nghỉ.\"",
+                  "options": [
+                    {"key": "A", "text": "[1]"},
+                    {"key": "B", "text": "[2]"},
+                    {"key": "C", "text": "[3]", "correct": true},
+                    {"key": "D", "text": "[4]"}
+                  ],
+                  "solution": {
+                    "approach": "Phân tích câu cần điền: However, staff members did get the day off.",
+                    "analysis": [
+                      "Liên từ 'However' (Tuy nhiên) đứng đầu câu thể hiện ý câu này đối lập với ý của câu trước đó. Hơn nữa, 'staff members' (nhân viên) được nhắc đến => câu trước phải đề cập đến nơi staff members làm việc.",
+                      "Xét các câu đứng trước của từng vị trí:",
+                      "[1]: The cause of the outage is still unknown, but the early morning's stormy weather most likely played a part",
+                      "[2]: \"I led the group back to the bus, and we headed to a different part of the city to discover alternative sites, such as Grantwood Park and Holtrop Tower.\"",
+                      "[3]: For the Craverton Art Museum, the outage did not make a difference in earnings because its galleries are closed to the public on Tuesdays.",
+                      "[4]: Power was restored to most area businesses by late yesterday afternoon.",
+                      "Chỉ có câu [3] phù hợp vì nhắc đến nơi làm việc là Craverton Art Museum và nói về một thông tin đối lập với việc nhân viên được nghỉ là việc doanh thu không thay đổi."
+                    ],
+                    "note": "Câu [4] nghe có vẻ hợp lý nhưng từ 'staff members' thường được dùng để chỉ một nhóm người làm việc chung trong một tổ chức, còn câu [4] không nói đến tổ chức nào cụ thể mà nói chung về hầu hết các doanh nghiệp trên địa bàn.",
+                    "verification": "For the Craverton Art Museum, the outage did not make a difference in earnings because its galleries are closed to the public on Tuesdays. However, staff members did get the day off. Craverton University canceled its classes, but generators powered residence halls and cafeterias. (Đối với Bảo tàng Nghệ thuật Craverton, vụ mất điện không làm thay đổi doanh thu bởi vì những triển lãm của nó đóng cửa vào thứ Ba. Tuy nhiên, nhân viên đã có ngày nghỉ.)"
+                  }
+                }
+              ],
+              "common_questions": [
+                "Câu hỏi về chủ đề, mục đích: What is the main topic of the article?",
+                "Câu hỏi về danh tính (câu hỏi suy luận): Who most likely is Mr. Nam?",
+                "Câu hỏi về chi tiết đúng (câu hỏi tìm thông tin/câu hỏi suy luận): What does the article mention about the Craverton Art Museum?",
+                "Câu hỏi điền câu: In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong? \"However, staff members did get the day off.\""
+              ],
+              "note": "Câu hỏi về chủ đề mục đích, câu hỏi suy luận về danh tính nhân vật và câu hỏi tìm thông tin hoặc câu hỏi suy luận về chi tiết đúng là các dạng câu hỏi thường gặp trong dạng văn bản Article."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Từ vựng thường gặp",
+      "content": [
+        {
+          "type": "vocabulary-list",
+          "categories": [
+            {
+              "title": "Kinh tế và kinh doanh",
+              "items": [
+                {"term": "Business cycle", "meaning": "chu kỳ kinh tế"},
+                {"term": "Fluctuation", "meaning": "sự biến động"},
+                {"term": "Prosperity = Flourish", "meaning": "sự thịnh vượng, phát đạt"},
+                {"term": "Stagnation = Sluggish", "meaning": "sự đình trệ"},
+                {"term": "Recession", "meaning": "tình trạng suy thoái"},
+                {"term": "Recovery", "meaning": "sự phục hồi"},
+                {"term": "Balance of trade", "meaning": "cán cân mậu dịch"},
+                {"term": "Acquisition", "meaning": "sự giành được, sự thu được"},
+                {"term": "Hostile takeover", "meaning": "việc thâu tóm một công ty"},
+                {"term": "Profit margin", "meaning": "sự chênh lệch lợi nhuận"},
+                {"term": "Net profit", "meaning": "lãi ròng"},
+                {"term": "Bankruptcy", "meaning": "sự vỡ nợ"},
+                {"term": "Interest rate", "meaning": "lãi suất"},
+                {"term": "Foreign currency", "meaning": "ngoại tệ"},
+                {"term": "Before-tax", "meaning": "trước khi đóng thuế"},
+                {"term": "After-tax", "meaning": "sau khi đóng thuế"},
+                {"term": "Cash flow", "meaning": "sự luân chuyển tiền mặt"},
+                {"term": "Trading volume", "meaning": "lượng mua bán"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

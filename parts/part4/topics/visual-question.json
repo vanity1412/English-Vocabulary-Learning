@@ -1,4 +1,229 @@
 {
   "title": "Câu hỏi kết hợp bảng biểu",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi kết hợp bảng biểu là dạng câu hỏi có hình ảnh đi kèm như: Bảng phân công công việc, Sơ đồ chỗ ngồi, Biểu đồ/lịch trình, Menu/khảo sát/bản đồ/sơ đồ cửa hàng. Thí sinh phải kết hợp thông tin nghe + thông tin trong hình để chọn đáp án đúng."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Luôn bắt đầu bằng: \"Look at the graphic.\" Vị trí câu hỏi không cố định (có thể là câu 1, 2 hoặc 3). Thông tin nghe thường xác nhận hoặc chỉ rõ vị trí/mục trong bảng biểu."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Graphic = hình ảnh, bảng biểu | Look at the graphic = Nhìn vào bảng biểu | Chart/Schedule/Map/Menu/Seating chart = biểu đồ/lịch trình/bản đồ/thực đơn/sơ đồ chỗ ngồi"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Đây là dạng NGHE + ĐỌC HÌNH<br>• Không chỉ nghe mà phải dò vị trí trên bảng biểu"
+        }
+      ]
+    },
+    {
+      "heading": "2. Chiến lược làm bài Graphic Questions",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>BƯỚC 1: ĐỌC HÌNH TRƯỚC KHI NGHE</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Trước khi audio chạy, hãy quan sát tiêu đề, bảng, trục, mục chính."
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc:",
+          "items": [
+            "Xác định loại hình: map, schedule, chart, menu, seating chart",
+            "Xác định mục quan trọng nhất (top item, location, time, category)"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo",
+          "content": "• 70% đáp án có thể đoán trước khi nghe"
+        },
+        {
+          "type": "text",
+          "content": "<strong>BƯỚC 2: LIÊN KẾT CÂU HỎI VỚI HÌNH</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Câu hỏi thường yêu cầu: Vị trí, Thời gian, Mục trong danh sách, Số liệu, Khu vực."
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc:",
+          "items": [
+            "Gạch keyword trong câu hỏi",
+            "So với keyword trong bảng"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>BƯỚC 3: NGHE KEYWORD XÁC NHẬN</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Trong audio, người nói thường nhắc trực tiếp tên mục trong bảng."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Tên riêng, danh mục, số liệu ít khi bị paraphrase. Nghe thấy keyword → dò vào bảng."
+        }
+      ]
+    },
+    {
+      "heading": "3. Dạng Graphic phổ biến trong TOEIC",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>📊 1️⃣ Sơ đồ cửa hàng / lối đi (Store Map / Aisle Map)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Hỏi:",
+          "items": [
+            "Which aisle…?",
+            "Where should listeners go?"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Keyword hay gặp: aisle, section, department, counter, entrance"
+        },
+        {
+          "type": "text",
+          "content": "<strong>📅 2️⃣ Lịch trình / thời gian (Schedule)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Hỏi:",
+          "items": [
+            "When is…?",
+            "What time…?"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Keyword: timetable, session, break, event"
+        },
+        {
+          "type": "text",
+          "content": "<strong>🪑 3️⃣ Sơ đồ chỗ ngồi (Seating Chart)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Hỏi:",
+          "items": [
+            "Where will… sit?",
+            "Which seat…?"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>📈 4️⃣ Biểu đồ / thống kê (Chart / Survey)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Hỏi:",
+          "items": [
+            "What should be focused on?",
+            "Which category has the highest percentage?"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Cách dự đoán đáp án trước khi nghe",
+      "content": [
+        {
+          "type": "text",
+          "content": "Nhiều câu có thể đoán dựa vào logic hình ảnh."
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc:",
+          "items": [
+            "Chọn mục lớn nhất / quan trọng nhất",
+            "Chọn mục được nhấn mạnh trong tiêu đề"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• TOEIC thường hỏi mục nổi bật nhất trong bảng"
+        }
+      ]
+    },
+    {
+      "heading": "5. Từ vựng quan trọng trong Graphic Questions",
+      "content": [
+        {
+          "type": "list",
+          "items": [
+            "<strong>Aisle:</strong> Lối đi",
+            "<strong>Section:</strong> Khu vực",
+            "<strong>Department:</strong> Bộ phận",
+            "<strong>Chart / Graph:</strong> Biểu đồ",
+            "<strong>Schedule:</strong> Lịch trình",
+            "<strong>Survey:</strong> Khảo sát",
+            "<strong>Seating chart:</strong> Sơ đồ chỗ ngồi",
+            "<strong>FAQ:</strong> Câu hỏi thường gặp"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "6. Bẫy thường gặp",
+      "content": [
+        {
+          "type": "list",
+          "title": "❌ Các lỗi cần tránh:",
+          "items": [
+            "<strong>1. Chỉ nghe mà không nhìn hình</strong> → Sai vì đáp án nằm trong bảng",
+            "<strong>2. Dịch hết đáp án dài</strong> → Chỉ cần keyword",
+            "<strong>3. Bị nhiễu bởi số liệu phụ</strong> → Chỉ chọn mục được hỏi"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "7. Mẹo làm nhanh điểm cao",
+      "content": [
+        {
+          "type": "list",
+          "title": "✅ Các bước thực hiện:",
+          "items": [
+            "Nhìn hình trước khi audio chạy",
+            "Đọc câu hỏi + khoanh keyword",
+            "Dò vị trí trong bảng",
+            "Nghe xác nhận",
+            "Không dịch từng từ"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt mẹo học nhanh",
+      "content": [
+        {
+          "type": "list",
+          "title": "🧠 Các mẹo quan trọng:",
+          "items": [
+            "Graphic question = nghe + đọc hình",
+            "Câu hỏi luôn bắt đầu bằng \"Look at the graphic\"",
+            "Đọc bảng trước khi nghe",
+            "Nghe keyword để dò vị trí",
+            "Dự đoán đáp án từ hình ảnh",
+            "Tránh dịch dài dòng"
+          ]
+        }
+      ]
+    }
+  ]
 }

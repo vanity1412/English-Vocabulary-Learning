@@ -1,4 +1,194 @@
 {
   "title": "Advertisement - Quảng cáo",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung của Advertisement",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>🎯 Mục đích quảng cáo</strong><br>Quảng cáo thường nhằm:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Quảng cáo sản phẩm",
+            "Quảng cáo dịch vụ",
+            "Quảng cáo cửa hàng / nhãn hiệu",
+            "Quảng cáo công ty du lịch",
+            "Quảng cáo sự kiện"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>👥 Mối quan hệ giữa người nói và người nghe</strong><br>Các mối quan hệ phổ biến:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Người bán – người tiêu dùng",
+            "Ban tổ chức sự kiện – người tham gia",
+            "Nhà cung cấp dịch vụ – người sử dụng dịch vụ"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>🔗 Mạch nói chuẩn của quảng cáo</strong><br>Quảng cáo thường theo trình tự:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Mở đầu thu hút chú ý / kích thích tò mò",
+            "Giới thiệu sản phẩm / công ty / dịch vụ",
+            "Mô tả đặc điểm, lợi ích sản phẩm",
+            "Thông tin bổ sung (giá, thời gian, ưu đãi, điều kiện)",
+            "Lời khuyên / yêu cầu hành động / cảm ơn"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Lưu ý quan trọng",
+          "content": "• Đây là cấu trúc chuẩn để nhận diện và làm đúng dạng bài Advertisement"
+        }
+      ]
+    },
+    {
+      "heading": "2. Quy tắc làm bài Advertisement",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>1. Xác định nội dung quảng cáo là gì</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Thông tin thường nằm ở những câu đầu tiên."
+        },
+        {
+          "type": "list",
+          "title": "Câu hỏi điển hình:",
+          "items": [
+            "What is being advertised?",
+            "What kind of product/service is mentioned?"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>2. Xác định thông tin chi tiết sản phẩm / dịch vụ</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Nằm ở phần mô tả sau giới thiệu."
+        },
+        {
+          "type": "list",
+          "title": "Chú ý từ để hỏi:",
+          "items": [
+            "What, When, Where, How, How much, How long, Which"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>3. Xác định lời khuyên / cảnh báo / đề nghị</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Thường nằm ở cuối đoạn quảng cáo."
+        },
+        {
+          "type": "list",
+          "title": "Dấu hiệu ngôn ngữ:",
+          "items": [
+            "Be sure to …",
+            "Don't forget to …",
+            "You should / You can / We recommend …"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Các trường hợp cụ thể của Advertisement",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>Quảng cáo sản phẩm / giới thiệu công ty</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Cấu trúc bài quảng cáo:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>1️⃣ Thu hút sự chú ý:</strong> Thường đặt câu hỏi hoặc giả định liên quan đến nhu cầu người nghe. Dùng để suy ra đối tượng khách hàng mục tiêu.",
+            "<strong>2️⃣ Giới thiệu sản phẩm / công ty:</strong> Nêu tên công ty, thương hiệu, sản phẩm, dịch vụ. Xác định được lĩnh vực kinh doanh.",
+            "<strong>3️⃣ Mục đích quảng cáo:</strong> Giới thiệu sản phẩm, Ra mắt sản phẩm mới, Chương trình ưu đãi/tri ân, Mở rộng thị trường.",
+            "<strong>4️⃣ Nội dung chi tiết:</strong> Giá/giảm giá/khuyến mãi, Tính năng/lợi ích sản phẩm, Thời gian/địa điểm/điều kiện.",
+            "<strong>5️⃣ Yêu cầu / đề xuất người nghe làm gì:</strong> Cách đặt hàng, Cách liên hệ tư vấn, Hướng dẫn đăng ký. Dấu hiệu: Call us at…, Visit our website…, Sign up today…"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Quy tắc nhận diện câu hỏi thường gặp",
+      "content": [
+        {
+          "type": "list",
+          "items": [
+            "<strong>1. Hỏi quảng cáo hướng đến ai</strong><br>→ Nằm ở phần mở đầu gây chú ý (câu hỏi giả định).",
+            "<strong>2. Hỏi loại sản phẩm / công ty / dịch vụ</strong><br>→ Nằm ở phần giới thiệu sau phần mở đầu.",
+            "<strong>3. Hỏi mục đích quảng cáo</strong><br>→ Thường kèm lý do: ra mắt, ưu đãi, kỷ niệm, mở rộng thị trường.",
+            "<strong>4. Hỏi thông tin chi tiết</strong><br>→ Nằm ở phần nội dung chi tiết, cần bắt keyword trong câu hỏi.",
+            "<strong>5. Hỏi người nghe phải làm gì</strong><br>→ Nằm ở phần cuối đoạn quảng cáo, chú ý cấu trúc yêu cầu/mệnh lệnh."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "5. Bản dịch thuật ngữ quan trọng",
+      "content": [
+        {
+          "type": "list",
+          "items": [
+            "<strong>Advertisement:</strong> Quảng cáo",
+            "<strong>Product:</strong> Sản phẩm",
+            "<strong>Service:</strong> Dịch vụ",
+            "<strong>Event:</strong> Sự kiện",
+            "<strong>Promotion:</strong> Khuyến mãi",
+            "<strong>Discount:</strong> Giảm giá",
+            "<strong>Customer:</strong> Khách hàng",
+            "<strong>Brand:</strong> Thương hiệu",
+            "<strong>Tour:</strong> Chuyến tham quan",
+            "<strong>Participant:</strong> Người tham gia",
+            "<strong>Recommend:</strong> Đề nghị",
+            "<strong>Warn:</strong> Cảnh báo"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "6. Mẹo ghi nhớ (cực quan trọng)",
+      "content": [
+        {
+          "type": "list",
+          "title": "✅ Các mẹo quan trọng:",
+          "items": [
+            "<strong>Mẹo 1: Nhớ mạch quảng cáo</strong><br>→ THU HÚT → GIỚI THIỆU → MÔ TẢ → THÔNG TIN THÊM → KÊU GỌI HÀNH ĐỘNG",
+            "<strong>Mẹo 2: Câu hỏi đi theo mạch nói</strong><br>Câu 1: Quảng cáo gì? | Câu 2: Thông tin chi tiết? | Câu 3: Người nghe cần làm gì?",
+            "<strong>Mẹo 3: Đầu = chủ đề, cuối = hành động</strong><br>Đầu đoạn: chủ đề quảng cáo | Cuối đoạn: lời khuyên/cảnh báo/đề nghị",
+            "<strong>Mẹo 4: Keyword quan trọng hơn nghe hết</strong><br>Chỉ cần bắt từ khóa liên quan câu hỏi, không cần hiểu toàn bộ đoạn.",
+            "<strong>Mẹo 5: Advertisement thường có lời kêu gọi hành động</strong><br>→ Nếu nghe: Call, Visit, Sign up, Come and see → gần như chắc là đáp án câu cuối."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt siêu ngắn dạng thi",
+      "content": [
+        {
+          "type": "tip",
+          "title": "Advertisement",
+          "content": "Nghe mạch quảng cáo + bắt keyword + nhớ cuối đoạn luôn có lời kêu gọi."
+        }
+      ]
+    }
+  ]
 }

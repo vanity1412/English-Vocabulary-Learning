@@ -1,4 +1,223 @@
 {
-  "title": "Talk - Bài phát biểu, diễn văn",
-  "content": ""
+  "title": "Talk - Bài nói chuyện / Thuyết trình",
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung của Talk",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>🎯 Mục đích của bài Talk</strong><br>Talk thường dùng để:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Thuyết trình thông tin du lịch",
+            "Trình bày tại hội thảo, hội nghị",
+            "Giới thiệu sự kiện",
+            "Phát biểu khai mạc",
+            "Bài diễn thuyết"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>👥 Mối quan hệ giữa người nói và người nghe</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Hướng dẫn viên – Khách tham quan",
+            "Diễn giả – Người tham dự sự kiện",
+            "Người tổ chức – Khách mời"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>🔗 Mạch nói chuẩn của Talk</strong><br>Talk thường theo trình tự:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Chào mừng đến sự kiện / chương trình",
+            "Giới thiệu bản thân / tổ chức",
+            "Thông báo nội dung chính của bài nói",
+            "Thông tin bổ sung / lịch trình / hoạt động tiếp theo"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Lưu ý quan trọng",
+          "content": "• Đây là cấu trúc cực quan trọng để xác định vị trí đáp án"
+        }
+      ]
+    },
+    {
+      "heading": "2. Quy tắc làm bài Talk",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>1. Xác định sự kiện / địa điểm bài nói</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Thường nằm ngay phần chào mừng và giới thiệu đầu bài."
+        },
+        {
+          "type": "list",
+          "title": "Câu hỏi thường gặp:",
+          "items": [
+            "What event is taking place?",
+            "Where is the talk taking place?",
+            "Where does the speaker work?"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>2. Xác định mục đích bài nói</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Nằm ở phần đầu bài nói sau câu chào mừng."
+        },
+        {
+          "type": "list",
+          "title": "Dấu hiệu ngôn ngữ:",
+          "items": [
+            "Today, I'd like to talk about …",
+            "The purpose of this talk is …",
+            "I'm here to explain …"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>3. Xác định thông tin chi tiết</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Nằm ở phần nội dung chính."
+        },
+        {
+          "type": "list",
+          "title": "Dạng câu hỏi: Wh-questions",
+          "items": [
+            "What, When, Where, Why, How, Which"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>4. Xác định hành động tiếp theo</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Nằm ở phần cuối bài nói."
+        },
+        {
+          "type": "list",
+          "title": "Dấu hiệu ngôn ngữ:",
+          "items": [
+            "Now, let's …",
+            "In a few minutes, you will …",
+            "After this session, …"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Các trường hợp cụ thể của Talk",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>✅ 1. LỜI GIỚI THIỆU DIỄN GIẢ (INTRODUCTION SPEECH)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Mạch nói chuẩn:",
+          "items": [
+            "Chào mừng",
+            "Giới thiệu người dẫn / người nói",
+            "Mục đích sự kiện",
+            "Giới thiệu khách mời",
+            "Thông tin chi tiết về khách mời",
+            "Hành động tiếp theo của khách mời"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Dấu hiệu ngôn ngữ:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Chào mừng:</strong> Welcome to…, Thank you for…",
+            "<strong>Giới thiệu người nói:</strong> This is…, My name is…, I'm…",
+            "<strong>Giới thiệu khách mời:</strong> Our guest today is…, Please welcome…"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>✅ 2. BÀI THUYẾT MINH CỦA HƯỚNG DẪN VIÊN DU LỊCH (TOUR GUIDE TALK)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc chuẩn:",
+          "items": [
+            "<strong>1️⃣ Chào mừng + giới thiệu:</strong> Welcome to + địa điểm, My name is…",
+            "<strong>2️⃣ Hướng dẫn / quy định:</strong> Hướng dẫn viên đưa ra quy định trước chuyến tham quan: Không cho động vật ăn, Không quay phim, chụp ảnh, Giữ trật tự, tắt điện thoại",
+            "<strong>3️⃣ Thông tin chi tiết:</strong> Lịch trình tham quan, Hoạt động, Thời gian dừng chân",
+            "<strong>4️⃣ Hành động tiếp theo:</strong> Now we will…, Let's move to…, Please follow me"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Bản dịch thuật ngữ quan trọng",
+      "content": [
+        {
+          "type": "list",
+          "items": [
+            "<strong>Talk:</strong> Bài nói chuyện / thuyết trình",
+            "<strong>Speaker:</strong> Diễn giả",
+            "<strong>Audience:</strong> Người nghe",
+            "<strong>Workshop:</strong> Hội thảo",
+            "<strong>Seminar:</strong> Hội nghị",
+            "<strong>Conference:</strong> Hội nghị lớn",
+            "<strong>Event:</strong> Sự kiện",
+            "<strong>Tour guide:</strong> Hướng dẫn viên",
+            "<strong>Schedule:</strong> Lịch trình",
+            "<strong>Session:</strong> Phiên họp",
+            "<strong>Presentation:</strong> Bài thuyết trình",
+            "<strong>Introduction:</strong> Giới thiệu",
+            "<strong>Purpose:</strong> Mục đích",
+            "<strong>Resource:</strong> Tài nguyên",
+            "<strong>Mentor:</strong> Cố vấn"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "5. Mẹo ghi nhớ (cực quan trọng)",
+      "content": [
+        {
+          "type": "list",
+          "title": "✅ Các mẹo quan trọng:",
+          "items": [
+            "<strong>Mẹo 1: Nhớ mạch Talk</strong><br>→ WELCOME → INTRO → MAIN CONTENT → NEXT ACTION",
+            "<strong>Mẹo 2: Đầu bài = sự kiện & mục đích</strong><br>Nghe 10–15 giây đầu là biết bài nói diễn ra ở đâu và nói về gì.",
+            "<strong>Mẹo 3: Giữa bài = thông tin chi tiết</strong><br>Các câu hỏi Wh thường nằm giữa bài.",
+            "<strong>Mẹo 4: Cuối bài = hành động tiếp theo</strong><br>Câu cuối thường hỏi người nghe sẽ làm gì tiếp theo.",
+            "<strong>Mẹo 5: Talk thường mang tính diễn thuyết</strong><br>→ Giọng nói dài, liên tục, không phải đối thoại → chắc chắn là Talk."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt siêu ngắn dạng thi",
+      "content": [
+        {
+          "type": "tip",
+          "title": "Talk",
+          "content": "Xác định sự kiện & mục đích đầu bài + bắt chi tiết giữa bài + tìm hành động cuối bài."
+        }
+      ]
+    }
+  ]
 }

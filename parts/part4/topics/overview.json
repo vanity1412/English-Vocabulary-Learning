@@ -1,4 +1,197 @@
 {
-  "title": "Tổng quan",
-  "content": ""
+  "title": "Part 4: Talks - Tổng quan",
+  "sections": [
+    {
+      "heading": "1. Thông tin chung",
+      "content": [
+        {
+          "type": "info-box",
+          "items": [
+            {
+              "label": "Hình thức câu hỏi",
+              "value": "Trắc nghiệm chọn 1 trong 4 đáp án A, B, C, D. Mỗi đoạn độc thoại (1 người nói) có 3 câu hỏi liên quan."
+            },
+            {
+              "label": "Số lượng câu hỏi",
+              "value": "30 câu hỏi (từ câu 71 đến câu 100), gồm 10 đoạn độc thoại"
+            },
+            {
+              "label": "Kỹ năng được đánh giá",
+              "value": "Nghe hiểu giao tiếp hằng ngày, nghe hiểu trong môi trường công sở, kết hợp kỹ năng nghe + suy luận thông tin"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch khái niệm:</strong> Part 4 = phần nghe bài nói đơn (monologue) về công việc và đời sống"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Part 4 giống Part 3 về dạng câu hỏi nhưng chỉ có 1 người nói<br>• Thông tin thường được trình bày theo thứ tự thời gian"
+        }
+      ]
+    },
+    {
+      "heading": "2. Các dạng câu hỏi trong Part 4",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>2.1. Phân loại theo tính chất câu hỏi</strong><br><br>Các câu hỏi trong Part 4 thường thuộc các nhóm sau:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Câu hỏi về chủ đề, mục đích bài nói:</strong> Bài nói về gì, mục đích của bài nói",
+            "<strong>Câu hỏi về danh tính, địa điểm:</strong> Người nói là ai, đang ở đâu",
+            "<strong>Câu hỏi về chi tiết thông tin:</strong> Số liệu, thời gian, hành động cụ thể",
+            "<strong>Câu hỏi về yêu cầu, gợi ý:</strong> Người nói yêu cầu hoặc đề xuất điều gì",
+            "<strong>Câu hỏi về hành động trong tương lai:</strong> Điều gì sẽ xảy ra tiếp theo",
+            "<strong>Câu hỏi về hàm ý câu nói (suy luận):</strong> Ý nói gián tiếp, suy luận từ ngữ cảnh",
+            "<strong>Câu hỏi kết hợp bảng biểu / hình ảnh:</strong> Kết hợp thông tin nghe với hình ảnh cho sẵn"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Câu hỏi thường xuất hiện theo thứ tự thông tin trong bài nói. Mỗi đoạn có 3 câu hỏi tương ứng 3 phần thông tin."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch khái niệm:</strong> Chủ đề/mục đích: bài nói về gì | Danh tính/địa điểm: ai, ở đâu | Chi tiết: số liệu, thời gian, hành động | Hàm ý: ý nói gián tiếp, suy luận"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Làm câu hỏi tổng quát trước → chi tiết → suy luận<br>• Tập trung nghe keyword (từ khóa) như thời gian, địa điểm, hành động"
+        },
+        {
+          "type": "text",
+          "content": "<strong>2.2. Phân loại theo hình thức bài nói</strong><br><br>Các dạng bài nói thường gặp:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Telephone message (Tin nhắn thoại):</strong> Tin nhắn để lại trên máy trả lời tự động",
+            "<strong>Advertisement (Quảng cáo):</strong> Quảng cáo sản phẩm, dịch vụ",
+            "<strong>Announcement (Thông báo):</strong> Thông báo công khai cho nhiều người",
+            "<strong>Talk (Bài diễn thuyết):</strong> Bài phát biểu, diễn văn",
+            "<strong>News report / broadcast (Bản tin):</strong> Tin tức, bản tin phát thanh",
+            "<strong>Excerpt from a meeting (Trích dẫn từ cuộc họp):</strong> Đoạn trích từ buổi họp, hội thảo"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Mỗi dạng có bố cục thông tin đặc trưng. Thông tin quan trọng thường nằm ở: Đầu bài (giới thiệu chủ đề), Giữa bài (chi tiết chính), Cuối bài (hành động, yêu cầu)."
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nhận diện dạng bài ngay từ câu mở đầu để đoán cấu trúc thông tin<br>• Bài họp và thông báo thường có yêu cầu hành động ở cuối"
+        }
+      ]
+    },
+    {
+      "heading": "3. Các bước làm bài chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>3.1. Quy trình làm bài cơ bản</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Các bước:",
+          "items": [
+            "<strong>Bước 1:</strong> Đọc câu hỏi để xác định thông tin cần nghe",
+            "<strong>Bước 2:</strong> Nghe và chọn đáp án theo thứ tự thông tin"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Không nghe lại được → phải bắt thông tin ngay. Thông tin xuất hiện theo thứ tự câu hỏi."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch khái niệm:</strong> Strategy = chiến lược làm bài | Keyword = từ khóa | Order = thứ tự thông tin"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nghe đến đâu chọn đến đó, không chờ nghe hết<br>• Nếu lỡ câu → bỏ ngay để không mất câu sau"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3.2. Làm bài khi thi trên giấy</strong><br><br>Có thể đọc trước câu hỏi và đáp án. Phải phân bố thời gian đọc câu hỏi giữa các đoạn."
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc:",
+          "items": [
+            "Đọc trước câu hỏi trong lúc băng hướng dẫn",
+            "Nghe đoạn băng và tô đáp án song song",
+            "Chuyển ngay sang đoạn tiếp theo khi xong"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Luôn đọc trước 3 câu tiếp theo khi có thời gian trống<br>• Không dành quá lâu cho 1 câu"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3.3. Làm bài khi thi trên máy tính</strong><br><br>Câu hỏi hiện lần lượt theo băng. Không đọc trước được câu tiếp theo."
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc:",
+          "items": [
+            "Đọc nhanh câu hỏi ngay khi hiện",
+            "Nghe và chọn đáp án song song"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch khái niệm:</strong> Computer-based test = thi trên máy tính"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Tập trung nghe hiểu thay vì phụ thuộc vào đọc trước<br>• Ghi nhớ thông tin trong đầu rồi chọn đáp án nhanh"
+        }
+      ]
+    },
+    {
+      "heading": "4. Lưu ý quan trọng khi ôn Part 4",
+      "content": [
+        {
+          "type": "text",
+          "content": "Part 4 có nhiều thông tin liên tục, đòi hỏi nghe hiểu tổng thể và chi tiết."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Thông tin theo thứ tự câu hỏi. Câu suy luận thường ở cuối."
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nghe ý chính trước, không cố nghe từng từ<br>• Ghi nhớ các tín hiệu chuyển ý: first, next, finally<br>• Tập luyện nghe bài nói dài liên tục"
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt mẹo học nhanh Part 4",
+      "content": [
+        {
+          "type": "list",
+          "title": "🧠 Các mẹo quan trọng:",
+          "items": [
+            "Nhận diện dạng bài nói ngay từ đầu",
+            "Xác định từ khóa trong câu hỏi",
+            "Nghe theo thứ tự thông tin",
+            "Bỏ câu khó, không dừng lại",
+            "Luyện nghe độc thoại dài để tăng stamina nghe"
+          ]
+        }
+      ]
+    }
+  ]
 }

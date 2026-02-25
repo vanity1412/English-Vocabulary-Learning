@@ -1,11 +1,9 @@
-// Grammar App JavaScript
-let grammarTopics = [];
+// Grammar Lesson Page JavaScript
 let currentGrammarTopic = null;
 let grammarExercises = [];
 let currentExerciseIndex = 0;
 let grammarScore = 0;
 let learnedTopics = new Set();
-let currentFilter = 'all';
 
 // LocalStorage keys
 const STORAGE_KEYS = {
@@ -15,24 +13,10 @@ const STORAGE_KEYS = {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    loadGrammarTopics();
     loadLearnedTopics();
-    initializeFilterButtons();
     initializeTabButtons();
+    loadGrammarLesson();
 });
-
-async function loadGrammarTopics() {
-    try {
-        const response = await fetch('grammar/grammar_topics.json');
-        const data = await response.json();
-        grammarTopics = data.topics;
-        displayGrammarTopics();
-        updateProgress();
-    } catch (error) {
-        console.error('Error loading grammar topics:', error);
-        alert('Không thể tải dữ liệu ngữ pháp!');
-    }
-}
 
 function loadLearnedTopics() {
     const saved = localStorage.getItem(STORAGE_KEYS.LEARNED_TOPICS);
@@ -43,21 +27,6 @@ function loadLearnedTopics() {
 
 function saveLearnedTopics() {
     localStorage.setItem(STORAGE_KEYS.LEARNED_TOPICS, JSON.stringify([...learnedTopics]));
-}
-
-function updateProgress() {
-    document.getElementById('topicsLearned').textContent = learnedTopics.size;
-}
-
-function initializeFilterButtons() {
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            currentFilter = this.dataset.level;
-            displayGrammarTopics();
-        });
-    });
 }
 
 function initializeTabButtons() {
@@ -90,41 +59,47 @@ function switchTab(tabName) {
     }
 }
 
-function displayGrammarTopics() {
-    const container = document.getElementById('grammarTopicsList');
+async function loadGrammarLesson() {
+    // Get topic ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const topicId = urlParams.get('topic');
     
-    let filteredTopics = grammarTopics;
-    if (currentFilter !== 'all') {
-        filteredTopics = grammarTopics.filter(topic => topic.level === currentFilter);
+    if (!topicId) {
+        alert('Không tìm thấy chủ đề!');
+        window.location.href = 'grammar.html';
+        return;
     }
     
-    container.innerHTML = filteredTopics.map((topic, index) => {
-        const isLearned = learnedTopics.has(topic.id);
-        const levelClass = topic.level === 'Cơ bản' ? 'basic' : 
-                          topic.level === 'Trung bình' ? 'intermediate' : 'advanced';
+    try {
+        // Load grammar topics
+        const response = await fetch('grammar/grammar_topics.json');
+        const data = await response.json();
+        currentGrammarTopic = data.topics.find(t => t.id === topicId);
         
-        return `
-            <div class="grammar-topic-card ${isLearned ? 'learned' : ''}" onclick="selectGrammarTopic('${topic.id}')">
-                ${isLearned ? '<span class="learned-badge">✓ Đã học</span>' : ''}
-                <div class="topic-icon">${topic.icon}</div>
-                <h3>${topic.title}</h3>
-                <p>${topic.description}</p>
-                <div class="topic-level ${levelClass}">${topic.level}</div>
-            </div>
-        `;
-    }).join('');
-}
-
-function selectGrammarTopic(topicId) {
-    // Chuyển hướng sang trang grammar riêng
-    window.location.href = `grammar-lesson.html?topic=${topicId}`;
+        if (!currentGrammarTopic) {
+            alert('Không tìm thấy chủ đề!');
+            window.location.href = 'grammar.html';
+            return;
+        }
+        
+        displayGrammarLesson();
+    } catch (error) {
+        console.error('Error loading grammar lesson:', error);
+        alert('Không thể tải dữ liệu ngữ pháp!');
+    }
 }
 
 function displayGrammarLesson() {
     const topic = currentGrammarTopic;
+    
+    // Update page title
+    document.getElementById('pageTitle').textContent = `${topic.title} - TOEIC`;
     document.getElementById('grammarLessonTitle').textContent = topic.title;
+    
+    // Display theory
     document.getElementById('grammarTheory').innerHTML = topic.theory;
     
+    // Display examples
     const examplesHtml = topic.examples.map(ex => `
         <div class="grammar-example">
             <p class="example-sentence">${ex.sentence}</p>
@@ -134,8 +109,17 @@ function displayGrammarLesson() {
     `).join('');
     document.getElementById('grammarExamples').innerHTML = examplesHtml;
     
-    // Switch to theory tab by default
-    switchTab('theory');
+    // Update button text if already learned
+    updateLearnedButton();
+}
+
+function updateLearnedButton() {
+    const btn = document.querySelector('.lesson-actions .btn-secondary');
+    if (learnedTopics.has(currentGrammarTopic.id)) {
+        btn.textContent = '❌ Bỏ đánh dấu đã học';
+    } else {
+        btn.textContent = '✅ Đánh dấu đã học';
+    }
 }
 
 async function startGrammarExercise() {
@@ -231,7 +215,6 @@ function showGrammarResults() {
     if (percentage >= 70) {
         learnedTopics.add(currentGrammarTopic.id);
         saveLearnedTopics();
-        updateProgress();
     }
     
     document.getElementById('grammarOptions').innerHTML = `
@@ -243,7 +226,7 @@ function showGrammarResults() {
             </p>
             ${percentage >= 70 ? '<p style="color: #28a745; font-size: 18px; margin: 15px 0;">✅ Chủ đề đã được đánh dấu là đã học!</p>' : ''}
             <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
-                <button class="btn btn-primary" onclick="backToGrammarTopics()">📚 Chọn chủ đề khác</button>
+                <button class="btn btn-primary" onclick="window.location.href='grammar.html'">📚 Chọn chủ đề khác</button>
                 <button class="btn btn-secondary" onclick="startGrammarExercise()">🔄 Làm lại</button>
                 <button class="btn btn-secondary" onclick="backToGrammarLesson()">📖 Xem lại lý thuyết</button>
             </div>
@@ -253,13 +236,6 @@ function showGrammarResults() {
     
     // Update progress bar to 100%
     document.getElementById('exerciseProgressFill').style.width = '100%';
-}
-
-function backToGrammarTopics() {
-    document.getElementById('grammarExerciseView').style.display = 'none';
-    document.getElementById('grammarLessonView').style.display = 'none';
-    document.getElementById('grammarTopicsView').style.display = 'block';
-    displayGrammarTopics(); // Refresh to show learned status
 }
 
 function backToGrammarLesson() {
@@ -276,7 +252,7 @@ function markTopicAsLearned() {
         alert('✅ Đã đánh dấu chủ đề này là đã học!');
     }
     saveLearnedTopics();
-    updateProgress();
+    updateLearnedButton();
 }
 
 // Notes functions

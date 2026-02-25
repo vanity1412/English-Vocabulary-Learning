@@ -1,4 +1,270 @@
 {
   "title": "Telephone message - Tin nhắn thoại",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung của Telephone Message",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>🎯 Mục đích tin nhắn thoại</strong><br>Tin nhắn thoại thường được dùng để:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Chia sẻ hoặc báo cáo thông tin liên quan đến đơn hàng, công việc",
+            "Thông báo trì hoãn hoặc sự cố",
+            "Yêu cầu hoặc khiếu nại của khách hàng",
+            "Sắp xếp lịch họp hoặc phỏng vấn"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>👥 Mối quan hệ giữa người nói và người nghe</strong><br>Các mối quan hệ thường gặp:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Đồng nghiệp",
+            "Người bán / người sửa chữa",
+            "Khách hàng"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>🔗 Mạch nói chuẩn của tin nhắn thoại</strong><br>Tin nhắn thoại thường đi theo trình tự:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Chào hỏi",
+            "Giới thiệu tên và nơi gọi đến",
+            "Nêu mục đích tin nhắn",
+            "Thông tin chi tiết",
+            "Yêu cầu người nghe làm gì"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Lưu ý quan trọng",
+          "content": "• Đây là yếu tố QUAN TRỌNG NHẤT để làm đúng dạng bài này"
+        }
+      ]
+    },
+    {
+      "heading": "2. Quy tắc làm bài Telephone Message",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>1. Xác định danh tính người nói</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Thông tin nằm ngay đầu tin nhắn."
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc thường gặp:",
+          "items": [
+            "This is …",
+            "My name is …",
+            "I'm …"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>2. Xác định người nghe là ai / tin nhắn gửi đến đâu</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Nằm ở phần mục đích hoặc lời giới thiệu."
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc thường gặp:",
+          "items": [
+            "As department heads, …",
+            "You're responsible for …"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>3. Xác định mục đích tin nhắn</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Thường xuất hiện ngay sau phần giới thiệu."
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc dấu hiệu:",
+          "items": [
+            "I'm calling to …",
+            "I'm calling about …",
+            "I'm calling back to …",
+            "I've received …",
+            "I'm returning …"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "⚠️ <strong>Chú ý từ nối:</strong> unfortunately, but, by the way, I'm sorry → báo hiệu thay đổi thông tin hoặc vấn đề phát sinh."
+        },
+        {
+          "type": "text",
+          "content": "<strong>4. Xác định thông tin chi tiết</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Nằm ở phần giữa tin nhắn. Tập trung vào keyword trong câu hỏi để nghe đúng thông tin cần."
+        },
+        {
+          "type": "text",
+          "content": "<strong>5. Xác định yêu cầu đối với người nghe</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Thường nằm ở cuối tin nhắn."
+        },
+        {
+          "type": "list",
+          "title": "Dấu hiệu:",
+          "items": [
+            "Please …",
+            "You should …",
+            "You could …",
+            "You have to …"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Tin nhắn thoại (Phone Message)",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>Hai trường hợp phổ biến:</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Người gọi để lại tin nhắn cho công ty/dịch vụ",
+            "Người gọi gọi lại để phản hồi tin nhắn đã nhận"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>Cấu trúc chuẩn của tin nhắn thoại:</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>1️⃣ Giới thiệu:</strong> Người nói giới thiệu bản thân.",
+            "<strong>2️⃣ Mục đích:</strong> Gọi để hỏi/yêu cầu hoặc Gọi lại để trả lời tin nhắn",
+            "<strong>3️⃣ Nội dung chi tiết:</strong> Thông tin cụ thể liên quan đến vấn đề.",
+            "<strong>4️⃣ Yêu cầu người nghe:</strong> Đề nghị người nghe thực hiện hành động nào đó."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Tin nhắn trả lời tự động (Automated Message)",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>1. Giới thiệu nơi gọi đến</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc thường gặp:",
+          "items": [
+            "Thank you for calling + tên công ty",
+            "You've reached + tên phòng ban"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>2. Mục đích tin nhắn tự động</strong><br>Thông báo không thể bắt máy vì:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ngoài giờ làm việc",
+            "Công ty đang bận",
+            "Không thể kết nối"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>3. Nội dung chi tiết</strong><br>Tin nhắn tự động thường cung cấp:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Giờ làm việc",
+            "Cách đặt hàng / đặt phòng",
+            "Số hotline"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>4. Yêu cầu người nghe làm gì</strong><br>Ví dụ hành động thường gặp:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Nhấn phím để đặt hàng",
+            "Nhấn phím để gặp đại lý",
+            "Nhấn phím để tư vấn đổi trả"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "5. Bản dịch thuật ngữ quan trọng",
+      "content": [
+        {
+          "type": "list",
+          "items": [
+            "<strong>Telephone message:</strong> Tin nhắn thoại",
+            "<strong>Phone message:</strong> Tin nhắn điện thoại",
+            "<strong>Automated message:</strong> Tin nhắn tự động",
+            "<strong>Purpose:</strong> Mục đích",
+            "<strong>Listener:</strong> Người nghe",
+            "<strong>Caller:</strong> Người gọi",
+            "<strong>Department:</strong> Phòng ban",
+            "<strong>Schedule:</strong> Lịch trình",
+            "<strong>Transfer:</strong> Thuyên chuyển",
+            "<strong>Request:</strong> Yêu cầu",
+            "<strong>Warranty:</strong> Bảo hành"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "6. Mẹo ghi nhớ (cực quan trọng)",
+      "content": [
+        {
+          "type": "list",
+          "title": "✅ Các mẹo quan trọng:",
+          "items": [
+            "<strong>Mẹo 1: Nhớ công thức mạch nói</strong><br>→ GIỚI THIỆU → MỤC ĐÍCH → CHI TIẾT → YÊU CẦU",
+            "<strong>Mẹo 2: Câu hỏi thường theo thứ tự mạch nói</strong><br>Câu 1: Ai nói? | Câu 2: Mục đích gì? | Câu 3: Người nghe phải làm gì?",
+            "<strong>Mẹo 3: Nghe keyword, bỏ chi tiết thừa</strong><br>Không cần hiểu toàn bộ, chỉ cần bắt từ khóa đúng câu hỏi.",
+            "<strong>Mẹo 4: Cuối tin nhắn luôn có yêu cầu</strong><br>→ Nếu nghe \"Please …\" gần cuối → gần như chắc là đáp án câu cuối.",
+            "<strong>Mẹo 5: Tin nhắn tự động = không có tương tác</strong><br>→ Chỉ cung cấp thông tin chung và hướng dẫn thao tác."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt siêu ngắn dạng thi",
+      "content": [
+        {
+          "type": "tip",
+          "title": "Telephone Message",
+          "content": "Nghe theo trình tự mạch nói, câu hỏi đi theo mạch."
+        }
+      ]
+    }
+  ]
 }

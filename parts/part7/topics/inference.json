@@ -1,4 +1,363 @@
 {
   "title": "Câu hỏi suy luận",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi suy luận cũng là một dạng câu hỏi phổ biến, xuất hiện ở hầu hết các bài trong Part 7. Về hình thức, câu hỏi suy luận cũng giống câu hỏi tìm thông tin, đều là dạng câu hỏi 5W1H hỏi về một chi tiết trong bài đọc. Tuy nhiên, điểm khác biệt là đáp án cho câu hỏi suy luận không được nói đến trực tiếp trong bài mà cần phải suy luận."
+        },
+        {
+          "type": "info-box",
+          "title": "Dấu hiệu nhận biết câu hỏi suy luận",
+          "items": [
+            {
+              "label": "Trong câu hỏi chứa các từ",
+              "value": "most likely (rất có khả năng), probably (có thể), be implied (được ngầm hiểu), be indicated (được ngụ ý), be inferred (được suy ra), is expected (được dự đoán), is suggested (được gợi ý), is stated (được khẳng định), be true about (đúng về)"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "content": "Dạng câu hỏi về chủ đề, mục đích, câu hỏi về hàm ý câu nói, câu hỏi tìm chi tiết sai cũng có nhiều câu thuộc dạng câu hỏi suy luận. Cách làm cho các dạng câu hỏi đó nằm trong các bài riêng của từng dạng. Ví dụ về câu hỏi suy luận trong bài học này là những câu hỏi về chi tiết, không thuộc các dạng câu hỏi trên."
+        }
+      ]
+    },
+    {
+      "heading": "2. Các trường hợp cụ thể",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "2.1. Câu hỏi Who?",
+          "examples": [
+            {
+              "id": "who-inference",
+              "title": "Example (New economy - Test 1 - Q158)",
+              "passage": {
+                "type": "email",
+                "content": "To: Stacey Johnson (sjohnson@toplineelec.com)\nFrom: Josh Fleck (jfleck@toplineelec.com)\nDate: October 22\nSubject: Strategic Planning\n\nDear Ms. Johnson,\n\nDistrict Management at Topline Electronics would like to inform you about a new development that will be affecting your store. Another competing consumer electronics store will be opening in the Crayville area on November 12.\n\nIn order to ensure that Topline Electronics does not lose business to this new store, District Management is advising you to run a special sale on our new line of curved UHD televisions. These televisions provide state-of-the-art features at moderate prices. By showing your customers that Topline Electronics offers the best deals in the area, you will be able to maintain customer loyalty. We will be shipping the new televisions to your store within the next week. We suggest you prepare a prominent display space in your store to feature them. You should also update your website to advertise the sale.\n\nSmooth communication between you and us is vital to effective operational practices. If you have any questions concerning the new televisions or the marketing campaign in general, please don't hesitate to contact District Management.\n\nSincerely,\nJosh Fleck\nDistrict Manager,\nTopline Electronics"
+              },
+              "question": {
+                "text": "Who most likely is Ms. Johnson?",
+                "translation": "Ms. Johnson rất có thể là ai?",
+                "options": [
+                  {"key": "A", "text": "A store manager", "translation": "Quản lý cửa hàng", "correct": true},
+                  {"key": "B", "text": "A customer", "translation": "Khách hàng"},
+                  {"key": "C", "text": "A product developer", "translation": "Nhà phát triển sản phẩm"},
+                  {"key": "D", "text": "A marketing specialist", "translation": "Chuyên gia marketing"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Câu hỏi đầu tiên => tìm thông tin ở đầu thư:",
+                    "analysis": [
+                      "'Dear Ms. Johnson, District Management at Topline Electronics would like to inform you about a new development that will be affecting your store.'",
+                      "Quản lí vùng tại Topline Electronics muốn báo với bạn về một sự tiến triển mới sẽ ảnh hưởng đến cửa hàng của bạn.",
+                      "Ms. Johnson phải là người đứng đầu, phụ trách cửa hàng = a store manager.",
+                      "Đáp án (A)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.2. Câu hỏi Where?",
+          "examples": [
+            {
+              "id": "where-inference",
+              "title": "Example (New economy - Test 1 - Q191)",
+              "passage": {
+                "type": "notice",
+                "title": "Important Notice",
+                "content": "Dear Castelli customers,\n\nOur quality assurance team has revealed that five hundred jars of Castelli's Classic Spaghetti Sauce do not meet our high standards of product quality.\n\nThe defect has been caused by an improper seal on the lid of the jar and may have resulted in the contents spoiling due to contact with air. We are currently warning customers not to eat this product.\n\nWhat you should do: If you have already purchased a jar of Castelli's Classic Spaghetti Sauce, please send an e-mail to our Customer Service Department at cs@castellifood.com. One of our employees will provide you with a product replacement voucher. Please include your name, full address, phone number, and the product's serial number in the e-mail. Customers will receive a $12 voucher for each jar purchased. Please do not try to get a refund for this product at a retailer.\n\nPlease remember that no other Castelli food products are affected. We encourage you to continue purchasing our products."
+              },
+              "question": {
+                "text": "Where would the notice most likely be found?",
+                "translation": "Thông báo rất có thể được tìm thấy ở đâu?",
+                "options": [
+                  {"key": "A", "text": "In a restaurant", "translation": "Ở một nhà hàng"},
+                  {"key": "B", "text": "In a staff break room", "translation": "Ở một phòng nghỉ nhân viên"},
+                  {"key": "C", "text": "In a shipping agency", "translation": "Ở một đơn vị chuyển phát"},
+                  {"key": "D", "text": "In a grocery store", "translation": "Ở một cửa hàng tạp hoá", "correct": true}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Câu hỏi đầu tiên => tìm thông tin ở đoạn đầu:",
+                    "analysis": [
+                      "'Dear Castelli customers,' => thông báo gửi khách hàng => (A) hoặc (D)",
+                      "'Our quality assurance team has revealed that five hundred jars of Castelli's Classic Spaghetti Sauce do not meet our high standards of product quality.'",
+                      "Nơi bán sản phẩm chai sốt mì Ý => Thông báo được dán ở tiệm tạp hoá",
+                      "Đáp án (D)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "content": "Ở bài đọc trong ví dụ cho câu hỏi Who và câu hỏi Where, các câu hỏi khác đều là câu hỏi suy luận => làm bài theo đúng thứ tự"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.3. Câu hỏi When?",
+          "examples": [
+            {
+              "id": "when-inference",
+              "title": "Example (ETS 2022 - Test 1 - Q155)",
+              "passage": {
+                "type": "email",
+                "content": "To: catiyeh@mymailroom.au\nFrom: achen@mutamark.au\nDate: 1 July\nSubject: Mutamark conference\n\nDear Ms. Atiyeh,\n\nTo follow up on our phone conversation earlier today, I would like to extend to you a formal written invitation to speak at the eighth annual Mutamark conference, scheduled to take place this year from 17 to 20 September in Zagros. Because you drew a sizable crowd when you appeared at the conference in the past, we will be making special arrangements for your visit this time. The Blue Room at the Debeljak Hotel holds only 120, so this year we are also booking the Koros Hall, which has a capacity of 270. We can offer you a 40-to-50-minute slot on the last day of the conference, when attendance should be at its peak. Please e-mail me to confirm your acceptance and to let me know more about your audiovisual requirements. We can provide overhead projection for still images if you will be using them again.\n\nVery best regards,\nAlex Chen, Conference Planning\nMutamark Headquarters, Melbourne"
+              },
+              "question": {
+                "text": "When will Ms. Atiyeh most likely appear at the Mutamark conference?",
+                "translation": "Ms. Atiyeh rất có thể xuất hiện tại hội nghị Mutamark khi nào?",
+                "options": [
+                  {"key": "A", "text": "On September 17", "translation": "Ngày 17 tháng Chín"},
+                  {"key": "B", "text": "On September 18", "translation": "Ngày 18 tháng Chín"},
+                  {"key": "C", "text": "On September 19", "translation": "Ngày 19 tháng Chín"},
+                  {"key": "D", "text": "On September 20", "translation": "Ngày 20 tháng Chín", "correct": true}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Dựa vào keyword Mutamark conference để tìm thông tin về thời gian tổ chức:",
+                    "analysis": [
+                      "'Mutamark conference, scheduled to take place this year from 17 to 20 September' => thời gian diễn ra từ 17-20 tháng Chín.",
+                      "Đọc tiếp để tìm gợi ý về ngày Ms. Atiyeh sẽ tham gia:",
+                      "'Because you drew a sizable crowd when you appeared at the conference in the past, we will be making special arrangements for your visit this time. The Blue Room at the Debeljak Hotel holds only 120, so this year we are also booking the Koros Hall, which has a capacity of 270. We can offer you a 40-to-50-minute slot on the last day of the conference, when attendance should be at its peak.'",
+                      "Ms. Atiyeh sẽ thu hút rất đông người tham gia nên cần hội trường lớn. Ban tổ chức đã giữ chỗ cho ngày cuối để Ms. Atiyeh xuất hiện.",
+                      "Ms. Atiyeh rất có thể sẽ tham gia vào ngày 20 tháng Chín.",
+                      "Đáp án (D)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "content": "Đây là câu hỏi cuối trong cụm 3 câu hỏi liên quan đến bài. Ở 2 câu hỏi trước, thí sinh đã trả lời thông tin về việc Ms. Atiyeh đã thu hút rất nhiều người tham gia hội nghị ở lần trước và hội trường Koros Hall có sức chứa 270. => Thông tin để suy luận ra câu hỏi về ngày tham dự rất dễ để tìm ra."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.4. Câu hỏi Why?",
+          "examples": [
+            {
+              "id": "why-inference",
+              "title": "Example (ETS 2022 - Test 4 - Q195)",
+              "note": "Cụm câu hỏi bao gồm 3 đoạn văn, thông tin để trả lời câu 195 liên quan đến đoạn 2 và 3",
+              "passages": [
+                {
+                  "type": "memo",
+                  "content": "TO: Purchasing agents\nFROM: Antizio International\nDATE: March 24\nSUBJECT: Inventory update\n\nEffective April 1, the following products will be discontinued.\n\nManufacturer | Product line\nVentana | \"Valentina\"-all colors (entire line)\n         | \"Brittany\"-country red, violet, taupe\nMedoro  | \"Solidstone\"-all colors\n         | \"Elementa\"--black, gray\n\nOrders for these products cannot be accepted after April 1. Return of these products cannot be accepted after May 1."
+                },
+                {
+                  "type": "form",
+                  "title": "ANTIZIO International - Merchandise Return",
+                  "content": "Please review our return policy before submitting this form. Returns must be made within 60 days of purchase and must be in original, unused condition.\n\nReturn date: May 12\nCustomer name: William Lin, WKL Contractors, Inc.\nOriginal invoice date: March 20\nItem name: Medoro brand-\"Elementa\" tile\nColor: Gray\nQuantity: 20 boxes\nPrice/box: $70\nReason for return: Actual color does not match catalog image\nForm of return requested: ☑ Refund  or  ☐ Store credit"
+                }
+              ],
+              "question": {
+                "text": "Why will Mr. Lin's refund request most likely be rejected?",
+                "translation": "Tại sao yêu cầu hoàn tiền của Mr. Lin rất có thể sẽ bị từ chối?",
+                "options": [
+                  {"key": "A", "text": "He bought an item that was custom designed.", "translation": "Anh ấy đã mua món đồ được thiết kế riêng."},
+                  {"key": "B", "text": "He failed to include proof of purchase.", "translation": "Anh ấy không cung cấp được hoá đơn mua hàng."},
+                  {"key": "C", "text": "He returned a product after a deadline had expired.", "translation": "Anh ấy trả lại sản phẩm sau khi đã quá hạn chót.", "correct": true},
+                  {"key": "D", "text": "He forgot to ask for a return authorization number.", "translation": "Anh ấy quên hỏi số xác nhận trả hàng"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Câu hỏi liên quan đến yêu cầu hoàn tiền => tìm thông tin về chính sách hoàn trả để xem yêu cầu của Mr. Lin vi phạm quy định nào:",
+                    "analysis": [
+                      "Ở đoạn 2: Những sản phẩm trong bảng không được hoàn trả sau mùng 1 tháng 5.",
+                      "'Return of these products cannot be accepted after May 1.'",
+                      "Xem sản phẩm Mr. Lin đã mua và thời gian hoàn trả ở đoạn 3:",
+                      "'Item name: Medoro brand-\"Elementa\" tile, Color: Gray, Return date: May 12'",
+                      "Sản phẩm Mr. Lin mua nằm trong danh sách không được hoàn trả sau mùng 1 tháng 5, mà ngày ông ấy hoàn trả là 12 tháng 5 nên yêu cầu trả hàng hoàn tiền sẽ không được chấp nhận.",
+                      "Đáp án (C)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.5. Câu hỏi How?",
+          "examples": [
+            {
+              "id": "how-inference",
+              "title": "Example (ETS 2022 - Test 5 - Q166)",
+              "passage": {
+                "type": "article",
+                "title": "Houkcomm Eyes Downtown Roseville",
+                "content": "(April 22) - Houkcomm, one of the state's leading telecommunications companies, will likely establish operations in Roseville. Houkcomm is reportedly looking to open a Roseville office as part of a new venture for the company: an expansion into the digital media industry. Houkcomm spokespeople have not offered any details on the plan, but two architects involved with the project confirmed that one proposed office building design would accommodate over 100 workers. The likely location for this soon-to-be constructed building, according to these sources, is a property adjacent to Behr Square in central Roseville."
+              },
+              "question": {
+                "text": "How did the reporter most likely obtain information for the article?",
+                "translation": "Phóng viên rất có khả năng đã lấy thông tin cho bài báo bằng cách nào?",
+                "options": [
+                  {"key": "A", "text": "From a press release written by Houkcomm representatives", "translation": "Từ một thông cáo báo chí viết bởi đại diện của Houkcomm"},
+                  {"key": "B", "text": "By interviewing employees of a firm that is doing work for Houkcomm", "translation": "Bằng cách phỏng vấn nhân viên của một hãng đang làm việc cho Houkcomm", "correct": true},
+                  {"key": "C", "text": "Through public documents and construction permits", "translation": "Từ những tài liệu công khai và giấy phép xây dựng"},
+                  {"key": "D", "text": "By attending a press conference in Roseville", "translation": "Bằng cách tham gia một họp báo ở Roseville"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Đây là một bài báo ngắn, đọc lướt để tìm thông tin:",
+                    "analysis": [
+                      "'Houkcomm spokespeople have not offered any details on the plan' => Người phát ngôn của Houkcomm không chia sẻ bất cứ thông tin gì về kế hoạch này => loại (A)",
+                      "'but two architects involved with the project confirmed that one proposed office building design would accommodate over 100 workers.'",
+                      "Hai kiến trúc sư liên quan tới dự án đã xác nhận rằng một thiết kế đề xuất cho toà nhà văn phòng sẽ có sức chứa hơn 100 công nhân.",
+                      "Kiến trúc sư liên quan đến dự án đã đưa thông tin cho phóng viên.",
+                      "Đáp án (B)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.6. Câu hỏi What?",
+          "examples": [
+            {
+              "id": "what-business-type",
+              "title": "Example 1: Câu hỏi về ngành nghề",
+              "passage": {
+                "type": "chat",
+                "content": "Lily Park (4:03 P.M.) Hello, everyone. I just want to check in with you before the weekend. Kaz, how did your meeting with Blumfield Associates go?\n\nKaz Fedorowitz (4:10 P.M.) It could not have been better. They are purchasing 40 new laptops with a service agreement. I've got the signed contract in hand.\n\nLily Park (4:11 P.M.) Outstanding! Nice way to wrap up the week.\n\nDavid Esposito (4:12 P.M.) Congratulations! This one puts you over the top. You are now the top salesperson for the third month in a row.\n\nDanielle Becker (4:13 P.M.) That's great news, Kaz. By the way, if you can get all your receipts to me as soon as you are back in the office, you will get your travel reimbursement check early the following week.\n\nKaz Fedorowitz (4:14 P.M.) Are you sure about that? Didn't Michael Lim just land a big sale?\n\nLily Park (4:15 P.M.) Unfortunately, Michael's customers backed out at the last minute. They decided to lease computers and printers from another firm rather than purchase new equipment.\n\nKaz Fedorowitz (4:17 P.M.) That's too bad. And thanks for taking care of that, Danielle.\n\nDanielle Becker (4:18 P.M.) My pleasure!\n\nLily Park (4:19 P.M.) Have a wonderful weekend, everyone."
+              },
+              "question": {
+                "text": "In what type of business are the writers involved?",
+                "translation": "Những người viết liên quan đến loại hình kinh doanh nào?",
+                "note": "Hầu hết các câu hỏi liên quan đến ngành nghề, loại hình kinh doanh trong Part 7 là các câu hỏi suy luận.",
+                "options": [
+                  {"key": "A", "text": "Real estate", "translation": "Bất động sản"},
+                  {"key": "B", "text": "Travel services", "translation": "Dịch vụ du lịch"},
+                  {"key": "C", "text": "Office technology", "translation": "Công nghệ văn phòng", "correct": true},
+                  {"key": "D", "text": "Financial consulting", "translation": "Tư vấn tài chính"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Câu hỏi đầu tiên => đọc đoạn đầu:",
+                    "analysis": [
+                      "'Kaz Fedorowitz (4:10 P.M.) It could not have been better. They are purchasing 40 new laptops with a service agreement. I've got the signed contract in hand.'",
+                      "Kí hợp đồng mua laptop với thỏa thuận ưu đãi",
+                      "Công ty bán thiết bị điện tử văn phòng",
+                      "Đáp án (C)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "content": "Các câu hỏi dạng này đều dựa vào sản phẩm/dịch vụ mà công ty cung cấp để suy ra loại hình kinh doanh"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "what-indicated",
+              "title": "Example 2: Câu hỏi về chi tiết đúng (New economy - Test 1 - Q159)",
+              "note": "Tiếp tục ví dụ ở phần câu hỏi Who?",
+              "passage": {
+                "type": "email",
+                "content": "To: Stacey Johnson (sjohnson@toplineelec.com)\nFrom: Josh Fleck (jfleck@toplineelec.com)\nDate: October 22\nSubject: Strategic Planning\n\nDear Ms. Johnson,\n\nDistrict Management at Topline Electronics would like to inform you about a new development that will be affecting your store. Another competing consumer electronics store will be opening in the Crayville area on November 12.\n\nIn order to ensure that Topline Electronics does not lose business to this new store, District Management is advising you to run a special sale on our new line of curved UHD televisions. These televisions provide state-of-the-art features at moderate prices. By showing your customers that Topline Electronics offers the best deals in the area, you will be able to maintain customer loyalty. We will be shipping the new televisions to your store within the next week. We suggest you prepare a prominent display space in your store to feature them. You should also update your website to advertise the sale.\n\nSmooth communication between you and us is vital to effective operational practices. If you have any questions concerning the new televisions or the marketing campaign in general, please don't hesitate to contact District Management.\n\nSincerely,\nJosh Fleck\nDistrict Manager,\nTopline Electronics"
+              },
+              "question": {
+                "text": "What is indicated about Topline Electronics?",
+                "translation": "Điều gì được chỉ ra về Topline Electronics?",
+                "options": [
+                  {"key": "A", "text": "It recently opened a new store location.", "translation": "Gần đây mở chi nhánh cửa hàng mới"},
+                  {"key": "B", "text": "It will be relocated to the Crayville area.", "translation": "Chuyển đến khu vực Crayville."},
+                  {"key": "C", "text": "It is concerned about market competition.", "translation": "Quan tâm đến cạnh tranh thị trường", "correct": true},
+                  {"key": "D", "text": "It was nominated for an annual award.", "translation": "Được đề cử một giải thưởng."}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Đọc đoạn tiếp theo sau đoạn đầu về mục đích viết thư:",
+                    "analysis": [
+                      "'Another competing consumer electronics store will be opening in the Crayville area on November 12.' => cửa hàng khác sẽ mở ở Crayville, không phải Topline Electronics => loại (A) và (B)",
+                      "'In order to ensure that Topline Electronics does not lose business to this new store, District Management is advising you to run a special sale on our new line of curved UHD televisions.'",
+                      "Lời khuyên để cạnh tranh được và không mất thị phần vào tay cửa hàng mới",
+                      "Topline Electronics có quan tâm đến đối thủ = It is concerned about market competition.",
+                      "Đáp án (C)"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "what-happen",
+              "title": "Example 3: Câu hỏi về sự việc/hành động (ETS 2022 - Test 5 - Q167)",
+              "note": "Tiếp tục ví dụ ở phần câu hỏi How?",
+              "passage": {
+                "type": "article",
+                "title": "Houkcomm Eyes Downtown Roseville",
+                "content": "(April 22) - Houkcomm, one of the state's leading telecommunications companies, will likely establish operations in Roseville. Houkcomm is reportedly looking to open a Roseville office as part of a new venture for the company: an expansion into the digital media industry. Houkcomm spokespeople have not offered any details on the plan, but two architects involved with the project confirmed that one proposed office building design would accommodate over 100 workers. The likely location for this soon-to-be constructed building, according to these sources, is a property adjacent to Behr Square in central Roseville."
+              },
+              "question": {
+                "text": "According to the article, what is likely to happen soon?",
+                "translation": "Dựa vào bài báo, điều gì có khả năng sẽ xảy ra sớm?",
+                "options": [
+                  {"key": "A", "text": "Construction will begin on a new building.", "translation": "Bắt đầu xây dựng tòa nhà mới", "correct": true},
+                  {"key": "B", "text": "All Behr Square residences will be purchased.", "translation": "Tất cả khu dân cư Behr Square sẽ được mua lại."},
+                  {"key": "C", "text": "Houkcomm will negotiate new supply contracts.", "translation": "Houkcomm sẽ đàm phán hợp đồng cung cấp mới."},
+                  {"key": "D", "text": "Manufacturing jobs will increase in Roseville.", "translation": "Công việc sản xuất sẽ tăng lên ở Roseville."}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Câu hỏi cuối, đọc đoạn cuối để tìm thông tin:",
+                    "analysis": [
+                      "'The likely location for this soon-to-be constructed building, according to these sources, is a property adjacent to Behr Square in central Roseville.'",
+                      "Địa điểm dự kiến cho toà nhà sắp xây, theo những nguồn tin này, là một khu đất sát với quảng trường Behr ở trung tâm Roseville.",
+                      "Toà nhà sắp được xây dựng",
+                      "Đáp án (A)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

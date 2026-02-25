@@ -1,4 +1,331 @@
 {
-  "title": "Form - Biểu mẫu",
-  "content": ""
+  "title": "Form - Đơn từ",
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Dạng văn bản Biểu mẫu này thường là Form (phiếu đánh giá, đơn) là đơn đăng ký dịch vụ, sản phẩm, đơn mua hàng, điền khảo sát ý kiến về sản phẩm/dịch vụ. Có những phiếu đánh giá đưa ra các mục cần đánh giá như bài đọc mẫu dưới đây nhưng cũng có phiếu đánh giá yêu cầu khách hàng viết ra ý kiến của mình."
+        },
+        {
+          "type": "structure",
+          "title": "Cấu trúc bài Form:",
+          "parts": [
+            {
+              "section": "Phần đầu",
+              "items": [
+                "Chức vụ",
+                "Số seri",
+                "Tên & địa chỉ công ty",
+                "Thông tin người gửi/người nhận",
+                "Mục đích của biểu mẫu"
+              ]
+            },
+            {
+              "section": "Phần giữa",
+              "description": "Thông tin chi tiết",
+              "examples": [
+                {
+                  "type": "Đơn hàng/Hóa đơn",
+                  "details": [
+                    "Lịch sử đặt hàng",
+                    "Số lượng",
+                    "Sản phẩm"
+                  ]
+                },
+                {
+                  "type": "Phiếu giảm giá",
+                  "details": [
+                    "Sản phẩm được giảm giá",
+                    "Điều kiện giảm giá"
+                  ]
+                }
+              ]
+            },
+            {
+              "section": "Phần cuối",
+              "items": [
+                "Lời nhắn",
+                "Yêu cầu/Đề nghị"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Các loại câu hỏi xuất hiện",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "2.1. Câu hỏi về chủ đề hoặc mục đích",
+          "content": [
+            {
+              "type": "text",
+              "content": "Nội dung trả lời thường xuất hiện ở phần đầu hoặc có thể suy ra được từ những thông tin trong phần đầu."
+            },
+            {
+              "type": "example",
+              "content": "Ví dụ: Biểu mẫu là hóa đơn thanh toán => mục đích của biểu mẫu có thể là xác nhận số lượng hàng mua và số tiền cần trả."
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.2. Câu hỏi chi tiết",
+          "content": [
+            {
+              "type": "text",
+              "content": "Thường hỏi về những nội dung xuất hiện trong giữa, ví dụ có thể hỏi về lịch sử giao dịch/Số lượng đặt hàng/Mặt hàng hoặc sản phẩm/Giá cả"
+            },
+            {
+              "type": "tips",
+              "items": [
+                "Xác định từ khóa để tìm đáp án nhanh hơn"
+              ]
+            },
+            {
+              "type": "common-words",
+              "title": "Những từ thường gặp:",
+              "words": [
+                {
+                  "word": "total",
+                  "meaning": "tổng số tiền"
+                },
+                {
+                  "word": "subtotal",
+                  "meaning": "tổng phụ"
+                },
+                {
+                  "word": "quantity",
+                  "meaning": "số lượng"
+                },
+                {
+                  "word": "shipping",
+                  "meaning": "vận chuyển"
+                },
+                {
+                  "word": "discount",
+                  "meaning": "chiết khấu"
+                },
+                {
+                  "word": "balance due",
+                  "meaning": "số dư đến hạn"
+                },
+                {
+                  "word": "outstanding/unpaid balance",
+                  "meaning": "số dư chưa thanh toán"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.3. Câu hỏi về yêu cầu/đề xuất",
+          "content": [
+            {
+              "type": "tips",
+              "items": [
+                "Nội dung đáp án nằm ở phần cuối",
+                "Chú ý các cấu trúc đề xuất, lời khuyên"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Bài đọc mẫu",
+      "content": [
+        {
+          "type": "example",
+          "passage": {
+            "type": "feedback-form",
+            "title": "Customer Feedback Form",
+            "introduction": "This form is designed to provide useful feedback to Albany International Airport about its car rental facilities. Please fill out this form and return it to any information desk in the airport. Thank you for your time.",
+            "sections": [
+              {
+                "title": "Shuttle Bus Service",
+                "questions": [
+                  {
+                    "question": "How long did you wait for the shuttle bus to the car rental area?",
+                    "options": [
+                      "Less than 5 min",
+                      "5-10 min",
+                      "10-20 min"
+                    ]
+                  },
+                  {
+                    "question": "Was the shuttle bus stop easy to find?",
+                    "options": [
+                      "Yes",
+                      "No"
+                    ]
+                  },
+                  {
+                    "question": "How would you rate the cleanliness of the shuttle bus?",
+                    "options": [
+                      "Very clean",
+                      "Somewhat clean",
+                      "Somewhat dirty"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Car Rental Service",
+                "questions": [
+                  {
+                    "question": "Which car rental company did you use?",
+                    "type": "fill-in"
+                  },
+                  {
+                    "question": "How would you rate the convenience of the Car Rental Center?",
+                    "options": [
+                      "Excellent",
+                      "Above average",
+                      "Average",
+                      "Below average",
+                      "Poor"
+                    ]
+                  },
+                  {
+                    "question": "How would you rate the quality of your rental vehicle?",
+                    "options": [
+                      "Excellent",
+                      "Above average",
+                      "Average",
+                      "Below average",
+                      "Poor"
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "Comments:",
+                "type": "open-ended"
+              }
+            ]
+          },
+          "annotations": [
+            {
+              "number": 1,
+              "label": "Mục đích, đối tượng đánh giá và cách tham gia đánh giá",
+              "note": "Đôi khi phần này còn nêu thêm thông tin là người tham gia đánh giá sẽ được tặng quà."
+            },
+            {
+              "number": 2,
+              "label": "Các câu hỏi cụ thể",
+              "note": "Phần này liệt kê những vấn đề cần hỏi ý kiến của khách hàng"
+            },
+            {
+              "number": 3,
+              "label": "Ý kiến khác",
+              "note": "Phần này dành cho người tham gia đánh giá viết ý kiến riêng."
+            }
+          ],
+          "questions": [
+            {
+              "type": "general",
+              "title": "Câu hỏi về thông tin khái quát",
+              "examples": [
+                "What is the purpose of this form?"
+              ]
+            },
+            {
+              "type": "specific",
+              "title": "Câu hỏi về thông tin cụ thể",
+              "examples": [
+                "Who will fill out this form?",
+                "Where should a completed form be taken?",
+                "What question is asked about the shuttle bus?"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Từ vựng thường gặp",
+      "content": [
+        {
+          "type": "vocabulary-list",
+          "categories": [
+            {
+              "title": "Khảo sát & Đánh giá",
+              "words": [
+                {
+                  "word": "Conduct/carry out a survey",
+                  "meaning": "tiến hành một cuộc khảo sát"
+                },
+                {
+                  "word": "Nationwide survey",
+                  "meaning": "khảo sát trên toàn quốc"
+                },
+                {
+                  "word": "Survey data",
+                  "meaning": "dữ liệu khảo sát"
+                },
+                {
+                  "word": "Questionnaire",
+                  "meaning": "bảng câu hỏi"
+                },
+                {
+                  "word": "Respondent",
+                  "meaning": "người trả lời khảo sát"
+                },
+                {
+                  "word": "Opinion poll",
+                  "meaning": "cuộc thăm dò ý kiến"
+                },
+                {
+                  "word": "Approval rating",
+                  "meaning": "tỷ lệ tán thành"
+                }
+              ]
+            },
+            {
+              "title": "Đăng ký & Hợp đồng",
+              "words": [
+                {
+                  "word": "Expire",
+                  "meaning": "kết thúc, hết hiệu lực"
+                },
+                {
+                  "word": "Renew a subscription",
+                  "meaning": "gia hạn hợp đồng"
+                },
+                {
+                  "word": "Special issue",
+                  "meaning": "số báo đặc biệt"
+                },
+                {
+                  "word": "Circulation",
+                  "meaning": "tổng số phát hành (báo, tạp chí)"
+                },
+                {
+                  "word": "Application form",
+                  "meaning": "đơn xin việc"
+                },
+                {
+                  "word": "Fill in a form",
+                  "meaning": "điền vào đơn"
+                },
+                {
+                  "word": "Registration fee",
+                  "meaning": "phí đăng ký"
+                },
+                {
+                  "word": "Cancellation notice",
+                  "meaning": "thông báo hủy"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

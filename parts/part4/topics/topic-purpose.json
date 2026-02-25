@@ -1,4 +1,145 @@
 {
   "title": "Câu hỏi về chủ đề, mục đích",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi về chủ đề và mục đích thường hỏi: Nội dung chính của bài nói là gì, Người nói nói về vấn đề gì, Mục đích của bài nói/cuộc gọi/quảng cáo là gì."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Các dạng câu hỏi phổ biến:",
+          "patterns": [
+            "What is the speaker mainly discussing?",
+            "What is the focus of …?",
+            "What is the purpose of …?",
+            "What … is being advertised?",
+            "What is … mainly about?",
+            "Why is the speaker calling?"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Câu trả lời thường nằm ở phần mở đầu bài nói (Introduction), thường xuất hiện trong 1–3 câu đầu tiên. Người nói thường giới thiệu: Chủ đề, Lý do nói, Sản phẩm/sự kiện/thông báo chính."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Chủ đề (topic) = nội dung chính của bài nói | Mục đích (purpose) = lý do bài nói/cuộc gọi/quảng cáo tồn tại"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nghe 2–3 câu đầu tiên thật kỹ<br>• Tập trung vào cụm từ chỉ mục đích như: I want to inform/announce, This is a reminder/announcement, We are pleased to announce, If you are looking for…"
+        }
+      ]
+    },
+    {
+      "heading": "2. Các trường hợp đáp án thường gặp",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>2.1. Đáp án là CỤM DANH TỪ (Noun Phrase)</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Đáp án thường là: Tên chủ đề, Sản phẩm, Chính sách, Dịch vụ, Loại hình kinh doanh."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Xác định danh từ chính trong phần mở đầu. Bỏ qua chi tiết phụ, tập trung vào chủ đề lớn nhất."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Noun phrase = cụm danh từ chỉ chủ đề chính"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Không cần nghe hết đoạn, chỉ cần bắt keyword danh từ chính<br>• Ghi nhớ: chủ đề thường là ý tổng quát, không phải chi tiết nhỏ"
+        },
+        {
+          "type": "text",
+          "content": "<strong>2.2. Đáp án là CẤU TRÚC \"TO + V\" (Mục đích hành động)</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Đáp án thường mô tả mục đích của bài nói. Dạng phổ biến: To announce, To inform, To advertise, To promote, To remind…"
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Không tập trung vào động từ chung chung. Tập trung vào danh từ phía sau động từ để phân biệt đáp án."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> To + V = để làm gì (mục đích hành động)"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Động từ giống nhau, khác nhau ở đối tượng thông báo/quảng cáo/sự kiện<br>• Luôn nghe xem bài nói về sự kiện, sản phẩm, cửa hàng hay thông báo"
+        }
+      ]
+    },
+    {
+      "heading": "3. Lưu ý tránh bẫy",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>3.1. Thông tin nhiễu (Distractors)</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Bài nói có thể nhắc đến nhiều thông tin phụ gây nhầm lẫn. Một số từ khóa trùng với đáp án sai."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Chỉ chọn ý chính đầu bài, không chọn chi tiết phụ. Không chọn đáp án chỉ vì nghe thấy từ khóa trùng."
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Keyword ≠ đáp án đúng<br>• Luôn xác định ý chính toàn bài"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3.2. Paraphrase (Diễn đạt lại)</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Thông tin trong bài thường không trùng nguyên từ với đáp án. Đáp án thường được diễn đạt lại bằng từ đồng nghĩa."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Học từ vựng đồng nghĩa. Nhận diện cách diễn đạt lại ý."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Paraphrase = diễn đạt lại cùng một ý bằng cách khác"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Không tìm từ giống 100%, tìm ý tương đương<br>• Học collocation và synonym theo cụm"
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt mẹo học nhanh",
+      "content": [
+        {
+          "type": "list",
+          "title": "🧠 Các mẹo quan trọng:",
+          "items": [
+            "Câu hỏi chủ đề/mục đích → nghe đầu đoạn",
+            "Tập trung vào danh từ chính hoặc mục đích hành động",
+            "Bỏ qua chi tiết nhỏ",
+            "Cẩn thận từ khóa gây nhiễu",
+            "Luyện paraphrase để tránh bẫy đề"
+          ]
+        }
+      ]
+    }
+  ]
 }

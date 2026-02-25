@@ -1,4 +1,124 @@
 {
-  "title": "Tổng quan",
-  "content": ""
+  "title": "Tổng quan Part 7: Reading Comprehension",
+  "sections": [
+    {
+      "heading": "1. Thông tin chung",
+      "content": [
+        {
+          "type": "info-box",
+          "items": [
+            {
+              "label": "Hình thức câu hỏi",
+              "value": "Trắc nghiệm chọn 1 trong 4 đáp án A, B, C, D để trả lời câu hỏi liên quan đến 1 hoặc nhiều đoạn văn bản"
+            },
+            {
+              "label": "Số lượng câu hỏi",
+              "value": "54 câu, từ câu 147-200 (chiếm 25% tổng số điểm bài thi)"
+            },
+            {
+              "label": "Kỹ năng đánh giá",
+              "value": "Đánh giá kỹ năng đọc hiểu cần thiết trong kinh doanh và cuộc sống hàng ngày"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "content": "Số lượng từ vựng trung bình trong Part 7 là 5000 từ, nên việc có được vốn từ vựng tốt là vô cùng quan trọng để đạt điểm cao ở phần này."
+        }
+      ]
+    },
+    {
+      "heading": "2. Các dạng câu hỏi",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "2.1. Phân loại",
+          "items": [
+            {
+              "type": "list",
+              "title": "Dựa vào hình thức văn bản:",
+              "items": [
+                "Article / Review - Bài báo, bài đánh giá",
+                "Announcement / Notice - Thông báo",
+                "Email / Letter - Thư điện tử, thư tay",
+                "Advertisement - Quảng cáo",
+                "Form - Biểu mẫu",
+                "Text message chain - Chuỗi tin nhắn"
+              ]
+            },
+            {
+              "type": "list",
+              "title": "Dựa vào số đoạn văn bản:",
+              "items": [
+                "Dạng 1 đoạn (Single passage): 29 câu",
+                "Dạng 2 đoạn (Double passage): 10 câu",
+                "Dạng 3 đoạn (Triple passage): 15 câu"
+              ]
+            },
+            {
+              "type": "list",
+              "title": "Dựa vào tính chất câu hỏi:",
+              "items": [
+                "Câu hỏi về đối tượng và mục đích",
+                "Câu hỏi yêu cầu chú ý đến chi tiết bài đọc",
+                "Câu hỏi gợi ý, lập luận (inference)",
+                "Câu hỏi tìm từ đồng nghĩa",
+                "Câu hỏi điền câu",
+                "Câu hỏi tìm chi tiết khác/không đúng với văn bản"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Lưu ý khi ôn tập",
+      "content": [
+        {
+          "type": "tip",
+          "title": "Quản lý thời gian làm bài",
+          "problem": "Làm không kịp giờ, dành quá nhiều thời gian cho Part 5, Part 6, không kịp làm hết Part 7.",
+          "solution": "Tổng thời gian làm bài TOEIC Reading là 75 phút cho 3 phần. Gợi ý cách phân bố thời gian:",
+          "breakdown": [
+            "Part 5 + Part 6 (46 câu): 15 phút",
+            "Part 7 (54 câu): 55 phút, trong đó:",
+            "  • Part 7 dạng 1 đoạn (29 câu): 28 phút",
+            "  • Part 7 dạng 2 đoạn (10 câu): 11 phút",
+            "  • Part 7 dạng 3 đoạn (15 câu): 15 phút",
+            "Kiểm tra lại bài: 5 phút"
+          ],
+          "note": "Khi luyện tập, nên luyện làm bài theo từng part và set thời gian như trên. Với các bạn mới bắt đầu, nên ưu tiên làm bài đúng trước, rồi luyện tập làm nhanh sau."
+        },
+        {
+          "type": "tip",
+          "title": "Thứ tự làm các phần",
+          "problem": "Làm theo đúng thứ tự câu hỏi và đến cuối bị mệt mỏi + áp lực thời gian + bài đọc dài và khó => cảm thấy rối loạn không thể tập trung làm bài.",
+          "solution": "Khi luyện tập, thiết lập thứ tự làm bài riêng, không nhất thiết phải làm lần lượt từ trên xuống dưới.",
+          "example": "Part 5 → Part 6 → Part 7 dạng 3 đoạn → Part 7 dạng 1 đoạn → Part 7 dạng 2 đoạn",
+          "note": "Thứ tự làm bài cần phù hợp với khả năng và điểm mục tiêu. Các bạn mục tiêu 450-600 nên tập trung vào Part 5, Part 6 và Part 7 dạng 1 đoạn. Với các bạn mục tiêu cao hơn thì việc đảo dạng 3 đoạn lên trước sẽ đỡ áp lực về thời gian hơn."
+        },
+        {
+          "type": "tip",
+          "title": "Thứ tự trả lời câu hỏi",
+          "problem": "Trả lời theo đúng thứ tự câu hỏi và đoạn văn => mất quá nhiều thời gian vào những câu hỏi suy luận và những đoạn văn dài.",
+          "solution": "Học cách xác định câu hỏi thông tin và câu hỏi suy luận, đoạn văn ngắn và đoạn văn dài => làm câu hỏi thông tin trước, câu hỏi suy luận sau, đoạn ngắn trước đoạn dài sau."
+        },
+        {
+          "type": "tip",
+          "title": "Luyện kỹ năng đọc lướt và xác định thông tin (Skim and Scan)",
+          "content": "Bài thi Reading không yêu cầu thí sinh phải đọc hiểu cả văn bản mà chỉ cần nắm được ý chính và một số thông tin nhất định.",
+          "definitions": [
+            "Skim: đọc lướt để hiểu ý chính của cả bài",
+            "Scan: dựa vào keyword đọc lướt để xác định thông tin cụ thể trong bài"
+          ],
+          "application": "Áp dụng vào các dạng câu hỏi phù hợp. VD: skimming để tìm chủ đề của bài, scanning để tìm thông tin chi tiết."
+        },
+        {
+          "type": "tip",
+          "title": "Học từ vựng",
+          "content": "Khi luyện đề, có từ mới thuộc chủ đề, các cách diễn đạt trong từng dạng văn bản cần note lại học ngay."
+        }
+      ]
+    }
+  ]
 }

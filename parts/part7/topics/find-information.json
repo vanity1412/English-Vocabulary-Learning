@@ -1,4 +1,349 @@
 {
   "title": "Câu hỏi tìm thông tin",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi tìm thông tin là dạng câu hỏi phổ biến nhất, xuất hiện ở mọi bài trong Part 7. Câu hỏi tìm thông tin là các câu hỏi dạng 5W1H hỏi về một chi tiết trong bài đọc, thí sinh cần tìm được thông tin về chi tiết đó trong bài (không cần suy luận thêm) để trả lời câu hỏi."
+        },
+        {
+          "type": "note",
+          "content": "Câu hỏi tìm thông tin không chứa các từ như: most likely, indicated, stated, mainly, true about.. vì đó là dấu hiệu nhận biết các câu hỏi suy luận."
+        }
+      ]
+    },
+    {
+      "heading": "2. Các trường hợp cụ thể",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "2.1. Câu hỏi Who?",
+          "examples": [
+            {
+              "id": "who-example",
+              "title": "Example (ETS 2022 - Test 5 - Q177)",
+              "passage": {
+                "type": "email",
+                "content": "To: Brody Dimmick <bdimmick@greerscoffee.com.au>\nFrom: Fawzia Gurmani <fgurmani@greerscoffee.com.au>\nSubject: Following up On your recent call\nDate: 17 September\nAttachment: Proposal\n\nDear Mr. Dimmick,\n\nThank you for your recent call. We are always pleased to hear from one of our many local store managers. I think your idea to reinstate the Greer's Coffee Club is excellent, and I am also pleased to know your customers have been asking about the club punch cards. I agree that this is a good time to bring back the program, as we are working on rebranding the company. I have drawn up your proposal and will forward it to Ms. So-Ra Oh, vice president of marketing, tomorrow. Before I do that, can you please look it over and let me know if I have missed any details? Please send me your feedback by the end of the day.\n\nThank you,\nFawzia Gurmani\nRegional Director"
+              },
+              "question": {
+                "text": "Who is Mr. Dimmick?",
+                "translation": "Ông Dimmick là ai?",
+                "options": [
+                  {"key": "A", "text": "A new supplier", "translation": "Nhà cung cấp mới"},
+                  {"key": "B", "text": "A store manager", "translation": "Quản lý cửa hàng", "correct": true},
+                  {"key": "C", "text": "A vice president", "translation": "Phó chủ tịch"},
+                  {"key": "D", "text": "A regional director", "translation": "Giám đốc khu vực"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Dựa vào tên riêng trong câu hỏi để tìm thông tin:",
+                    "analysis": [
+                      "'Dear Mr. Dimmick, Thank you for your recent call. We are always pleased to hear from one of our many local store managers.'",
+                      "Mr. Dimmick là one of our many local store managers.",
+                      "Đáp án (B)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.2. Câu hỏi When?",
+          "examples": [
+            {
+              "id": "when-example",
+              "title": "Example (ETS 2022 - Test 7 - Q184)",
+              "passage": {
+                "type": "job-posting",
+                "content": "Welinaras Corporation\n\nJob title: Senior Research and Development Engineer\nListing date: 23 March\nApply by: 25 April\n\nResponsible for designing and testing wearable health-monitoring devices.\n\nEDUCATION AND SKILLS:\n- Graduate degree in biomedical engineering\n- Minimum of five years' experience developing medical devices and conducting clinical trials\n- Minimum of three years' experience in managing research teams\n- Excellent written and oral communication skills\n- Ability to work collaboratively in a global, multicultural environment\n\nCandidates must attend a preliminary training course on 25 May, prior to starting work on 8 June."
+              },
+              "question": {
+                "text": "When is the application deadline?",
+                "translation": "Khi nào là hạn chót nộp đơn?",
+                "options": [
+                  {"key": "A", "text": "In March", "translation": "Tháng Ba"},
+                  {"key": "B", "text": "In April", "translation": "Tháng Tư", "correct": true},
+                  {"key": "C", "text": "In May", "translation": "Tháng Năm"},
+                  {"key": "D", "text": "In June", "translation": "Tháng Sáu"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Dựa vào keyword application, thông tin trong bài:",
+                    "analysis": [
+                      "'Apply by: 25 April' (Nộp đơn muộn nhất vào ngày 25 tháng Tư)",
+                      "Đáp án (B)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "content": "Thông tin liên quan đến tên người nhận, địa chỉ, ngày tháng, tiêu đề thư... cũng là thông tin để trả lời câu hỏi. Cần chú ý đến cả phần này khi đọc bài."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.3. Câu hỏi Where?",
+          "examples": [
+            {
+              "id": "where-example",
+              "title": "Example (ETS 2022 - Test 5 - Q169)",
+              "passage": {
+                "type": "email",
+                "content": "From: Takeshi Ishiguro\nTo: All Sevastya employees\nSubject: Update\nDate: December 13\n\nDear Sevastya employees,\n\nI am writing to give you an update on this year's sales so far. I am happy to report that currently our sales volume is up 20% from last year. This is due in part to the fact that we have been very successful in expanding our international reach. In Brazil, sales increased 57%, which can be attributed to the Rio de Janeiro Fashion Show where our evening wear was featured. A similar trend emerged in Russia, where sales were up by 32%. There we anticipate sustained growth for the rest of the year, especially in our winter apparel line. We also saw sales growth in the United Arab Emirates (UAE), but growth was a modest 10% due to fierce competition. That said, in this market, sign-ups for our credit card were strong. Finally, in Korea, where we have had our most successful international market launch thus far, favorable news articles about our products drove very strong sales. Thus, overall, it's been an excellent year so far. I am confident that our new program, which offers discounts to customers who invite others to shop with us, will begin to boost sales growth at all locations.\n\nSincerely,\nTakeshi Ishiguro\nVice President of Sales"
+              },
+              "question": {
+                "text": "According to the e-mail, where was the company's product seen by an audience?",
+                "translation": "Theo như email, sản phẩm của công ty được xem bởi khán giả ở đâu?",
+                "note": "Keyword trong câu hỏi là danh từ mang tính khái quát, chung chung nên khả năng cao sẽ được paraphrase trong bài => nên dựa vào tên riêng trong các đáp án để scan thông tin thì sẽ dễ dàng hơn.",
+                "options": [
+                  {"key": "A", "text": "In Brazil", "translation": "Brazil", "correct": true},
+                  {"key": "B", "text": "In Russia", "translation": "Nga"},
+                  {"key": "C", "text": "In the UAE", "translation": "Tiểu vương quốc Ả Rập thống nhất"},
+                  {"key": "D", "text": "In Korea", "translation": "Hàn quốc"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Scan thông tin dựa vào keyword Brazil:",
+                    "analysis": [
+                      "'In Brazil, sales increased 57%, which can be attributed to the Rio de Janeiro Fashion Show where our evening wear was featured.'",
+                      "Ở Brazil, doanh thu tăng nhờ 1 show thời trang nơi mà trang phục dạ hội của chúng ta được trình diễn.",
+                      "Khán giả xem sản phẩm của hãng trong một show ở Brazil.",
+                      "Đáp án (A) đúng"
+                    ]
+                  },
+                  {
+                    "step": "Kiểm tra các đáp án còn lại",
+                    "content": "Để chắc chắn hơn, ta có thể xem thêm thông tin liên quan đến 3 đáp án còn lại:",
+                    "analysis": [
+                      "'A similar trend emerged in Russia, where sales were up by 32%. We also saw sales growth in the United Arab Emirates (UAE), but growth was a modest 10% due to fierce competition. Finally, in Korea, where we have had our most successful international market launch thus far, favorable news articles about our products drove very strong sales.'",
+                      "Không có thông tin về việc khán giả xem sản phẩm => Loại (B), (C), (D).",
+                      "Chọn (A)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.4. Câu hỏi Why?",
+          "examples": [
+            {
+              "id": "why-example",
+              "title": "Example (ETS 2022 - Test 5 - Q152)",
+              "passage": {
+                "type": "article",
+                "content": "One reason that corrugated fiberboard has become such a popular material for shipping fresh vegetables and fruits is the ease of labeling the containers. Information such as the brand, size, and grade of the produce can be printed directly on the box after it has been formed. Although this method, known as 'postprinting' is the most economical way of labeling fiberboard containers, it is limited to only one or two colors. Full-color graphics can be obtained by printing the information on the box before it has been formed. This method, known as 'preprinting' costs about 15 percent more, but many supermarket managers prefer it because customers are attracted to the colorful displays, which leads to increased sales."
+              },
+              "question": {
+                "text": "Why do store managers generally prefer boxes with full-color graphics?",
+                "translation": "Tại sao quản lý cửa hàng thường thích hộp đựng với hình trang trí đủ màu sắc?",
+                "note": "Các keyword trong câu hỏi không phải danh từ riêng nhưng là các danh từ khó bị thay thế => vẫn có thể dựa vào các keyword này để tìm thông tin.",
+                "options": [
+                  {"key": "A", "text": "They can be cleaned and reused.", "translation": "Chúng có thể được làm sạch và tái sử dụng."},
+                  {"key": "B", "text": "They come in a wide variety of sizes.", "translation": "Chúng có nhiều cỡ."},
+                  {"key": "C", "text": "They are often requested by customers.", "translation": "Chúng thường được khách hỏi mua"},
+                  {"key": "D", "text": "They increase customers' purchases.", "translation": "Chúng tăng lượng mua của khách", "correct": true}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Scan thông tin liên quan đến các keyword full-color graphics và store managers:",
+                    "analysis": [
+                      "'Full-color graphics can be obtained by printing the information on the box before it has been formed. This method, known as preprinting, costs about 15 percent more, but many supermarket managers prefer it because customers are attracted to the colorful displays, which leads to increased sales.'",
+                      "Câu chứa đáp án: many supermarket managers prefer it because customers are attracted to the colorful displays, which leads to increased sales = increase customers' purchases.",
+                      "Lí do là nó tăng lượng đơn hàng. => Đáp án (D)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "content": "Các từ nói về lí do là dấu hiệu nhận biết đáp án: because, because of, due to, leads to, caused by, cause, the reason is that..."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.5. Câu hỏi How?",
+          "examples": [
+            {
+              "id": "how-example",
+              "title": "Example (ETS 2022 - Test 2 - Q163)",
+              "passage": {
+                "type": "advertisement",
+                "content": "AKBAR STORAGE COMPANY\n227 Wexham Road, Bridgetown\nPhone: 246-555-0147\n\nSatisfying storage needs in Barbados for 30 years!\n\n- Units are available in small, standard, and premium sizes to fit your storage needs.\n- Your clean, dry storage unit is available to you around the clock.\n- Our storage facility is monitored by high-quality security cameras, and each customer is given a pass code. Our secure electronic gate can be released only by entering this code.\n- Our business office is open 9 A.M. to 6 P.M., Monday to Friday, and 9 A.M. to 2 P.M. on Saturday. Stop in to speak with one of our representatives.\n\nAnd now, get 20 percent off with a twelve-month rental of our largest type of unit!"
+              },
+              "question": {
+                "text": "How can customers receive a discount?",
+                "translation": "Khách hàng nhận giảm giá bằng cách nào?",
+                "options": [
+                  {"key": "A", "text": "By cutting back on their storage space by 20 percent", "translation": "Giảm không gian lưu trữ 20%"},
+                  {"key": "B", "text": "By renting a premium-size unit for one year", "translation": "Thuê một kho cỡ đại trong một năm", "correct": true},
+                  {"key": "C", "text": "By showing the advertisement to a service representative", "translation": "Đưa quảng cáo cho đại diện dịch vụ xem"},
+                  {"key": "D", "text": "By agreeing to rent a unit for a second year", "translation": "Đồng ý thuê một kho cho năm thứ hai"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Dựa vào keyword discount tìm được thông tin cuối bài:",
+                    "analysis": [
+                      "'And now, get 20 percent off with a twelve-month rental of our largest type of unit!' (Và bây giờ, nhận mức giảm giá 20% với thời hạn thuê 12 tháng loại kho rộng nhất của chúng tôi!)",
+                      "= customers can receive a discount by renting a premium-size unit for one year.",
+                      "Đáp án (B)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.6. Câu hỏi What?",
+          "content": [
+            {
+              "type": "text",
+              "content": "Câu hỏi What có nhiều dạng khác nhau:"
+            }
+          ],
+          "examples": [
+            {
+              "id": "what-thing-example",
+              "title": "Example 1: Câu hỏi về sự vật (ETS 2022 - Test 5 - Q147)",
+              "passage": {
+                "type": "advertisement",
+                "content": "http://www.yummygoodfoods.com\n\nYummy Good Foods\n\nIs nutrition important to you?\nDo you like high-quality, natural products?\nAre you short on time?\n\nThen consider our healthy, nutritional meals shipped right to your door! Yummy Good Foods is having a special one-time offer. We will send your first week of delicious meals from our Healthy Meal menu with complimentary shipping! Go to www.yummygoodfoods.com and enter code: BetterHealth4Me.\n\nOffer valid through June with your first monthly purchase."
+              },
+              "question": {
+                "text": "What is available through the month of June?",
+                "translation": "Cái gì sẽ được áp dụng suốt tháng Sáu?",
+                "options": [
+                  {"key": "A", "text": "A diet analysis", "translation": "Phân tích thực đơn"},
+                  {"key": "B", "text": "A sample recipe", "translation": "Công thức mẫu"},
+                  {"key": "C", "text": "A free delivery", "translation": "Miễn phí giao hàng", "correct": true},
+                  {"key": "D", "text": "A magazine subscription", "translation": "Đăng ký đặt tạp chí"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + Chọn đáp án",
+                    "content": "Dựa vào keyword June để scan thông tin:",
+                    "analysis": [
+                      "'Offer valid through June with your first monthly purchase.' => Chưa rõ là ưu đãi gì",
+                      "Đọc ngược lại phía trên xem Offer cụ thể là gì: 'We will send your first week of delicious meals from our Healthy Meal menu with complimentary shipping!'",
+                      "= A free delivery",
+                      "Đáp án (C)"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "what-action-example",
+              "title": "Example 2: Câu hỏi về sự việc/hành động",
+              "passage": {
+                "type": "article",
+                "title": "Fulton Stainless Steel Products",
+                "content": "Fulton Stainless Steel Products is a large-scale manufacturer making stainless steel industrial kitchen appliances in factories in Germany and France. The company's products are trusted by chefs and bakers around the world to be durable, long-lasting, and of superb quality. The company produces kitchen stoves, ovens, microwaves, refrigerators, food processors, electric kettles, coffee makers, and other products.\n\nAfter acquiring the Visor Home Products Company in a deal last month, the company expected its overall profits to increase 20% compared to the last fiscal year. As a result, to meet increased demand, the company will employ more than 300 full-time workers in our six factories and offer good pay with an excellent benefits package. The company considers all of its employees valuable members of the Fulton family. Additionally, the company continues to research and develop new products to satisfy its customers and compete with other companies."
+              },
+              "question": {
+                "text": "What did Fulton Stainless Steel Products do last month?",
+                "translation": "Fulton Stainless Steel Products đã làm gì tháng trước?",
+                "note": "Câu hỏi có tên riêng công ty nhưng đây là bài báo viết về chính công ty đó nên khả năng cao tên riêng đó sẽ được paraphrase. Ta dựa vào keyword về thời gian sẽ dễ scan thông tin hơn.",
+                "options": [
+                  {"key": "A", "text": "It held a press conference.", "translation": "Tổ chức một họp báo."},
+                  {"key": "B", "text": "It opened a new factory.", "translation": "Mở một công ty mới."},
+                  {"key": "C", "text": "It obtained a company.", "translation": "Mua một công ty.", "correct": true},
+                  {"key": "D", "text": "It laid off some workers.", "translation": "Sa thải vài công nhân."}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Dựa vào keyword last month tìm thông tin:",
+                    "analysis": [
+                      "'After acquiring the Visor Home Products Company in a deal last month, the company expected its overall profits to increase 20% compared to the last fiscal year.'",
+                      "last month, the company obtained a company",
+                      "Đáp án (C)"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "what-request-example",
+              "title": "Example 3: Câu hỏi về yêu cầu/đề nghị",
+              "passage": {
+                "type": "email",
+                "content": "To: All Employees (employees@politospizza.com)\nFrom: Greg Kluck (gregkluck@politospizza.com)\nSubject: Inspection Results\nDate: January 25\n\nDear employees,\n\nThe results from our recent inspection on January 22 indicate that there are a few problems that we need to address.\n\nFirst, it was brought to my attention that fire exit signs need to be installed again. The most serious violation concerned the improper storage and labeling of food. All ingredients stored for later use must be labeled with an exact date and detailed contents. If we do not label containers properly, spoiled food could accidently be served to customers. We received relatively low grades for employee hygiene and the cleanliness of our facilities. All employees are required to wear their uniform and hairnet at all times and wash their hands after every bathroom visit. We also need to mop floors more often and keep them dry.\n\nIn order to correct these poor situations, I will be posting a checklist that all employees will be required to complete every morning. It will include necessary preparations to ensure that we are not breaking any regulations. This measure will go into effect on January 29.\n\nIf you have any questions about these changes, please bring them up at the staff meeting tomorrow."
+              },
+              "question": {
+                "text": "What does Mr. Kluck ask his employees to do?",
+                "translation": "Mr. Kluck yêu cầu nhân viên làm gì?",
+                "note": "Câu hỏi về yêu cầu, đề nghị => scan các câu dạng yêu cầu, đề nghị trong bài",
+                "options": [
+                  {"key": "A", "text": "Apologize to customers", "translation": "Xin lỗi khách hàng"},
+                  {"key": "B", "text": "Wear a name tag at all times", "translation": "Luôn đeo bảng tên"},
+                  {"key": "C", "text": "File a complaint with Ms. Tenner", "translation": "Gửi một khiếu nại với Ms. Tenner"},
+                  {"key": "D", "text": "Fill out a required form", "translation": "Điền một đơn", "correct": true}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Tìm các câu yêu cầu trong bài và so sánh với các đáp án:",
+                    "analysis": [
+                      "'First, it was brought to my attention that fire exit signs need to be installed again.' => không khớp với đáp án nào",
+                      "'All ingredients stored for later use must be labeled with an exact date and detailed contents.' => không khớp với đáp án nào",
+                      "'All employees are required to wear their uniform and hairnet at all times and wash their hands after every bathroom visit.' => không khớp với đáp án nào",
+                      "'We also need to mop floors more often and keep them dry.' => không khớp với đáp án nào",
+                      "'In order to correct these poor situations, I will be posting a checklist that all employees will be required to complete every morning.' = Fill out a required form",
+                      "Đáp án (D)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "content": "Dấu hiệu các câu yêu cầu đề nghị: must/must be, need to/need to be, have to/have to be, be required to, requested to, be asked to.."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

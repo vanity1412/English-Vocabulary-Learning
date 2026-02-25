@@ -7,7 +7,7 @@ const partNumber = urlParams.get('part');
 // Load part data
 async function loadPartData() {
     try {
-        const response = await fetch(`part${partNumber}/overview.json`);
+        const response = await fetch(`../parts/part${partNumber}/overview.json`);
         currentPartData = await response.json();
         
         // Update page title and description

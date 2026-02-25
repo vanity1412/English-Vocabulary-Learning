@@ -5,14 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết Part TOEIC</title>
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/parts.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo-link">
+                <div class="header-logo">📚</div>
+                <div class="header-title">
+                    <h1>Vũ Văn Thông - Cùng Học TOEIC</h1>
+                    <div class="header-subtitle">Chinh phục TOEIC một cách dễ dàng</div>
+                </div>
+            </a>
+            <div class="header-nav">
+                <button class="nav-btn" onclick="window.location.href='../vocabulary.html'">📖 Từ vựng</button>
+                <button class="nav-btn" onclick="window.location.href='../grammar.html'">📝 Ngữ pháp</button>
+                <button class="nav-btn active" onclick="window.location.href='../parts.html'">🎯 Parts</button>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
-        <header class="header">
+        <div class="page-header-part">
             <button class="back-btn" onclick="window.location.href='../parts.html'">← Quay lại</button>
             <h1 id="partTitle">Part 1: Photographs</h1>
-        </header>
+        </div>
 
         <div class="part-detail-container">
             <div class="part-description" id="partDescription"></div>
@@ -33,6 +52,57 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📚 Về Chúng Tôi</h3>
+                    <p>Nền tảng học TOEIC trực tuyến với hơn 1200+ từ vựng, 17 chủ đề ngữ pháp và lý thuyết đầy đủ cho 7 Part TOEIC.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-btn" title="Facebook">📘</a>
+                        <a href="#" class="social-btn" title="YouTube">📺</a>
+                        <a href="#" class="social-btn" title="Email">✉️</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>🔗 Liên Kết Nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="../vocabulary.html">📖 Học Từ Vựng</a></li>
+                        <li><a href="../grammar.html">📝 Học Ngữ Pháp</a></li>
+                        <li><a href="../parts.html">🎯 Ôn Tập Các Part</a></li>
+                        <li><a href="#" onclick="alert('Tính năng đang phát triển!')">📊 Thống Kê Học Tập</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>📈 Thống Kê</h3>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <p class="stat-number">1200+</p>
+                            <p class="stat-label">Từ vựng</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number">17</p>
+                            <p class="stat-label">Chủ đề ngữ pháp</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number">7</p>
+                            <p class="stat-label">Part TOEIC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Vũ Văn Thông - Cùng Học TOEIC. Made with <span class="footer-heart">❤️</span></p>
+                <div class="footer-credits">
+                    <a href="#">Điều khoản sử dụng</a>
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="../js/part-detail.js"></script>
 </body>

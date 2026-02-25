@@ -1,4 +1,211 @@
 {
   "title": "Câu hỏi về hành động tương lai",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi về hành động tương lai yêu cầu xác định việc sẽ xảy ra tiếp theo hoặc trong tương lai gần của người nói, người nghe hoặc nhân vật trong bài nói."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Các dạng câu hỏi phổ biến:",
+          "patterns": [
+            "What will the speaker do next?",
+            "What will the listeners do next?",
+            "What will listeners most likely hear next?",
+            "What will Jane do next?",
+            "What will happen when…?"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Đáp án là một hành động hoặc sự kiện trong tương lai. Thông tin thường nằm ở đoạn giữa hoặc cuối bài nói."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Next = tiếp theo | Most likely = rất có thể | What will happen when… = Điều gì sẽ xảy ra khi…"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Đây là dạng câu hỏi DỰ ĐOÁN HÀNH ĐỘNG TIẾP THEO<br>• Luôn chú ý thì tương lai (will, going to, plan to)"
+        }
+      ]
+    },
+    {
+      "heading": "2. Dấu hiệu nhận biết hành động tương lai",
+      "content": [
+        {
+          "type": "text",
+          "content": "Người nói thường dùng các cụm từ báo hiệu hành động sắp xảy ra."
+        },
+        {
+          "type": "list",
+          "title": "✅ Dạng Telephone Message / Announcement:",
+          "items": [
+            "Now",
+            "Today",
+            "Let's",
+            "I'll / I'd like to / I want to",
+            "I'm going to",
+            "I have to"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "✅ Dạng News Report / Broadcast:",
+          "items": [
+            "Up next",
+            "We'll be back after…",
+            "Stay tuned"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "✅ Trường hợp có khách mời: Sau khi giới thiệu khách mời → người nói sẽ nói khách mời sẽ làm gì hoặc sẽ chia sẻ gì."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Up next = tiếp theo là | Stay tuned = đừng chuyển kênh | I'm going to = tôi sẽ"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nghe thấy các cụm này → đáp án về hành động tương lai sắp xuất hiện<br>• Thường nằm cuối bài hoặc sau phần giới thiệu"
+        }
+      ]
+    },
+    {
+      "heading": "3. Phân loại câu hỏi hành động tương lai",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>3.1. HÀNH ĐỘNG TƯƠNG LAI CỦA NGƯỜI NGHE</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Hỏi người nghe sẽ làm gì tiếp theo."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Thường xuất hiện sau phần hướng dẫn, training, sự kiện, tour, hội nghị. Dạng câu hỏi thường là: What will the listeners do next?"
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Listeners = người nghe"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Thường là hành động nhóm: tour, training, watch, vote, attend"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3.2. HÀNH ĐỘNG TƯƠNG LAI CỦA NGƯỜI NÓI</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Hỏi người nói sẽ làm gì tiếp theo hoặc trong tương lai."
+        },
+        {
+          "type": "list",
+          "title": "Thường có các cụm:",
+          "items": [
+            "I will",
+            "I'm going to",
+            "I plan to",
+            "Có thể kèm mốc thời gian: at the end of the day, later, tomorrow"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> At the end of the day = vào cuối ngày | Plan to = dự định"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Luôn chú ý thời gian tương lai trong câu hỏi"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3.3. HÀNH ĐỘNG TƯƠNG LAI CỦA NHÂN VẬT TRONG BÀI</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Hỏi hành động tiếp theo của một nhân vật được nhắc đến trong bài nói."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Thường xuất hiện khi người nói giới thiệu khách mời hoặc nhân viên. Dấu hiệu: invited, will explain, will present, will demonstrate."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Demonstration = trình bày/hướng dẫn | Present = trình bày | Explain = giải thích"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Sau khi giới thiệu nhân vật → hành động tương lai của họ thường là đáp án"
+        }
+      ]
+    },
+    {
+      "heading": "4. Paraphrase trong câu hỏi hành động tương lai",
+      "content": [
+        {
+          "type": "text",
+          "content": "Đáp án thường diễn đạt khác so với bài nghe nhưng cùng nghĩa."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Nghe ý nghĩa, không nghe từng từ. So sánh hành động chính trong bài với đáp án."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Paraphrase = diễn đạt lại"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• \"Dim the lights\" = Lighting will be adjusted<br>• \"Take calls\" = Hear listeners' opinions"
+        }
+      ]
+    },
+    {
+      "heading": "5. Lưu ý tránh bẫy",
+      "content": [
+        {
+          "type": "text",
+          "content": "Bẫy phổ biến nhất là từ giống nhau nhưng nghĩa khác."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Không chọn đáp án chỉ vì trùng keyword. Phải hiểu toàn bộ hành động."
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Explain ≠ Explain project timeline (bẫy từ giống)<br>• Time ≠ Timeline (bẫy từ vựng gần nghĩa)"
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt mẹo học nhanh",
+      "content": [
+        {
+          "type": "list",
+          "title": "🧠 Các mẹo quan trọng:",
+          "items": [
+            "Câu hỏi hành động tương lai → tìm việc sẽ xảy ra tiếp theo",
+            "Đáp án thường ở giữa hoặc cuối bài",
+            "Dấu hiệu: will, going to, up next, plan to",
+            "Có thể hỏi hành động của người nói, người nghe, hoặc nhân vật",
+            "Cẩn thận paraphrase và bẫy keyword"
+          ]
+        }
+      ]
+    }
+  ]
 }

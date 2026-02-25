@@ -1,4 +1,197 @@
 {
   "title": "Câu hỏi điền câu",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi điền câu của Part 7 tương tự dạng câu hỏi điền câu của Part 6, là dạng câu hỏi cho sẵn 1 câu văn và yêu cầu thí sinh tìm ra vị trí thích hợp trong văn bản để điền câu đó vào. Nó thường là câu hỏi cuối trong bài."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Dạng câu hỏi này có dạng:",
+          "patterns": [
+            "In which of the positions marked [1], [2], [3] and [4] does the following sentence best belong? \"...\""
+          ]
+        },
+        {
+          "type": "info-box",
+          "items": [
+            {
+              "label": "Tần suất xuất hiện",
+              "value": "Dạng câu hỏi này chiếm 2/54 câu hỏi của Part 7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Phân tích ví dụ",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "Example 1",
+          "examples": [
+            {
+              "id": "sentence-insertion-example1",
+              "title": "Example 1 (ETS 2022 - Test 1 - Q157)",
+              "passage": {
+                "type": "article",
+                "title": "Monorail Coming to Sudbury",
+                "content": "(4 Feb.) Ottawa-based Saenger, Inc., has been selected by the city of Sudbury to build a monorail system that will connect the city's commercial district to the airport. -[1]-. Funding for the system is drawn from a combination of public agencies and private investors. -[2]-. Ticket sales for the monorail will also provide a new source of revenue for the city. -[3]-. Construction is slated to begin in early June and is expected to be completed within four years. -[4]-"
+              },
+              "question": {
+                "text": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong? \"Along the way, the line will stop at nine stations.\"",
+                "translation": "Câu sau đây điền vào vị trí nào là đúng nhất [1], [2], [3], [4]? \"Trên đường đi, tàu sẽ dừng ở chín trạm.\"",
+                "options": [
+                  {"key": "A", "text": "[1]", "correct": true},
+                  {"key": "B", "text": "[2]"},
+                  {"key": "C", "text": "[3]"},
+                  {"key": "D", "text": "[4]"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Phân tích câu cho sẵn",
+                    "content": "Along the way, the line will stop at nine stations. (Trên đường đi, tàu sẽ dừng ở chín trạm.)",
+                    "analysis": [
+                      "Điểm cần chú ý: mạo từ 'the' trong 'the way' và 'the line' có nghĩa câu phía trước đã nhắc đến tuyến đường và chuyến tàu."
+                    ]
+                  },
+                  {
+                    "step": "Lần lượt xét 4 vị trí trong bài",
+                    "content": "Đọc câu trước chỗ trống để hiểu ý chính và tìm sự liên kết:",
+                    "positions": [
+                      {
+                        "position": "[1]",
+                        "before": "(4 Feb.) Ottawa-based Saenger, Inc., has been selected by the city of Sudbury to build a monorail system that will connect the city's commercial district to the airport.",
+                        "meaning": "Giới thiệu chủ thầu dự án xây dựng tuyến đường sắt nối khu thương mại thành phố với sân bay",
+                        "suitable": true
+                      },
+                      {
+                        "position": "[2]",
+                        "before": "Funding for the system is drawn from a combination of public agencies and private investors.",
+                        "meaning": "Nguồn quỹ cho dự án",
+                        "suitable": false
+                      },
+                      {
+                        "position": "[3]",
+                        "before": "Ticket sales for the monorail will also provide a new source of revenue for the city.",
+                        "meaning": "Việc bán vé tạo thêm nguồn thu cho thành phố",
+                        "suitable": false
+                      },
+                      {
+                        "position": "[4]",
+                        "before": "Construction is slated to begin in early June and is expected to be completed within four years.",
+                        "meaning": "Thời gian bắt đầu và thời gian dự kiến hoàn thành công trình",
+                        "suitable": false
+                      }
+                    ],
+                    "conclusion": "Theo như phân tích phía trên, vị trí [1] phù hợp nhất với câu cần điền vì có nhắc đến chuyến tàu và tuyến đường."
+                  },
+                  {
+                    "step": "Kiểm tra lại tính liên kết",
+                    "content": "Điền câu vào đoạn văn để kiểm tra lại tính liên kết:",
+                    "result": "(4 Feb.) Ottawa-based Saenger, Inc., has been selected by the city of Sudbury to build a monorail system that will connect the city's commercial district to the airport. Along the way, the line will stop at nine stations. Funding for the system is drawn from a combination of public agencies and private investors.",
+                    "translation": "(4 tháng 2) Saenger, Inc. có trụ sở tại Ottawa, đã được thành phố Sudbury chọn để xây dựng một hệ thống tàu điện một ray kết nối khu thương mại của thành phố với sân bay. Trên đường đi, tàu sẽ dừng ở chín trạm. Nguồn vốn cho hệ thống được lấy từ sự kết hợp của các cơ quan nhà nước và các nhà đầu tư tư nhân.",
+                    "conclusion": "Nội dung kết nối liền mạch => Đáp án (A)"
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "content": "Mạo từ (the), đại từ chỉ định của danh từ (this, that, these, those) hoặc đại từ (it, they,..) trong câu là manh mối để suy luận về đặc điểm của vị trí điền câu."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "Example 2",
+          "examples": [
+            {
+              "id": "sentence-insertion-example2",
+              "title": "Example 2 (ETS 2022 - Test 5 - Q161)",
+              "passage": {
+                "type": "announcement",
+                "content": "—[1]—. The Melbourne Colton Hotel is pleased to announce that construction of the new Yarra River wing is now completed. —[2]—. This new section offers extended-stay apartments, which are ideal for executives who are relocating or for people on company travel for more than a week. We offer furnished one-and two-bedroom apartments with a living room, work space, and full kitchen. —[3]—\n\nWe offer:\n- Different levels of pricing for housekeeping\n- A variety of low-cost Internet and phone plans\n- Conference facilities that can be booked for a minimal fee\n- Short-term gym memberships at several nearby fitness centers\n- Complimentary coffee served each morning in the lobby\n\nThe Melbourne Colton Hotel is close to transportation, tourist sites, and shopping. Contact reservations@coltonhotels.com.au for more information or call 613 7010 9921. [4]"
+              },
+              "question": {
+                "text": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong? \"In addition, optional services are available for extended-stay guests.\"",
+                "translation": "Câu sau đây điền vào vị trí nào là đúng nhất [1], [2], [3], [4]? \"Ngoài ra, dịch vụ tùy chọn có sẵn cho khách lưu trú dài ngày.\"",
+                "options": [
+                  {"key": "A", "text": "[1]"},
+                  {"key": "B", "text": "[2]"},
+                  {"key": "C", "text": "[3]", "correct": true},
+                  {"key": "D", "text": "[4]"}
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Phân tích câu cho sẵn",
+                    "content": "In addition, optional services are available for extended-stay guests.",
+                    "analysis": [
+                      "Điểm cần chú ý: Liên từ 'In addition' ở đầu câu để bổ sung thông tin liên quan => câu trước đó khả năng cao sẽ nói về các dịch vụ có sẵn."
+                    ]
+                  },
+                  {
+                    "step": "Lần lượt xét 4 vị trí trong bài",
+                    "content": "Đọc các câu trước chỗ trống để hiểu ý chính và tìm sự liên kết:",
+                    "positions": [
+                      {
+                        "position": "[1]",
+                        "before": "Mở đầu thông báo",
+                        "meaning": "Loại. Câu đã cho không thể đứng ở vị trí đầu đoạn",
+                        "suitable": false
+                      },
+                      {
+                        "position": "[2]",
+                        "before": "The Melbourne Colton Hotel is pleased to announce that construction of the new Yarra River wing is now completed.",
+                        "meaning": "Mở đầu thông báo về việc hoàn tất công trình",
+                        "suitable": false
+                      },
+                      {
+                        "position": "[3]",
+                        "before": "This new section offers extended-stay apartments, which are ideal for executives who are relocating or for people on company travel for more than a week. We offer furnished one-and two-bedroom apartments with a living room, work space, and full kitchen.",
+                        "meaning": "Nói về những tiện ích, dịch vụ mà khu vực mới cung cấp",
+                        "suitable": true
+                      },
+                      {
+                        "position": "[4]",
+                        "before": "Contact reservations@coltonhotels.com.au for more information or call 613 7010 9921.",
+                        "meaning": "Thông tin liên hệ",
+                        "suitable": false
+                      }
+                    ],
+                    "conclusion": "Vị trí số [3] phù hợp nhất để điền câu"
+                  },
+                  {
+                    "step": "Kiểm tra tính liên kết với cả đoạn",
+                    "content": "This new section offers extended-stay apartments, which are ideal for executives who are relocating or for people on company travel for more than a week. We offer furnished one-and two-bedroom apartments with a living room, work space, and full kitchen. In addition, optional services are available for extended-stay guests.",
+                    "translation": "(Phần mới này cung cấp các căn hộ lưu trú dài ngày, lý tưởng cho các cán bộ cấp cao đang chuyển chỗ ở hoặc cho những người đi công tác trong hơn một tuần. Chúng tôi cung cấp các căn hộ một và hai phòng ngủ được trang bị đầy đủ tiện nghi với phòng khách, không gian làm việc và nhà bếp đầy đủ tiện nghi. Ngoài ra, dịch vụ tùy chọn cũng có sẵn cho khách lưu trú dài ngày.)",
+                    "conclusion": "Nội dung liên kết liền mạch => Đáp án (C)"
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý 1",
+                    "content": "Các liên từ đầu câu (In addition, However, Therefore, On the other hand...) là manh mối để chọn vị trí thích hợp."
+                  },
+                  {
+                    "title": "Lưu ý 2",
+                    "content": "Dạng câu hỏi điền câu thường nằm ở cuối và nên được làm cuối cùng."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

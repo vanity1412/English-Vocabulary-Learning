@@ -5,17 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Học Ngữ Pháp - TOEIC</title>
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/grammar.css">
+    <link rel="stylesheet" href="css/responsive-improvements.css">
+    <link rel="stylesheet" href="css/donation-modal.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo-link">
+                <div class="header-logo">📚</div>
+                <div class="header-title">
+                    <h1>Vũ Văn Thông - Cùng Học TOEIC</h1>
+                    <div class="header-subtitle">Chinh phục TOEIC một cách dễ dàng</div>
+                </div>
+            </a>
+            <div class="header-nav">
+                <button class="nav-btn" onclick="window.location.href='vocabulary.html'">📖 Từ vựng</button>
+                <button class="nav-btn active" onclick="window.location.href='grammar.html'">📝 Ngữ pháp</button>
+                <button class="nav-btn" onclick="window.location.href='parts.html'">🎯 Parts</button>
+                <button class="donate-btn" onclick="if(typeof donationModal !== 'undefined') donationModal.forceShow()">
+                    💝 Ủng hộ Admin
+                </button>
+            </div>
+        </div>
+    </header>
+
     <div class="container" id="grammarApp">
-        <header>
+        <div class="page-header">
             <button class="btn btn-secondary back-btn" onclick="window.location.href='index.html'">⬅️ Quay lại</button>
             <h1>📝 Học Ngữ Pháp TOEIC</h1>
             <div class="progress-info">
                 <span>Đã học: <strong id="topicsLearned">0</strong>/17 chủ đề</span>
             </div>
-        </header>
+        </div>
 
         <!-- Grammar Topics View -->
         <div id="grammarTopicsView">
@@ -30,83 +54,70 @@
             </div>
             <div id="grammarTopicsList" class="grammar-topics-grid"></div>
         </div>
-
-        <!-- Grammar Lesson View -->
-        <div id="grammarLessonView" style="display: none;">
-            <div class="grammar-lesson-container">
-                <div class="lesson-header">
-                    <button class="btn btn-secondary" onclick="backToGrammarTopics()">⬅️ Quay lại</button>
-                    <h2 id="grammarLessonTitle"></h2>
-                </div>
-
-                <!-- Tab Navigation -->
-                <div class="lesson-tabs">
-                    <button class="tab-btn active" data-tab="theory">📖 Lý thuyết</button>
-                    <button class="tab-btn" data-tab="examples">💡 Ví dụ</button>
-                    <button class="tab-btn" data-tab="notes">📝 Ghi chú</button>
-                </div>
-
-                <!-- Theory Tab -->
-                <div class="tab-content active" id="theoryTab">
-                    <div class="grammar-section">
-                        <div id="grammarTheory" class="grammar-theory"></div>
-                    </div>
-                </div>
-
-                <!-- Examples Tab -->
-                <div class="tab-content" id="examplesTab">
-                    <div class="grammar-section">
-                        <div id="grammarExamples" class="grammar-examples"></div>
-                    </div>
-                </div>
-
-                <!-- Notes Tab -->
-                <div class="tab-content" id="notesTab">
-                    <div class="grammar-section">
-                        <div class="notes-container">
-                            <h3>✍️ Ghi chú của bạn</h3>
-                            <textarea id="userNotes" class="notes-textarea" placeholder="Viết ghi chú của bạn ở đây..."></textarea>
-                            <button class="btn btn-primary" onclick="saveNotes()">💾 Lưu ghi chú</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="lesson-actions">
-                    <button class="btn btn-primary btn-large" onclick="startGrammarExercise()">
-                        🎯 Làm bài tập
-                    </button>
-                    <button class="btn btn-secondary btn-large" onclick="markTopicAsLearned()">
-                        ✅ Đánh dấu đã học
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Grammar Exercise View -->
-        <div id="grammarExerciseView" style="display: none;">
-            <div class="grammar-exercise-container">
-                <div class="exercise-header">
-                    <button class="btn btn-secondary" onclick="backToGrammarLesson()">⬅️ Quay lại</button>
-                    <div class="exercise-progress">
-                        <h3>Câu <span id="grammarExerciseCurrent">1</span>/<span id="grammarExerciseTotal">10</span></h3>
-                        <div class="progress-bar-small">
-                            <div class="progress-fill-small" id="exerciseProgressFill"></div>
-                        </div>
-                    </div>
-                    <p class="score">Điểm: <span id="grammarScore">0</span></p>
-                </div>
-                
-                <div class="exercise-question">
-                    <p id="grammarExerciseQuestion"></p>
-                </div>
-                
-                <div id="grammarOptions" class="grammar-options"></div>
-                <div id="grammarFeedback" class="grammar-feedback"></div>
-            </div>
-        </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📚 Về Chúng Tôi</h3>
+                    <p>Nền tảng học TOEIC trực tuyến với hơn 1200+ từ vựng, 17 chủ đề ngữ pháp và lý thuyết đầy đủ cho 7 Part TOEIC.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/thong.vu.871003" target="_blank" class="social-btn facebook" title="Facebook">📘</a>
+                        <a href="https://github.com/vanity1412" target="_blank" class="social-btn github" title="GitHub">💻</a>
+                        <a href="tel:0968046024" class="social-btn phone" title="Điện thoại">📞</a>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📞</span>
+                            <a href="tel:0968046024">0968 046 024</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>👤</span>
+                            <span>Vũ Văn Thông</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>🔗 Liên Kết Nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="vocabulary.html">📖 Học Từ Vựng</a></li>
+                        <li><a href="grammar.html">📝 Học Ngữ Pháp</a></li>
+                        <li><a href="parts.html">🎯 Ôn Tập Các Part</a></li>
+                        <li><a href="#" onclick="alert('Tính năng đang phát triển!')">📊 Thống Kê Học Tập</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>📈 Thống Kê</h3>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <p class="stat-number">1200+</p>
+                            <p class="stat-label">Từ vựng</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number">17</p>
+                            <p class="stat-label">Chủ đề ngữ pháp</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number">7</p>
+                            <p class="stat-label">Part TOEIC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Vũ Văn Thông - Cùng Học TOEIC. Made with <span class="footer-heart">❤️</span></p>
+                <div class="footer-credits">
+                    <a href="#">Điều khoản sử dụng</a>
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="js/grammar.js"></script>
+    <script src="js/donation-modal.js"></script>
 </body>
 </html>

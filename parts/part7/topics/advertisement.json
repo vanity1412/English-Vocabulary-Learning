@@ -1,4 +1,403 @@
 {
   "title": "Advertisement - Quảng cáo",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Advertisement (quảng cáo) là dạng bài đọc trình bày các thông tin nhằm giới thiệu sản phẩm hoặc dịch vụ nào đó. Các mẩu quảng cáo về đồ điện gia dụng, nhà ở, chương trình du lịch thường xuyên xuất hiện trong phần đọc hiểu của bài thi TOEIC với nội dung tương đối dễ hiểu. Do đó, nếu nắm vững bố cục của dạng bài đọc này thì bạn sẽ dễ dàng trả lời được các câu hỏi."
+        },
+        {
+          "type": "text",
+          "content": "Bên cạnh những bài đọc có nội dung quảng cáo sản phẩm hoặc dịch vụ, thí sinh cũng sẽ gặp những bài đọc có hình thức quảng cáo tuyển dụng. Đây là dạng bài đọc bạn cần nghiên cứu kỹ. Quảng cáo tuyển dụng thường được trình bày theo trình tự: vị trí dự tuyển, nội dung công việc, điều kiện dự tuyển, chế độ phúc lợi và cách dự tuyển. Bài đọc dạng này thường có nhiều câu hỏi về thông tin cụ thể nên bạn cần tìm đúng thông tin mà câu hỏi yêu cầu."
+        },
+        {
+          "type": "structure",
+          "title": "Cấu trúc của bài quảng cáo:",
+          "parts": [
+            {
+              "section": "Phần mở đầu",
+              "items": [
+                "Tiêu đề",
+                "Giới thiệu: công ty, loại sản phẩm/dịch vụ,..."
+              ]
+            },
+            {
+              "section": "Phần thân",
+              "description": "Cung cấp thông tin chi tiết về quảng cáo, ví dụ:",
+              "items": [
+                "Yêu cầu công việc, tiêu chí ứng tuyển",
+                "Ưu nhược điểm sản phẩm"
+              ]
+            },
+            {
+              "section": "Phần cuối",
+              "description": "Các thông tin phụ, ví dụ:",
+              "items": [
+                "Cách thức mua hàng",
+                "Thông tin người liên hệ",
+                "Chú ý, nhắc nhở"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Các loại câu hỏi thường xuất hiện",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "2.1. Hỏi đối tượng quảng cáo",
+          "content": [
+            {
+              "type": "tips",
+              "items": [
+                "Nội dung thường xuất hiện ở phần đầu",
+                "Chú ý xác định loại quảng cáo gì, mặt hàng gì => suy ra được đối tượng quảng cáo hướng đến"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.2. Hỏi thông tin chi tiết",
+          "content": [
+            {
+              "type": "text",
+              "content": "Nội dung nằm ở phần thân hoặc cuối, ví dụ:"
+            },
+            {
+              "type": "tips",
+              "items": [
+                "Đặc điểm hoặc ưu điểm của sản phẩm/dịch vụ: durable, customized, competitive",
+                "Quyền lợi mua hàng"
+              ]
+            },
+            {
+              "type": "common-words",
+              "title": "Những từ thường xuất hiện:",
+              "words": [
+                {
+                  "word": "discount",
+                  "meaning": "giảm giá"
+                },
+                {
+                  "word": "coupon",
+                  "meaning": "phiếu quà tặng"
+                },
+                {
+                  "word": "giveaway",
+                  "meaning": "quà tặng"
+                },
+                {
+                  "word": "saving points",
+                  "meaning": "điểm tích lũy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "2.3. Hỏi về thông tin phụ (cách đặt hàng, thông tin liên hệ,...)",
+          "content": [
+            {
+              "type": "tips",
+              "items": [
+                "Thường xuất hiện ở phần cuối",
+                "Chú ý các thông tin liên quan đến website, email, số điện thoại"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Bài đọc mẫu",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "3.1. Dạng quảng cáo sản phẩm/dịch vụ",
+          "examples": [
+            {
+              "id": "example1",
+              "passage": {
+                "type": "advertisement",
+                "title": "Verus Travel",
+                "content": "Do you need a break? Then reward yourself with a Verus Travel package tour! Call Verus Travel today at 0800-777-282 to book yourself the overseas trip you've always wanted. We offer a wide range of options to suit any budget.\n\nHere's a small sample of the special package deals that are available now:\n\nA Pacific Paradise\nEnjoy three nights and four days at the wonderful Lily Resort in Fiji. The total package costs just $1,200 per person.\n\nA Swiss Retreat\nHead to the Swiss Alps to enjoy the clean air in a luxurious mountain lodge. This package is available for only $1,800 per person.\n\nItaly on a Shoestring\nSpend two weeks touring all the amazing sites in Italy for just $1,600. Don't miss out on this once-in-a-lifetime opportunity!\n\n*Please note: All packages are subject to availability."
+              },
+              "annotations": [
+                {
+                  "number": 1,
+                  "label": "Đề mục",
+                  "note": "Nêu tên công ty hoặc tên sản phẩm, dịch vụ."
+                },
+                {
+                  "number": 2,
+                  "label": "Giới thiệu sơ lược",
+                  "note": "Giới thiệu sơ lược về sản phẩm hoặc dịch vụ. Cho biết sản phẩm hoặc dịch vụ có ưu điểm nào đó và đáp ứng được những mong đợi của khách hàng."
+                },
+                {
+                  "number": 3,
+                  "label": "Trình bày cụ thể",
+                  "note": "Đây là phần mô tả chi tiết các đặc điểm của sản phẩm hoặc dịch vụ. Hãy đọc kỹ phần này để trả lời các câu hỏi về thông tin cụ thể."
+                },
+                {
+                  "number": 4,
+                  "label": "Thông tin bổ sung",
+                  "note": "Phần này nêu các thông tin bổ sung như ngày tháng áp dụng chương trình giảm giá, hạn sử dụng sản phẩm…."
+                }
+              ],
+              "questions": [
+                {
+                  "type": "general",
+                  "title": "Câu hỏi về thông tin khái quát",
+                  "examples": [
+                    "Who most likely is the advertisement intended for?",
+                    "What is being advertised?"
+                  ]
+                },
+                {
+                  "type": "specific",
+                  "title": "Câu hỏi về thông tin cụ thể",
+                  "examples": [
+                    "What is NOT mentioned in the advertisement?",
+                    "What is stated about the suggested package tours?",
+                    "What benefit does Verus Travel offer?"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "3.2. Dạng tin tuyển dụng",
+          "examples": [
+            {
+              "id": "example2",
+              "passage": {
+                "type": "job-posting",
+                "title": "Job opening: Service Representative / Bank Teller",
+                "content": "City First Bank has been a successful financial institution for 70 years. We are currently looking for a service rep / teller who can:\n\n• process customer deposits, withdrawals, transfers, etc.\n• maintain and update computer databases frequently\n• follow all regulations to insure branch security\n• help customers open new accounts\n\nApplicants must have a minimum of three years of teller experience as well as a demonstrated ability to work quickly and accurately with numbers.\n\nCity First Bank offers a generous salary, full medical coverage, and a competitive pension plan. Apply now and join our excellent banking team. Send your résumé, cover letter, and two letters of reference to the following address:\n\nCity First Bank Main Branch\n14558 Rio Blvd.\nSanta Barbara, CA 912"
+              },
+              "annotations": [
+                {
+                  "number": 1,
+                  "label": "Vị trí dự tuyển",
+                  "note": "Đôi khi thông tin này được viết thành câu chứ không phải được viết dưới dạng đề mục"
+                },
+                {
+                  "number": 2,
+                  "label": "Giới thiệu về lĩnh vực kinh doanh và lịch sử của công ty"
+                },
+                {
+                  "number": 3,
+                  "label": "Nội dung công việc",
+                  "note": "Phần này có thể có đề mục là Duties (Nhiệm vụ) hoặc Responsibilities (Trách nhiệm) với nội dung công việc được trình bày theo dạng liệt kê."
+                },
+                {
+                  "number": 4,
+                  "label": "Điều kiện dự tuyển",
+                  "note": "Phần này thường có đề mục là Requirements và cũng được trình bày theo dạng liệt kê."
+                },
+                {
+                  "number": 5,
+                  "label": "Chế độ phúc lợi và cách dự tuyển"
+                },
+                {
+                  "number": 6,
+                  "label": "Địa chỉ gửi hồ sơ dự tuyển",
+                  "note": "Có thể kèm theo hạn nộp hồ sơ"
+                }
+              ],
+              "questions": [
+                {
+                  "type": "general",
+                  "title": "Câu hỏi về thông tin khái quát",
+                  "examples": [
+                    "What is the purpose of this advertisement?",
+                    "Who would be most interested in this advertisement?"
+                  ]
+                },
+                {
+                  "type": "specific",
+                  "title": "Câu hỏi về thông tin cụ thể",
+                  "examples": [
+                    "What position is being advertised?",
+                    "What does this advertisement ask the applicant to do?",
+                    "Which of these is a requirement for this position?",
+                    "Which of these is NOT mentioned as a duty of this position?"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Từ vựng thường gặp",
+      "content": [
+        {
+          "type": "vocabulary-list",
+          "categories": [
+            {
+              "title": "Tuyển dụng",
+              "words": [
+                {
+                  "word": "Apply for",
+                  "meaning": "ứng tuyển cho..."
+                },
+                {
+                  "word": "Job opening/vacancy",
+                  "meaning": "vị trí còn trống"
+                },
+                {
+                  "word": "Job description",
+                  "meaning": "bản mô tả công việc"
+                },
+                {
+                  "word": "Application form",
+                  "meaning": "đơn xin việc"
+                },
+                {
+                  "word": "Expertise",
+                  "meaning": "kiến thức, chuyên môn"
+                },
+                {
+                  "word": "Successful candidate",
+                  "meaning": "ứng viên trúng tuyển"
+                },
+                {
+                  "word": "Permanent work",
+                  "meaning": "công việc chính thức"
+                },
+                {
+                  "word": "Temporary worker",
+                  "meaning": "nhân viên thời vụ"
+                },
+                {
+                  "word": "Meet the requirements",
+                  "meaning": "đáp ứng yêu cầu"
+                },
+                {
+                  "word": "Annual salary",
+                  "meaning": "lương hằng năm"
+                },
+                {
+                  "word": "Benefit package",
+                  "meaning": "điều kiện phúc lợi"
+                },
+                {
+                  "word": "Negotiable",
+                  "meaning": "có thể thương lượng"
+                }
+              ]
+            },
+            {
+              "title": "Sản phẩm/Dịch vụ",
+              "words": [
+                {
+                  "word": "Appliance",
+                  "meaning": "thiết bị điện gia dụng"
+                },
+                {
+                  "word": "Release/Launch",
+                  "meaning": "xuất xưởng, xuất hàng"
+                },
+                {
+                  "word": "Bargain",
+                  "meaning": "mặc cả"
+                },
+                {
+                  "word": "Compatible with",
+                  "meaning": "tương thích với"
+                },
+                {
+                  "word": "Durable",
+                  "meaning": "bền bỉ"
+                },
+                {
+                  "word": "Affordable price",
+                  "meaning": "giá cả cạnh tranh"
+                },
+                {
+                  "word": "Customized service",
+                  "meaning": "dịch vụ theo yêu cầu"
+                },
+                {
+                  "word": "Under warranty",
+                  "meaning": "trong thời gian bảo hành"
+                },
+                {
+                  "word": "Full refund",
+                  "meaning": "hoàn tiền toàn bộ"
+                },
+                {
+                  "word": "Free coupon",
+                  "meaning": "phiếu mua hàng miễn phí"
+                }
+              ]
+            },
+            {
+              "title": "Bất động sản",
+              "words": [
+                {
+                  "word": "Property",
+                  "meaning": "bất động sản"
+                },
+                {
+                  "word": "Premises",
+                  "meaning": "lô đất"
+                },
+                {
+                  "word": "Complex",
+                  "meaning": "khu nhà"
+                },
+                {
+                  "word": "Landlord",
+                  "meaning": "chủ nhà cho thuê"
+                },
+                {
+                  "word": "Tenant",
+                  "meaning": "người thuê nhà"
+                },
+                {
+                  "word": "Inhabitant",
+                  "meaning": "người cư trú"
+                },
+                {
+                  "word": "Fully furnished",
+                  "meaning": "trang bị đầy đủ thiết bị"
+                },
+                {
+                  "word": "Within walking distance",
+                  "meaning": "trong khoảng cách có thể đi bộ được"
+                },
+                {
+                  "word": "Leisure facilities",
+                  "meaning": "tiện nghi giải trí"
+                },
+                {
+                  "word": "Terms and conditions",
+                  "meaning": "điều khoản hợp đồng"
+                },
+                {
+                  "word": "Maintenance fee",
+                  "meaning": "phí bảo trì"
+                },
+                {
+                  "word": "Utility bill",
+                  "meaning": "hóa đơn điện nước, ga"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,4 +1,138 @@
 {
   "title": "Câu hỏi tìm chi tiết sai",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi tìm chi tiết sai yêu cầu người đọc phải tìm ra chi tiết không có trong bài đọc."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Câu hỏi tìm chi tiết sai thường có dạng:",
+          "patterns": [
+            "What is NOT true about...?",
+            "What is NOT mentioned about...?",
+            "What is NOT suggested/recommended in...?",
+            "What is NOT a requirement for...?"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Dạng câu hỏi này không khó nhưng mất nhiều thời gian làm vì trong hầu hết các trường hợp, thí sinh cần tìm thông tin của cả 4 đáp án để chọn ra đáp án đúng."
+        },
+        {
+          "type": "info-box",
+          "items": [
+            {
+              "label": "Tần suất xuất hiện",
+              "value": "Câu hỏi tìm chi tiết sai chỉ chiếm 1-3/54 câu hỏi của Part 7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Phân tích ví dụ",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "Example (ETS 2022 - Test 1 - Q176)",
+          "examples": [
+            {
+              "id": "not-true-example",
+              "title": "Example (ETS 2022 - Test 1 - Q176)",
+              "passage": {
+                "type": "article",
+                "title": "Alberta Business Matters - April issue",
+                "subtitle": "Improve Your Office Environment Now!",
+                "content": "Today's office environment, featuring numerous corridors, unexciting beige or white walls, and often rows of identical, windowless cubicles, might not inspire comfort, beauty, and energy. However, there are some easy, inexpensive ways to make your office space more inviting.\n\nAir quality\n- Add some green plants to the décor. Plants offer a natural filtration system, increasing oxygen levels. Nonflowering plants should be preferred, as they will not scatter pollen.\n- A small, tabletop air purifier helps improve stale air and removes dust.\n\nLight quality\n- Take breaks and go outdoors. Even just five minutes before or after lunch break will provide your eyes with a respite from artificial light sources.\n- Use desktop lamps with full-spectrum light bulbs.\n- Install double-glazed windows instead of blinds to reduce glare while maintaining natural light.\n\nStress relief\n- Earplugs or noise-cancelling headphones can block distracting noise in an open office floor plan.\n- Photographs of loved ones and places we have visited for vacation are reminders of our life away from the office. Select a few favorite pictures as important decorative elements.\n\n-------------------------\nDear readers, if you have tips to add to this list, send them in and they will be published in next month's issue.\n-------------------------"
+              },
+              "question": {
+                "text": "What is NOT recommended in the article?",
+                "translation": "Điều gì KHÔNG được khuyến nghị trong bài báo?",
+                "note": "Xác định dạng câu hỏi + keyword của mỗi đáp án",
+                "options": [
+                  {
+                    "key": "A",
+                    "text": "Using plants to decorate cubicles",
+                    "translation": "Sử dụng cây để trang trí chỗ làm việc"
+                  },
+                  {
+                    "key": "B",
+                    "text": "Walking outdoors during breaks",
+                    "translation": "Đi bộ ra ngoài trong giờ giải lao"
+                  },
+                  {
+                    "key": "C",
+                    "text": "Using a calming noise machine",
+                    "translation": "Sử dụng máy tạo tiếng ồn trắng",
+                    "correct": true
+                  },
+                  {
+                    "key": "D",
+                    "text": "Decorating with personal photographs",
+                    "translation": "Trang trí với những bức ảnh của riêng mình"
+                  }
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Scan thông tin của 4 đáp án trong bài, sử dụng keyword đã xác định trong từng câu. Câu nào trúng khớp với thông tin trong bài, ta có thể LOẠI:",
+                    "analysis": [
+                      {
+                        "option": "A",
+                        "text": "Using plants to decorate cubicles",
+                        "match": "Add some green plants to the décor",
+                        "result": "Loại",
+                        "explanation": "Trùng khớp với thông tin trong bài"
+                      },
+                      {
+                        "option": "B",
+                        "text": "Walking outdoors during breaks",
+                        "match": "Take breaks and go outdoors",
+                        "result": "Loại",
+                        "explanation": "Trùng khớp với thông tin trong bài"
+                      },
+                      {
+                        "option": "C",
+                        "text": "Using a calming noise machine",
+                        "match": "Earplugs or noise-cancelling headphones can block distracting noise in an open office floor plan",
+                        "result": "Chọn",
+                        "explanation": "Ở đây, máy tạo tiếng ồn trắng (ghi chú: tiếng ồn trắng white noise = calming noise: một dạng âm thanh giúp thư giãn, dễ đi vào giấc ngủ, vd: tiếng mưa, tiếng nước chảy, tiếng máy sấy,..) khác với nút tai hoặc tai nghe chống ồn. Thông tin về calming noise machine cũng không tìm thấy trong bài => Đây là chi tiết SAI. (Trường hợp bạn không biết calming noise machine là gì thì riêng chi tiết: earplug và headphone không phải là machine đã có thể kết luận)"
+                      },
+                      {
+                        "option": "D",
+                        "text": "Decorating with personal photographs",
+                        "match": "Photographs of loved ones and places we have visited for vacation are reminders of our life away from the office. Select a few favorite pictures as important decorative elements.",
+                        "result": "Loại",
+                        "explanation": "Trùng khớp với thông tin trong bài"
+                      }
+                    ]
+                  },
+                  {
+                    "step": "Kết luận",
+                    "content": "Đáp án là (C)"
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "points": [
+                      "Kỹ năng quan trọng để làm dạng bài này là xác định keyword và scanning (đọc lướt tìm thông tin)",
+                      "Luôn dùng phương pháp loại trừ (tìm thông tin của cả 4 phương án) để chắc chắn câu trả lời của mình là đúng",
+                      "Cẩn thận đọc kỹ câu hỏi để không nhầm lẫn sang dạng câu hỏi tìm chi tiết đúng"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

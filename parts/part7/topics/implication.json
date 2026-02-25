@@ -1,4 +1,241 @@
 {
   "title": "Câu hỏi về hàm ý câu nói",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi về hàm ý câu nói Part 7 tương tự như dạng câu hỏi này ở Part 3 và Part 4, yêu cầu thí sinh chỉ ra được ý nghĩa, mục đích của một câu nói trong một đoạn hội thoại. Dạng câu hỏi này chỉ xuất hiện ở dạng bài Text message chain - Chuỗi tin nhắn."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Câu hỏi về hàm ý câu nói ở Part 7 thường có dạng:",
+          "patterns": [
+            "At 3:31, why does Anna say \"...\"?",
+            "At 2:14 P.M., what does Mr. Smith most likely mean when he writes, \"...\"?",
+            "What does Michael imply when he says he \"...\"?"
+          ]
+        },
+        {
+          "type": "info-box",
+          "items": [
+            {
+              "label": "Tần suất xuất hiện",
+              "value": "Dạng câu hỏi này chiếm 2/54 số câu hỏi của Part 7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Phân tích ví dụ",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "Example 1",
+          "examples": [
+            {
+              "id": "implication-example1",
+              "title": "Example 1 (ETS 2022 - Test 1 - Q157)",
+              "passage": {
+                "type": "text-message",
+                "messages": [
+                  {
+                    "sender": "Dennis Beck",
+                    "time": "2:52 P.M.",
+                    "text": "Hi, Corinne. I just want to be sure that you saw the document I sent you. It's the combined market analysis and advertising proposal for the Keyes Elegant Home group. We're preparing it for tomorrow's presentation to the client."
+                  },
+                  {
+                    "sender": "Corinne McCall",
+                    "time": "2:53 P.M.",
+                    "text": "Yes, I have just downloaded it. Is this about their new line of tableware?"
+                  },
+                  {
+                    "sender": "Dennis Beck",
+                    "time": "2:54 P.M.",
+                    "text": "Yes. I'd like you to read it over."
+                  },
+                  {
+                    "sender": "Corinne McCall",
+                    "time": "3:01 P.M.",
+                    "text": "No problem. Would you like me to revise anything, or do you want me to just check that it is all clear?"
+                  },
+                  {
+                    "sender": "Dennis Beck",
+                    "time": "3:02 P.M.",
+                    "text": "Feel free to add information to the section \"Advertising Strategies,\" since that is your area of expertise."
+                  },
+                  {
+                    "sender": "Corinne McCall",
+                    "time": "3:03 P.M.",
+                    "text": "Will do. I'll get it back to you before the end of the day."
+                  }
+                ]
+              },
+              "question": {
+                "text": "At 3:01 P.M., what does Ms. McCall most likely mean when she writes, \"No problem\"?",
+                "translation": "Vào lúc 3:01 chiều, cô McCall rất có thể có ý gì khi cô viết, \"Không có gì\"?",
+                "options": [
+                  {
+                    "key": "A",
+                    "text": "She did not have any issues logging on to her computer.",
+                    "translation": "Cô ấy đã không gặp bất kỳ vấn đề gì khi đăng nhập máy tính của cô ấy."
+                  },
+                  {
+                    "key": "B",
+                    "text": "She does not think a document has errors.",
+                    "translation": "Cô ấy không nghĩ rằng tài liệu bị lỗi."
+                  },
+                  {
+                    "key": "C",
+                    "text": "She is willing to review a document.",
+                    "translation": "Cô ấy sẵn sàng xem lại tài liệu.",
+                    "correct": true
+                  },
+                  {
+                    "key": "D",
+                    "text": "She has time to meet representatives from Keyes Elegant Home.",
+                    "translation": "Cô ấy có thời gian để gặp những đại diện từ Keyes Elegant Home."
+                  }
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Dựa vào câu hỏi, ta có thể dễ dàng xác định được câu nói trong chuỗi tin nhắn. Đọc tiếp phía trước để xác định câu 'No problem' trả lời cho câu hỏi gì, và đọc thêm câu tiếp nếu cần thêm thông tin làm rõ ý cho câu trả lời:",
+                    "analysis": [
+                      "Dennis Beck (2:54 P.M.): 'Yes. I'd like you to read it over.' => yêu cầu đọc tài liệu",
+                      "Corinne McCall (3:01 P.M.): 'No problem.' => đồng ý",
+                      "'Would you like me to revise anything, or do you want me to just check that it is all clear?' => hỏi thêm về yêu cầu",
+                      "'No problem' nghĩa là cô ấy đồng ý xem qua tài liệu",
+                      "Đáp án (C)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "content": "Khi câu nói là dạng câu trả lời ngắn => đọc câu phía trước để hiểu câu hỏi."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "Example 2",
+          "examples": [
+            {
+              "id": "implication-example2",
+              "title": "Example 2 (New economy - Test 2 - Q151)",
+              "passage": {
+                "type": "text-message",
+                "messages": [
+                  {
+                    "sender": "Liz Bradley",
+                    "time": "8:14",
+                    "text": "Sir, the arrangements have been made for your meeting with Mr. Johnson tomorrow afternoon. I've reserved a table for two at Sheraton Restaurant at 1:00 P.M."
+                  },
+                  {
+                    "sender": "Bernie Gibbs",
+                    "time": "8:17",
+                    "text": "Thank you. And have you compiled the reports that I'll need at the meeting?"
+                  },
+                  {
+                    "sender": "Liz Bradley",
+                    "time": "8:18",
+                    "text": "Most of them, yes. I'm still waiting for Michael Steel's report. He told me that he would have them ready for me sometime this morning."
+                  },
+                  {
+                    "sender": "Bernie Gibbs",
+                    "time": "8:20",
+                    "text": "Well, they should have been completed last night. Can you contact him and see what's going on?"
+                  },
+                  {
+                    "sender": "System",
+                    "time": "8:26",
+                    "text": "(Michael Steel has been added to the conversation)"
+                  },
+                  {
+                    "sender": "Liz Bradley",
+                    "time": "8:27",
+                    "text": "Michael, Mr. Gibbs wants to know where the reports are. Are you finished with them?"
+                  },
+                  {
+                    "sender": "Michael Steel",
+                    "time": "8:28",
+                    "text": "I apologize for the delay. Our intern accidentally deleted some files. I had to scour the database to locate the backup material. It was a bit of a headache sorting through the files that I needed but I think I have everything organized and I'm printing them out now."
+                  },
+                  {
+                    "sender": "Liz Bradley",
+                    "time": "8:29",
+                    "text": "Can you bring them to me as soon as you're done?"
+                  },
+                  {
+                    "sender": "Michael Steel",
+                    "time": "8:30",
+                    "text": "Of course. I'll be there in 10 minutes."
+                  }
+                ]
+              },
+              "question": {
+                "text": "What does Michael imply when he says he \"had to scour the database to locate the backup material\"?",
+                "translation": "Michael có ý gì khi anh ấy nói anh ấy \"đã phải lục soát cơ sở dữ liệu để xác định vị trí tài liệu sao lưu\"?",
+                "options": [
+                  {
+                    "key": "A",
+                    "text": "He took his time writing the report.",
+                    "translation": "Anh ấy dành thời gian viết báo cáo."
+                  },
+                  {
+                    "key": "B",
+                    "text": "He had to back up all the information first.",
+                    "translation": "Anh ấy phải sao lưu dự phòng tất cả thông tin trước."
+                  },
+                  {
+                    "key": "C",
+                    "text": "He needed time to find the missing data.",
+                    "translation": "Anh ấy cần thời gian để tìm dữ liệu bị mất.",
+                    "correct": true
+                  },
+                  {
+                    "key": "D",
+                    "text": "The computer was out of order.",
+                    "translation": "Máy tính bị hỏng."
+                  }
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Xác định vị trí của câu nói và đọc những câu xung quanh để hiểu ngữ cảnh:",
+                    "analysis": [
+                      "Michael Steel 8:28: 'I apologize for the delay. Our intern accidentally deleted some files. I had to scour the database to locate the backup material. It was a bit of a headache sorting through the files that I needed but I think I have everything organized and I'm printing them out now.'",
+                      "(Tôi xin lỗi vì sự chậm trễ. Thực tập sinh của chúng ta đã vô tình xóa vài tài liệu. Tôi đã phải lục soát cơ sở dữ liệu để xác định vị trí của tài liệu sao lưu. Việc này hơi đau não một chút khi mà phải lọc ra các tài liệu mà tôi cần nhưng tôi nghĩ tôi là mọi thứ đã được sắp xếp đâu vào đấy và tôi sẽ in chúng ra ngay bây giờ.)",
+                      "Michael đã mất thời gian để tìm lại dữ liệu bị mất",
+                      "Đáp án (C)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý 1",
+                    "content": "Khi câu hỏi là dạng câu trần thuật một hành động, sự việc => tìm lí do, ngữ cảnh của hành động bằng cách đọc câu trước và sau."
+                  },
+                  {
+                    "title": "Lưu ý 2",
+                    "content": "Về thứ tự làm bài: Đây là dạng câu hỏi không khó, nên làm theo đúng thứ tự vì trả lời những câu hỏi trước đó cũng giúp chúng ta hiểu được phần nào nội dung chính cũng như mạch trò chuyện."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

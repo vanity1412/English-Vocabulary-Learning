@@ -1,4 +1,184 @@
 {
-  "title": "Câu hỏi tìm từ đồng nghĩa",
-  "content": ""
+  "title": "Câu hỏi từ đồng nghĩa",
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi từ đồng nghĩa yêu cầu người đọc tìm ra từ đồng nghĩa có thể thay thế được cho một từ/cụm từ trong bài đọc."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Câu hỏi từ đồng nghĩa có dạng:",
+          "patterns": [
+            "The word \"...\" in paragraph..., line..., is closest in meaning to",
+            "In the email, the phrase \"...\" is closest in meaning to"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "Đây là dạng câu hỏi dễ vì không cần suy luận, chỉ cần hiểu nghĩa của từ. Một vài trường hợp từ chỉ có 1 nghĩa, nhưng một vài trường hợp từ có nhiều nghĩa, ta phải dựa vào ngữ cảnh trong bài để chọn."
+        },
+        {
+          "type": "info-box",
+          "items": [
+            {
+              "label": "Tần suất xuất hiện",
+              "value": "Dạng câu hỏi này chiếm 2-4/54 câu của Part 7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Phân tích ví dụ",
+      "content": [
+        {
+          "type": "subsection",
+          "title": "Example 1",
+          "examples": [
+            {
+              "id": "synonym-example1",
+              "title": "Example 1 (ETS 2022 - Test 1 - Q167)",
+              "passage": {
+                "type": "document",
+                "title": "SLEEP SOUNDLY SOLUTIONS",
+                "content": "Thank you for choosing Sleep Soundly Solutions!\n\nThe updated control panel is linked to an integrated system that allows you to activate and disable all security systems in your home, including your Sleep Soundly motion sensor as well as your fire, smoke, and carbon monoxide detectors. All Sleep Soundly residential alarm systems have been tested thoroughly to ensure the highest quality and sensitivity, so you can sleep soundly in the knowledge that your home is protected. We have also developed a new smartphone application that will notify you of any disturbances wherever you are. The app is available for download now.\n\nSleep Soundly control equipment is carefully manufactured for use with Sleep Soundly detectors and alarms. Using products manufactured by other companies may result in an alarm system that does not meet safety requirements for residential buildings or comply with local laws."
+              },
+              "question": {
+                "text": "The word \"meet\" in paragraph 3, line 3, is closest in meaning to",
+                "translation": "Từ \"meet\" trong đoạn 3, dòng 3, gần nghĩa nhất với",
+                "options": [
+                  {
+                    "key": "A",
+                    "text": "Greet",
+                    "translation": "Chào hỏi"
+                  },
+                  {
+                    "key": "B",
+                    "text": "Touch",
+                    "translation": "Chạm"
+                  },
+                  {
+                    "key": "C",
+                    "text": "Satisfy",
+                    "translation": "Thỏa mãn",
+                    "correct": true
+                  },
+                  {
+                    "key": "D",
+                    "text": "Experience",
+                    "translation": "Trải nghiệm"
+                  }
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Tìm câu chứa từ cần tìm đồng nghĩa:",
+                    "analysis": [
+                      "'Using products manufactured by other companies may result in an alarm system that does not meet safety requirements for residential buildings or comply with local laws.'",
+                      "Cụm 'meet safety requirements': đáp ứng những yêu cầu về an toàn.",
+                      "Từ 'meet' trong câu này nghĩa là thỏa mãn, đáp ứng",
+                      "Đáp án (C)"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "subsection",
+          "title": "Example 2",
+          "examples": [
+            {
+              "id": "synonym-example2",
+              "title": "Example 2 (New Economy - Test 2 - Q197)",
+              "passage": {
+                "type": "email",
+                "content": "From: Debra Clarke (debraclarke@fourseasons.com)\nTo: Sally Nelson (snelson@clandon.net)\nDate: April 30\nSubject: Exchange\n\nDear Ms. Nelson,\n\nWe have received your request to exchange the sweater you purchased. We sincerely apologize for this mistake. We shipped the correct item immediately as per your request. Your shipment can be tracked on our website using the following tracking number: 447H57J.\n\nBecause this was our mistake, we have returned $7 to your credit card in order to reimburse you for the return shipping costs. Please check your balance to confirm this.\n\nIf you experience any future problems with this order, you may call me at 303-555-4387. I will help you solve any problem that may arise.\n\nDebra Clarke"
+              },
+              "question": {
+                "text": "In the e-mail from Debra Clarke, the phrase \"as per\" is closest in meaning to",
+                "translation": "Trong email từ Debra Clarke, cụm từ \"as per\" gần nghĩa nhất với",
+                "options": [
+                  {
+                    "key": "A",
+                    "text": "regardless of",
+                    "translation": "bất kể"
+                  },
+                  {
+                    "key": "B",
+                    "text": "except for",
+                    "translation": "ngoại trừ"
+                  },
+                  {
+                    "key": "C",
+                    "text": "rather than",
+                    "translation": "hơn là"
+                  },
+                  {
+                    "key": "D",
+                    "text": "according to",
+                    "translation": "theo như",
+                    "correct": true
+                  }
+                ]
+              },
+              "solution": {
+                "steps": [
+                  {
+                    "step": "Tìm thông tin + chọn đáp án",
+                    "content": "Tìm câu chứa cụm từ cần tìm đồng nghĩa:",
+                    "analysis": [
+                      "'We shipped the correct item immediately as per your request.'",
+                      "Cụm 'as per your request' = theo như yêu cầu của bạn.",
+                      "as per = according to",
+                      "Đáp án (D)"
+                    ]
+                  }
+                ],
+                "notes": [
+                  {
+                    "title": "Lưu ý",
+                    "content": "Trường hợp không chắc chắn, ta có thể thử cả 4 đáp án thay cho từ trong bài:",
+                    "examples": [
+                      {
+                        "option": "A",
+                        "sentence": "We shipped the correct item immediately regardless of your request.",
+                        "translation": "Chúng tôi đã giao ngay đúng sản phẩm bất kể yêu cầu của bạn.",
+                        "valid": false
+                      },
+                      {
+                        "option": "B",
+                        "sentence": "We shipped the correct item immediately except for your request.",
+                        "translation": "Chúng tôi đã giao ngay đúng sản phẩm ngoại trừ yêu cầu của bạn.",
+                        "valid": false
+                      },
+                      {
+                        "option": "C",
+                        "sentence": "We shipped the correct item immediately rather than your request.",
+                        "translation": "Chúng tôi đã giao ngay đúng sản phẩm hơn là yêu cầu của bạn.",
+                        "valid": false
+                      },
+                      {
+                        "option": "D",
+                        "sentence": "We shipped the correct item immediately according to your request.",
+                        "translation": "Chúng tôi đã giao ngay đúng sản phẩm đúng theo yêu cầu của bạn.",
+                        "valid": true
+                      }
+                    ],
+                    "conclusion": "Chỉ đáp án (D) là hợp lý."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

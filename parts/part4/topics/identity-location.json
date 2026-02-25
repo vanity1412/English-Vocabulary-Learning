@@ -1,4 +1,166 @@
 {
   "title": "Câu hỏi về danh tính, địa điểm",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi về danh tính và địa điểm dùng để xác định: Người nói là ai, Người nghe là ai, Người nói/người nghe làm việc ở đâu, Bài nói diễn ra ở đâu."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Các dạng câu hỏi phổ biến:",
+          "patterns": [
+            "Who most likely is the speaker?",
+            "Who most likely are the listeners?",
+            "Where do the listeners most likely work?",
+            "Where most likely does the speaker work?",
+            "Where is the speech being given?"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Thông tin thường nằm ở phần đầu hoặc giữa bài nói. Người nói thường tiết lộ danh tính/bối cảnh khi: Chào mừng người nghe, Giới thiệu chủ đề, Mô tả công việc hoặc môi trường làm việc."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Danh tính (identity) = người nói/người nghe là ai, nghề nghiệp gì | Địa điểm (location) = nơi diễn ra bài nói hoặc nơi làm việc"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nghe kỹ phần chào hỏi và giới thiệu ban đầu<br>• Tập trung vào từ chỉ nghề nghiệp và môi trường làm việc"
+        }
+      ]
+    },
+    {
+      "heading": "2. Câu hỏi về danh tính (Identity Questions)",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>2.1. Hỏi về NGƯỜI NÓI / NGƯỜI NGHE</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Người nói/người nghe thường được xác định qua: Vai trò công việc, Hoạt động đang diễn ra, Đối tượng được nhắm đến."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Tìm từ khóa nghề nghiệp hoặc vai trò. Dựa vào nội dung bài nói để suy luận nhóm người nghe."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Speaker = người nói | Listeners = người nghe | Occupation = nghề nghiệp"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Không cần nghe tên nghề trực tiếp, hãy suy luận từ hoạt động và bối cảnh<br>• Chú ý cụm từ: audience, customers, employees, students, participants"
+        },
+        {
+          "type": "text",
+          "content": "<strong>2.2. Hỏi về NƠI LÀM VIỆC</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Câu hỏi xác định nơi làm việc của người nói/người nghe. Thường dựa vào hoạt động, sản phẩm, dịch vụ được nhắc đến."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Tìm từ khóa chỉ: Cửa hàng, công ty, văn phòng | Sản phẩm, giá cả, khách hàng | Suy ra loại hình nơi làm việc."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Workplace = nơi làm việc | Retail store = cửa hàng bán lẻ | Office = văn phòng | Factory = nhà máy"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nghe keyword về sản phẩm – khách hàng – giá cả – dịch vụ<br>• Suy luận môi trường làm việc từ ngữ cảnh"
+        }
+      ]
+    },
+    {
+      "heading": "3. Câu hỏi về địa điểm (Location Questions)",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>3.1. Hỏi nơi diễn ra bài nói</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Xác định địa điểm diễn ra bài nói hoặc sự kiện. Thường xuất hiện ở phần mở đầu."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Nghe các cụm từ: Welcome to…, Thanks for coming to…, At this event/conference/meeting"
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Training session = buổi đào tạo | Press conference = họp báo | Job fair = hội chợ việc làm | Store grand opening = khai trương cửa hàng"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Địa điểm thường được nói trực tiếp ở câu đầu tiên<br>• Nhận diện loại sự kiện từ cụm từ giới thiệu"
+        }
+      ]
+    },
+    {
+      "heading": "4. Lưu ý tránh bẫy",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>4.1. Từ gây nhiễu (Ambiguous Words)</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Một số từ có nhiều nghĩa gây nhầm lẫn (đa nghĩa)."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Xác định nghĩa theo ngữ cảnh bài nói. Không chọn đáp án chỉ vì nghe thấy từ trùng."
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Một từ có thể là danh từ/động từ/nghề nghiệp → phải dựa vào ngữ cảnh"
+        },
+        {
+          "type": "text",
+          "content": "<strong>4.2. Suy luận gián tiếp</strong>"
+        },
+        {
+          "type": "text",
+          "content": "Danh tính/địa điểm có thể không nói trực tiếp. Phải suy luận từ nội dung."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Dựa vào hoạt động, nhiệm vụ, môi trường. Kết hợp nhiều keyword để suy ra đáp án."
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Không chờ từ khóa rõ ràng, hãy suy luận từ bối cảnh công việc"
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt mẹo học nhanh",
+      "content": [
+        {
+          "type": "list",
+          "title": "🧠 Các mẹo quan trọng:",
+          "items": [
+            "Danh tính/địa điểm → nghe đầu và giữa bài",
+            "Tập trung vào nghề nghiệp, vai trò, môi trường",
+            "Địa điểm thường nói rõ trong câu mở đầu",
+            "Cẩn thận từ đa nghĩa gây nhiễu",
+            "Suy luận từ bối cảnh thay vì chờ keyword"
+          ]
+        }
+      ]
+    }
+  ]
 }

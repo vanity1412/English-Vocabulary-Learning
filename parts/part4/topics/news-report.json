@@ -1,4 +1,239 @@
 {
-  "title": "News report, Broadcast - Bản tin",
-  "content": ""
+  "title": "News Report / Broadcast - Bản tin",
+  "sections": [
+    {
+      "heading": "1. Lý thuyết chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>🎯 Mục đích của bản tin (News Report / Broadcast)</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Cung cấp thông tin giao thông",
+            "Dự báo thời tiết",
+            "Tin tức thời sự, kinh tế, xã hội",
+            "Giới thiệu sách, phim, sự kiện mới",
+            "Phỏng vấn khách mời"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>👥 Mối quan hệ người nói – người nghe</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Người dẫn chương trình / Phóng viên → Thính giả / Khán giả"
+          ]
+        },
+        {
+          "type": "text",
+          "content": "<strong>🔗 Mạch nói (Bố cục chuẩn)</strong>"
+        },
+        {
+          "type": "list",
+          "items": [
+            "<strong>Bước 1: Giới thiệu chủ đề</strong> → Nêu nội dung chính của bản tin",
+            "<strong>Bước 2: Nội dung chi tiết</strong> → Thông tin, sự kiện, số liệu, nguyên nhân",
+            "<strong>Bước 3: Ghi chú / khuyến nghị</strong> → Lời khuyên, cảnh báo, hướng dẫn",
+            "<strong>Bước 4: Chương trình tiếp theo / quảng cáo</strong> → Chuyển sang nội dung khác"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Các trường hợp cụ thể",
+      "content": [
+        {
+          "type": "text",
+          "content": "<strong>1️⃣ DỰ BÁO THỜI TIẾT (Weather Forecast)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc mạch nói:",
+          "items": [
+            "Chào mừng + giới thiệu chương trình",
+            "Thời tiết trước đó",
+            "Thời tiết hiện tại + lời khuyên",
+            "Thời tiết sắp tới",
+            "Chương trình tiếp theo"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc nghe:",
+          "items": [
+            "Nghe ngày cụ thể (today, tomorrow, this weekend)",
+            "Nghe lời khuyên (advice, warning)",
+            "Nghe dấu hiệu chuyển đoạn: as a result, so, therefore"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Cụm từ quan trọng:",
+          "items": [
+            "<strong>Stay tuned:</strong> Đừng chuyển kênh",
+            "<strong>I'll be back in…:</strong> Tôi sẽ quay lại sau",
+            "<strong>Now, let's…:</strong> Bây giờ hãy chuyển sang"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Bản dịch mẫu cụm từ:",
+          "items": [
+            "<strong>weather forecast:</strong> dự báo thời tiết",
+            "<strong>severe storm:</strong> bão nghiêm trọng",
+            "<strong>heavy rain:</strong> mưa lớn",
+            "<strong>temperature drop:</strong> nhiệt độ giảm"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Thời tiết luôn có 3 thời điểm: quá khứ → hiện tại → tương lai"
+        },
+        {
+          "type": "text",
+          "content": "<strong>2️⃣ THÔNG BÁO GIAO THÔNG (Traffic Report)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc mạch nói:",
+          "items": [
+            "Chào mừng + giới thiệu bản tin giao thông",
+            "Câu chủ đề (tai nạn, ùn tắc, thời tiết xấu)",
+            "Thông tin chi tiết (đường, thời gian, nguyên nhân)",
+            "Lời khuyên / giải pháp",
+            "Chương trình tiếp theo"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc nghe:",
+          "items": [
+            "Tập trung nguyên nhân (due to, because of)",
+            "Nghe đường, khu vực, thời gian",
+            "Nghe lời khuyên cuối đoạn"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Cụm từ quan trọng:",
+          "items": [
+            "<strong>Take a detour:</strong> Đi đường vòng",
+            "<strong>Find another route:</strong> Tìm tuyến đường khác",
+            "<strong>Use public transportation:</strong> Dùng phương tiện công cộng",
+            "<strong>Stay indoor:</strong> Ở trong nhà"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Traffic report = Problem → Details → Advice"
+        },
+        {
+          "type": "text",
+          "content": "<strong>3️⃣ PHÁT THANH TIN TỨC (News Broadcast)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc mạch nói:",
+          "items": [
+            "Giới thiệu người dẫn + chương trình",
+            "Chủ đề bản tin",
+            "Nội dung chi tiết",
+            "Chương trình tiếp theo"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc nghe:",
+          "items": [
+            "Chủ đề luôn xuất hiện ngay sau phần giới thiệu",
+            "Chú ý từ nối: but, however, in addition, as a result, so, unfortunately"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Tin tức thường theo công thức: What happened → Details → Next program"
+        },
+        {
+          "type": "text",
+          "content": "<strong>4️⃣ PHỎNG VẤN (Interview)</strong>"
+        },
+        {
+          "type": "list",
+          "title": "Cấu trúc mạch nói:",
+          "items": [
+            "Chào mừng + giới thiệu chương trình",
+            "Giới thiệu khách mời",
+            "Thông tin chi tiết về khách mời",
+            "Nội dung khách mời sẽ nói / làm",
+            "Yêu cầu người nghe"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc nghe:",
+          "items": [
+            "Nghe tên + nghề nghiệp khách mời ngay đầu",
+            "Nghe thành tựu, sự nghiệp ở phần giữa",
+            "Nghe hành động tiếp theo ở cuối"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Bản dịch mẫu cụm từ:",
+          "items": [
+            "<strong>interview:</strong> phỏng vấn",
+            "<strong>guest speaker:</strong> khách mời diễn giả",
+            "<strong>career achievements:</strong> thành tựu sự nghiệp",
+            "<strong>upcoming project:</strong> dự án sắp tới"
+          ]
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Interview luôn có: Host → Guest → Background → Future plan"
+        }
+      ]
+    },
+    {
+      "heading": "3. Quy tắc chung làm dạng News Report",
+      "content": [
+        {
+          "type": "list",
+          "title": "✅ Các quy tắc quan trọng:",
+          "items": [
+            "<strong>1. Câu đầu cực kỳ quan trọng</strong><br>→ Xác định chủ đề bản tin",
+            "<strong>2. Phần giữa là thông tin chi tiết</strong><br>→ Nghe keyword: thời gian, địa điểm, con số, nguyên nhân",
+            "<strong>3. Câu cuối thường là</strong><br>→ Lời khuyên hoặc Chương trình tiếp theo"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Mẹo ghi nhớ siêu nhanh",
+      "content": [
+        {
+          "type": "tip",
+          "title": "🧠 Công thức vàng dạng bản tin",
+          "content": "Intro → Topic → Details → Advice → Next program"
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt siêu ngắn dạng thi",
+      "content": [
+        {
+          "type": "tip",
+          "title": "News Report / Broadcast",
+          "content": "Xác định chủ đề đầu bài + bắt chi tiết giữa bài + tìm lời khuyên / chương trình tiếp theo cuối bài."
+        }
+      ]
+    }
+  ]
 }

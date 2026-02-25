@@ -246,8 +246,21 @@ function showFlashcard() {
 
     // Set images
     const imagePath = `${currentImagesFolder}/${word.word}.png`;
-    document.getElementById('wordImage').src = imagePath;
-    document.getElementById('wordImageBack').src = imagePath;
+    const wordImageFront = document.getElementById('wordImage');
+    const wordImageBack = document.getElementById('wordImageBack');
+    
+    wordImageFront.src = imagePath;
+    wordImageBack.src = imagePath;
+    wordImageFront.style.display = 'block';
+    wordImageBack.style.display = 'block';
+    
+    // Hide image if it fails to load
+    wordImageFront.onerror = function() {
+        this.style.display = 'none';
+    };
+    wordImageBack.onerror = function() {
+        this.style.display = 'none';
+    };
 
     // Reset card state
     document.querySelector('.card-front').classList.remove('hidden');

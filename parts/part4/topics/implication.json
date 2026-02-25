@@ -1,4 +1,169 @@
 {
   "title": "Câu hỏi về hàm ý câu nói",
-  "content": ""
+  "sections": [
+    {
+      "heading": "1. Đặc điểm chung",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi về hàm ý yêu cầu thí sinh hiểu mục đích, ý nghĩa ẩn sau một câu nói trong bài nghe."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Không hỏi thông tin trực tiếp → hỏi ý định hoặc mục đích nói câu đó. Thông tin trả lời thường nằm trước và sau câu nói được trích dẫn. Vị trí thường là câu hỏi thứ 2 hoặc thứ 3 trong nhóm câu hỏi."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Imply = hàm ý, ngụ ý | Purpose = mục đích | Meaning = ý nghĩa"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Đây là dạng HIỂU NGỮ CẢNH, KHÔNG NGHE TỪ<br>• Phải nghe toàn đoạn để hiểu logic"
+        }
+      ]
+    },
+    {
+      "heading": "2. Dạng câu hỏi hàm ý phổ biến",
+      "content": [
+        {
+          "type": "text",
+          "content": "Câu hỏi thường tập trung vào lý do người nói nói một câu cụ thể."
+        },
+        {
+          "type": "question-patterns",
+          "title": "Cấu trúc câu hỏi:",
+          "patterns": [
+            "Why does the speaker say, \"…\"?",
+            "What does the speaker imply when she/he says, \"…\"?"
+          ],
+          "note": "→ Tại sao người nói nói \"…?\" | → Người nói ngụ ý gì khi nói \"…?\""
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Why does the speaker say… = Tại sao người nói nói | What does the speaker imply… = Người nói ngụ ý gì"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Luôn tìm mục đích thật sự của câu nói (gợi ý, từ chối, đề xuất, nhấn mạnh…)"
+        }
+      ]
+    },
+    {
+      "heading": "3. Vị trí thông tin đáp án",
+      "content": [
+        {
+          "type": "text",
+          "content": "Thông tin để trả lời thường nằm ở cả trước và sau câu được trích dẫn."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Không chỉ nghe câu được hỏi. Phải nghe toàn mạch nói để hiểu bối cảnh."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Context = ngữ cảnh | Before and after = trước và sau"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Câu trích dẫn chỉ là manh mối, đáp án nằm ở logic xung quanh"
+        }
+      ]
+    },
+    {
+      "heading": "4. Dấu hiệu chuyển ý quan trọng",
+      "content": [
+        {
+          "type": "text",
+          "content": "Các từ nối báo hiệu thông tin quan trọng hoặc thay đổi ý."
+        },
+        {
+          "type": "list",
+          "title": "Các từ chuyển ý hay gặp:",
+          "items": [
+            "However",
+            "By the way",
+            "Unfortunately",
+            "So",
+            "Actually",
+            "In addition to",
+            "As well as",
+            "Also"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> However = tuy nhiên | Unfortunately = thật không may | So = vì vậy | Actually = thực ra"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Nghe thấy từ chuyển ý → tập trung vì đáp án thường xuất hiện"
+        }
+      ]
+    },
+    {
+      "heading": "5. Cách suy luận hàm ý",
+      "content": [
+        {
+          "type": "text",
+          "content": "Hàm ý thường liên quan đến: Đề xuất, Phàn nàn, Đồng ý/từ chối, Nhấn mạnh vấn đề, Gợi ý hành động."
+        },
+        {
+          "type": "list",
+          "title": "Quy tắc:",
+          "items": [
+            "Xác định vấn đề chính trong đoạn nói",
+            "Xác định mục đích câu nói trong mạch logic",
+            "Chọn đáp án diễn đạt cùng ý nghĩa"
+          ]
+        },
+        {
+          "type": "note",
+          "content": "<strong>Bản dịch:</strong> Suggest = gợi ý | Complain = phàn nàn | Emphasize = nhấn mạnh"
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Hỏi: \"Người nói muốn người nghe hiểu điều gì?\""
+        }
+      ]
+    },
+    {
+      "heading": "6. Lưu ý tránh bẫy",
+      "content": [
+        {
+          "type": "text",
+          "content": "Đáp án thường không trùng từ với câu nói mà là diễn đạt lại ý."
+        },
+        {
+          "type": "note",
+          "content": "<strong>Quy tắc:</strong> Không chọn đáp án chỉ vì giống keyword. Phải hiểu toàn đoạn và suy luận logic."
+        },
+        {
+          "type": "tip",
+          "title": "Mẹo ghi nhớ",
+          "content": "• Keyword giống ≠ nghĩa đúng<br>• Luôn đọc đáp án theo Ý, không theo TỪ"
+        }
+      ]
+    },
+    {
+      "heading": "Tóm tắt mẹo học nhanh",
+      "content": [
+        {
+          "type": "list",
+          "title": "🧠 Các mẹo quan trọng:",
+          "items": [
+            "Câu hỏi hàm ý → hỏi mục đích câu nói",
+            "Phải nghe cả trước và sau câu trích dẫn",
+            "Dấu hiệu: however, so, actually, unfortunately…",
+            "Đáp án thường là paraphrase",
+            "Tránh bẫy keyword giống nhưng sai nghĩa"
+          ]
+        }
+      ]
+    }
+  ]
 }
