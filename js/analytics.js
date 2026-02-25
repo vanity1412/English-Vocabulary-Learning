@@ -78,7 +78,9 @@ class AnalyticsTracker {
     }
     
     resumeTimeTracking() {
-        this.startTimeTracking();
+        if (!this.timeTrackingInterval) {
+            this.startTimeTracking();
+        }
     }
     
     // Track page view
@@ -195,15 +197,30 @@ class AnalyticsTracker {
     trackSessionEnd() {
         const sessionDuration = Math.floor((Date.now() - this.sessionStart) / 1000);
         
+        const eventData = {
+            'event_category': 'Engagement',
+            'session_duration': sessionDuration,
+            'study_time': this.studyTime,
+            'words_learned': this.wordsLearned,
+            'quizzes_taken': this.quizzesTaken,
+            'grammar_topics_viewed': this.grammarTopicsViewed
+        };
+        
         if (window.gtag) {
-            gtag('event', 'session_end', {
-                'event_category': 'Engagement',
-                'session_duration': sessionDuration,
-                'study_time': this.studyTime,
-                'words_learned': this.wordsLearned,
-                'quizzes_taken': this.quizzesTaken,
-                'grammar_topics_viewed': this.grammarTopicsViewed
+            // Sử dụng beacon transport để đảm bảo gửi được khi đóng trang
+            gtag('event', 'session_end', eventData, {
+                'transport_type': 'beacon'
             });
+        }
+        
+        // Backup: Sử dụng sendBeacon nếu có
+        if (navigator.sendBeacon) {
+            const data = JSON.stringify({
+                event: 'session_end',
+                ...eventData,
+                measurement_id: GA_MEASUREMENT_ID
+            });
+            navigator.sendBeacon('https://www.google-analytics.com/mp/collect', data);
         }
         
         console.log(`👋 Session End - Duration: ${sessionDuration}s, Study Time: ${this.studyTime}s`);
@@ -300,6 +317,10 @@ document.addEventListener('DOMContentLoaded', () => {
     analyticsTracker = new AnalyticsTracker();
     localAnalytics = new LocalAnalytics();
     
+    // Export để sử dụng trong các file khác (sau khi đã khởi tạo)
+    window.analyticsTracker = analyticsTracker;
+    window.localAnalytics = localAnalytics;
+    
     // Record visit
     localAnalytics.recordVisit();
     
@@ -311,7 +332,3 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🌐 Website:', 'https://vanity1412.github.io/English-Vocabulary-Learning/');
     console.log('📈 Measurement ID:', GA_MEASUREMENT_ID);
 });
-
-// Export để sử dụng trong các file khác
-window.analyticsTracker = analyticsTracker;
-window.localAnalytics = localAnalytics;
