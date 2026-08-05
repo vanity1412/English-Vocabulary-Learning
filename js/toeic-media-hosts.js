@@ -1,6 +1,12 @@
 (function () {
   const MEDIA_BASES = {
     main: './',
+    media1: 'https://vanity1412.github.io/English-Vocabulary-Learning1/',
+    media2: 'https://vanity1412.github.io/English-Vocabulary-Learning2/',
+    media3: 'https://vanity1412.github.io/English-Vocabulary-Learning3/'
+  };
+
+  const FALLBACK_MEDIA_BASES = {
     media1: 'https://raw.githubusercontent.com/vanity1412/English-Vocabulary-Learning1/main/',
     media2: 'https://raw.githubusercontent.com/vanity1412/English-Vocabulary-Learning2/main/',
     media3: 'https://raw.githubusercontent.com/vanity1412/English-Vocabulary-Learning3/main/'
@@ -116,6 +122,34 @@
     return joinBase(MEDIA_BASES[bucket] || MEDIA_BASES.main, cleanPath);
   }
 
+  function getAlternateToeicAsset(pathOrUrl) {
+    const value = String(pathOrUrl || '');
+    if (!value) return '';
+
+    const primaryBucket = Object.keys(MEDIA_BASES)
+      .filter(bucket => bucket !== 'main')
+      .find(bucket => value.startsWith(MEDIA_BASES[bucket]));
+
+    if (primaryBucket && FALLBACK_MEDIA_BASES[primaryBucket]) {
+      return FALLBACK_MEDIA_BASES[primaryBucket] + value.slice(MEDIA_BASES[primaryBucket].length);
+    }
+
+    const fallbackBucket = Object.keys(FALLBACK_MEDIA_BASES)
+      .find(bucket => value.startsWith(FALLBACK_MEDIA_BASES[bucket]));
+
+    if (fallbackBucket && MEDIA_BASES[fallbackBucket]) {
+      return MEDIA_BASES[fallbackBucket] + value.slice(FALLBACK_MEDIA_BASES[fallbackBucket].length);
+    }
+
+    if (/^(?:https?:|data:|#|\/)/i.test(value)) return '';
+
+    const cleanPath = stripRelativePrefix(value);
+    if (!/^(?:Media|SW Media|Sample)\//i.test(cleanPath)) return '';
+
+    const bucket = getBucket(cleanPath);
+    return FALLBACK_MEDIA_BASES[bucket] ? joinBase(FALLBACK_MEDIA_BASES[bucket], cleanPath) : '';
+  }
+
   function resolveToeicAssetInHtml(html) {
     if (!html) return html;
 
@@ -125,8 +159,53 @@
     );
   }
 
+  function retryWithAlternateMedia(element) {
+    if (!element || element.dataset.toeicMediaFallbackTried === '1') return;
+
+    const current = element.currentSrc || element.getAttribute('src') || element.src;
+    const alternate = getAlternateToeicAsset(current);
+    if (!alternate || alternate === current) return;
+
+    element.dataset.toeicMediaFallbackTried = '1';
+    element.setAttribute('src', alternate);
+
+    const parentMedia = element.parentElement && /^(AUDIO|VIDEO)$/i.test(element.parentElement.tagName)
+      ? element.parentElement
+      : null;
+
+    if (parentMedia) parentMedia.load();
+    if (/^(AUDIO|VIDEO)$/i.test(element.tagName)) element.load();
+  }
+
+  function installToeicMediaFallbacks() {
+    document.addEventListener('error', event => {
+      const element = event.target;
+      if (!element || !element.tagName) return;
+
+      const tagName = element.tagName.toUpperCase();
+      if (tagName === 'IMG' || tagName === 'SOURCE') {
+        retryWithAlternateMedia(element);
+        return;
+      }
+
+      if (tagName === 'AUDIO' || tagName === 'VIDEO') {
+        const sources = Array.from(element.querySelectorAll('source'));
+        if (sources.length) {
+          sources.forEach(retryWithAlternateMedia);
+          element.load();
+        } else {
+          retryWithAlternateMedia(element);
+        }
+      }
+    }, true);
+  }
+
   window.TOEIC_MEDIA_BASES = MEDIA_BASES;
+  window.TOEIC_MEDIA_FALLBACK_BASES = FALLBACK_MEDIA_BASES;
   window.TOEIC_MEDIA_BUCKETS = MEDIA_BUCKETS;
   window.resolveToeicAsset = resolveToeicAsset;
   window.resolveToeicAssetInHtml = resolveToeicAssetInHtml;
+  window.getAlternateToeicAsset = getAlternateToeicAsset;
+
+  installToeicMediaFallbacks();
 })();
