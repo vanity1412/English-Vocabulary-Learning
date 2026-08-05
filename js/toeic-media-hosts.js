@@ -1,9 +1,9 @@
 (function () {
   const MEDIA_BASES = {
     main: './',
-    media1: 'https://vanity1412.github.io/English-Vocabulary-Learning1/',
-    media2: 'https://vanity1412.github.io/English-Vocabulary-Learning2/',
-    media3: 'https://vanity1412.github.io/English-Vocabulary-Learning3/'
+    media1: 'https://raw.githubusercontent.com/vanity1412/English-Vocabulary-Learning1/main/',
+    media2: 'https://raw.githubusercontent.com/vanity1412/English-Vocabulary-Learning2/main/',
+    media3: 'https://raw.githubusercontent.com/vanity1412/English-Vocabulary-Learning3/main/'
   };
 
   const MEDIA_BUCKETS = {
