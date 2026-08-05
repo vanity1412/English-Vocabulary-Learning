@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVT TOEIC – Speaking & Writing</title>
+    <link rel="icon" href="toeic-logo.png" type="image/png">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; color: #333; line-height: 1.5; zoom: 1.25; }
+        * { box-sizing: border-box; }
+        .hidden { display: none !important; }
+        
+        /* Header */
+        .test-header { background-color: #003366; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .header-left { font-size: 20px; font-weight: bold; display: flex; align-items: center; gap: 10px;}
+        .btn-exit { background-color: #dc3545; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: 0.2s;}
+        .btn-exit:hover { background-color: #c82333; }
+        
+        /* Setup Screen */
+        #setup-screen { max-width: 600px; margin: 50px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; border-top: 5px solid #0037f4;}
+        .form-group { margin-bottom: 25px; text-align: left; }
+        .form-group label { font-weight: bold; display: block; margin-bottom: 8px; color: #003366;}
+        select { width: 100%; padding: 12px; border-radius: 4px; border: 1px solid #ccc; font-size: 16px; outline: none;}
+        .btn-start { background: #28a745; color: white; border: none; padding: 15px 40px; font-size: 18px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; text-transform: uppercase;}
+        .btn-start:hover { background: #218838; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(40,167,69,0.3);}
+        
+        /* Test Screen Layout */
+        #test-screen { max-width: 1300px; margin: 20px auto; padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        
+        /* Timer Bar */
+        .timer-bar { display: flex; justify-content: space-between; align-items: center; background: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #ddd;}
+        .part-title { font-size: 20px; font-weight: bold; color: #003366; }
+        .timer-box { font-size: 24px; font-weight: bold; text-align: center; padding: 8px 30px; border-radius: 8px; min-width: 300px;}
+        .prep-time { background: #fff3cd; color: black; border: 2px solid #ffeeba; }
+        .response-time { background: #d4edda; color: black; border: 2px solid #c3e6cb; }
+        .timer-box.hidden-time { visibility: hidden; } /* Dùng visibility để không làm xô lệch layout */
+        .btn-skip { background: #6c757d; color: white; border: none; padding: 8px 20px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.2s; width: 150px; font-size: 15px;}
+        .btn-skip:hover { background: #5a6268; }
+        
+        .api-tooltip { background: #003366; color: white; border-radius: 50%; width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; cursor: pointer; position: relative; margin-left: 5px; vertical-align: middle;}
+        .api-tooltip-box { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 12px 15px; border-radius: 6px; font-size: 13px; opacity: 0; visibility: hidden; transition: 0.2s; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-weight: normal; line-height: 1.6; width: max-content; text-align: left; pointer-events: none;}
+        .api-tooltip-box.active { opacity: 1; visibility: visible; pointer-events: auto; }
+        .api-tooltip-box a { color: #5ba4e5; text-decoration: none; font-weight: bold; }
+        .api-tooltip-box a:hover { text-decoration: underline; color: #90caf9; }
+        .saved-text { color: #28a745; font-size: 13px; font-weight: bold; opacity: 0; transition: opacity 0.3s; }
+        .saved-text.show { opacity: 1; }
+        
+        /* Main Content 2 Columns */
+        .content-area { display: flex; gap: 20px; min-height: 50vh; align-items: stretch;}
+        .left-col { flex: 1.2; border: 1px solid #ddd; padding: 25px; border-radius: 8px; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); overflow-y: auto; max-height: 60vh;}
+        .right-col { flex: 1; border: 1px solid #ddd; padding: 25px; border-radius: 8px; background: #fafafa; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; box-shadow: inset 0 0 10px rgba(0,0,0,0.02);}
+        
+        /* Styling inside Left Col */
+        #intro-box { background: #e3f2fd; padding: 20px; border-radius: 6px; border-left: 4px solid #5ba4e5; margin-bottom: 20px; font-size: 19px; color: #333; line-height: 1.6;}
+        #intro-box strong { color: #003366; font-size: 21px; display: block; margin-bottom: 5px;}
+        #intro-box img { max-width: 100%; max-height: 250px; object-fit: contain; margin: 15px 0; border: 1px solid #ccc; border-radius: 4px; }
+        #media-box img { max-width: 100%; height: auto; max-height: 35vh; object-fit: contain; border: 1px solid #ccc; border-radius: 8px; display: block; margin: 0 auto 15px auto; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        #text-box { font-size: 23px; font-weight: 500; line-height: 1.6; color: #111;}
+        
+        /* Bắt tất cả ảnh nằm lẩn trong câu hỏi và ép thu nhỏ, xóa thanh cuộn lỗi do HTML của đề thi */
+        #text-box * { max-width: 100% !important; }
+        
+        /* Ép lề các đoạn văn khít lại, không cho tạo khoảng trắng dư thừa */
+        #text-box div, #text-box p, #text-box figure { overflow: hidden !important; margin-top: 0 !important; margin-bottom: 12px !important; }
+        
+        #text-box img {
+            max-width: 100% !important; 
+            height: auto !important; 
+            max-height: 40vh !important; 
+            object-fit: contain !important; 
+            border: 1px solid #ddd;
+            border-radius: 8px; 
+            margin: 15px auto; 
+            display: block; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+        }
+        
+        /* Styling inside Right Col (Controls) */
+        .sw-textarea { width: 100%; flex: 1; min-height: 300px; padding: 15px; font-size: 16px; border: 2px solid #ccc; border-radius: 6px; resize: vertical; font-family: inherit; outline: none; transition: 0.2s; line-height: 1.5;}
+        .sw-textarea:focus { border-color: #5ba4e5; box-shadow: 0 0 0 3px rgba(91,164,229,0.2);}
+        .word-count { width: 100%; text-align: right; font-size: 14px; color: #666; font-weight: bold; margin-top: 10px; }
+        
+        .mic-container { display: flex; align-items: center; gap: 10px; }
+        .record-btn { background: #dc3545; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(220,53,69,0.4); transition: 0.3s; pointer-events: none; opacity: 0.5;}
+        .record-btn.active { pointer-events: auto; opacity: 1; }
+        .record-btn.recording { animation: pulseRed 1.5s infinite; background: #c82333; }
+        @keyframes pulseRed { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); } 70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(220, 53, 69, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); } }
+        .mic-status { font-weight: bold; color: #555; font-size: 15px; white-space: nowrap; }
+        
+        /* Bottom Navigation */
+        .nav-controls { display: flex; justify-content: space-between; align-items: center; background: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #ddd;}
+        .btn-nav { background: #003366; color: white; border: none; padding: 10px 25px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.2s;}
+        .btn-nav:hover:not(:disabled) { background: #002244; }
+        .btn-nav:disabled { opacity: 0.5; cursor: not-allowed; }
+        .q-counter { font-weight: 800; font-size: 20px; color: #003366; background: #e3f2fd; padding: 5px 20px; border-radius: 20px; border: 1px solid #5ba4e5;}
+        
+        /* --- GIAO DIỆN ĐIỆN THOẠI (MOBILE RESPONSIVE S&W) --- */
+        @media (max-width: 768px) {
+            body { zoom: 1 !important; transform: none !important; overflow-x: hidden; }
+            .test-header { flex-direction: column; gap: 10px; padding: 15px 10px; }
+            .header-left { font-size: 15px; width: 100%; justify-content: center; text-align: center; }
+            #setup-screen { margin: 15px 10px; padding: 20px 15px; }
+            #test-screen { padding: 10px; }
+            
+            /* Ép dọc 2 cột, đưa phần làm bài xuống dưới */
+            .content-area { flex-direction: column !important; }
+            .left-col, .right-col { flex: none !important; width: 100% !important; max-height: none !important; padding: 15px !important; overflow: visible !important; }
+            
+            /* Sắp xếp lại thanh đồng hồ */
+            .timer-bar { flex-direction: column !important; gap: 12px; padding: 15px 10px !important; }
+            .timer-bar > div { flex: none !important; width: 100% !important; justify-content: center !important; }
+            .timer-box { min-width: 0 !important; width: 100% !important; font-size: 16px !important; padding: 8px !important; }
+            .part-title { font-size: 17px !important; text-align: center; }
+            .btn-skip { width: 100% !important; padding: 10px !important; }
+            #dummy-space { display: none !important; }
+            
+            /* Sắp xếp lại thanh điều hướng */
+            .nav-controls { flex-wrap: wrap; gap: 10px; padding: 15px 10px !important; justify-content: space-between !important; }
+            .btn-nav { flex: 1; padding: 10px 5px !important; font-size: 13px !important; }
+            .q-counter { order: -1; width: 100%; text-align: center; margin-bottom: 5px; }
+            
+            /* Tối ưu chữ, khung hiển thị và Audio */
+            .api-tooltip-box { left: auto; right: -10px; transform: none; width: 90vw; }
+            .sw-zoom-btn { display: none !important; } /* Ẩn nút zoom chữ trên mobile */
+            #intro-box { font-size: 15px !important; }
+            #intro-box strong { font-size: 17px !important; }
+            #text-box { font-size: 16px !important; }
+            #student-audio-playback { max-width: 100% !important; }
+            #full-intro-screen { padding: 20px 15px !important; }
+            .mic-status { font-size: 14px !important; width: auto !important;}
+        }
+    </style>
+</head>
+<body>
+
+    <header class="test-header">
+        <div class="header-left">
+            <img src="toeic-logo.png" alt="VVT TOEIC" style="height: 30px; background: white; border-radius: 4px; padding: 2px;">
+            WINDY TOEIC - SPEAKING & WRITING
+        </div>
+        <button class="btn-exit" onclick="window.location.href='index.html'">Thoát</button>
+    </header>
+
+    <!-- MÀN HÌNH CHỌN ĐỀ -->
+    <div id="setup-screen">
+        <h2 style="color: #003366; margin-top: 0; margin-bottom: 25px;">CHỌN BÀI THI S&W</h2>
+        <div class="form-group">
+            <label>Chọn bộ đề:</label>
+            <select id="sw-test-select">
+                <option value="test 1">Test 1 (Đề mô phỏng chuẩn)</option>
+                <option value="test 2">Test 2</option>
+                <option value="test 3">Test 3</option>
+                <option value="test 4">Test 4</option>
+                <option value="test 5">Test 5</option>
+                <option value="test 6">Test 6</option>
+                <option value="test 7">Test 7</option>
+                <option value="test 8">Test 8</option>
+                <option value="test 9">Test 9</option>
+                <option value="test 10">Test 10</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Kỹ năng:</label>
+            <select id="sw-skill-select">
+                <option value="B" selected>Cả 2</option>
+                <option value="S">Chỉ Speaking (Nói - Ghi âm)</option>
+                <option value="W">Chỉ Writing (Viết - Gõ chữ)</option>
+            </select>
+        </div>
+        
+        <div class="form-group" style="position: relative; margin-bottom: 35px;">
+            <label style="display: flex; align-items: center;">
+                Groq API KEY <span style="color: #dc3545; font-size: 14px; font-weight: bold; margin-left: 8px;">* Bắt buộc</span>
+                <div class="api-tooltip" id="api-tooltip-btn" onclick="toggleApiTooltip(event)">?
+                    <div class="api-tooltip-box" id="api-tooltip-box" onclick="event.stopPropagation()">
+                        <div style="font-weight: bold; color: #ff6b6b; margin-bottom: 5px;">HƯỚNG DẪN LẤY API KEY (MIỄN PHÍ)</div>
+                        1. Đăng ký: <a href="https://console.groq.com/login" target="_blank">console.groq.com/login</a><br>
+                        2. Vào trang: <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a><br>
+                        3. Bấm Create API key, nhập tên, Submit.<br>
+                        4. Copy dãy mã bắt đầu bằng gsk_ dán vào ô bên dưới.
+                    </div>
+                </div>
+            </label>
+            <input type="text" autocomplete="off" spellcheck="false" id="groq-api-key" placeholder="Nhập API Key bắt đầu bằng gsk_..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-size: 15px; outline: none; -webkit-text-security: disc;" oninput="autoSaveAPI()">
+            <div style="display: flex; justify-content: flex-end; margin-top: 5px; position: absolute; width: 100%;">
+                <span id="api-saved-msg" class="saved-text">Đã lưu ✔</span>
+            </div>
+        </div>
+
+        <button class="btn-start" onclick="initTest()">Bắt đầu làm bài</button>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            let savedKey = localStorage.getItem('win_groq_api_key');
+            if (savedKey) document.getElementById('groq-api-key').value = savedKey;
+            
+            let urlParams = new URLSearchParams(window.location.search);
+            let testParam = urlParams.get('test');
+            if (testParam) {
+                let selectBox = document.getElementById('sw-test-select');
+                if (selectBox) {
+                    selectBox.value = testParam;
+                    // Ẩn luôn ô "Chọn bộ đề" đi cho gọn mắt
+                    selectBox.parentElement.style.display = 'none'; 
+                }
+                
+                // Đổi tiêu đề trên cùng để học viên biết đang làm đề nào
+                let titleEl = document.querySelector('#setup-screen h2');
+                if (titleEl) {
+                    titleEl.innerText = testParam.toUpperCase() + " - SPEAKING & WRITING";
+                }
+            }
+        };
+
+        // Hiện/ẩn Tooltip hướng dẫn API bằng cách click
+        function toggleApiTooltip(event) {
+            event.stopPropagation();
+            document.getElementById('api-tooltip-box').classList.toggle('active');
+        }
+        
+        // Bấm ra ngoài khoảng trống thì tắt Tooltip
+        document.addEventListener('click', function(event) {
+            let box = document.getElementById('api-tooltip-box');
+            if (box && box.classList.contains('active')) {
+                box.classList.remove('active');
+            }
+        });
+
+        let apiSaveTimeout;
+        function autoSaveAPI() {
+            let apiKey = document.getElementById('groq-api-key').value.trim();
+            localStorage.setItem('win_groq_api_key', apiKey);
+            
+            let msg = document.getElementById('api-saved-msg');
+            msg.classList.add('show');
+            
+            clearTimeout(apiSaveTimeout);
+            apiSaveTimeout = setTimeout(() => {
+                msg.classList.remove('show');
+            }, 1500);
+        }
+    </script>
+
+    <!-- MÀN HÌNH THI -->
+    <div id="test-screen" class="hidden">
+        
+        <div class="timer-bar" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="part-title" id="part-title" style="flex: 1;">TOEIC SPEAKING</div>
+            
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex: 2;">
+                <div class="timer-box prep-time hidden-time" id="timer-box">PREPARATION TIME: 00:00</div>
+                <!-- Giao diện Speaking (Mic) -->
+                <div id="speaking-action" class="mic-container hidden" style="width: auto;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <button class="record-btn" id="record-btn" title="Mic">🎤</button>
+                        <div class="mic-status" id="mic-status" style="width: 110px; text-align: left; color: black;">...</div>
+                        <!-- Nút Chấm điểm đã được bốc lên đây -->
+                        <button id="btn-eval-speaking" class="hidden" onclick="getFeedback('S')" style="background: #0037f4; color: white; border: none; padding: 8px 20px; border-radius: 6px; font-weight: bold; font-size: 14px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-left: 20px; white-space: nowrap; transition: 0.2s;">✨ Chấm Điểm</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="flex: 1; display: flex; justify-content: flex-end;">
+                <button class="btn-skip hidden" id="btn-skip-prep" onclick="skipPrepTime()">Skip</button>
+                <div style="width: 150px;" id="dummy-space"></div> <!-- Chỗ trống ảo để giữ layout khi ẩn nút Skip -->
+            </div>
+        </div>
+        
+        <!-- Khung hướng dẫn Full màn hình -->
+        <div id="full-intro-screen" class="hidden" style="background: white; border-radius: 8px; padding: 40px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #ddd; min-height: 50vh; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+            <div style="width: 100%; max-width: 900px; margin-bottom: 30px;">
+                <div id="intro-box" style="font-size: 17px;"></div>
+            </div>
+            <button onclick="hideIntroAndShowQuestion()" style="background: #0037f4; color: white; border: none; padding: 12px 35px; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">Tiếp tục (Continue) →</button>
+        </div>
+
+        <div class="content-area" id="main-workspace">
+            <!-- Cột trái: Câu hỏi, Hình ảnh, Audio -->
+            <div class="left-col" id="left-panel" style="position: relative; padding-top: 45px;">
+                <div style="position: absolute; top: 10px; right: 20px; z-index: 10;">
+                    <button class="sw-zoom-btn" onclick="zoomSWText(1)" title="Phóng to" style="background: #f8f9fa; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; font-size: 14px; padding: 2px 10px; margin-left: 5px; color: #333; font-weight: bold; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">🔍+</button>
+                    <button class="sw-zoom-btn" onclick="zoomSWText(-1)" title="Thu nhỏ" style="background: #f8f9fa; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; font-size: 14px; padding: 2px 10px; margin-left: 5px; color: #333; font-weight: bold; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">🔍-</button>
+                </div>
+                <div id="media-box"></div>
+                <div id="text-box" style="margin-top: 0;"></div>
+            </div>
+
+            <!-- Cột phải: Khu vực Tương tác -->
+            <div class="right-col" id="right-panel" style="position: relative;">
+                
+                <!-- Giao diện Feedback Speaking (Đã dời sang cột phải) -->
+                <div id="practice-feedback-speaking" class="hidden" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 0;">
+                    <audio id="student-audio-playback" controls style="width: 100%; max-width: 400px; margin-bottom: 20px;"></audio>
+                    <div id="eval-result-speaking" style="display: none; width: 100%; background: #fff; border: 1px solid #5ba4e5; border-radius: 6px; padding: 20px; text-align: left; font-size: 16px; line-height: 1.6; overflow-y: auto; max-height: 50vh;"></div>
+                </div>
+
+                <!-- Giao diện Writing -->
+                <div id="writing-action" class="hidden" style="width: 100%; height: 100%; display: flex; flex-direction: column;">
+                    <textarea class="sw-textarea" id="writing-input" placeholder="Bắt đầu gõ câu trả lời của bạn vào đây..." disabled oninput="document.getElementById('word-count-num').innerText = this.value.trim().split(/\s+/).filter(w => w.length > 0).length;"></textarea>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                        <div style="display: flex; gap: 15px;">
+                            <button id="btn-submit-w" onclick="submitWritingEarly()" style="background: #28a745; color: white; border: none; padding: 10px 25px; border-radius: 6px; font-weight: bold; font-size: 15px; cursor: pointer; box-shadow: 0 4px 6px rgba(40,167,69,0.3); transition: 0.2s; white-space: nowrap;">Nộp Bài</button>
+                            <button id="btn-eval-writing" class="hidden" onclick="getFeedback('W')" style="background: #0037f4; color: white; border: none; padding: 10px 25px; border-radius: 6px; font-weight: bold; font-size: 15px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,55,244,0.3); transition: 0.2s; white-space: nowrap;">✨ Chấm Điểm</button>
+                        </div>
+                        <div class="word-count" style="margin-top: 0; font-size: 15px;">Word count: <span id="word-count-num">0</span></div>
+                    </div>
+                    <div id="eval-result-writing" style="display: none; background: #fff; border: 1px solid #5ba4e5; border-radius: 6px; padding: 15px; text-align: left; font-size: 15px; line-height: 1.6; margin-top: 15px; max-height: 250px; overflow-y: auto;"></div>
+                </div>
+            </div> <!-- Đóng thẻ right-col -->
+        </div> <!-- ĐÓNG THẺ content-area TẠI ĐÂY ĐỂ TRẢ NAV VỀ ĐÚNG VỊ TRÍ -->
+
+        <div class="nav-controls">>
+            <button class="btn-nav" id="btn-prev" onclick="changeQuestion(-1)">← Câu trước</button>
+            <div class="q-counter" id="q-counter">Câu 1</div>
+            <button class="btn-nav" id="btn-next" onclick="changeQuestion(1)">Câu tiếp →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentTestName = "";
+        let currentSkill = "";
+        let swData = null;
+        let currentQIndex = 0; 
+        let totalQuestions = 0; 
+        let swScores = {}; // BỘ NHỚ NGẦM LƯU ĐIỂM S&W
+        
+        let swTimerInterval;
+        let currentPhase = "prep"; 
+        let timeLeft = 0;
+        let currentMode = "practice"; // Khai báo biến an toàn chống lỗi văng nút Bắt đầu
+        let activeSharedTimerId = null; 
+        
+        function playBeep() {
+            try {
+                let ctx = new (window.AudioContext || window.webkitAudioContext)();
+                let osc = ctx.createOscillator();
+                let gainNode = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(800, ctx.currentTime);
+                gainNode.gain.setValueAtTime(0.1, ctx.currentTime);
+                osc.connect(gainNode);
+                gainNode.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.3);
+            } catch(e) {}
+        }
+        
+        let currentSWTransSize = 23; // Cỡ chữ mặc định
+
+        function zoomSWText(step) {
+            currentSWTransSize += step * 2;
+            if (currentSWTransSize < 16) currentSWTransSize = 16;
+            if (currentSWTransSize > 35) currentSWTransSize = 35;
+            
+            // Ép cỡ chữ lên toàn bộ văn bản cột trái
+            document.querySelectorAll('#text-box, #intro-box, #text-box *, #intro-box *').forEach(el => {
+                if(el.tagName !== 'IMG' && el.tagName !== 'AUDIO' && el.tagName !== 'STRONG' && el.className !== 'sw-zoom-btn') {
+                    el.style.fontSize = currentSWTransSize + 'px';
+                }
+            });
+            // Giữ cho thẻ Tiêu đề in đậm to hơn một chút
+            document.querySelectorAll('#intro-box strong').forEach(el => {
+                el.style.fontSize = (currentSWTransSize + 2) + 'px';
+            });
+        }
+
+        function getRealSkill(index) {
+            if (currentSkill === 'S') return 'S';
+            if (currentSkill === 'W') return 'W';
+            return index < 11 ? 'S' : 'W';
+        }
+
+        function hideIntroAndShowQuestion() {
+            document.getElementById('full-intro-screen').classList.add('hidden');
+            document.getElementById('main-workspace').classList.remove('hidden');
+            document.querySelector('.nav-controls').classList.remove('hidden'); 
+            document.querySelector('.timer-bar').style.display = 'flex'; // Hiện lại thanh đồng hồ
+            
+            // Kích hoạt Audio và Đồng hồ tính giờ sau khi học viên đã bấm Continue
+            if (typeof triggerQuestionStart === 'function') {
+                triggerQuestionStart();
+            }
+        }
+
+        // HÀM 1: BẤM NÚT BẮT ĐẦU TỪ MÀN HÌNH SETUP
+        function initTest() {
+            try {
+                currentTestName = document.getElementById('sw-test-select').value;
+                currentSkill = document.getElementById('sw-skill-select').value;
+                
+                // Tránh lỗi văng code nếu vô tình thiếu mất menu chọn chế độ
+                let modeSelect = document.getElementById('sw-mode-select');
+                currentMode = modeSelect ? modeSelect.value : "practice"; 
+                
+                let apiKey = document.getElementById('groq-api-key').value.trim();
+                if (apiKey) localStorage.setItem('win_groq_api_key', apiKey);
+
+                let skillsToFetch = currentSkill === 'B' ? ['S', 'W'] : [currentSkill];
+                
+                let fetchPromises = skillsToFetch.map(skill => {
+                    let filePath = encodeURI(`SW/${currentTestName}/${currentTestName} ${skill}.json`);
+                    let noCacheUrl = filePath + "?v=" + new Date().getTime();
+                    
+                    return fetch(noCacheUrl).then(res => {
+                        if (!res.ok) throw new Error(`Không tìm thấy file: ${decodeURI(filePath)}`);
+                        return res.json();
+                    });
+                });
+
+                Promise.all(fetchPromises)
+                    .then(results => {
+                        if (results.length === 1) {
+                            swData = results[0];
+                        } else {
+                            swData = {
+                                questions: results[0].questions.concat(results[1].questions),
+                                intro: results[0].intro.concat(results[1].intro),
+                                sub_intro: results[0].sub_intro 
+                            };
+                        }
+                        totalQuestions = swData.questions.length;
+                        currentQIndex = 0;
+                        
+                        document.getElementById('setup-screen').classList.add('hidden');
+                        
+                        // KIỂM TRA: Nếu có thi Speaking thì bung bảng xin quyền Mic chuyên nghiệp trước khi vào thi
+                        // NẾU ĐÃ CẤP QUYỀN LẦN ĐẦU RỒI THÌ KHÔNG HIỆN BẢNG NỮA
+                        let hasMicPermission = localStorage.getItem('win_mic_granted');
+                        if ((currentSkill === 'B' || currentSkill === 'S') && !hasMicPermission) {
+                            showMicPermissionModal();
+                        } else {
+                            document.getElementById('test-screen').classList.remove('hidden');
+                            renderQuestion();
+                        }
+                    })
+                    .catch(err => alert("Lỗi khi tải đề: " + err.message));
+            } catch (error) {
+                alert("Lỗi hệ thống: " + error.message);
+            }
+        }
+
+        // HÀM 2: IN NỘI DUNG CÂU HỎI RA MÀN HÌNH
+        function renderQuestion() {
+            if (!swData) return;
+            
+            let qData = swData.questions[currentQIndex];
+            let realSkill = getRealSkill(currentQIndex);
+            
+            // 1. Cập nhật UI theo Kỹ năng thật sự của câu đó
+            document.getElementById('part-title').innerText = realSkill === 'S' ? "TOEIC SPEAKING" : "TOEIC WRITING";
+            
+            // RESET MỌI KẾT QUẢ/ĐÁNH GIÁ/GHI ÂM CỦA CÂU CŨ TRƯỚC KHI RENDER CÂU MỚI
+            window.currentAudioBlob = null;
+            let spFeedback = document.getElementById('practice-feedback-speaking');
+            if(spFeedback) spFeedback.classList.add('hidden');
+            let spEvalBtn = document.getElementById('btn-eval-speaking');
+            if(spEvalBtn) spEvalBtn.classList.add('hidden');
+            let spEval = document.getElementById('eval-result-speaking');
+            if(spEval) { spEval.style.display = 'none'; spEval.innerHTML = ''; }
+            
+            let wrEvalBtn = document.getElementById('btn-eval-writing');
+            if(wrEvalBtn) wrEvalBtn.classList.add('hidden');
+            let wrEval = document.getElementById('eval-result-writing');
+            if(wrEval) { wrEval.style.display = 'none'; wrEval.innerHTML = ''; }
+
+            if (realSkill === 'S') {
+                document.getElementById('speaking-action').classList.remove('hidden');
+                document.getElementById('right-panel').classList.remove('hidden'); 
+                document.getElementById('writing-action').classList.add('hidden');
+            } else {
+                document.getElementById('speaking-action').classList.add('hidden');
+                document.getElementById('right-panel').classList.remove('hidden');
+                document.getElementById('writing-action').classList.remove('hidden');
+            }
+
+            document.getElementById('q-counter').innerText = `Câu ${currentQIndex + 1} / ${totalQuestions}`;
+            
+            // Kiểm tra và lưu API Key
+            let apiKey = document.getElementById('groq-api-key').value.trim();
+            if (apiKey) localStorage.setItem('win_groq_api_key', apiKey);
+
+            // 2. Cập nhật nội dung Cột Trái (Media + Chữ)
+            let mediaHtml = "";
+            if (qData.audio_src && qData.audio_src !== "") {
+                mediaHtml = `<audio controls style="width: 100%; margin-bottom: 15px;"><source src="${qData.audio_src}" type="audio/mpeg"></audio>`;
+            }
+            
+            // Xử lý logic bóc tách Intro theo từng cụm câu hỏi (ĐÃ FIX LẠI SỐ INDEX CHUẨN XÁC)
+            let introHtml = "";
+            let introIndex = -1;
+            let shouldShowIntro = false;
+            let localQIndex = (currentSkill === 'B' && realSkill === 'W') ? currentQIndex - 11 : currentQIndex;
+            
+            if (realSkill === 'S') {
+                if (localQIndex === 0) { introIndex = 0; shouldShowIntro = true; } // Q1-2
+                else if (localQIndex === 2) { introIndex = 1; shouldShowIntro = true; } // Q3-4
+                else if (localQIndex === 4) { introIndex = 2; shouldShowIntro = true; } // Q5-7
+                else if (localQIndex === 7) { introIndex = 3; shouldShowIntro = true; } // Q8-10
+                else if (localQIndex === 10) { introIndex = 4; shouldShowIntro = true; } // Q11
+            } else {
+                if (localQIndex === 0) { introIndex = 0; shouldShowIntro = true; } // W Q1-5
+                else if (localQIndex === 5) { introIndex = 1; shouldShowIntro = true; } // W Q6-7
+                else if (localQIndex === 7) { introIndex = 2; shouldShowIntro = true; } // W Q8
+                if (currentSkill === 'B' && shouldShowIntro) introIndex += 5; 
+            }
+
+            // BỘ LỌC: GIỮ CHẶT HÌNH ẢNH LỊCH TRÌNH CHO Q8-10 SPEAKING
+            if (realSkill === 'S' && localQIndex >= 7 && localQIndex <= 9) {
+                let persistentImgHtml = "";
+                // 1. Quét tìm ảnh trong Hướng dẫn của cụm này
+                if (swData.intro && swData.intro[3]) {
+                    let matches = swData.intro[3].content.match(/<img[^>]+>/gi);
+                    if (matches) persistentImgHtml += matches.join('');
+                }
+                // 2. Quét tìm ảnh trong nội dung câu hỏi số 8 (phòng hờ JSON đặt nhầm ảnh vào text)
+                if (swData.questions && swData.questions[7] && swData.questions[7].question) {
+                    let matches = swData.questions[7].question.match(/<img[^>]+>/gi);
+                    if (matches) persistentImgHtml += matches.join('');
+                }
+                
+                // Đảm bảo chèn ảnh vào mediaHtml và gắn thêm thuộc tính chống lỗi
+                if (persistentImgHtml && !mediaHtml.includes('<img')) {
+                    persistentImgHtml = persistentImgHtml.replace(/<img/gi, '<img onerror="this.style.display=\\\'none\\\'"');
+                    mediaHtml += persistentImgHtml;
+                }
+            }
+
+            document.getElementById('media-box').innerHTML = mediaHtml;
+            
+            // Data Sanitization: Clean up redundant images and formatting
+            let rawQText = qData.question || "";
+            if (realSkill === 'S' && localQIndex >= 7 && localQIndex <= 9) {
+                rawQText = rawQText.replace(/<img[^>]+>/gi, '');
+            }
+            
+            // LỌC ĐỊNH DẠNG TỐI ĐA: Quét sạch mọi khoảng trắng thừa
+            rawQText = rawQText.replace(/<(p|div)>\s*(?:<br\s*\/?>|&nbsp;|\s)*<\/\1>/gi, ''); // Xóa sạch các thẻ <p> hoặc <div> rỗng
+            rawQText = rawQText.replace(/(?:<br\s*\/?>\s*){3,}/gi, '<br><br>'); // Gom tất cả các thẻ <br> liên tiếp nhau lại, ép tối đa chỉ được cách 1 dòng trống
+            
+            // TƯỚC QUYỀN TỰ ĐỘNG PHÁT AUDIO (AUTOPLAY) TỪ MÃ HTML CỦA ĐỀ THI
+            rawQText = rawQText.replace(/autoplay/gi, '');
+            
+            // BỘ LỌC BỔ SUNG: GIỮ CHẶT TÌNH HUỐNG (SITUATION) TRÊN MÀN HÌNH CHO Q5-7 SPEAKING
+            if (realSkill === 'S' && localQIndex >= 4 && localQIndex <= 6 && swData.sub_intro) {
+                let situationHtml = `<div style="margin-bottom: 15px; border-bottom: 1px dashed #ccc; padding-bottom: 10px; font-size: 19px; color: #003366;"><strong>Situation:</strong> ${swData.sub_intro.content}</div>`;
+                rawQText = situationHtml + rawQText;
+            }
+            
+            document.getElementById('text-box').innerHTML = rawQText;
+
+            if (shouldShowIntro && introIndex !== -1 && swData.intro && swData.intro[introIndex]) {
+                let rawIntro = swData.intro[introIndex].content;
+                
+                // Data Sanitization: Format layout and clean up redundant tags
+                rawIntro = rawIntro.replace(/(Directions)\s*(?:<[^>]+>|\s)*:/gi, '$1:');
+                rawIntro = rawIntro.replace(/(clicking on)\s*(?:<[^>]+>|\s)*(Next)\s*(?:<[^>]+>|\s)*\./gi, '$1 $2.');
+                rawIntro = rawIntro.replace(/(click on)\s*(?:<[^>]+>|\s)*(Back)\s*(?:<[^>]+>|\s)*\./gi, '$1 $2.');
+                rawIntro = rawIntro.replace(/(Click on)\s*(?:<[^>]+>|\s)*(Continue)\s*(?:<[^>]+>|\s)*(to go on\.)/gi, '$1 $2 $3');
+                
+                // Xử lý riêng cho Hướng dẫn Writing Q1-5 (Thu nhỏ chữ và chèn ảnh nội bộ)
+                if (realSkill === 'W' && localQIndex === 0) {
+                    // Chèn đường dẫn ảnh có sẵn trong thư mục máy tính của bạn
+                    rawIntro = rawIntro.replace(/<img[^>]*>/i, '<img src="Sample/sample 1.png" alt="Example Image" style="max-width:100%; max-height:220px; object-fit:contain; border-radius:8px; margin: 15px 0; border: 1px solid #ccc; display: block;">');
+                    
+                    // Ép toàn bộ các thẻ (kể cả in đậm, p, div) bên trong hướng dẫn này phải nhỏ lại
+                    rawIntro = '<style>#intro-w-q1, #intro-w-q1 * { font-size: 14.5px !important; line-height: 1.5 !important; }</style><div id="intro-w-q1">' + rawIntro + '</div>';
+                } else {
+                    rawIntro = rawIntro.replace(/<img/gi, '<img onerror="this.style.display=\\\'none\\\'"');
+                }
+                
+                introHtml += rawIntro;
+            }
+
+            if (realSkill === 'S' && localQIndex >= 4 && localQIndex <= 6 && swData.sub_intro) {
+                if (localQIndex === 4) {
+                    introHtml += `<div style="margin-top: 15px; border-top: 1px dashed #ccc; padding-top: 10px;"><strong>Situation:</strong> ${swData.sub_intro.content}</div>`;
+                }
+            }
+
+            let introBox = document.getElementById('intro-box');
+            let fullIntroScreen = document.getElementById('full-intro-screen');
+            let mainWorkspace = document.getElementById('main-workspace');
+
+            if (!window.seenIntros) window.seenIntros = [];
+
+            window.triggerQuestionStart = function() {
+                
+                let micStatus = document.getElementById('mic-status');
+                if (micStatus) {
+                    micStatus.innerText = "...";
+                    micStatus.style.color = "black";
+                }
+
+                document.getElementById('timer-box').classList.remove('hidden-time');
+                
+                // ƯU TIÊN TÌM AUDIO Ở CÂU HỎI HIỆN TẠI TRƯỚC. CHỈ TÌM AUDIO HƯỚNG DẪN NẾU KHUNG HƯỚNG DẪN ĐANG MỞ.
+                let audioEl = document.querySelector('#media-box audio') || document.querySelector('#text-box audio');
+                if (!audioEl && !document.getElementById('full-intro-screen').classList.contains('hidden')) {
+                    audioEl = document.querySelector('#intro-box audio');
+                }
+                
+                // GIẢM ÂM LƯỢNG MẶC ĐỊNH XUỐNG 60% (~ GIẢM 5dB) CHỐNG GIẬT MÌNH
+                if (audioEl) audioEl.volume = 0.6;
+                
+                let timeConfig = getQuestionTime(currentQIndex);
+                let isSharedRunning = (timeConfig.shared && timeConfig.sharedId === activeSharedTimerId && swTimerInterval);
+
+                // HÀM CHẠY AUDIO (Tách riêng để gọi sau khi hết 45s)
+                window.playAudioSequence = function() {
+                    document.getElementById('timer-box').className = "timer-box prep-time";
+                    document.getElementById('timer-box').innerText = "🔊";
+                    document.getElementById('btn-skip-prep').classList.add('hidden');
+                    document.getElementById('dummy-space').style.display = "block";
+
+                    // BỎ KHÓA AUDIO: Cho phép thanh Audio sáng lên và hoạt động bình thường
+                    if (audioEl) {
+                        audioEl.style.pointerEvents = 'auto';
+                        audioEl.style.opacity = '1';
+                    }
+
+                    // Ép trình duyệt đọc lại thẻ <source> trước khi play để tránh lỗi DOM chưa load xong
+                    audioEl.load();
+
+                    let playPromise = audioEl.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(e => {
+                            console.log("Trình duyệt chặn Play:", e);
+                            // TUYỆT ĐỐI KHÔNG GỌI startQuestionTimer() Ở ĐÂY NỮA!
+                            // Nếu bị chặn, Audio sẽ đứng im và ĐỒNG HỒ SẼ CHỜ học viên tự bấm nút Play bằng tay.
+                        });
+                    }
+                    
+                    // ĐỒNG HỒ CHỈ ĐƯỢC CHẠY KHI AUDIO THỰC SỰ ĐÃ PHÁT XONG
+                    audioEl.onended = function() { 
+                        startQuestionTimer(); 
+                    };
+                    
+                    // CHỈ KHỞI ĐỘNG ĐỒNG HỒ NGAY LẬP TỨC NẾU FILE AUDIO THỰC SỰ BỊ HỎNG 404 KHÔNG TÌM THẤY
+                    let sourceEl = audioEl.querySelector('source');
+                    if (sourceEl) {
+                        sourceEl.onerror = function() { startQuestionTimer(); };
+                    }
+                    audioEl.onerror = function() { startQuestionTimer(); };
+                };
+
+                if (audioEl && !isSharedRunning) {
+                    let realS = getRealSkill(currentQIndex);
+                    let localQ = (currentSkill === 'B' && realS === 'W') ? currentQIndex - 11 : currentQIndex;
+
+                    // ĐẶC THÙ CÂU 8 SPEAKING: CHO 45 GIÂY ĐỌC BẢNG BIỂU TRƯỚC KHI AUDIO NÓI
+                    if (realS === 'S' && localQ === 7) {
+                        clearInterval(swTimerInterval);
+                        currentPhase = "reading"; // Chế độ đọc đề
+                        timeLeft = 45;
+
+                        // KHÓA THANH AUDIO TRONG 45S ĐỌC ĐỀ CHỐNG BẤM NHẦM
+                        if (audioEl) {
+                            audioEl.style.pointerEvents = 'none';
+                            audioEl.style.opacity = '0.5';
+                        }
+
+                        document.getElementById('timer-box').className = "timer-box prep-time";
+                        document.getElementById('timer-box').innerText = "Reading Time: 00:45";
+                        document.getElementById('btn-skip-prep').innerText = "Skip";
+                        document.getElementById('btn-skip-prep').classList.remove('hidden');
+                        document.getElementById('dummy-space').style.display = "none";
+
+                        swTimerInterval = setInterval(() => {
+                            timeLeft--;
+                            let m = Math.floor(timeLeft / 60);
+                            let s = timeLeft % 60;
+                            let timeStr = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+                            document.getElementById('timer-box').innerText = `Reading Time: ${timeStr}`;
+
+                            if (timeLeft <= 0) {
+                                clearInterval(swTimerInterval);
+                                playBeep();
+                                window.playAudioSequence(); // Hết 45s đọc thì bật Audio câu hỏi
+                            }
+                        }, 1000);
+                    } else {
+                        window.playAudioSequence(); // Các câu khác thì phát Audio luôn
+                    }
+                } else {
+                    startQuestionTimer();
+                }
+            };
+
+            // KIỂM TRA: LUÔN HIỆN KHUNG HƯỚNG DẪN KHI QUAY LẠI CÂU ĐẦU TIÊN CỦA MỖI PART
+            if (introHtml.trim() !== "") {
+                
+                introBox.innerHTML = introHtml;
+                fullIntroScreen.classList.remove('hidden');
+                mainWorkspace.classList.add('hidden');
+                
+                // ẨN HOÀN TOÀN THANH ĐỒNG HỒ VÀ THANH CHUYỂN CÂU KHI ĐANG ĐỌC HƯỚNG DẪN
+                document.querySelector('.timer-bar').style.display = 'none'; 
+                document.querySelector('.nav-controls').classList.add('hidden'); 
+                
+                clearInterval(swTimerInterval);
+            } else {
+                introBox.innerHTML = ""; // XÓA SẠCH RÁC AUDIO CỦA CÂU TRƯỚC ĐỂ KHÔNG BẮT NHẦM
+                fullIntroScreen.classList.add('hidden');
+                mainWorkspace.classList.remove('hidden');
+                document.querySelector('.timer-bar').style.display = 'flex'; 
+                document.querySelector('.nav-controls').classList.remove('hidden');
+                
+                // Trả về lệnh gốc chạy ngay lập tức để giữ quyền User Gesture (Bấm nút chuyển câu)
+                if (typeof triggerQuestionStart === 'function') {
+                    triggerQuestionStart();
+                }
+            }
+            
+            document.getElementById('btn-prev').disabled = (currentQIndex === 0);
+            
+            // LOGIC MỚI: Ở câu cuối cùng, biến nút Next thành nút TỔNG KẾT
+            let btnNext = document.getElementById('btn-next');
+            if (currentQIndex === totalQuestions - 1) {
+                btnNext.innerHTML = "📊 TỔNG KẾT";
+                btnNext.disabled = false;
+                btnNext.style.background = "#28a745"; // Đổi màu xanh lá
+                btnNext.onclick = showSWSummary;
+            } else {
+                btnNext.innerHTML = "Câu tiếp →";
+                btnNext.disabled = false;
+                btnNext.style.background = "#003366"; // Trả về màu xanh dương cũ
+                btnNext.onclick = function() { changeQuestion(1); };
+            }
+            
+            if (realSkill === 'W') {
+                let txtArea = document.getElementById('writing-input');
+                txtArea.value = ""; 
+                txtArea.disabled = false; 
+                document.getElementById('word-count-num').innerText = "0";
+                
+                // Phục hồi lại nút Nộp Bài cho câu mới
+                let submitBtn = document.getElementById('btn-submit-w');
+                if(submitBtn) submitBtn.style.display = 'block';
+            }
+            
+            // Ép giữ nguyên cỡ chữ hiện tại cho câu hỏi mới load
+            zoomSWText(0);
+        }
+
+        // HÀM 3: XỬ LÝ CHUYỂN CÂU
+        function changeQuestion(step) {
+            document.querySelectorAll('audio').forEach(a => {
+                a.onended = null; 
+                a.onerror = null; 
+                a.querySelectorAll('source').forEach(s => s.onerror = null);
+                a.pause(); 
+                a.removeAttribute('src'); 
+                a.load(); 
+            });
+            
+            if (typeof audioStream !== 'undefined' && audioStream) {
+                audioStream.getTracks().forEach(track => track.stop());
+            }
+            
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+            
+            let newIndex = currentQIndex + step;
+            if (newIndex >= 0 && newIndex < totalQuestions) {
+                
+                // KIỂM TRA BẢO TOÀN ĐỒNG HỒ: Nếu lật câu mà vẫn nằm trong nhóm dùng chung thì KHÔNG ĐƯỢC XÓA GIỜ
+                let oldTimeConfig = getQuestionTime(currentQIndex);
+                let newTimeConfig = getQuestionTime(newIndex);
+                if (!(oldTimeConfig.shared && newTimeConfig.shared && oldTimeConfig.sharedId === newTimeConfig.sharedId)) {
+                    clearInterval(swTimerInterval); // Xóa đồng hồ
+                    swTimerInterval = null;
+                    activeSharedTimerId = null;
+                }
+                
+                stopRecording(); // Tắt mic nếu đang thu dở mà bấm qua câu
+                currentQIndex = newIndex;
+                renderQuestion();
+            }
+        }
+
+        // HÀM 4: QUẢN LÝ THỜI GIAN TOEIC S&W
+        function getQuestionTime(index) {
+            let realSkill = getRealSkill(index);
+            let localQIndex = (currentSkill === 'B' && realSkill === 'W') ? index - 11 : index;
+
+            if (realSkill === 'S') {
+                if (localQIndex <= 1) return { prep: 45, res: 45 }; 
+                if (localQIndex <= 3) return { prep: 45, res: 30 }; 
+                if (localQIndex <= 6) return { prep: 3, res: (localQIndex === 6 ? 30 : 15) }; 
+                if (localQIndex <= 9) return { prep: 3, res: (localQIndex === 9 ? 30 : 15) }; 
+                return { prep: 45, res: 60 }; 
+            } else {
+                // Phân bổ ID chung cho các câu Writing xài chung đồng hồ
+                if (localQIndex <= 4) return { prep: 0, res: 8 * 60, shared: true, sharedId: 'W_Q1_5' }; 
+                if (localQIndex <= 6) return { prep: 0, res: 10 * 60, shared: false }; 
+                return { prep: 0, res: 30 * 60, shared: false }; 
+            }
+        }
+
+        function startQuestionTimer() {
+            let timeConfig = getQuestionTime(currentQIndex);
+            let timerBox = document.getElementById('timer-box');
+            
+            // CHỐNG RESET: Nếu hệ thống đang đếm giờ của 1 nhóm dùng chung (Ví dụ Writing Q1-Q5), thì bỏ qua khởi tạo
+            if (timeConfig.shared && timeConfig.sharedId === activeSharedTimerId && swTimerInterval) {
+                updateTimerUI(); // Chỉ render lại chữ ra màn hình
+                return;
+            }
+
+            clearInterval(swTimerInterval);
+            activeSharedTimerId = timeConfig.shared ? timeConfig.sharedId : null;
+            
+            if (timeConfig.prep > 0) {
+                currentPhase = "prep";
+                timeLeft = timeConfig.prep;
+                timerBox.className = "timer-box prep-time";
+            } else {
+                currentPhase = "response";
+                timeLeft = timeConfig.res;
+                timerBox.className = "timer-box response-time";
+                
+                // Mở bài mà không có prep (vd: Writing) thì bóp còi luôn
+                playBeep(); 
+                // Kích hoạt Mic ngay lập tức nếu là Speaking (trường hợp hiếm nhưng phòng hờ)
+                if (getRealSkill(currentQIndex) === 'S') startRecording();
+            }
+
+            updateTimerUI();
+
+            swTimerInterval = setInterval(() => {
+                timeLeft--;
+                if (timeLeft <= 0) {
+                    if (currentPhase === "prep") {
+                        playBeep(); // Hết chuẩn bị -> Kêu TÍT
+                        currentPhase = "response";
+                        timeLeft = timeConfig.res;
+                        timerBox.className = "timer-box response-time";
+                        
+                        // Bật Mic ghi âm khi hết giờ chuẩn bị
+                        if (getRealSkill(currentQIndex) === 'S') startRecording();
+                        
+                    } else {
+                        clearInterval(swTimerInterval);
+                        timerBox.innerText = "TIME UP!";
+                        playBeep(); // Hết giờ làm bài -> TÍT
+                        
+                        // Tắt Mic
+                        if (getRealSkill(currentQIndex) === 'S') stopRecording();
+                        
+                        // Xử lý Hành động theo Chế độ
+                        if (currentMode === 'exam') {
+                            // Thi thật Speaking -> tự qua câu. Writing -> không tự qua (vì được tự do nộp)
+                            if (getRealSkill(currentQIndex) === 'S') {
+                                setTimeout(() => changeQuestion(1), 2000);
+                            }
+                        } else {
+                            // Luyện tập: Hiện nút Feedback
+                            if (getRealSkill(currentQIndex) === 'S') {
+                                if (document.getElementById('mic-guide-text')) document.getElementById('mic-guide-text').style.display = 'none';
+                                document.getElementById('practice-feedback-speaking').classList.remove('hidden');
+                                document.getElementById('btn-eval-speaking').classList.remove('hidden');
+                            } else {
+                                document.getElementById('btn-eval-writing').classList.remove('hidden');
+                            }
+                        }
+                        return;
+                    }
+                }
+                updateTimerUI();
+            }, 1000);
+        }
+
+        function updateTimerUI() {
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            let timeStr = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+            let titleStr = currentPhase === "prep" ? "Preparation Time" : "Response Time";
+            document.getElementById('timer-box').innerText = `${titleStr}: ${timeStr}`;
+            
+            let btnSkip = document.getElementById('btn-skip-prep');
+            let dummySpace = document.getElementById('dummy-space');
+            
+            // MỚI: Hiện nút Skip trong giờ Chuẩn bị, HOẶC trong giờ Ghi âm của phần Speaking
+            let showSkip = (currentPhase === "prep" || (currentPhase === "response" && getRealSkill(currentQIndex) === 'S')) && timeLeft > 0;
+            
+            if (showSkip) {
+                btnSkip.innerText = currentPhase === "prep" ? "Skip" : "Nộp sớm";
+                btnSkip.classList.remove('hidden');
+                dummySpace.style.display = "none";
+            } else {
+                btnSkip.classList.add('hidden');
+                dummySpace.style.display = "block";
+            }
+        }
+
+        // HÀM BỔ SUNG: NỘP BÀI WRITING 
+        function submitWritingEarly() {
+            clearInterval(swTimerInterval);
+            swTimerInterval = null;
+            activeSharedTimerId = null;
+            document.getElementById('timer-box').innerText = "ĐÃ NỘP";
+            document.getElementById('writing-input').disabled = true; 
+            
+            let submitBtn = document.getElementById('btn-submit-w');
+            if(submitBtn) submitBtn.style.display = 'none'; // Ẩn nút nộp đi cho gọn
+            
+            if (currentMode === 'practice') {
+                let evalBtn = document.getElementById('btn-eval-writing');
+                if (evalBtn) evalBtn.classList.remove('hidden');
+            } else {
+                alert("Đã ghi nhận bài làm! Vui lòng bấm 'Câu tiếp' để chuyển sang câu tiếp theo.");
+            }
+        }
+
+        // HÀM 5: BẤM NÚT BỎ QUA THỜI GIAN
+        function skipPrepTime() {
+            if (currentPhase === "reading") {
+                // Đang trong 45s đọc bảng biểu -> Bỏ qua để nghe Audio Câu hỏi luôn
+                clearInterval(swTimerInterval);
+                playBeep();
+                if (typeof window.playAudioSequence === 'function') window.playAudioSequence();
+            }
+            else if (currentPhase === "prep") {
+                let timeConfig = getQuestionTime(currentQIndex); 
+                currentPhase = "response";
+                timeLeft = timeConfig.res;
+                
+                let timerBox = document.getElementById('timer-box');
+                timerBox.className = "timer-box response-time";
+                
+                playBeep(); 
+                updateTimerUI(); 
+                
+                // Ép bật Mic ngay lập tức
+                if (getRealSkill(currentQIndex) === 'S') startRecording();
+            } 
+            else if (currentPhase === "response" && getRealSkill(currentQIndex) === 'S') {
+                clearInterval(swTimerInterval);
+                document.getElementById('timer-box').innerText = "ĐÃ NỘP";
+                playBeep();
+                
+                stopRecording();
+                
+                let btnSkip = document.getElementById('btn-skip-prep');
+                if(btnSkip) btnSkip.classList.add('hidden');
+                let dummySpace = document.getElementById('dummy-space');
+                if(dummySpace) dummySpace.style.display = "block";
+                
+                if (currentMode === 'exam') {
+                    setTimeout(() => changeQuestion(1), 2000);
+                } else {
+                    let fbBtn = document.getElementById('practice-feedback-speaking');
+                    if(fbBtn) fbBtn.classList.remove('hidden');
+                    let spEvalBtn = document.getElementById('btn-eval-speaking');
+                    if(spEvalBtn) spEvalBtn.classList.remove('hidden');
+                }
+            }
+        }
+
+        // HÀM 6: QUẢN LÝ GHI ÂM (MEDIA RECORDER) - CHẾ ĐỘ DEBUG
+        let mediaRecorder;
+        let audioChunks = [];
+        let audioStream;
+
+        function startRecording() {
+            console.log("--- BẮT ĐẦU YÊU CẦU QUYỀN MICRO ---");
+            try {
+                navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+                    let micLabel = stream.getAudioTracks()[0].label;
+                    console.log("1. Cấp quyền thành công. Thiết bị thu:", micLabel);
+                    
+                    // CẢNH BÁO NẾU TRÌNH DUYỆT CHỌN NHẦM STEREO MIX (Chỉ thu tiếng máy tính, không thu giọng người)
+                    if (micLabel.toLowerCase().includes("stereo mix") || micLabel.toLowerCase().includes("mix")) {
+                        alert("⚠️ CẢNH BÁO: Trình duyệt đang dùng 'Stereo Mix' để thu âm. File ghi âm của bạn sẽ không có tiếng! Vui lòng bấm vào biểu tượng Micro trên thanh địa chỉ trình duyệt để đổi sang Micro thật.");
+                    }
+                    
+                    audioStream = stream;
+                    
+                    // Thử ép định dạng chuẩn để tránh lỗi trình duyệt tự chọn định dạng lạ
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = [];
+                    
+                    mediaRecorder.ondataavailable = e => {
+                        console.log("3. Đang nhận dữ liệu (Chunk size):", e.data ? e.data.size : "Không có data");
+                        if (e.data && e.data.size > 0) audioChunks.push(e.data);
+                    };
+                    
+                    mediaRecorder.onstop = () => {
+                        console.log("4. Đã nhận lệnh Stop. Số lượng Chunk nhận được:", audioChunks.length);
+                        
+                        // FIX LỖI IOS SAFARI: Bắt buộc phải trả lại đúng định dạng (MimeType) mà thiết bị vừa thu âm
+                        window.currentAudioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType }); 
+                        console.log("5. Tạo Blob thành công. Dung lượng file:", window.currentAudioBlob.size, "bytes. Định dạng:", window.currentAudioBlob.type);
+                        
+                        let audioUrl = URL.createObjectURL(window.currentAudioBlob);
+                        let playbackEl = document.getElementById('student-audio-playback');
+                        if(playbackEl) {
+                            playbackEl.src = audioUrl;
+                            playbackEl.load(); 
+                        }
+                        
+                        if (audioStream) {
+                            audioStream.getTracks().forEach(track => {
+                                track.stop();
+                                console.log("6. Đã ngắt phần cứng Mic:", track.readyState);
+                            });
+                        }
+                    };
+                    
+                    mediaRecorder.start();
+                    console.log("--- ĐÃ RA LỆNH START RECORDER ---");
+                    
+                    document.getElementById('record-btn').classList.add('recording');
+                    document.getElementById('mic-status').innerText = "Đang Ghi Âm...";
+                    document.getElementById('mic-status').style.color = "#dc3545";
+                }).catch(e => {
+                    console.error("LỖI MICRO NGAY TỪ BƯỚC 1: ", e);
+                    document.getElementById('mic-status').innerText = "Vui lòng cấp quyền Micro!";
+                    document.getElementById('mic-status').style.color = "#dc3545";
+                });
+            } catch(e) {
+                console.error("LỖI CÚ PHÁP TRY/CATCH: ", e);
+            }
+        }
+
+        function stopRecording() {
+            if (typeof mediaRecorder !== 'undefined' && mediaRecorder && mediaRecorder.state !== 'inactive') {
+                mediaRecorder.stop();
+                // KHÔNG TẮT MIC Ở ĐÂY NỮA VÌ SẼ LÀM FILE BỊ RỖNG RUỘT. ĐÃ DỜI VÀO HÀM onstop Ở TRÊN.
+                document.getElementById('record-btn').classList.remove('recording');
+                document.getElementById('mic-status').innerText = "Hoàn thành!";
+                document.getElementById('mic-status').style.color = "#28a745";
+            }
+        }
+
+        // HÀM 7: GỌI API ĐÁNH GIÁ BẰNG GROQ (WHISPER & LLAMA3)
+        async function getFeedback(skillType) {
+            let apiKey = localStorage.getItem('win_groq_api_key');
+            if (!apiKey) {
+                alert("Vui lòng nhập Groq API Key ở màn hình chọn đề!");
+                return;
+            }
+
+            let resBox = document.getElementById(skillType === 'S' ? 'eval-result-speaking' : 'eval-result-writing');
+            let evalBtn = skillType === 'S' ? document.getElementById('btn-eval-speaking') : document.getElementById('btn-eval-writing');
+            
+            evalBtn.disabled = true;
+            resBox.style.display = 'block';
+            resBox.innerHTML = "<i>⏳ Đang phân tích dữ liệu bằng AI... Vui lòng chờ vài giây...</i>";
+            
+            let qData = swData.questions[currentQIndex];
+            // Nếu câu hỏi rỗng, lấy dữ liệu từ IntroBox
+            let qText = qData.question || document.getElementById('intro-box').innerText.replace(/<[^>]*>?/gm, '').trim();
+            let studentAnswer = "";
+
+            try {
+                if (skillType === 'W') {
+                    studentAnswer = document.getElementById('writing-input').value.trim();
+                    if (!studentAnswer) throw new Error("Bạn chưa viết câu trả lời!");
+                } else {
+                    if (!window.currentAudioBlob) throw new Error("Chưa có file ghi âm! Hãy làm bài trước.");
+                    resBox.innerHTML = "<i>⏳ AI đang nghe và bóc băng ghi âm (Whisper)...</i>";
+                    
+                    let formData = new FormData();
+                    formData.append("file", window.currentAudioBlob, "audio.webm");
+                    formData.append("model", "whisper-large-v3");
+
+                    let whisperRes = await fetch("https://api.groq.com/openai/v1/audio/transcriptions", {
+                        method: "POST",
+                        headers: { "Authorization": `Bearer ${apiKey}` },
+                        body: formData
+                    });
+                    
+                    if (!whisperRes.ok) throw new Error("Không thể gọi API Whisper. Hãy kiểm tra lại API Key!");
+                    let whisperData = await whisperRes.json();
+                    studentAnswer = whisperData.text.trim();
+                    if (!studentAnswer) throw new Error("AI không nghe rõ bạn nói gì. Vui lòng ghi âm lại to và rõ hơn!");
+                    
+                    resBox.innerHTML = `<i>⏳ <b>Bản dịch bóc băng:</b> "${studentAnswer}"<br><br>Đang chấm điểm...</i>`;
+                }
+
+                // --- TÍCH HỢP GROUND TRUTH (MÔ TẢ ẢNH) TỪ FILE descriptions.txt ---
+                let imageDesc = "";
+                // Tìm tất cả ảnh đang có trên màn hình (Bỏ qua ảnh ví dụ Sample)
+                let imgEls = document.querySelectorAll('#media-box img, #text-box img, #intro-box img');
+                let filename = "";
+                for (let img of imgEls) {
+                    let src = img.getAttribute('src');
+                    if (src && !src.includes('sample 1.png') && !src.includes('placehold')) {
+                        filename = src.split('/').pop(); // Lấy tên file, ví dụ: zenlish-1-traveler-wait.jpg
+                        break;
+                    }
+                }
+                
+                if (filename) {
+                    try {
+                        let descRes = await fetch('SW Media/descriptions.txt');
+                        if (descRes.ok) {
+                            let descText = await descRes.text();
+                            let lines = descText.split('\n');
+                            let found = false;
+                            for (let line of lines) {
+                                line = line.trim();
+                                if (line === filename) {
+                                    found = true;
+                                } else if (found) {
+                                    // Gặp tên file ảnh tiếp theo hoặc tên Test mới thì dừng lại
+                                    if (line.endsWith('.jpg') || line.endsWith('.png') || line.endsWith('.jpeg') || line.startsWith('test ')) break;
+                                    if (line !== "") imageDesc += line + " ";
+                                }
+                            }
+                        }
+                    } catch(e) { console.log("Không tải được descriptions.txt"); }
+                }
+
+                let realS = getRealSkill(currentQIndex);
+                let localQ = (currentSkill === 'B' && realS === 'W') ? currentQIndex - 11 : currentQIndex;
+                
+                // Gắn nút cái loa và ép AI xuất nội dung vào thẻ <span> để hàm JS đọc được
+                let suggestionFormat = `<div class="ai-suggestion-box" style="color:#27ae60; margin-top:8px;"><b>Gợi ý làm bài (Suggested Answer): <button onclick="speakSuggestion(this)" style="background:transparent; border:none; cursor:pointer; font-size:18px; padding:0; margin-left:5px; vertical-align:middle; transition:0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'" title="Nghe đọc mẫu">🔊</button></b><br><span class="suggestion-text">[MUST DO: Write a perfect, full-length sample answer in 100% ENGLISH. Absolutely NO Vietnamese here]</span></div>`;
+                
+                // Part 1 Speaking (Read aloud) không cần gợi ý làm bài
+                if (realS === 'S' && localQ <= 1) {
+                    suggestionFormat = ``; 
+                }
+
+                // XỬ LÝ LỆNH ĐẶC BIỆT CHO TỪNG DẠNG BÀI ĐỂ AI KHÔNG BỊ "NGÁO"
+                let extraInstruction = "";
+                if (realS === 'S' && localQ <= 1) {
+                    extraInstruction = "\nYêu cầu đề bài là đọc lại y chang thông điệp được viết trên màn hình.";
+                } else if (realS === 'S' && localQ >= 7 && localQ <= 9) {
+                    // Dành riêng cho Q8-10: Cấm AI bắt lỗi thiếu thông tin toàn cảnh
+                    extraInstruction = "\n[CRITICAL RULE]: This is TOEIC Speaking Questions 8-10. The student is ONLY answering a specific short question based on the schedule/agenda image. DO NOT expect or ask them to describe the whole image. Grade them ONLY on whether they correctly answer the specific question asked using the information provided.";
+                }
+
+                let prompt = `Bạn là Giám khảo TOEIC chuyên nghiệp của ETS. Hãy chấm điểm phần thi ${skillType === 'S' ? 'Speaking' : 'Writing'} này.
+Nội dung câu hỏi/yêu cầu: "${qText}"${extraInstruction}
+${imageDesc ? `\nMô tả thực tế của bức tranh trên màn hình là: "${imageDesc.trim()}". (Chỉ trừ điểm nếu thí sinh tả sai lệch hẳn so với mô tả này. Nếu thí sinh tả những chi tiết hợp lý có thể tồn tại trong bối cảnh đó thì cứ châm chước qua).` : ''}
+Câu trả lời của học viên: "${studentAnswer}"
+
+Tiêu chí chấm điểm:
+- Speaking: Q1-2, Q3-4, Q5-7, Q8-10 (0-3 điểm). Q11 (0-5 điểm).
+- Writing: Q1-5 (0-3 điểm). Q6-7 (0-4 điểm). Q8 (0-5 điểm).
+Hãy tự xác định đây là dạng câu hỏi nào dựa vào nội dung và chấm điểm thô. 
+Lưu ý: Bạn nhận xét bằng Tiếng Việt, nhưng phần "Suggested Answer" BẮT BUỘC phải viết bằng 100% Tiếng Anh.
+
+TRẢ VỀ ĐÚNG ĐỊNH DẠNG HTML SAU (TUYỆT ĐỐI KHÔNG BỌC TRONG MARKDOWN CODE BLOCK HAY DẤU \`\`\`):
+<div style="color:#d35400; font-size:18px;"><b>ĐIỂM THÔ ƯỚC LƯỢNG:</b> [Điểm]/[Tối đa]</div>
+<div style="color:#111; margin-top:8px;"><b>Nhận xét chi tiết:</b> [Chỉ ra lỗi sai ngữ pháp, từ vựng, độ liên kết hoặc sự liên quan đến đề bài bằng tiếng Việt]</div>
+${suggestionFormat}`;
+
+                // TỰ ĐỘNG HỎI GROQ DANH SÁCH MODEL ĐANG CÒN SỐNG
+                let modelsRes = await fetch("https://api.groq.com/openai/v1/models", {
+                    method: "GET",
+                    headers: { "Authorization": `Bearer ${apiKey}` }
+                });
+                if (!modelsRes.ok) throw new Error("Lỗi xác thực API Key Groq. Hãy kiểm tra lại Key!");
+                
+                let modelsData = await modelsRes.json();
+                let availableModels = modelsData.data.map(m => m.id);
+                
+                // Thuật toán ưu tiên tìm model mạnh nhất (Llama 3.3 -> 3.1 -> 3), bỏ qua model âm thanh (whisper)
+                let textModels = availableModels.filter(m => !m.includes('whisper'));
+                let selectedModel = textModels.find(m => m.includes('llama-3.3-70b'))
+                                 || textModels.find(m => m.includes('llama-3.1-70b'))
+                                 || textModels.find(m => m.includes('llama3-70b'))
+                                 || textModels.find(m => m.includes('llama3-8b'))
+                                 || textModels.find(m => m.includes('mixtral'))
+                                 || textModels[0]; // Bí quá thì bốc đại model đầu tiên
+
+                let chatRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${apiKey}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        model: selectedModel, 
+                        messages: [{ role: "user", content: prompt }],
+                        temperature: 0.1 
+                    })
+                });
+
+                if (!chatRes.ok) {
+                    let errText = await chatRes.text();
+                    throw new Error("Lỗi khi gọi Model: " + selectedModel + ". Chi tiết: " + errText);
+                }
+                let chatData = await chatRes.json();
+                
+                let feedbackHtml = chatData.choices[0].message.content.replace(/```html|```/gi, '').trim();
+                
+                if (realS === 'S' && localQ <= 1) {
+                    let cutIndex = feedbackHtml.search(/(Gợi ý làm bài|Suggested Answer)/i);
+                    if (cutIndex !== -1) {
+                        feedbackHtml = feedbackHtml.substring(0, cutIndex).trim();
+                    }
+                }
+                
+                if (skillType === 'S') {
+                    feedbackHtml = `<div style="background:#f4f6f9; padding:10px; border-radius:4px; margin-bottom:15px; font-style:italic; border-left: 3px solid #555;"><b>Bản dịch bóc băng của bạn:</b> "${studentAnswer}"</div>` + feedbackHtml;
+                }
+                
+                resBox.innerHTML = feedbackHtml;
+
+                // TỰ ĐỘNG CHỘP ĐIỂM BẰNG REGEX CẤT VÀO MẢNG (Đã fix lỗi bị dính thẻ HTML)
+                let scoreMatch = feedbackHtml.match(/ĐIỂM THÔ ƯỚC LƯỢNG:(?:[^0-9]*)(\d+)\/(\d+)/i);
+                if (scoreMatch) {
+                    swScores[currentQIndex] = {
+                        score: parseInt(scoreMatch[1]),
+                        max: parseInt(scoreMatch[2])
+                    };
+                }
+                
+            } catch (err) {
+                resBox.innerHTML = `<b style="color:red;">Lỗi: ${err.message}</b>`;
+            } finally {
+                evalBtn.disabled = false;
+            }
+        }
+
+        // HÀM ĐỌC GIỌNG MẪU (SUGGESTED ANSWER) BẰNG GIỌNG XỊN
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = function() { window.speechSynthesis.getVoices(); };
+            window.speechSynthesis.getVoices();
+        }
+
+        function speakSuggestion(btn) {
+            let container = btn.closest('.ai-suggestion-box');
+            if (!container) return;
+            
+            let textSpan = container.querySelector('.suggestion-text');
+            let textToRead = "";
+            if (textSpan) {
+                textToRead = textSpan.innerText.trim();
+            } else {
+                // Dự phòng nếu con AI xuất thiếu thẻ span
+                textToRead = container.innerText.replace(/Gợi ý làm bài \(Suggested Answer\):/i, '').replace('🔊', '').trim();
+            }
+
+            if(!textToRead) return;
+
+            let utterance = new SpeechSynthesisUtterance(textToRead);
+            let voices = window.speechSynthesis.getVoices();
+            let savedVoiceName = localStorage.getItem('win_selected_voice');
+            let selectedVoice = null;
+            
+            // Đồng bộ lấy đúng giọng mà học viên đã set bên trang chủ
+            if (savedVoiceName) {
+                selectedVoice = voices.find(voice => voice.name === savedVoiceName);
+            }
+            if (!selectedVoice) {
+                let goodVoices = voices.filter(v => v.lang.includes('en') && !v.name.includes('Microsoft') && !v.name.includes('Windows'));
+                selectedVoice = goodVoices.find(v => v.name.includes('Google')) || goodVoices[0] || voices.find(v => v.lang === 'en-US');
+            }
+                         
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+            } else {
+                utterance.lang = 'en-US';
+            }
+            
+            utterance.rate = 0.9;
+            utterance.volume = 0.6; // GIẢM ÂM LƯỢNG ĐỌC MẪU AI XUỐNG 60% (~ GIẢM 5dB)
+            window.speechSynthesis.cancel();
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // BẮT PHÍM TẮT MŨI TÊN TRÁI/PHẢI
+        document.addEventListener('keydown', function(event) {
+            if (document.activeElement.tagName === 'TEXTAREA' || document.activeElement.tagName === 'INPUT') return;
+            
+            let testScreen = document.getElementById('test-screen');
+            if (testScreen && !testScreen.classList.contains('hidden')) {
+                if (event.code === 'ArrowRight' || event.keyCode === 39) {
+                    event.preventDefault();
+                    if (!document.getElementById('btn-next').disabled) changeQuestion(1);
+                } else if (event.code === 'ArrowLeft' || event.keyCode === 37) {
+                    event.preventDefault();
+                    if (!document.getElementById('btn-prev').disabled) changeQuestion(-1);
+                }
+            }
+        });
+
+        // --- HÀM 8: HIỂN THỊ GIAO DIỆN XIN QUYỀN MIC CHUYÊN NGHIỆP ---
+        function showMicPermissionModal() {
+            let modalHtml = `
+            <div id="mic-setup-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 99999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+                <div style="background: white; width: 550px; max-width: 90%; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center;">
+                    <h2 style="color: #003366; margin-top: 0; margin-bottom: 15px; font-size: 24px;">🎙️ CẤP QUYỀN MICROPHONE</h2>
+                    <p style="font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 20px;">Để hệ thống có thể thu âm mượt mà mà không làm gián đoạn thời gian làm bài của bạn, vui lòng cấp quyền truy cập Microphone.</p>
+                    <div style="background: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 8px; text-align: left; font-size: 15px; color: #111; margin-bottom: 25px;">
+                        <b>📌 HƯỚNG DẪN DÀNH CHO HỌC VIÊN:</b><br>
+                        1. Khi bảng thông báo của trình duyệt hiện ra, hãy chọn <b>"Allow while visiting the site"</b> (Cho phép khi truy cập trang web).<br>
+                        2. Tuyệt đối KHÔNG chọn "Stereo Mix" để tránh việc hệ thống không thu được giọng nói.
+                    </div>
+                    <button onclick="requestMicAndStart()" style="background: #28a745; color: white; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 10px rgba(40,167,69,0.3);">Đã hiểu & Cấp quyền</button>
+                </div>
+            </div>`;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+
+        function requestMicAndStart() {
+            navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+                // Thu quyền thành công -> Tắt mic ngay để giải phóng phần cứng
+                stream.getTracks().forEach(track => track.stop());
+                
+                // Đánh dấu đã cấp quyền để các lần thi sau không hỏi lại bảng này nữa
+                localStorage.setItem('win_mic_granted', '1');
+                
+                // Đóng Modal và kích hoạt Test
+                document.getElementById('mic-setup-modal').remove();
+                document.getElementById('test-screen').classList.remove('hidden');
+                renderQuestion();
+            }).catch(err => {
+                alert("Bạn chưa cấp quyền Microphone. Không thể vào thi Speaking!");
+            });
+        }
+
+        // --- HÀM 9: HIỂN THỊ BẢNG TỔNG KẾT VÀ LƯU LỊCH SỬ S&W ---
+        function showSWSummary() {
+            let rawSpeak = 0, rawWrite = 0;
+            let speakHtml = '', writeHtml = '';
+            
+            for (let i = 0; i < totalQuestions; i++) {
+                let sType = getRealSkill(i);
+                let qNum = i + 1;
+                
+                if (swScores[i]) {
+                    if (sType === 'S') rawSpeak += swScores[i].score;
+                    else rawWrite += swScores[i].score;
+                    
+                    let row = `<div style="display:flex; justify-content:space-between; padding: 6px 0; border-bottom: 1px dashed #ccc; font-size:14px;"><span>Câu ${qNum}</span> <b style="color:#28a745;">${swScores[i].score}/${swScores[i].max}</b></div>`;
+                    if (sType === 'S') speakHtml += row; else writeHtml += row;
+                } else {
+                    let row = `<div style="display:flex; justify-content:space-between; padding: 6px 0; border-bottom: 1px dashed #ccc; color: #999; font-size:14px;"><span>Câu ${qNum}</span> <i>Chưa chấm</i></div>`;
+                    if (sType === 'S') speakHtml += row; else writeHtml += row;
+                }
+            }
+
+            // Tính điểm quy đổi chuẩn ETS
+            let scaledSpeak = Math.round((rawSpeak / 35) * 200) || 0;
+            if (scaledSpeak > 200) scaledSpeak = 200;
+            
+            let scaledWrite = Math.round((rawWrite / 28) * 200) || 0;
+            if (scaledWrite > 200) scaledWrite = 200;
+            
+            let totalScaled = scaledSpeak + scaledWrite;
+            let maxScale = (currentSkill === 'B') ? 400 : 200;
+            let finalScoreText = `${totalScaled}/${maxScale}`;
+
+            // Tạo layout 2 cột linh hoạt
+            let colHtml = `<div style="display: flex; gap: 20px;">`;
+            if (currentSkill === 'S' || currentSkill === 'B') {
+                colHtml += `<div style="flex: 1;">
+                    <h3 style="color:#003366; border-bottom: 2px solid #5ba4e5; padding-bottom:5px; margin-top:0; font-size: 16px; text-align: center;">SPEAKING</h3>
+                    ${speakHtml}
+                    <div style="margin-top: 10px; text-align: center; color:#dc3545; font-weight:bold; font-size: 15px;">Điểm quy đổi: ${scaledSpeak}/200</div>
+                </div>`;
+            }
+            if (currentSkill === 'W' || currentSkill === 'B') {
+                colHtml += `<div style="flex: 1;">
+                    <h3 style="color:#003366; border-bottom: 2px solid #5ba4e5; padding-bottom:5px; margin-top:0; font-size: 16px; text-align: center;">WRITING</h3>
+                    ${writeHtml}
+                    <div style="margin-top: 10px; text-align: center; color:#dc3545; font-weight:bold; font-size: 15px;">Điểm quy đổi: ${scaledWrite}/200</div>
+                </div>`;
+            }
+            colHtml += `</div>`;
+
+            let modalHtml = `
+            <div id="sw-summary-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 99999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+                <div style="background: white; width: 650px; max-width: 95%; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left;">
+                    <h2 style="color: #003366; margin-top: 0; margin-bottom: 15px; font-size: 22px; text-align:center; text-transform: uppercase;">📊 TỔNG KẾT BÀI LÀM S&W</h2>
+                    <div style="max-height: 50vh; overflow-y: auto; margin-bottom: 20px; background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #eee;">
+                        ${colHtml}
+                    </div>
+                    <div style="font-size: 20px; font-weight: bold; color: #dc3545; text-align: center; margin-bottom: 25px;">
+                        TỔNG ĐIỂM S&W: ${finalScoreText}
+                    </div>
+                    <div style="display: flex; justify-content: space-between; gap: 15px;">
+                        <button onclick="document.getElementById('sw-summary-modal').remove()" style="flex: 1; background: #6c757d; color: white; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer;">Đóng lại</button>
+                        <button onclick="saveSWAndExit('${finalScoreText}', ${scaledSpeak}, ${scaledWrite}, ${rawSpeak}, ${rawWrite})" style="flex: 1; background: #28a745; color: white; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer;">Lưu & Thoát</button>
+                    </div>
+                </div>
+            </div>`;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+
+        function saveSWAndExit(finalScoreText, scaledSpeak, scaledWrite, rawSpeak, rawWrite) {
+            let testName = document.getElementById('sw-test-select') ? document.getElementById('sw-test-select').options[document.getElementById('sw-test-select').selectedIndex].text : currentTestName.toUpperCase();
+            
+            // Lưu vào Lịch sử (Đóng gói tương thích với trang chủ index.html)
+            let historyData = JSON.parse(localStorage.getItem('win_history') || '[]');
+            let dateStr = new Date().toLocaleString("vi-VN");
+            
+            let partStatsObj = {};
+            if (currentSkill === 'S' || currentSkill === 'B') partStatsObj["SPEAKING (Điểm thô)"] = { correct: rawSpeak, total: 35 };
+            if (currentSkill === 'W' || currentSkill === 'B') partStatsObj["WRITING (Điểm thô)"] = { correct: rawWrite, total: 28 };
+
+            let detailData = {
+                totalCorrect: (rawSpeak + rawWrite), // Tạm dùng để tương thích giao diện cũ
+                totalQuestions: (currentSkill === 'B') ? 63 : (currentSkill === 'S' ? 35 : 28), // 35+28=63 điểm thô tối đa
+                listCorrect: rawSpeak, // Tương thích hiển thị ra index.html
+                readCorrect: rawWrite, 
+                finalL: scaledSpeak, // Hiển thị điểm quy đổi
+                finalR: scaledWrite, 
+                partStats: partStatsObj,
+                userAnswers: {}, fileName: currentTestName
+            };
+            
+            historyData.unshift({ 
+                test: testName, 
+                score: finalScoreText, 
+                date: dateStr, 
+                details: detailData 
+            }); 
+            
+            if (historyData.length > 100) historyData.pop();
+            localStorage.setItem('win_history', JSON.stringify(historyData));
+            
+            // Thoát về Landing Page
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

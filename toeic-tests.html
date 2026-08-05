@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chọn đề và bắt đầu thi thử TOEIC trên giao diện máy tính.">
+    <title>VVT - Thi thử TOEIC</title>
+    <style>
+        :root {
+            --brand: #667eea;
+            --brand-dark: #574fc7;
+            --brand-deep: #4c3b8f;
+            --violet: #764ba2;
+            --ink: #20233b;
+            --muted: #667085;
+            --line: #e8e9f3;
+            --surface: #ffffff;
+            --background: #f5f6fc;
+            --success: #268a60;
+            --shadow: 0 18px 45px rgba(67, 54, 132, .12);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--background);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.5;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        button, input { font: inherit; }
+        button { cursor: pointer; }
+
+        .topbar {
+            min-height: 76px;
+            padding: 14px clamp(20px, 5vw, 72px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
+            color: white;
+            background: linear-gradient(115deg, var(--brand) 0%, var(--violet) 100%);
+            box-shadow: 0 2px 12px rgba(50, 39, 109, .16);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            min-width: max-content;
+        }
+
+        .brand-icon {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            font-size: 24px;
+            background: rgba(255, 255, 255, .18);
+            border: 1px solid rgba(255, 255, 255, .25);
+        }
+
+        .brand strong { display: block; font-size: 19px; letter-spacing: .2px; }
+        .brand small { display: block; margin-top: 1px; color: rgba(255, 255, 255, .82); font-size: 12px; }
+
+        .nav-links { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px; }
+        .nav-link {
+            padding: 9px 13px;
+            border-radius: 999px;
+            color: rgba(255, 255, 255, .88);
+            font-size: 14px;
+            font-weight: 650;
+            transition: background .2s ease, color .2s ease, transform .2s ease;
+        }
+        .nav-link:hover { color: white; background: rgba(255, 255, 255, .14); transform: translateY(-1px); }
+        .nav-link.active { color: var(--brand-dark); background: white; box-shadow: 0 5px 14px rgba(30, 18, 91, .18); }
+
+        main { padding-bottom: 56px; }
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(46px, 7vw, 82px) clamp(20px, 5vw, 72px) 82px;
+            color: white;
+            background: linear-gradient(120deg, var(--brand) 0%, var(--violet) 100%);
+        }
+        .hero::before, .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            background: rgba(255, 255, 255, .1);
+        }
+        .hero::before { width: 390px; height: 390px; top: -240px; right: 6%; }
+        .hero::after { width: 270px; height: 270px; bottom: -180px; left: 10%; }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(290px, .8fr);
+            align-items: center;
+            gap: clamp(30px, 6vw, 84px);
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border: 1px solid rgba(255, 255, 255, .28);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .13);
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .hero h1 { margin: 16px 0 14px; font-size: clamp(35px, 5vw, 58px); line-height: 1.08; letter-spacing: -1.4px; }
+        .hero p { max-width: 610px; margin: 0; color: rgba(255, 255, 255, .9); font-size: clamp(16px, 2vw, 19px); }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+        .button-primary, .button-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 45px;
+            padding: 0 17px;
+            border-radius: 12px;
+            font-weight: 750;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+        .button-primary { color: var(--brand-dark); background: white; box-shadow: 0 8px 18px rgba(42, 24, 104, .2); }
+        .button-secondary { color: white; border: 1px solid rgba(255,255,255,.36); background: rgba(255,255,255,.1); }
+        .button-primary:hover, .button-secondary:hover { transform: translateY(-2px); }
+
+        .exam-window {
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.38);
+            border-radius: 18px;
+            color: #31344e;
+            background: rgba(255,255,255,.97);
+            box-shadow: 0 24px 48px rgba(35, 21, 96, .28);
+            transform: rotate(1.5deg);
+        }
+        .window-bar { height: 39px; display: flex; align-items: center; gap: 6px; padding: 0 14px; background: #f2f3fb; border-bottom: 1px solid #e3e5f1; }
+        .dot { width: 9px; height: 9px; border-radius: 50%; background: #d5d8e8; }
+        .window-label { margin-left: 7px; color: #767b99; font-size: 11px; font-weight: 750; letter-spacing: .04em; text-transform: uppercase; }
+        .window-body { padding: 23px; }
+        .window-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 17px; font-size: 13px; font-weight: 800; }
+        .timer { padding: 5px 9px; border-radius: 7px; color: #7050a5; background: #f1eafd; font-variant-numeric: tabular-nums; }
+        .question-line { height: 10px; margin-bottom: 9px; border-radius: 99px; background: #e9eaf4; }
+        .question-line.short { width: 64%; }
+        .mini-options { display: grid; gap: 8px; margin-top: 18px; }
+        .mini-option { display: flex; align-items: center; gap: 8px; padding: 9px 10px; border: 1px solid #e4e6f0; border-radius: 9px; color: #6a708c; font-size: 12px; }
+        .radio { width: 14px; height: 14px; border: 2px solid #b8bdd3; border-radius: 50%; }
+        .mini-option.selected { border-color: #a795eb; color: #5c43b7; background: #f6f3ff; font-weight: 700; }
+        .mini-option.selected .radio { border: 4px solid #7157d7; }
+
+        .content-wrap { max-width: 1180px; margin: -36px auto 0; padding: 0 clamp(20px, 5vw, 72px); position: relative; z-index: 2; }
+        .summary-card {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid rgba(228, 229, 239, .85);
+            border-radius: 18px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+        .summary-item { min-height: 104px; display: flex; align-items: center; gap: 13px; padding: 20px; }
+        .summary-item + .summary-item { border-left: 1px solid var(--line); }
+        .summary-icon { width: 43px; height: 43px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 13px; background: #f0edff; font-size: 21px; }
+        .summary-item strong { display: block; font-size: 19px; }
+        .summary-item span { display: block; margin-top: 1px; color: var(--muted); font-size: 13px; }
+
+        .catalog { padding-top: 58px; }
+        .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+        .section-heading h2 { margin: 0; font-size: clamp(26px, 3vw, 34px); letter-spacing: -.7px; }
+        .section-heading p { max-width: 550px; margin: 6px 0 0; color: var(--muted); }
+        .catalog-count { flex: 0 0 auto; padding: 8px 12px; border-radius: 999px; color: var(--brand-dark); background: #eeebff; font-size: 13px; font-weight: 800; }
+
+        .catalog-controls { display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 14px; align-items: center; margin-bottom: 28px; }
+        .search-box { position: relative; }
+        .search-box span { position: absolute; top: 50%; left: 15px; transform: translateY(-50%); font-size: 17px; pointer-events: none; }
+        .search-box input { width: 100%; min-height: 50px; padding: 0 15px 0 43px; border: 1px solid #dedfed; border-radius: 13px; outline: none; color: var(--ink); background: white; box-shadow: 0 5px 15px rgba(37,31,83,.04); transition: border .2s ease, box-shadow .2s ease; }
+        .search-box input:focus { border-color: #9b8ce9; box-shadow: 0 0 0 4px rgba(102, 126, 234, .14); }
+        .filters { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+        .filter-button { padding: 9px 12px; border: 1px solid #e1e3ef; border-radius: 10px; color: #60657f; background: white; font-size: 13px; font-weight: 750; transition: all .2s ease; }
+        .filter-button:hover { border-color: #bcb2ee; color: var(--brand-dark); }
+        .filter-button.active { border-color: var(--brand); color: white; background: var(--brand); box-shadow: 0 6px 14px rgba(102,126,234,.2); }
+
+        .test-collections { display: grid; gap: 20px; }
+        .test-collection { overflow: hidden; border: 1px solid var(--line); border-radius: 17px; background: var(--surface); box-shadow: 0 7px 20px rgba(34, 29, 76, .045); }
+        .collection-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 19px 22px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, #fbfbff 0%, #f6f3ff 100%); }
+        .collection-title { display: flex; align-items: center; gap: 12px; }
+        .collection-symbol { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 12px; background: white; box-shadow: 0 3px 10px rgba(88, 70, 161, .09); font-size: 19px; }
+        .collection-title h3 { margin: 0; font-size: 18px; }
+        .collection-title p { margin: 1px 0 0; color: var(--muted); font-size: 13px; }
+        .collection-badge { padding: 5px 9px; border-radius: 999px; color: var(--success); background: #eaf8f1; font-size: 12px; font-weight: 800; }
+        .test-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; padding: 19px 22px 22px; }
+        .test-card { position: relative; display: block; min-height: 98px; padding: 15px; overflow: hidden; border: 1px solid #e3e4f0; border-radius: 13px; color: var(--ink); background: white; transition: transform .2s ease, border .2s ease, box-shadow .2s ease; }
+        .test-card::after { content: "→"; position: absolute; right: 13px; bottom: 9px; color: #a59bd9; font-size: 17px; font-weight: 700; transition: transform .2s ease, color .2s ease; }
+        .test-card:hover { border-color: #a99bea; box-shadow: 0 10px 19px rgba(92, 72, 174, .13); transform: translateY(-3px); }
+        .test-card:hover::after { color: var(--brand); transform: translateX(3px); }
+        .test-card:focus-visible { outline: 3px solid rgba(102,126,234,.35); outline-offset: 2px; }
+        .test-number { display: block; color: var(--brand-dark); font-size: 16px; font-weight: 850; }
+        .test-meta { display: block; margin-top: 4px; padding-right: 16px; color: var(--muted); font-size: 12px; line-height: 1.35; }
+        .test-card.sw .test-number { color: #bd5d78; }
+        .test-card.sw:hover { border-color: #edb0c0; }
+
+        .empty-state { padding: 42px 20px; border: 1px dashed #cfd2e5; border-radius: 15px; text-align: center; color: var(--muted); background: #fbfbff; }
+        .empty-state strong { display: block; margin-bottom: 4px; color: var(--ink); }
+
+        .preparation { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; margin-top: 38px; }
+        .tip-card, .notice-card { padding: 24px; border-radius: 17px; }
+        .tip-card { color: white; background: linear-gradient(130deg, #5f68cf, #8151a5); box-shadow: 0 15px 30px rgba(85, 65, 169, .18); }
+        .notice-card { border: 1px solid var(--line); background: white; }
+        .tip-card h3, .notice-card h3 { margin: 0 0 7px; font-size: 18px; }
+        .tip-card p { margin: 0; color: rgba(255,255,255,.88); }
+        .notice-card p { margin: 0; color: var(--muted); }
+        .tip-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+        .tip-list span { padding: 9px 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; color: white; background: rgba(255,255,255,.1); font-size: 13px; font-weight: 650; }
+        .notice-card a { display: inline-flex; margin-top: 15px; color: var(--brand-dark); font-size: 14px; font-weight: 800; }
+
+        .footer { padding: 26px 20px 34px; color: #81859c; text-align: center; font-size: 13px; }
+        .hidden { display: none !important; }
+
+        @media (max-width: 920px) {
+            .hero-inner, .preparation { grid-template-columns: 1fr; }
+            .exam-window { max-width: 480px; width: 100%; margin: 0 auto; transform: none; }
+            .test-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
+        @media (max-width: 720px) {
+            .topbar { align-items: flex-start; flex-direction: column; }
+            .nav-links { justify-content: flex-start; }
+            .hero { padding-bottom: 65px; }
+            .summary-card { grid-template-columns: 1fr; }
+            .summary-item + .summary-item { border-top: 1px solid var(--line); border-left: 0; }
+            .catalog-controls { grid-template-columns: 1fr; }
+            .filters { justify-content: flex-start; }
+            .section-heading { align-items: flex-start; flex-direction: column; }
+            .test-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 15px; }
+            .collection-header { padding: 16px; }
+            .collection-badge { display: none; }
+        }
+        @media (max-width: 460px) {
+            .nav-link { padding: 7px 9px; font-size: 12px; }
+            .test-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .test-card { min-height: 88px; padding: 13px; }
+            .tip-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Về trang chủ VVT">
+            <span class="brand-icon" aria-hidden="true">📚</span>
+            <span>
+                <strong>VVT</strong>
+                <small>Cùng Học TOEIC</small>
+            </span>
+        </a>
+        <nav class="nav-links" aria-label="Điều hướng chính">
+            <a class="nav-link" href="vocabulary.html">📖 Từ vựng</a>
+            <a class="nav-link" href="grammar.html">📝 Ngữ pháp</a>
+            <a class="nav-link" href="parts.html">🎯 Parts</a>
+            <a class="nav-link active" href="toeic-tests.html" aria-current="page">💻 Thi thử</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <div>
+                    <span class="eyebrow">💻 Phòng thi mô phỏng trên máy tính</span>
+                    <h1>Chọn đề, vào phòng thi và chinh phục TOEIC.</h1>
+                    <p>Làm bài Listening &amp; Reading hoặc Speaking &amp; Writing với đồng hồ, điều hướng câu hỏi và lưu tiến độ như một buổi thi thật.</p>
+                    <div class="hero-actions">
+                        <a class="button-primary" href="#test-catalog">Chọn đề ngay</a>
+                        <a class="button-secondary" href="parts.html">Ôn kỹ năng theo Part</a>
+                    </div>
+                </div>
+                <div class="exam-window" aria-hidden="true">
+                    <div class="window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="window-label">TOEIC test center</span></div>
+                    <div class="window-body">
+                        <div class="window-title"><span>PART 5 · QUESTION 101</span><span class="timer">01:23:48</span></div>
+                        <div class="question-line"></div>
+                        <div class="question-line short"></div>
+                        <div class="mini-options">
+                            <div class="mini-option"><span class="radio"></span>(A) applicant</div>
+                            <div class="mini-option selected"><span class="radio"></span>(B) appointment</div>
+                            <div class="mini-option"><span class="radio"></span>(C) arrangement</div>
+                            <div class="mini-option"><span class="radio"></span>(D) assignment</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-wrap">
+            <section class="summary-card" aria-label="Tổng quan kho đề">
+                <div class="summary-item"><span class="summary-icon">🎧</span><span><strong id="lr-count">77 đề</strong><span>Listening &amp; Reading</span></span></div>
+                <div class="summary-item"><span class="summary-icon">✍️</span><span><strong id="sw-count">10 đề</strong><span>Speaking &amp; Writing</span></span></div>
+                <div class="summary-item"><span class="summary-icon">⏱️</span><span><strong>120 phút</strong><span>Thi thử toàn bộ L&amp;R</span></span></div>
+            </section>
+
+            <section class="catalog" id="test-catalog">
+                <div class="section-heading">
+                    <div><h2>Kho đề thi thử</h2><p>Chọn một đề bên dưới. Bạn sẽ thiết lập thời gian và Part trước khi vào phòng thi.</p></div>
+                    <span class="catalog-count" id="catalog-count">0 đề khả dụng</span>
+                </div>
+
+                <div class="catalog-controls">
+                    <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Tìm ETS 2026, Hackers, Test 5..." autocomplete="off"></label>
+                    <div class="filters" aria-label="Lọc bộ đề">
+                        <button class="filter-button active" data-filter="all" type="button">Tất cả</button>
+                        <button class="filter-button" data-filter="ets" type="button">ETS</button>
+                        <button class="filter-button" data-filter="hackers" type="button">Hackers</button>
+                        <button class="filter-button" data-filter="placement" type="button">Đầu vào</button>
+                        <button class="filter-button" data-filter="sw" type="button">S&amp;W</button>
+                    </div>
+                </div>
+
+                <div class="test-collections" id="test-collections"></div>
+                <div class="empty-state hidden" id="empty-state"><strong>Chưa tìm thấy đề phù hợp</strong>Thử tìm bằng tên bộ đề hoặc số Test khác nhé.</div>
+            </section>
+
+            <section class="preparation">
+                <article class="tip-card">
+                    <h3>Trước khi bắt đầu</h3>
+                    <p>Đeo tai nghe khi làm Listening, chọn thời lượng 120 phút để mô phỏng kỳ thi L&amp;R và hạn chế rời khỏi màn hình.</p>
+                    <div class="tip-list"><span>🎧 Kiểm tra âm thanh</span><span>⏱️ Chọn thời gian</span><span>🏁 Nộp bài để xem kết quả</span></div>
+                </article>
+                <article class="notice-card">
+                    <h3>Cần ôn trước khi thi?</h3>
+                    <p>Luyện từng Part, củng cố ngữ pháp hoặc học từ vựng TOEIC trước khi quay lại làm đề.</p>
+                    <a href="parts.html">Đi tới lộ trình 7 Part →</a>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">VVT · Cùng học TOEIC từng ngày, tiến bộ từng đề.</footer>
+
+    <script>
+        const range = (from, to) => Array.from({ length: to - from + 1 }, (_, index) => from + index);
+        const collections = [
+            { key: 'ets-2026', filter: 'ets', icon: '✨', title: 'ETS 2026', detail: 'Bộ đề mới · Listening & Reading', badge: 'Mới cập nhật', prefix: 'ets-2026', tests: range(1, 10) },
+            { key: 'ets-2024', filter: 'ets', icon: '📘', title: 'ETS 2024', detail: '10 đề Listening & Reading', badge: '10 đề', prefix: 'ets-2024', tests: range(1, 10) },
+            { key: 'ets-2023', filter: 'ets', icon: '📙', title: 'ETS 2023', detail: '10 đề Listening & Reading', badge: '10 đề', prefix: 'ets-2023', tests: range(1, 10) },
+            { key: 'ets-2022', filter: 'ets', icon: '📗', title: 'ETS 2022', detail: '6 đề Listening & Reading', badge: '6 đề', prefix: 'ets-2022', tests: range(1, 6) },
+            { key: 'ets-2020', filter: 'ets', icon: '📕', title: 'ETS 2020', detail: '8 đề Listening & Reading', badge: '8 đề', prefix: 'ets-2020', tests: range(3, 10) },
+            { key: 'ets-2019', filter: 'ets', icon: '📔', title: 'ETS 2019', detail: '5 đề Listening & Reading', badge: '5 đề', prefix: 'ets-2019', tests: range(1, 5) },
+            { key: 'ets-2018', filter: 'ets', icon: '📓', title: 'ETS 2018', detail: '5 đề Listening & Reading', badge: '5 đề', prefix: 'ets-2018', tests: range(1, 5) },
+            { key: 'hackers-3', filter: 'hackers', icon: '📚', title: 'Hackers 3', detail: '10 đề Listening & Reading', badge: '10 đề', prefix: 'hacker-3', tests: range(1, 10) },
+            { key: 'hackers-2', filter: 'hackers', icon: '📒', title: 'Hackers 2', detail: '10 đề Listening & Reading', badge: '10 đề', prefix: 'hacker-2', tests: range(1, 10) },
+            { key: 'placement', filter: 'placement', icon: '🎯', title: 'Kiểm tra đầu vào', detail: '3 đề xác định trình độ', badge: '3 đề', prefix: 'test-dau-vao', tests: range(1, 3), shortMeta: 'Kiểm tra đầu vào' },
+            { key: 'sw', filter: 'sw', icon: '✍️', title: 'Speaking & Writing', detail: '10 bài thi nói và viết', badge: '10 đề', type: 'sw', tests: range(1, 10) }
+        ];
+
+        const collectionContainer = document.getElementById('test-collections');
+        const searchInput = document.getElementById('search-input');
+        const catalogCount = document.getElementById('catalog-count');
+        const emptyState = document.getElementById('empty-state');
+        let activeFilter = 'all';
+
+        function testHref(collection, number) {
+            if (collection.type === 'sw') return `toeic-practice-sw.html?test=${encodeURIComponent(`test ${number}`)}`;
+            if (collection.filter === 'placement') return `toeic-practice.html?test=${collection.prefix}-${number}`;
+            return `toeic-practice.html?test=${collection.prefix}-test-${number}`;
+        }
+
+        function testMeta(collection) {
+            if (collection.type === 'sw') return 'Speaking & Writing';
+            return collection.shortMeta || 'Listening & Reading';
+        }
+
+        function renderCollections() {
+            collectionContainer.innerHTML = collections.map(collection => `
+                <section class="test-collection" data-collection="${collection.key}" data-filter="${collection.filter}">
+                    <div class="collection-header">
+                        <div class="collection-title">
+                            <span class="collection-symbol" aria-hidden="true">${collection.icon}</span>
+                            <span><h3>${collection.title}</h3><p>${collection.detail}</p></span>
+                        </div>
+                        <span class="collection-badge">${collection.badge}</span>
+                    </div>
+                    <div class="test-grid">
+                        ${collection.tests.map(number => `
+                            <a class="test-card ${collection.type === 'sw' ? 'sw' : ''}" href="${testHref(collection, number)}" data-search="${collection.title} ${collection.detail} test ${number} ${collection.filter}">
+                                <span class="test-number">Test ${number}</span>
+                                <span class="test-meta">${testMeta(collection)}</span>
+                            </a>`).join('')}
+                    </div>
+                </section>`).join('');
+
+            document.getElementById('lr-count').textContent = `${collections.filter(collection => collection.filter !== 'sw').reduce((total, collection) => total + collection.tests.length, 0)} đề`;
+            document.getElementById('sw-count').textContent = `${collections.find(collection => collection.type === 'sw').tests.length} đề`;
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = searchInput.value.trim().toLocaleLowerCase('vi-VN');
+            let visibleTests = 0;
+            let visibleCollections = 0;
+
+            document.querySelectorAll('.test-collection').forEach(section => {
+                const collectionMatches = activeFilter === 'all' || section.dataset.filter === activeFilter;
+                let cardsInSection = 0;
+
+                section.querySelectorAll('.test-card').forEach(card => {
+                    const searchMatches = !query || card.dataset.search.toLocaleLowerCase('vi-VN').includes(query);
+                    const visible = collectionMatches && searchMatches;
+                    card.classList.toggle('hidden', !visible);
+                    if (visible) cardsInSection += 1;
+                });
+
+                section.classList.toggle('hidden', cardsInSection === 0);
+                if (cardsInSection > 0) {
+                    visibleCollections += 1;
+                    visibleTests += cardsInSection;
+                }
+            });
+
+            catalogCount.textContent = `${visibleTests} đề khả dụng`;
+            emptyState.classList.toggle('hidden', visibleCollections > 0);
+        }
+
+        document.querySelectorAll('.filter-button').forEach(button => {
+            button.addEventListener('click', () => {
+                activeFilter = button.dataset.filter;
+                document.querySelectorAll('.filter-button').forEach(item => item.classList.toggle('active', item === button));
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+        renderCollections();
+    </script>
+</body>
+</html>

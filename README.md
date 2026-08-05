@@ -27,6 +27,12 @@
 - Nhắc nhở từ cần ôn hôm nay
 - Theo dõi số lần ôn tập
 
+### 5. **Thi Thử TOEIC Trên Máy Tính** 💻
+- Chọn đề, thời lượng và các Part muốn làm từ trang `toeic-tests.html`
+- Phòng thi mô phỏng có đồng hồ, lưới điều hướng câu, gắn cờ, lưu bài dở dang và chấm điểm
+- Bao gồm 77 bộ dữ liệu Listening & Reading trong thư mục `Data/`
+- Toàn bộ ảnh và audio Listening & Reading (hơn 3 GB), dữ liệu Speaking & Writing và phòng thi S&W đã nằm trong dự án, nên có thể dùng độc lập.
+
 ## 🧠 Phương pháp học Spaced Repetition
 
 ### Chu kỳ ôn tập tối ưu:
@@ -64,12 +70,14 @@ Từ vựng được chia theo chủ đề:
 
 ## 🚀 Cách sử dụng
 
-1. Mở file `index.html` bằng trình duyệt
+1. Chạy file `start-local-site.cmd` rồi mở trang chủ được hiện trong trình duyệt.
 2. Chọn chế độ học phù hợp:
    - **Flashcard**: Học từ mới
    - **Quiz**: Kiểm tra kiến thức
    - **Search**: Tra cứu nhanh
    - **Review**: Ôn tập theo lịch
+
+> Không mở trực tiếp các file HTML bằng cách nhấp đúp. Ứng dụng cần web server cục bộ để tải dữ liệu JSON của từ vựng và đề thi; file `start-local-site.cmd` đã làm việc này tự động.
 
 3. Tiến độ học tập được lưu tự động trong LocalStorage
 
