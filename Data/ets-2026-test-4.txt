@@ -47,7 +47,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 1.1",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85697&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-1.jpg&quot; alt=&quot;&quot; width=&quot;1296&quot; height=&quot;904&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85697&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-1.jpg&quot; alt=&quot;&quot; width=&quot;1296&quot; height=&quot;904&quot; /&gt;",
                     "is_grouped": false,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-01.mp3",
                     "type": "listening"
@@ -89,7 +89,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 1.2",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85708&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-2.jpg&quot; alt=&quot;&quot; width=&quot;1294&quot; height=&quot;922&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85708&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-2.jpg&quot; alt=&quot;&quot; width=&quot;1294&quot; height=&quot;922&quot; /&gt;",
                     "is_grouped": false,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-02.mp3",
                     "type": "listening"
@@ -131,7 +131,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 1.3",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85712&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-3.jpg&quot; alt=&quot;&quot; width=&quot;1290&quot; height=&quot;924&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85712&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-3.jpg&quot; alt=&quot;&quot; width=&quot;1290&quot; height=&quot;924&quot; /&gt;",
                     "is_grouped": false,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-03.mp3",
                     "type": "listening"
@@ -173,7 +173,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 1.4",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85715&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-4.jpg&quot; alt=&quot;&quot; width=&quot;1282&quot; height=&quot;930&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85715&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-4.jpg&quot; alt=&quot;&quot; width=&quot;1282&quot; height=&quot;930&quot; /&gt;",
                     "is_grouped": false,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-04.mp3",
                     "type": "listening"
@@ -215,7 +215,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 1.5",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85721&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-5.jpg&quot; alt=&quot;&quot; width=&quot;1292&quot; height=&quot;914&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85721&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-5.jpg&quot; alt=&quot;&quot; width=&quot;1292&quot; height=&quot;914&quot; /&gt;",
                     "is_grouped": false,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-05.mp3",
                     "type": "listening"
@@ -257,7 +257,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 1.6",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85728&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-6-1.jpg&quot; alt=&quot;&quot; width=&quot;850&quot; height=&quot;1200&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85728&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-6-1.jpg&quot; alt=&quot;&quot; width=&quot;850&quot; height=&quot;1200&quot; /&gt;",
                     "is_grouped": false,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-06-1.mp3",
                     "type": "listening"
@@ -2348,7 +2348,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. PART 3.62-64",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85936&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-62.jpg&quot; alt=&quot;&quot; width=&quot;618&quot; height=&quot;544&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85936&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-62.jpg&quot; alt=&quot;&quot; width=&quot;618&quot; height=&quot;544&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-62-64.mp3",
                     "type": "listening"
@@ -2454,7 +2454,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. PART 3.65-67",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85922&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-65.jpg&quot; alt=&quot;&quot; width=&quot;632&quot; height=&quot;510&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85922&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-65.jpg&quot; alt=&quot;&quot; width=&quot;632&quot; height=&quot;510&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-65-67.mp3",
                     "type": "listening"
@@ -2560,7 +2560,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. PART 3.68-70",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85904&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-68.jpg&quot; alt=&quot;&quot; width=&quot;578&quot; height=&quot;224&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-85904&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-68.jpg&quot; alt=&quot;&quot; width=&quot;578&quot; height=&quot;224&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-68-70.mp3",
                     "type": "listening"
@@ -3514,7 +3514,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. PART 4.95-97",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-86041&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-95.jpg&quot; alt=&quot;&quot; width=&quot;522&quot; height=&quot;442&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-86041&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-95.jpg&quot; alt=&quot;&quot; width=&quot;522&quot; height=&quot;442&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-95-97.mp3",
                     "type": "listening"
@@ -3620,7 +3620,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. PART 4.98-100",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-86048&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-98.jpg&quot; alt=&quot;&quot; width=&quot;650&quot; height=&quot;204&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-86048&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-98.jpg&quot; alt=&quot;&quot; width=&quot;650&quot; height=&quot;204&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": "./Media/ets 2026 test 4/audio/zenlish-test-04-98-100.mp3",
                     "type": "listening"
@@ -5018,7 +5018,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 6. 131-134",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88470&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-131-134-4.jpg&quot; alt=&quot;&quot; width=&quot;1600&quot; height=&quot;1016&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88470&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-131-134-4.jpg&quot; alt=&quot;&quot; width=&quot;1600&quot; height=&quot;1016&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -5156,7 +5156,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 6. 135-138",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88483&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-135-138-3.jpg&quot; alt=&quot;&quot; width=&quot;1600&quot; height=&quot;688&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88483&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-135-138-3.jpg&quot; alt=&quot;&quot; width=&quot;1600&quot; height=&quot;688&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -5294,7 +5294,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 6. 139-142",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88476&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-139-142-3.jpg&quot; alt=&quot;&quot; width=&quot;1600&quot; height=&quot;768&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88476&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-139-142-3.jpg&quot; alt=&quot;&quot; width=&quot;1600&quot; height=&quot;768&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -5432,7 +5432,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 6. 143-146",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88480&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-143-146-2.jpg&quot; alt=&quot;&quot; width=&quot;1372&quot; height=&quot;1156&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88480&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-143-146-2.jpg&quot; alt=&quot;&quot; width=&quot;1372&quot; height=&quot;1156&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -5506,7 +5506,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 147-148",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88486&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-183855.jpg&quot; alt=&quot;&quot; width=&quot;796&quot; height=&quot;370&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88486&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-183855.jpg&quot; alt=&quot;&quot; width=&quot;796&quot; height=&quot;370&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -5612,7 +5612,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 149-151",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88489&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-184645.jpg&quot; alt=&quot;&quot; width=&quot;759&quot; height=&quot;263&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88489&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-184645.jpg&quot; alt=&quot;&quot; width=&quot;759&quot; height=&quot;263&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -5686,7 +5686,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 152-153",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88492&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-184936.jpg&quot; alt=&quot;&quot; width=&quot;809&quot; height=&quot;546&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88492&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-184936.jpg&quot; alt=&quot;&quot; width=&quot;809&quot; height=&quot;546&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -5792,7 +5792,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 154-156",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88495&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-185312.jpg&quot; alt=&quot;&quot; width=&quot;794&quot; height=&quot;573&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88495&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-185312.jpg&quot; alt=&quot;&quot; width=&quot;794&quot; height=&quot;573&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -5866,7 +5866,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 157-158",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88501&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-185601.jpg&quot; alt=&quot;&quot; width=&quot;604&quot; height=&quot;650&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88501&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-185601.jpg&quot; alt=&quot;&quot; width=&quot;604&quot; height=&quot;650&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -5972,7 +5972,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 159-161",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88508&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-185805.jpg&quot; alt=&quot;&quot; width=&quot;643&quot; height=&quot;473&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88508&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-185805.jpg&quot; alt=&quot;&quot; width=&quot;643&quot; height=&quot;473&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -6046,7 +6046,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 162-163",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88516&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-190016.jpg&quot; alt=&quot;&quot; width=&quot;638&quot; height=&quot;493&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88516&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-190016.jpg&quot; alt=&quot;&quot; width=&quot;638&quot; height=&quot;493&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -6184,7 +6184,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 164-167",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88525&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-190313.jpg&quot; alt=&quot;&quot; width=&quot;634&quot; height=&quot;422&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88525&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-27-190313.jpg&quot; alt=&quot;&quot; width=&quot;634&quot; height=&quot;422&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -6322,7 +6322,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 168-171",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88945&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-121438.jpg&quot; alt=&quot;&quot; width=&quot;802&quot; height=&quot;532&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88945&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-121438.jpg&quot; alt=&quot;&quot; width=&quot;802&quot; height=&quot;532&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -6460,7 +6460,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 172-175",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88955&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-122523.jpg&quot; alt=&quot;&quot; width=&quot;654&quot; height=&quot;705&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88955&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-122523.jpg&quot; alt=&quot;&quot; width=&quot;654&quot; height=&quot;705&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -6630,7 +6630,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 176-180",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88964&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-124550.jpg&quot; alt=&quot;&quot; width=&quot;648&quot; height=&quot;756&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88964&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-124550.jpg&quot; alt=&quot;&quot; width=&quot;648&quot; height=&quot;756&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -6800,7 +6800,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 181-185",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88966&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-124636.jpg&quot; alt=&quot;&quot; width=&quot;602&quot; height=&quot;781&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88966&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-124636.jpg&quot; alt=&quot;&quot; width=&quot;602&quot; height=&quot;781&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -6970,7 +6970,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 186-190",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88974&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125003.jpg&quot; alt=&quot;&quot; width=&quot;611&quot; height=&quot;694&quot; /&gt; &lt;img class=&quot;aligncenter size-full wp-image-88975&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125009.jpg&quot; alt=&quot;&quot; width=&quot;586&quot; height=&quot;314&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88974&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125003.jpg&quot; alt=&quot;&quot; width=&quot;611&quot; height=&quot;694&quot; /&gt; &lt;img class=&quot;aligncenter size-full wp-image-88975&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125009.jpg&quot; alt=&quot;&quot; width=&quot;586&quot; height=&quot;314&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -7140,7 +7140,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 191-195",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88984&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125824.jpg&quot; alt=&quot;&quot; width=&quot;550&quot; height=&quot;688&quot; /&gt; &lt;img class=&quot;aligncenter size-full wp-image-88985&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125838.jpg&quot; alt=&quot;&quot; width=&quot;536&quot; height=&quot;264&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88984&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125824.jpg&quot; alt=&quot;&quot; width=&quot;550&quot; height=&quot;688&quot; /&gt; &lt;img class=&quot;aligncenter size-full wp-image-88985&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125838.jpg&quot; alt=&quot;&quot; width=&quot;536&quot; height=&quot;264&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
@@ -7310,7 +7310,7 @@
                         }
                     ],
                     "title": "ETS 2026 TEST 4. Part 7. 196-200",
-                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88978&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125457.jpg&quot; alt=&quot;&quot; width=&quot;546&quot; height=&quot;731&quot; /&gt; &lt;img class=&quot;aligncenter size-full wp-image-88979&quot; src=&quot;./Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125522.jpg&quot; alt=&quot;&quot; width=&quot;490&quot; height=&quot;251&quot; /&gt;",
+                    "content": "&lt;img class=&quot;aligncenter size-full wp-image-88978&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125457.jpg&quot; alt=&quot;&quot; width=&quot;546&quot; height=&quot;731&quot; /&gt; &lt;img class=&quot;aligncenter size-full wp-image-88979&quot; src=&quot;Media/ets 2026 test 4/images/zenlish-anh-chup-man-hinh-2025-12-28-125522.jpg&quot; alt=&quot;&quot; width=&quot;490&quot; height=&quot;251&quot; /&gt;",
                     "is_grouped": true,
                     "audio_url": false,
                     "type": "reading"
