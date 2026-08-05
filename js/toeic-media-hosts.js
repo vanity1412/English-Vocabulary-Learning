@@ -120,7 +120,7 @@
     if (!html) return html;
 
     return String(html).replace(
-      /(src|href)\s*=\s*(["'])((?:Media|SW Media|Sample)\/[^"']+)\2/gi,
+      /(src|href)\s*=\s*(["'])(\.\/(?:Media|SW Media|Sample)\/[^"']+|(?:Media|SW Media|Sample)\/[^"']+)\2/gi,
       (match, attribute, quote, path) => `${attribute}=${quote}${resolveToeicAsset(path)}${quote}`
     );
   }
