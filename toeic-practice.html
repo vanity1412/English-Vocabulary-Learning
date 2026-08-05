@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VVT TOEIC – Phòng thi mô phỏng</title>
     <link rel="icon" href="toeic-logo.png" type="image/png">
+    <script src="js/toeic-media-hosts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -492,17 +493,12 @@
     <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzWAINM3W5jAJA0Jhv4Ha_kPPApcrbVi4ANAY0gQ6oB2gUuLv4loTglWov4dwEXTQdz/exec";
         // Dữ liệu đề, ảnh và audio đều nằm trong dự án này để có thể chạy độc lập.
-        const TOEIC_MEDIA_ROOT = './';
-
         function resolveToeicMedia(path) {
-            if (!path || /^(?:https?:|data:|#|\/)/i.test(path)) return path;
-            return path.startsWith('Media/') ? TOEIC_MEDIA_ROOT + path : path;
+            return window.resolveToeicAsset ? window.resolveToeicAsset(path) : path;
         }
 
         function resolveToeicMediaInHtml(html) {
-            return html.replace(/(src|href)\s*=\s*(["'])(Media\/[^"']+)\2/gi, (match, attribute, quote, path) => {
-                return `${attribute}=${quote}${resolveToeicMedia(path)}${quote}`;
-            });
+            return window.resolveToeicAssetInHtml ? window.resolveToeicAssetInHtml(html) : html;
         }
 
         const urlParams = new URLSearchParams(window.location.search);

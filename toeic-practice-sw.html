@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VVT TOEIC – Speaking & Writing</title>
     <link rel="icon" href="toeic-logo.png" type="image/png">
+    <script src="js/toeic-media-hosts.js"></script>
     <style>
         body { font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; color: #333; line-height: 1.5; zoom: 1.25; }
         * { box-sizing: border-box; }
@@ -330,6 +331,14 @@
         let timeLeft = 0;
         let currentMode = "practice"; // Khai báo biến an toàn chống lỗi văng nút Bắt đầu
         let activeSharedTimerId = null; 
+
+        function resolveToeicMedia(path) {
+            return window.resolveToeicAsset ? window.resolveToeicAsset(path) : path;
+        }
+
+        function resolveToeicMediaInHtml(html) {
+            return window.resolveToeicAssetInHtml ? window.resolveToeicAssetInHtml(html) : html;
+        }
         
         function playBeep() {
             try {
@@ -526,6 +535,7 @@
                 }
             }
 
+            mediaHtml = resolveToeicMediaInHtml(mediaHtml);
             document.getElementById('media-box').innerHTML = mediaHtml;
             
             // Data Sanitization: Clean up redundant images and formatting
@@ -547,6 +557,7 @@
                 rawQText = situationHtml + rawQText;
             }
             
+            rawQText = resolveToeicMediaInHtml(rawQText);
             document.getElementById('text-box').innerHTML = rawQText;
 
             if (shouldShowIntro && introIndex !== -1 && swData.intro && swData.intro[introIndex]) {
@@ -569,6 +580,7 @@
                     rawIntro = rawIntro.replace(/<img/gi, '<img onerror="this.style.display=\\\'none\\\'"');
                 }
                 
+                rawIntro = resolveToeicMediaInHtml(rawIntro);
                 introHtml += rawIntro;
             }
 
@@ -1096,7 +1108,7 @@
                 
                 if (filename) {
                     try {
-                        let descRes = await fetch('SW Media/descriptions.txt');
+                        let descRes = await fetch(resolveToeicMedia('SW Media/descriptions.txt'));
                         if (descRes.ok) {
                             let descText = await descRes.text();
                             let lines = descText.split('\n');

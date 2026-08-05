@@ -1,5 +1,0 @@
-Media/** filter=lfs diff=lfs merge=lfs -text
-"SW Media/**" filter=lfs diff=lfs merge=lfs -text
-Sample/** filter=lfs diff=lfs merge=lfs -text
-*.mp3 filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
