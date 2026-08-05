@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VVT TOEIC – Phòng thi mô phỏng</title>
     <link rel="icon" href="toeic-logo.png" type="image/png">
-    <script src="js/toeic-media-hosts.js?v=20260805-media-fallback"></script>
+    <script src="js/toeic-media-hosts.js?v=20260805-media-retry2"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -618,7 +618,7 @@
             let displayName = fileName.replace(".txt", "").replace(".json", "").replace(/-/g, " ").toUpperCase();
             document.getElementById('setup-title').innerText = displayName;
             
-            fetch('Data/' + encodeURIComponent(fileName) + '?v=20260805-media-fallback', { cache: 'no-store' })
+            fetch('Data/' + encodeURIComponent(fileName) + '?v=20260805-media-retry2', { cache: 'no-store' })
             .then(response => {
                 if (!response.ok) throw new Error("Không thể tải file dữ liệu nội bộ.");
                 return response.text();
