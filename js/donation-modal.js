@@ -83,11 +83,11 @@ class DonationModal {
 
                     <div class="donation-footer">
                         <div class="donation-actions">
-                            <button class="btn-supported" onclick="donationModal.markSupported()">
-                                Đã ủng hộ / Không hiện nữa ✅
-                            </button>
                             <button class="btn-continue" onclick="donationModal.close()">
-                                Tiếp Tục Học 📚
+                                Tiếp tục học
+                            </button>
+                            <button class="btn-supported" onclick="donationModal.markSupported()">
+                                Đã ủng hộ
                             </button>
                         </div>
                         <p class="thank-you-text">Cảm ơn bạn rất nhiều! ❤️</p>

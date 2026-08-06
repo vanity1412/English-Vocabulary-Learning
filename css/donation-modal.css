@@ -209,8 +209,9 @@
 .donation-actions {
     display: flex;
     align-items: center;
+    flex: 1 1 auto;
     gap: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .btn-continue,
@@ -228,6 +229,7 @@
 }
 
 .btn-supported {
+    margin-left: auto;
     background: linear-gradient(115deg, #16a34a 0%, #22c55e 100%);
     box-shadow: 0 7px 15px rgba(34, 197, 94, .22);
 }
