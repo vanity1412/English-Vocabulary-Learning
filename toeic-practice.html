@@ -31,6 +31,18 @@
         .part-item { display: flex; align-items: center; background: #f8f9fa; padding: 10px 15px; border-radius: 4px; border: 1px solid #e9ecef; }
         .part-item input { transform: scale(1.2); margin-right: 10px; }
         .part-item.disabled { opacity: 0.5; pointer-events: none; }
+
+        .practice-grading-selection { border: 1px solid #e7edf3; padding: 18px 20px; border-radius: 4px; margin: 18px 0 30px; background: #fbfcfe; }
+        .practice-grading-head { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 12px; }
+        .practice-grading-head label { margin: 0; }
+        .practice-grading-hint { font-size: 13px; color: #5f6f80; margin-bottom: 12px; }
+        .practice-grading-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .practice-grading-card { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #dfe6ee; border-radius: 4px; padding: 12px 14px; cursor: pointer; font-family: inherit; font-size: 16px; font-weight: 700; color: #243447; text-align: left; transition: 0.2s; }
+        .practice-grading-card:hover { border-color: #5ba4e5; background: #f4f9ff; }
+        .practice-grading-card input { transform: scale(1.15); margin: 0; }
+        .practice-grading-card span { line-height: 1.35; }
+        .practice-back-btn { background: #eef2f6; border: 1px solid #d5dde6; color: #34495e; border-radius: 4px; padding: 7px 12px; cursor: pointer; font-weight: 700; font-family: inherit; }
+        .practice-back-btn:hover { background: #e2e8ef; }
         
         /* Nút chế độ làm bài */
         .action-buttons { display: flex; gap: 20px; justify-content: center; margin-top: 30px;}
@@ -57,7 +69,7 @@
         .btn-grid { background: rgba(255,255,255,0.2); border: none; color: white; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 18px; }
         
         .shortcut-tooltip { background: rgba(255,255,255,0.1); border: none; color: white; border-radius: 50%; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold; cursor: help; position: relative; margin-right: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
-        .shortcut-tooltip::after { content: "[Phím Cách]: Nghe lại Audio \A [←]: Câu trước \A [→]: Câu tiếp \A [↑]: Hiện chữ"; position: absolute; top: 40px; right: 0; background: #333; color: #fff; padding: 12px; border-radius: 4px; white-space: pre; font-size: 14px; opacity: 0; visibility: hidden; transition: 0.2s; pointer-events: none; z-index: 1001; text-align: left; line-height: 1.6; font-weight: normal; box-shadow: 0 4px 6px rgba(0,0,0,0.3);}
+        .shortcut-tooltip::after { content: "[Phím Cách]: Nghe lại Audio \A [Ctrl]: Tua lại 5s \A [←]: Câu trước \A [→]: Câu tiếp \A [↑]: Hiện chữ"; position: absolute; top: 40px; right: 0; background: #333; color: #fff; padding: 12px; border-radius: 4px; white-space: pre; font-size: 14px; opacity: 0; visibility: hidden; transition: 0.2s; pointer-events: none; z-index: 1001; text-align: left; line-height: 1.6; font-weight: normal; box-shadow: 0 4px 6px rgba(0,0,0,0.3);}
         .shortcut-tooltip:hover::after { opacity: 1; visibility: visible; }
 
         /* Nút đổi màu Banner */
@@ -148,6 +160,13 @@
         #nav-modal.active { right: 0; }
         .nav-modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ddd; padding-bottom: 15px; margin-bottom: 20px; font-weight: 700; font-size: 18px; color: #333;}
         .close-nav { cursor: pointer; color: #666; font-size: 24px; background: none; border: none; font-weight: bold; }
+        .review-filter-panel { background: #fff; border: 1px solid #e1e4e8; border-radius: 6px; padding: 12px; margin-bottom: 18px; }
+        .review-filter-title { font-size: 13px; font-weight: 700; color: #555; margin-bottom: 8px; }
+        .review-filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .review-filter-btn { border: 1px solid #d8dee6; background: #f8f9fa; color: #333; border-radius: 4px; padding: 8px 6px; cursor: pointer; font-size: 13px; font-weight: 700; font-family: inherit; }
+        .review-filter-btn.active { background: #043b5c; border-color: #043b5c; color: white; }
+        .review-filter-hidden { display: none !important; }
+        .review-jump-btn { width: 100%; margin-top: 8px; border: none; background: #e25b45; color: white; border-radius: 4px; padding: 9px 8px; cursor: pointer; font-size: 13px; font-weight: 700; font-family: inherit; }
         
         .nav-part-group { margin-bottom: 25px; }
         .nav-part-title { font-size: 18px; font-weight: 400; color: #555; margin-bottom: 15px; }
@@ -163,6 +182,8 @@
         .grid-btn.correct-ans { background: #719f4a !important; }
         .grid-btn.wrong-ans { background: #e25b45 !important; }
         .grid-btn.marked { background: #ffc107 !important; color: #111 !important; box-shadow: 0 0 0 2px #fff, 0 0 0 4px #ffc107 !important; }
+        .grid-btn.correct-ans.marked { background: #719f4a !important; color: #fff !important; box-shadow: 0 0 0 2px #fff, 0 0 0 4px #ffc107 !important; }
+        .grid-btn.wrong-ans.marked { background: #e25b45 !important; color: #fff !important; box-shadow: 0 0 0 2px #fff, 0 0 0 4px #ffc107 !important; }
         
         /* --- CÔNG CỤ TƯƠNG TÁC (HIGHLIGHT & DRAW) --- */
         #drawing-canvas { position: fixed; top: 75px; left: 0; width: 100%; height: calc(100% - 75px); pointer-events: none; z-index: 900; }
@@ -192,6 +213,11 @@
         body.dark-mode .form-group select { background: #333; color: #fff; border-color: #555; }
         body.dark-mode .part-selection { border-color: #333; }
         body.dark-mode .part-item { background: #2a2a2a; border-color: #444; }
+        body.dark-mode .practice-grading-selection { background: #1e1e1e; border-color: #333; }
+        body.dark-mode .practice-grading-card { background: #2a2a2a; border-color: #444; color: #e0e0e0; }
+        body.dark-mode .practice-grading-card:hover { background: #333; border-color: #5ba4e5; }
+        body.dark-mode .practice-grading-hint { color: #aaa; }
+        body.dark-mode .practice-back-btn { background: #333; border-color: #444; color: #e0e0e0; }
         body.dark-mode .sub-header { background: #1e1e1e; border-bottom-color: #333; }
         body.dark-mode #current-part-label { color: #5ba4e5; }
         body.dark-mode .left-panel, body.dark-mode .right-panel { background: #1e1e1e; border-color: #333; box-shadow: none; }
@@ -206,6 +232,10 @@
         body.dark-mode #nav-modal { background: #1e1e1e; border-left-color: #333; }
         body.dark-mode .nav-modal-header { color: #e0e0e0; border-bottom-color: #444; }
         body.dark-mode .nav-part-title { color: #aaa; }
+        body.dark-mode .review-filter-panel { background: #2a2a2a; border-color: #444; }
+        body.dark-mode .review-filter-title { color: #ddd; }
+        body.dark-mode .review-filter-btn { background: #333; color: #e0e0e0; border-color: #555; }
+        body.dark-mode .review-filter-btn.active { background: #5ba4e5; border-color: #5ba4e5; color: #111; }
         body.dark-mode .score-modal { background: #1e1e1e; }
         body.dark-mode .score-modal h2, body.dark-mode .score-row, body.dark-mode .score-total { color: #e0e0e0; }
         body.dark-mode .part-stats-btn { background: #333; color: #e0e0e0; border-color: #444; }
@@ -255,6 +285,9 @@
             .btn-transcript { font-size: 11px; padding: 5px; }
             .option-label { font-size: 14px; }
             .speed-controls { flex-wrap: wrap; }
+            .practice-grading-head { flex-direction: column; align-items: stretch; }
+            .practice-grading-grid { grid-template-columns: 1fr; }
+            .review-filter-grid { grid-template-columns: 1fr; }
             
             /* Menu danh sách câu hỏi */
             #nav-modal { width: 100%; right: -100%; top: 0; height: 100vh; }
@@ -345,8 +378,24 @@
             </div>
 
             <div class="action-buttons">
-                <button class="btn-mode btn-practice" onclick="startTest('practice')">Luyện Tập</button>
+                <button class="btn-mode btn-practice" onclick="showPracticeGradingOptions()">Luyện Tập</button>
                 <button class="btn-mode btn-exam" onclick="startTest('exam')">Giao Diện Thi Thật</button>
+            </div>
+
+            <div class="form-group practice-grading-selection hidden" id="practice-grading-selection">
+                <div class="practice-grading-head">
+                    <label>Kiểu luyện tập</label>
+                    <button type="button" class="practice-back-btn" onclick="hidePracticeGradingOptions()">Quay lại</button>
+                </div>
+                <div class="practice-grading-hint" id="practice-grading-hint"></div>
+                <div class="practice-grading-grid">
+                    <button type="button" class="practice-grading-card" onclick="startPracticeWithGrading('instant')">
+                        <span>Chấm ngay khi chọn</span>
+                    </button>
+                    <button type="button" class="practice-grading-card" onclick="startPracticeWithGrading('final')">
+                        <span>Làm hết Part rồi chấm</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -430,6 +479,18 @@
                 Danh sách câu hỏi
                 <button class="close-nav" onclick="toggleNav()">&#10005;</button>
             </div>
+            <div id="review-filter-panel" class="review-filter-panel hidden">
+                <div class="review-filter-title">Lọc khi dò bài</div>
+                <div class="review-filter-grid">
+                    <button type="button" class="review-filter-btn active" data-filter="all" onclick="setReviewFilter('all')">Tất cả</button>
+                    <button type="button" class="review-filter-btn" data-filter="wrong" onclick="setReviewFilter('wrong')">Câu sai</button>
+                    <button type="button" class="review-filter-btn" data-filter="correct" onclick="setReviewFilter('correct')">Câu đúng</button>
+                    <button type="button" class="review-filter-btn" data-filter="marked" onclick="setReviewFilter('marked')">Gắn cờ</button>
+                    <button type="button" class="review-filter-btn" data-filter="unanswered" onclick="setReviewFilter('unanswered')">Chưa làm</button>
+                    <button type="button" class="review-filter-btn" data-filter="answered" onclick="setReviewFilter('answered')">Đã làm</button>
+                </div>
+                <button type="button" class="review-jump-btn" onclick="jumpToFirstReview('wrong')">Ôn câu sai đầu tiên</button>
+            </div>
             <div class="grid-container" id="nav-grid-container"></div>
         </div>
 
@@ -441,7 +502,7 @@
                 <div class="score-row">Số câu đúng: <span id="m-total-correct" style="margin-left:5px;"> 0/200</span></div>
                 <div class="score-row">Listening: <span id="m-list-detail" style="margin-left:5px;"> 0/100 – 5 điểm</span></div>
                 <div class="score-row">Reading: <span id="m-read-detail" style="margin-left:5px;"> 0/100 – 5 điểm</span></div>
-                <div class="score-total">Tổng điểm: <span id="m-final-score" style="color: #dc3545; margin-left: 5px;"> 10 điểm</span></div>
+                <div class="score-total"><span id="m-final-label">Tổng điểm:</span> <span id="m-final-score" style="color: #dc3545; margin-left: 5px;"> 10 điểm</span></div>
                 
                 <!-- Nút xổ xuống chi tiết từng Part -->
                 <button class="part-stats-btn" onclick="document.getElementById('part-stats-box').classList.toggle('active')">
@@ -452,6 +513,7 @@
                 </div>
                 
                 <div class="modal-buttons">
+                    <button class="btn-modal-blue" onclick="reviewWrongAnswersFromModal()">ÔN CÂU SAI</button>
                     <button class="btn-modal-blue" onclick="closeScoreModal(true)">XEM ĐÁP ÁN</button>
                     <button class="btn-modal-red" onclick="closeScoreModal(false)">THOÁT</button>
                 </div>
@@ -530,6 +592,328 @@
         let savedNotes = {};
         let isValidForLeaderboard = false; // Biến đánh giá xem bài này có được lên Bảng xếp hạng không
         let g_selectedParts = []; // Biến lưu trữ danh sách Part đang làm dở
+        let practiceGradingMode = 'final'; // final = làm hết rồi chấm, instant = chọn là chấm ngay
+        let pendingPracticeGradingMode = null;
+        let isFullToeicTest = false;
+        let currentReviewFilter = 'all';
+        let ctrlSeekAudioPending = false;
+        const RESULT_REVIEW_TITLE = "Nội dung & Dịch nghĩa / Đáp án:";
+
+        let savedAudioSpeed = parseFloat(localStorage.getItem('win_audio_speed'));
+        if (!isNaN(savedAudioSpeed)) currentAudioSpeed = savedAudioSpeed;
+
+        function getSelectedPracticeGradingMode() {
+            let selected = document.querySelector('input[name="practice-grading-mode"]:checked');
+            return selected ? selected.value : practiceGradingMode;
+        }
+
+        function getPracticeGradingLabel(mode) {
+            return mode === 'instant' ? 'Chấm ngay khi chọn' : 'Làm hết Part rồi chấm';
+        }
+
+        function updatePracticeGradingHint() {
+            let hint = document.getElementById('practice-grading-hint');
+            if (!hint) return;
+            let lastMode = localStorage.getItem('win_last_practice_grading');
+            hint.innerText = lastMode ? `Lần trước bạn dùng: ${getPracticeGradingLabel(lastMode)}.` : 'Chọn cách luyện phù hợp trước khi vào bài.';
+        }
+
+        function setPracticeGradingMode(mode) {
+            practiceGradingMode = (mode === 'instant') ? 'instant' : 'final';
+            let targetInput = document.querySelector(`input[name="practice-grading-mode"][value="${practiceGradingMode}"]`);
+            if (targetInput) targetInput.checked = true;
+        }
+
+        function showPracticeGradingOptions() {
+            let gradingBox = document.getElementById('practice-grading-selection');
+            if (!gradingBox) return;
+            updatePracticeGradingHint();
+            gradingBox.classList.remove('hidden');
+            gradingBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function hidePracticeGradingOptions() {
+            let gradingBox = document.getElementById('practice-grading-selection');
+            if (gradingBox) gradingBox.classList.add('hidden');
+        }
+
+        function startPracticeWithGrading(mode) {
+            pendingPracticeGradingMode = mode;
+            setPracticeGradingMode(mode);
+            localStorage.setItem('win_last_practice_grading', practiceGradingMode);
+            startTest('practice');
+        }
+
+        function isInstantPracticeMode() {
+            return currentMode === 'practice' && practiceGradingMode === 'instant' && !isSubmitted;
+        }
+
+        function canShowReviewResult() {
+            return isSubmitted || isInstantPracticeMode();
+        }
+
+        function isListeningPart(partName) {
+            let normalizedPart = (partName || "").toUpperCase();
+            return normalizedPart.includes("PART 1") || normalizedPart.includes("PART 2") || normalizedPart.includes("PART 3") || normalizedPart.includes("PART 4");
+        }
+
+        function isDeferredInstantFeedbackPart(partName) {
+            let normalizedPart = (partName || "").toUpperCase();
+            return normalizedPart.includes("PART 3") || normalizedPart.includes("PART 4") || normalizedPart.includes("PART 6") || normalizedPart.includes("PART 7");
+        }
+
+        function isDeferredInstantFeedbackQuestion(index) {
+            let item = flatQuestions[index];
+            if (!item || !item.sq) return false;
+            return isDeferredInstantFeedbackPart(item.sq.term_name);
+        }
+
+        function canShowInstantQuestionResult(index) {
+            if (!isInstantPracticeMode() || !userAnswers[index]) return false;
+            let item = flatQuestions[index];
+            if (!item) return false;
+            return !isDeferredInstantFeedbackQuestion(index) || isGroupFullyAnswered(item.groupId);
+        }
+
+        function formatPercent(correct, total) {
+            if (!total) return "0%";
+            return `${Math.round((correct / total) * 100)}%`;
+        }
+
+        function getCorrectChoice(index) {
+            let item = flatQuestions[index];
+            if (!item || !item.sq || !item.sq.choices) return null;
+            let correctObj = item.sq.choices.find(c => c.choice_right_answer);
+            return correctObj ? correctObj.choice : null;
+        }
+
+        function getQuestionStatus(index) {
+            if (!userAnswers[index]) return 'unanswered';
+            if (!canShowReviewResult()) return 'answered';
+            if (isInstantPracticeMode() && !canShowInstantQuestionResult(index)) return 'answered';
+            return userAnswers[index] === getCorrectChoice(index) ? 'correct' : 'wrong';
+        }
+
+        function matchesReviewFilter(index, filter) {
+            if (filter === 'all') return true;
+            if (filter === 'marked') return !!markedQuestions[index];
+
+            let status = getQuestionStatus(index);
+            if (filter === 'answered') return !!userAnswers[index];
+            if ((filter === 'correct' || filter === 'wrong') && !canShowReviewResult()) return false;
+            return status === filter;
+        }
+
+        function updateReviewFilterPanel() {
+            let panel = document.getElementById('review-filter-panel');
+            if (!panel) return;
+            if (isSubmitted || isInstantPracticeMode()) panel.classList.remove('hidden');
+            else panel.classList.add('hidden');
+        }
+
+        function applyReviewFilter() {
+            updateReviewFilterPanel();
+
+            document.querySelectorAll('.review-filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === currentReviewFilter);
+            });
+
+            document.querySelectorAll('.grid-btn').forEach(btn => {
+                let idx = parseInt(btn.dataset.index || btn.id.replace('grid-btn-', ''), 10);
+                if (Number.isNaN(idx)) return;
+                btn.classList.toggle('review-filter-hidden', !matchesReviewFilter(idx, currentReviewFilter));
+            });
+        }
+
+        function setReviewFilter(filter) {
+            currentReviewFilter = filter || 'all';
+            applyReviewFilter();
+        }
+
+        function jumpToFirstReview(filter) {
+            let targetFilter = filter || currentReviewFilter || 'all';
+            let targetIndex = flatQuestions.findIndex((_, index) => matchesReviewFilter(index, targetFilter));
+            if (targetIndex === -1) {
+                alert("Không có câu phù hợp với bộ lọc này.");
+                return;
+            }
+            jumpToQuestion(targetIndex);
+        }
+
+        function reviewWrongAnswersFromModal() {
+            closeScoreModal(true);
+            setReviewFilter('wrong');
+            jumpToFirstReview('wrong');
+            document.getElementById('nav-modal').classList.add('active');
+        }
+
+        function buildPartStatsHtml(partStats) {
+            let statsHtml = '';
+            Object.keys(partStats).sort().forEach(p => {
+                let totalStr = partStats[p].total < 10 ? "0" + partStats[p].total : partStats[p].total;
+                statsHtml += `<div class="stat-row"><span>${p}</span> <span><b>${partStats[p].correct}</b> / ${totalStr} (${formatPercent(partStats[p].correct, partStats[p].total)})</span></div>`;
+            });
+            return statsHtml;
+        }
+
+        function setScoreModalSummary(summary) {
+            let totalPercent = formatPercent(summary.totalCorrect, summary.totalQuestions);
+
+            document.getElementById('m-total-correct').innerText = `${summary.totalCorrect}/${summary.totalQuestions} (${totalPercent})`;
+            if (summary.hasFullToeicScore) {
+                document.getElementById('m-list-detail').innerText = `${summary.listCorrect}/100 - ${summary.finalL} điểm`;
+                document.getElementById('m-read-detail').innerText = `${summary.readCorrect}/100 - ${summary.finalR} điểm`;
+                document.getElementById('m-final-label').innerText = "Tổng điểm:";
+                document.getElementById('m-final-score').innerText = `${summary.finalTotal} điểm`;
+            } else {
+                document.getElementById('m-list-detail').innerText = summary.listTotal ? `${summary.listCorrect}/${summary.listTotal} (${formatPercent(summary.listCorrect, summary.listTotal)})` : "Không làm";
+                document.getElementById('m-read-detail').innerText = summary.readTotal ? `${summary.readCorrect}/${summary.readTotal} (${formatPercent(summary.readCorrect, summary.readTotal)})` : "Không làm";
+                document.getElementById('m-final-label').innerText = "Tỷ lệ đúng:";
+                document.getElementById('m-final-score').innerText = totalPercent;
+            }
+        }
+
+        function isGroupFullyAnswered(groupId) {
+            let hasQuestion = false;
+            for (let i = 0; i < flatQuestions.length; i++) {
+                if (flatQuestions[i].groupId === groupId) {
+                    hasQuestion = true;
+                    if (!userAnswers[i]) return false;
+                }
+            }
+            return hasQuestion;
+        }
+
+        function getQuestionIndexesByGroup(groupId) {
+            let indexes = [];
+            for (let i = 0; i < flatQuestions.length; i++) {
+                if (flatQuestions[i].groupId === groupId) indexes.push(i);
+            }
+            return indexes;
+        }
+
+        function revealInstantExplanation(index) {
+            if (!canShowInstantQuestionResult(index)) return;
+            let item = flatQuestions[index];
+            if (!item || !item.sq) return;
+
+            let expBox = document.getElementById(`exp-${item.sq.index}`);
+            if (expBox) {
+                expBox.classList.remove('hidden');
+                expBox.querySelectorAll('.pre-submit-text').forEach(el => el.classList.remove('pre-submit-text'));
+                let titleEl = expBox.querySelector('h4');
+                if (titleEl) titleEl.innerText = RESULT_REVIEW_TITLE;
+            }
+        }
+
+        function revealInstantGroupTranscript(groupId) {
+            if (!isInstantPracticeMode() || !isGroupFullyAnswered(groupId)) return;
+
+            document.querySelectorAll('#left-transcript, #left-transcript-container, #left-transcript-eng, #left-transcript-vi').forEach(el => {
+                el.classList.remove('hidden');
+                el.style.display = 'block';
+                el.querySelectorAll('.pre-submit-text').forEach(child => child.classList.remove('pre-submit-text'));
+            });
+        }
+
+        function clearInstantFeedback(index) {
+            let item = flatQuestions[index];
+            document.querySelectorAll(`input[name="q-${index}"]`).forEach(input => {
+                let label = input.parentElement;
+                if (label) label.classList.remove('correct', 'wrong');
+            });
+
+            if (item && item.sq) {
+                let expBox = document.getElementById(`exp-${item.sq.index}`);
+                if (expBox) expBox.classList.add('hidden');
+
+                if (isDeferredInstantFeedbackQuestion(index) && !isGroupFullyAnswered(item.groupId)) {
+                    document.querySelectorAll('#left-transcript, #left-transcript-container, #left-transcript-eng, #left-transcript-vi').forEach(el => {
+                        el.classList.add('hidden');
+                        el.style.display = 'none';
+                    });
+                }
+            }
+
+            let gridBtn = document.getElementById(`grid-btn-${index}`);
+            if (gridBtn) {
+                gridBtn.classList.remove('correct-ans', 'wrong-ans');
+                if (userAnswers[index]) gridBtn.classList.add('answered');
+            }
+        }
+
+        function applyInstantGridFeedback(index) {
+            if (!userAnswers[index]) return;
+
+            let gridBtn = document.getElementById(`grid-btn-${index}`);
+            if (!gridBtn) return;
+
+            gridBtn.classList.remove('answered', 'correct-ans', 'wrong-ans');
+            if (!canShowInstantQuestionResult(index)) {
+                gridBtn.classList.add('answered');
+                return;
+            }
+
+            let correctChoice = getCorrectChoice(index);
+            gridBtn.classList.add(userAnswers[index] === correctChoice ? 'correct-ans' : 'wrong-ans');
+        }
+
+        function syncInstantGridFeedback() {
+            if (!isInstantPracticeMode()) return;
+
+            for (let i = 0; i < flatQuestions.length; i++) {
+                applyInstantGridFeedback(i);
+            }
+        }
+
+        function applyInstantFeedback(index) {
+            if (!isInstantPracticeMode() || !userAnswers[index]) return;
+            if (!canShowInstantQuestionResult(index)) {
+                clearInstantFeedback(index);
+                return;
+            }
+
+            let correctChoice = getCorrectChoice(index);
+            document.querySelectorAll(`input[name="q-${index}"]`).forEach(input => {
+                input.checked = (input.value === userAnswers[index]);
+                let label = input.parentElement;
+                if (!label) return;
+                label.classList.remove('correct', 'wrong');
+                if (input.value === correctChoice) {
+                    label.classList.add('correct');
+                } else if (input.value === userAnswers[index]) {
+                    label.classList.add('wrong');
+                }
+            });
+
+            applyInstantGridFeedback(index);
+            revealInstantExplanation(index);
+            revealInstantGroupTranscript(flatQuestions[index].groupId);
+        }
+
+        function applyInstantFeedbackForGroup(groupId) {
+            getQuestionIndexesByGroup(groupId).forEach(index => {
+                if (userAnswers[index]) applyInstantFeedback(index);
+            });
+        }
+
+        function syncInstantFeedbackForCurrentGroup() {
+            if (!isInstantPracticeMode()) return;
+
+            for (let i = 0; i < flatQuestions.length; i++) {
+                if (flatQuestions[i].groupId === currentGroupId && userAnswers[i]) {
+                    applyInstantFeedback(i);
+                }
+            }
+        }
+
+        function updatePracticeSubmitLabel() {
+            let btnSubmit = document.getElementById('btn-submit');
+            if (!btnSubmit || isSubmitted) return;
+            btnSubmit.innerText = isInstantPracticeMode() ? "XEM ĐIỂM" : "NỘP BÀI";
+            btnSubmit.style.backgroundColor = "#27ae60";
+            btnSubmit.onclick = submitTest;
+        }
 
         // CÔNG TẮC BẬT/TẮT NÚT HIỆN CHỮ
         // Chỉnh thành "true" nếu bạn muốn nó hiện lại, hiện tại đang "false" (tắt)
@@ -635,6 +1019,7 @@
                 let shareMode = urlParams.get('mode');
                 let shareParts = urlParams.get('parts');
                 let shareTime = urlParams.get('time');
+                let shareGrading = urlParams.get('grading');
                 let isResumeSignal = urlParams.get('resume');
 
                 if (autoRestartMode) {
@@ -642,7 +1027,10 @@
                     // Phục hồi chính xác Thời gian và các Part đã chọn trước đó
                     let savedTime = sessionStorage.getItem('win_restart_time');
                     let savedParts = sessionStorage.getItem('win_restart_parts');
+                    let savedGrading = sessionStorage.getItem('win_restart_grading');
                     if (savedTime) document.getElementById('time-select').value = savedTime;
+                    if (savedGrading) setPracticeGradingMode(savedGrading);
+                    sessionStorage.removeItem('win_restart_grading');
                     if (savedParts) {
                         let partsArray = savedParts.split(',');
                         availableParts.forEach(part => {
@@ -654,6 +1042,7 @@
                 } else if (shareMode && shareParts) {
                     // Bắt được link chia sẻ -> Ép thông số và chạy thẳng vào test
                     if (shareTime) document.getElementById('time-select').value = shareTime;
+                    if (shareGrading) setPracticeGradingMode(shareGrading);
                     
                     if (shareParts !== 'all') {
                         let partsArray = shareParts.split(',');
@@ -679,6 +1068,7 @@
                     if (savedProgress) {
                         let parsed = JSON.parse(savedProgress);
                         if (parsed.currentMode) resumeMode = parsed.currentMode; // Trả về đúng chế độ thi/luyện tập
+                        if (parsed.practiceGradingMode) setPracticeGradingMode(parsed.practiceGradingMode);
                     }
                     startTest(resumeMode);
                 } else if (urlParams.get('historyIndex') !== null) {
@@ -794,6 +1184,7 @@
                         currentQIndex: 0,
                         answeredQuestions: pastTest.details.totalQuestions,
                         currentMode: 'exam',
+                        practiceGradingMode: pastTest.details.practiceGradingMode || 'final',
                         selectedParts: pastTest.details.selectedParts || availableParts
                     };
                     isSubmitted = true; // Ép hệ thống hiểu là bài đã nộp để hiện màu đúng/sai
@@ -808,6 +1199,7 @@
                                 gridBtn.className = isCorrect ? "grid-btn correct-ans" : "grid-btn wrong-ans";
                             }
                         });
+                        applyReviewFilter();
                     }, 200);
 
                     // Sửa lại nút Nộp bài thành nút Xem Bảng Điểm
@@ -817,18 +1209,24 @@
                             btnSubmit.innerText = "XEM LẠI BẢNG ĐIỂM";
                             btnSubmit.style.backgroundColor = "#f27127";
                             btnSubmit.onclick = function() {
-                                document.getElementById('m-total-correct').innerText = `${pastTest.details.totalCorrect}/${pastTest.details.totalQuestions}`;
-                                document.getElementById('m-list-detail').innerText = `${pastTest.details.listCorrect}/100 – ${pastTest.details.finalL} điểm`;
-                                document.getElementById('m-read-detail').innerText = `${pastTest.details.readCorrect}/100 – ${pastTest.details.finalR} điểm`;
-                                document.getElementById('m-final-score').innerText = `${pastTest.score} điểm`;
+                                let detailSummary = {
+                                    totalCorrect: pastTest.details.totalCorrect || 0,
+                                    totalQuestions: pastTest.details.totalQuestions || 0,
+                                    listCorrect: pastTest.details.listCorrect || 0,
+                                    readCorrect: pastTest.details.readCorrect || 0,
+                                    listTotal: pastTest.details.listTotal || 100,
+                                    readTotal: pastTest.details.readTotal || 100,
+                                    finalL: pastTest.details.finalL || 5,
+                                    finalR: pastTest.details.finalR || 5,
+                                    finalTotal: pastTest.details.finalTotal || pastTest.score,
+                                    hasFullToeicScore: pastTest.details.hasFullToeicScore !== false
+                                };
+                                setScoreModalSummary(detailSummary);
                                 
                                 // Bổ sung in dữ liệu Thống kê từng Part
                                 let statsHtml = '';
                                 if (pastTest.details.partStats) {
-                                    Object.keys(pastTest.details.partStats).sort().forEach(p => {
-                                        let totalStr = pastTest.details.partStats[p].total < 10 ? "0" + pastTest.details.partStats[p].total : pastTest.details.partStats[p].total;
-                                        statsHtml += `<div class="stat-row"><span>${p}</span> <span><b>${pastTest.details.partStats[p].correct}</b> / ${totalStr}</span></div>`;
-                                    });
+                                    statsHtml = buildPartStatsHtml(pastTest.details.partStats);
                                 }
                                 document.getElementById('part-stats-box').innerHTML = statsHtml;
                                 document.getElementById('part-stats-box').classList.remove('active'); // Đảm bảo luôn thu gọn khi mới mở bảng điểm lên
@@ -851,6 +1249,15 @@
             }
 
             currentMode = mode;
+            if (resumeData && resumeData.practiceGradingMode) {
+                setPracticeGradingMode(resumeData.practiceGradingMode);
+            } else if (currentMode === 'practice') {
+                setPracticeGradingMode(pendingPracticeGradingMode || urlParams2.get('grading') || getSelectedPracticeGradingMode());
+                pendingPracticeGradingMode = null;
+            } else {
+                setPracticeGradingMode('final');
+                pendingPracticeGradingMode = null;
+            }
             
             let selectedTime = document.getElementById('time-select').value;
             let selectedParts = [];
@@ -906,12 +1313,18 @@
 
             totalQuestions = flatQuestions.length;
             if(totalQuestions === 0) return;
+            isFullToeicTest = (totalQuestions === 200 && selectedParts.length === availableParts.length);
 
             // --- CẬP NHẬT URL ĐỂ COPY CHIA SẺ ---
             let timeVal = document.getElementById('time-select').value;
             let currentParams = new URLSearchParams(window.location.search);
             currentParams.set('mode', currentMode);
             currentParams.set('time', timeVal);
+            if (currentMode === 'practice') {
+                currentParams.set('grading', practiceGradingMode);
+            } else {
+                currentParams.delete('grading');
+            }
             if(isCustom && selectedParts.length > 0) {
                 currentParams.set('parts', selectedParts.join(','));
             } else {
@@ -929,6 +1342,7 @@
             // Ẩn nhóm công cụ hỗ trợ nếu đang ở chế độ thi thật
             let practiceTools = document.getElementById('practice-tools');
             if(practiceTools) practiceTools.style.display = (currentMode === 'exam') ? 'none' : 'flex';
+            updatePracticeSubmitLabel();
             
             buildNavGrid();
 
@@ -954,6 +1368,7 @@
                     let btn = document.getElementById(`grid-btn-${idx}`);
                     if (btn && markedQuestions[idx]) btn.classList.add('marked');
                 }
+                syncInstantGridFeedback();
                 
                 document.getElementById('answered-count').innerText = answeredQuestions;
                 showQuestion(resumeData.currentQIndex || 0);
@@ -984,7 +1399,7 @@
                 let qNumMatch = item.sq.title.match(/\d+/);
                 let qNum = qNumMatch ? qNumMatch[0] : (index + 1);
 
-                gridHtml += `<button class="grid-btn" id="grid-btn-${index}" onclick="jumpToQuestion(${index})">${qNum}</button>`;
+                gridHtml += `<button class="grid-btn" id="grid-btn-${index}" data-index="${index}" onclick="jumpToQuestion(${index})">${qNum}</button>`;
             });
             
             if (currentPart !== '') gridHtml += `</div></div>`; // Đóng cụm Part cuối cùng
@@ -995,6 +1410,8 @@
             navContainer.innerHTML = gridHtml;
             
             document.getElementById('total-count').innerText = totalQuestions;
+            syncInstantGridFeedback();
+            applyReviewFilter();
         }
 
         function showQuestion(index) {
@@ -1049,6 +1466,8 @@
                     if (currentMode === 'practice') {
                         leftHtml += `
                         <div class="speed-controls">
+                            <button class="speed-btn" onclick="seekAudio(-5)" title="Tua lại 5 giây (Ctrl)">-5s</button>
+                            <button class="speed-btn" onclick="seekAudio(5)" title="Tua tới 5 giây">+5s</button>
                             <span>Tốc độ: </span>
                             <button class="speed-btn ${currentAudioSpeed === 0.7 ? 'active' : ''}" id="sp-07" onclick="setSpeed(0.7)">-30%</button>
                             <button class="speed-btn ${currentAudioSpeed === 0.8 ? 'active' : ''}" id="sp-08" onclick="setSpeed(0.8)">-20%</button>
@@ -1439,6 +1858,8 @@
             document.querySelectorAll('.grid-btn').forEach(btn => btn.classList.remove('current'));
             let currentBtn = document.getElementById(`grid-btn-${index}`);
             if(currentBtn) currentBtn.classList.add('current');
+
+            syncInstantFeedbackForCurrentGroup();
             
             // Xóa lịch sử Undo/Redo khi qua nhóm câu hỏi mới
             initHistoryState();
@@ -1462,6 +1883,7 @@
                 markText.innerText = markedQuestions[idx] ? "Bỏ Cờ" : "Gắn Cờ";
                 markBtn.style.background = markedQuestions[idx] ? "#ffc107" : "#fff3cd";
             }
+            applyReviewFilter();
         }
 
         function selectAnswer(idx, choice) {
@@ -1476,6 +1898,12 @@
                 document.getElementById(`grid-btn-${idx}`).classList.add('answered');
             }
             userAnswers[idx] = choice;
+            if (isInstantPracticeMode() && isDeferredInstantFeedbackQuestion(idx) && isGroupFullyAnswered(flatQuestions[idx].groupId)) {
+                applyInstantFeedbackForGroup(flatQuestions[idx].groupId);
+            } else {
+                applyInstantFeedback(idx);
+            }
+            applyReviewFilter();
         }
 
         function navigateQuestion(step) {
@@ -1729,17 +2157,35 @@
 
         function setSpeed(rate) {
             currentAudioSpeed = rate; // Lưu lại tốc độ
+            localStorage.setItem('win_audio_speed', rate);
             let audioEl = document.getElementById('q-audio');
             if (audioEl) {
                 audioEl.playbackRate = rate;
             }
             document.querySelectorAll('.speed-btn').forEach(btn => btn.classList.remove('active'));
-            if(rate === 0.7) document.getElementById('sp-07').classList.add('active');
-            if(rate === 0.8) document.getElementById('sp-08').classList.add('active');
-            if(rate === 0.9) document.getElementById('sp-09').classList.add('active');
-            if(rate === 1.0) document.getElementById('sp-1').classList.add('active');
-            if(rate === 1.1) document.getElementById('sp-11').classList.add('active');
-            if(rate === 1.25) document.getElementById('sp-125').classList.add('active');
+            let activeSpeedId = null;
+            if(rate === 0.7) activeSpeedId = 'sp-07';
+            if(rate === 0.8) activeSpeedId = 'sp-08';
+            if(rate === 0.9) activeSpeedId = 'sp-09';
+            if(rate === 1.0) activeSpeedId = 'sp-1';
+            if(rate === 1.1) activeSpeedId = 'sp-11';
+            if(rate === 1.25) activeSpeedId = 'sp-125';
+            let activeSpeedBtn = activeSpeedId ? document.getElementById(activeSpeedId) : null;
+            if (activeSpeedBtn) activeSpeedBtn.classList.add('active');
+        }
+
+        function seekAudio(seconds) {
+            if (currentMode === 'exam' && !isSubmitted) return;
+            let audioEl = document.getElementById('q-audio');
+            if (!audioEl) return;
+
+            let maxTime = isNaN(audioEl.duration) ? audioEl.currentTime + seconds : audioEl.duration;
+            audioEl.currentTime = Math.max(0, Math.min(maxTime, audioEl.currentTime + seconds));
+        }
+
+        function isTextEntryTarget(target) {
+            if (!target || !target.tagName) return false;
+            return target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || (target.tagName === 'INPUT' && target.type !== 'radio');
         }
 
         // Chuyển câu thông minh cho chế độ Thi Thật
@@ -1793,6 +2239,7 @@
                         globalTimeInSeconds: globalTimeInSeconds,
                         isCountDown: isCountDown,
                         currentMode: currentMode,
+                        practiceGradingMode: practiceGradingMode,
                         selectedParts: g_selectedParts,
                         lastUpdated: Date.now() // Gắn dấu thời gian để đưa lên đầu danh sách
                     };
@@ -1820,6 +2267,7 @@
                         globalTimeInSeconds: globalTimeInSeconds,
                         isCountDown: isCountDown,
                         currentMode: currentMode,
+                        practiceGradingMode: practiceGradingMode,
                         selectedParts: g_selectedParts,
                         lastUpdated: Date.now() // Gắn dấu thời gian để đưa lên đầu danh sách
                     };
@@ -1880,9 +2328,16 @@
 
             // 2. BẢO VỆ Ô GÕ CHỮ: Nếu đang trong ô gõ chữ thì chặn lại ngay!
             // Tuyệt đối không cho chạy xuống dưới để phím Space ra khoảng trắng, không bị bật Audio.
-            if (document.activeElement.tagName === 'TEXTAREA' || document.activeElement.tagName === 'SELECT' || (document.activeElement.tagName === 'INPUT' && document.activeElement.type !== 'radio')) return;
+            if (isTextEntryTarget(document.activeElement)) return;
 
             // 3. Các phím tắt khác
+            if (event.key === 'Control') {
+                if (!event.repeat) ctrlSeekAudioPending = true;
+                return;
+            }
+
+            if (event.ctrlKey) ctrlSeekAudioPending = false;
+
             if (event.ctrlKey && (event.key === 'z' || event.key === 'Z')) {
                 event.preventDefault(); undoAction(); return;
             }
@@ -1945,6 +2400,18 @@
             }
         });
 
+        document.addEventListener('keyup', function(event) {
+            if (event.key !== 'Control') return;
+            if (!ctrlSeekAudioPending) return;
+            ctrlSeekAudioPending = false;
+            if (isTextEntryTarget(document.activeElement)) return;
+            seekAudio(-5);
+        });
+
+        window.addEventListener('blur', function() {
+            ctrlSeekAudioPending = false;
+        });
+
         function submitTest() {
             if(isSubmitted) return;
             if(answeredQuestions < totalQuestions) {
@@ -1965,7 +2432,7 @@
             let audioEl = document.getElementById('q-audio');
             if(audioEl) audioEl.pause();
 
-            let totalCorrect = 0, listCorrect = 0, readCorrect = 0;
+            let totalCorrect = 0, listCorrect = 0, readCorrect = 0, listTotal = 0, readTotal = 0;
             let partStats = {}; // Bộ đếm điểm từng Part
             
             flatQuestions.forEach((item, index) => {
@@ -1973,6 +2440,8 @@
                 let partName = sq.term_name ? sq.term_name.trim().toUpperCase() : "OTHER";
                 if(!partStats[partName]) partStats[partName] = { correct: 0, total: 0 };
                 partStats[partName].total++;
+                let isLC = isListeningPart(partName);
+                if (isLC) listTotal++; else readTotal++;
 
                 let correctObj = sq.choices.find(c => c.choice_right_answer);
                 let correctChoice = correctObj ? correctObj.choice : null;
@@ -1983,12 +2452,11 @@
                     totalCorrect++;
                     partStats[partName].correct++; // Lệnh đếm số câu đúng cho thống kê từng Part
                     
-                    let isLC = partName.includes("PART 1") || partName.includes("PART 2") || partName.includes("PART 3") || partName.includes("PART 4");
                     if (isLC) listCorrect++; else readCorrect++; // Phân loại điểm chuẩn xác theo tên Part
                     
-                    if (gridBtn) gridBtn.className = "grid-btn correct-ans";
+                    if (gridBtn) gridBtn.className = "grid-btn correct-ans" + (markedQuestions[index] ? " marked" : "");
                 } else {
-                    if (gridBtn) gridBtn.className = "grid-btn wrong-ans";
+                    if (gridBtn) gridBtn.className = "grid-btn wrong-ans" + (markedQuestions[index] ? " marked" : "");
                 }
             });
 
@@ -2001,18 +2469,24 @@
             let finalTotal = finalL + finalR;
 
             // Xây dựng HTML thống kê chi tiết từng Part
-            let statsHtml = '';
-            Object.keys(partStats).sort().forEach(p => {
-                let totalStr = partStats[p].total < 10 ? "0" + partStats[p].total : partStats[p].total;
-                statsHtml += `<div class="stat-row"><span>${p}</span> <span><b>${partStats[p].correct}</b> / ${totalStr}</span></div>`;
-            });
+            let statsHtml = buildPartStatsHtml(partStats);
             document.getElementById('part-stats-box').innerHTML = statsHtml;
 
             // ĐIỀN DỮ LIỆU VÀO BẢNG MODAL
-            document.getElementById('m-total-correct').innerText = `${totalCorrect}/${totalQuestions}`;
-            document.getElementById('m-list-detail').innerText = `${listCorrect}/100 – ${finalL} điểm`;
-            document.getElementById('m-read-detail').innerText = `${readCorrect}/100 – ${finalR} điểm`;
-            document.getElementById('m-final-score').innerText = `${finalTotal} điểm`;
+            let scoreSummary = {
+                totalCorrect: totalCorrect,
+                totalQuestions: totalQuestions,
+                listCorrect: listCorrect,
+                readCorrect: readCorrect,
+                listTotal: listTotal,
+                readTotal: readTotal,
+                finalL: finalL,
+                finalR: finalR,
+                finalTotal: finalTotal,
+                hasFullToeicScore: isFullToeicTest
+            };
+            setScoreModalSummary(scoreSummary);
+            applyReviewFilter();
 
             // HIỆN MODAL, BẮN PHÁO GIẤY VÀ PHÁT ÂM THANH
             document.getElementById('score-overlay').classList.add('active');
@@ -2049,13 +2523,19 @@
             let detailData = {
                 totalCorrect: totalCorrect, totalQuestions: totalQuestions,
                 listCorrect: listCorrect, readCorrect: readCorrect,
-                finalL: finalL, finalR: finalR, partStats: partStats,
+                listTotal: listTotal, readTotal: readTotal,
+                finalL: finalL, finalR: finalR, finalTotal: finalTotal,
+                hasFullToeicScore: isFullToeicTest,
+                scorePercent: formatPercent(totalCorrect, totalQuestions),
+                partStats: partStats,
                 userAnswers: userAnswers, 
                 fileName: fileName,
+                practiceGradingMode: practiceGradingMode,
                 selectedParts: g_selectedParts // Lưu lại chính xác những Part đã làm
             };
             
-            historyData.unshift({ test: testName, score: finalTotal, date: dateStr, details: detailData }); 
+            let historyScore = isFullToeicTest ? finalTotal : `${totalCorrect}/${totalQuestions} (${formatPercent(totalCorrect, totalQuestions)})`;
+            historyData.unshift({ test: testName, score: historyScore, date: dateStr, details: detailData });
             if (historyData.length > 100) historyData.pop();
             localStorage.setItem('win_history', JSON.stringify(historyData));
 
@@ -2080,6 +2560,7 @@
                 sessionStorage.setItem('win_auto_restart', currentMode); 
                 sessionStorage.setItem('win_restart_time', document.getElementById('time-select').value);
                 sessionStorage.setItem('win_restart_parts', g_selectedParts.join(','));
+                sessionStorage.setItem('win_restart_grading', practiceGradingMode);
                 location.reload(); 
             };
 
@@ -2088,11 +2569,12 @@
                 (async function() {
                     let testDisplayName = document.getElementById('setup-title').innerText;
                     let isLB = isValidForLeaderboard ? "YES" : "NO";
+                    let sheetScore = isFullToeicTest ? finalTotal : `${totalCorrect}/${totalQuestions} (${formatPercent(totalCorrect, totalQuestions)})`;
                     let signature = "";
                     
                     if (isLB === "YES") {
                         let secretKey = "WINDY_SECURE_API_2026";
-                        let rawString = `${studentName}|${testDisplayName}|${finalTotal}|${secretKey}`;
+                        let rawString = `${studentName}|${testDisplayName}|${sheetScore}|${secretKey}`;
                         let encoder = new TextEncoder();
                         let hashBuffer = await crypto.subtle.digest('SHA-256', encoder.encode(rawString));
                         signature = Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
@@ -2102,7 +2584,7 @@
                         "?name=" + encodeURIComponent(studentName) +
                         "&classcode=" + encodeURIComponent(classCode) +
                         "&test=" + encodeURIComponent(testDisplayName) +
-                        "&score=" + encodeURIComponent(finalTotal) +
+                        "&score=" + encodeURIComponent(sheetScore) +
                         "&leaderboard=" + isLB +
                         "&sig=" + signature;
 
@@ -2226,17 +2708,37 @@
                 // Ghi nhớ trạng thái Audio trước khi Ctrl Z
                 let wasPlaying = oldAudio && !oldAudio.paused;
                 let currentTime = oldAudio ? oldAudio.currentTime : 0;
-                let currentSpeed = oldAudio ? oldAudio.playbackRate : 1;
+                let currentSpeed = oldAudio ? oldAudio.playbackRate : currentAudioSpeed;
+                let currentVolume = oldAudio ? oldAudio.volume : null;
                 
-                mContent.innerHTML = state.mediaDom;
+                let safeMediaDom = state.mediaDom.replace(/\sautoplay(?:=(?:"[^"]*"|'[^']*'|[^\s>]+))?/gi, '');
+                mContent.innerHTML = safeMediaDom;
                 
                 let newAudio = document.getElementById('q-audio');
-                if (newAudio && oldAudio) {
-                    newAudio.currentTime = currentTime;
+                if (newAudio) {
+                    newAudio.removeAttribute('autoplay');
+                    newAudio.pause();
                     newAudio.playbackRate = currentSpeed;
-                    if (wasPlaying) {
-                        let playPromise = newAudio.play();
-                        if (playPromise !== undefined) playPromise.catch(e => {});
+                    newAudio.preservesPitch = true;
+                    if (currentVolume !== null) newAudio.volume = currentVolume;
+
+                    if (oldAudio) {
+                        let restoreAudioPosition = function() {
+                            try {
+                                let maxTime = isNaN(newAudio.duration) ? currentTime : newAudio.duration;
+                                newAudio.currentTime = Math.max(0, Math.min(maxTime, currentTime));
+                            } catch(e) {}
+
+                            if (wasPlaying) {
+                                let playPromise = newAudio.play();
+                                if (playPromise !== undefined) playPromise.catch(e => {});
+                            } else {
+                                newAudio.pause();
+                            }
+                        };
+
+                        if (newAudio.readyState >= 1) restoreAudioPosition();
+                        else newAudio.addEventListener('loadedmetadata', restoreAudioPosition, { once: true });
                     }
                 }
             }
