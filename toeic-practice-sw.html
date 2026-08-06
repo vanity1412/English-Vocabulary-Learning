@@ -45,6 +45,7 @@
         .api-tooltip-box a:hover { text-decoration: underline; color: #90caf9; }
         .saved-text { color: #28a745; font-size: 13px; font-weight: bold; opacity: 0; transition: opacity 0.3s; }
         .saved-text.show { opacity: 1; }
+        .api-provider-note { font-size: 13px; color: #666; margin-top: 6px; line-height: 1.45; }
         
         /* Main Content 2 Columns */
         .content-area { display: flex; gap: 20px; min-height: 50vh; align-items: stretch;}
@@ -169,20 +170,25 @@
             </select>
         </div>
         
+        <div class="form-group">
+            <label>Nhà cung cấp AI:</label>
+            <select id="ai-provider-select" onchange="switchAIProvider()">
+                <option value="groq">Groq - Speaking + Writing</option>
+                <option value="deepseek">DeepSeek - Writing/Text</option>
+            </select>
+            <div class="api-provider-note" id="ai-provider-note"></div>
+        </div>
+
         <div class="form-group" style="position: relative; margin-bottom: 35px;">
             <label style="display: flex; align-items: center;">
-                Groq API KEY <span style="color: #dc3545; font-size: 14px; font-weight: bold; margin-left: 8px;">* Bắt buộc</span>
+                <span id="api-provider-label">Groq API KEY</span> <span style="color: #dc3545; font-size: 14px; font-weight: bold; margin-left: 8px;">* Bắt buộc</span>
                 <div class="api-tooltip" id="api-tooltip-btn" onclick="toggleApiTooltip(event)">?
                     <div class="api-tooltip-box" id="api-tooltip-box" onclick="event.stopPropagation()">
-                        <div style="font-weight: bold; color: #ff6b6b; margin-bottom: 5px;">HƯỚNG DẪN LẤY API KEY (MIỄN PHÍ)</div>
-                        1. Đăng ký: <a href="https://console.groq.com/login" target="_blank">console.groq.com/login</a><br>
-                        2. Vào trang: <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a><br>
-                        3. Bấm Create API key, nhập tên, Submit.<br>
-                        4. Copy dãy mã bắt đầu bằng gsk_ dán vào ô bên dưới.
+                        <div id="api-tooltip-content"></div>
                     </div>
                 </div>
             </label>
-            <input type="text" autocomplete="off" spellcheck="false" id="groq-api-key" placeholder="Nhập API Key bắt đầu bằng gsk_..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-size: 15px; outline: none; -webkit-text-security: disc;" oninput="autoSaveAPI()">
+            <input type="text" autocomplete="off" spellcheck="false" id="ai-api-key" placeholder="Nhập API Key..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-size: 15px; outline: none; -webkit-text-security: disc;" oninput="autoSaveAPI()">
             <div style="display: flex; justify-content: flex-end; margin-top: 5px; position: absolute; width: 100%;">
                 <span id="api-saved-msg" class="saved-text">Đã lưu ✔</span>
             </div>
@@ -192,9 +198,104 @@
     </div>
     
     <script>
+        const AI_PROVIDERS = {
+            groq: {
+                id: 'groq',
+                name: 'Groq',
+                storageKey: 'win_groq_api_key',
+                placeholder: 'Nhập Groq API Key bắt đầu bằng gsk_...',
+                note: 'Khuyên dùng cho Speaking vì Groq có Whisper để bóc băng file ghi âm.',
+                tooltip: `<div style="font-weight: bold; color: #ff6b6b; margin-bottom: 5px;">HƯỚNG DẪN LẤY GROQ API KEY</div>
+                        1. Đăng ký: <a href="https://console.groq.com/login" target="_blank">console.groq.com/login</a><br>
+                        2. Vào trang: <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a><br>
+                        3. Bấm Create API key, nhập tên, Submit.<br>
+                        4. Copy dãy mã bắt đầu bằng gsk_ dán vào ô bên dưới.`,
+                chatUrl: 'https://api.groq.com/openai/v1/chat/completions',
+                modelsUrl: 'https://api.groq.com/openai/v1/models',
+                transcriptionUrl: 'https://api.groq.com/openai/v1/audio/transcriptions',
+                supportsAudioTranscription: true
+            },
+            deepseek: {
+                id: 'deepseek',
+                name: 'DeepSeek',
+                storageKey: 'win_deepseek_api_key',
+                placeholder: 'Nhập DeepSeek API Key bắt đầu bằng sk-...',
+                note: 'Dùng tốt cho Writing/text. Speaking ghi âm vẫn cần Groq để bóc băng audio.',
+                tooltip: `<div style="font-weight: bold; color: #ff6b6b; margin-bottom: 5px;">HƯỚNG DẪN LẤY DEEPSEEK API KEY</div>
+                        1. Đăng nhập: <a href="https://platform.deepseek.com/" target="_blank">platform.deepseek.com</a><br>
+                        2. Vào mục API keys và tạo key mới.<br>
+                        3. Copy dãy mã bắt đầu bằng sk- dán vào ô bên dưới.<br>
+                        4. Key chỉ lưu trong trình duyệt của bạn, không lưu vào mã nguồn.`,
+                chatUrl: 'https://api.deepseek.com/chat/completions',
+                defaultModel: 'deepseek-v4-flash',
+                supportsAudioTranscription: false
+            }
+        };
+        let activeAIProvider = localStorage.getItem('win_ai_provider') || 'groq';
+
+        function getAIProviderConfig(providerId = activeAIProvider) {
+            return AI_PROVIDERS[providerId] || AI_PROVIDERS.groq;
+        }
+
+        function loadAPIKeyForCurrentProvider() {
+            let input = document.getElementById('ai-api-key');
+            if (!input) return;
+            let provider = getAIProviderConfig();
+            input.value = localStorage.getItem(provider.storageKey) || '';
+        }
+
+        function updateAPIProviderUI() {
+            let provider = getAIProviderConfig();
+            let label = document.getElementById('api-provider-label');
+            let input = document.getElementById('ai-api-key');
+            let note = document.getElementById('ai-provider-note');
+            let tooltipContent = document.getElementById('api-tooltip-content');
+
+            if (label) label.innerText = provider.name + ' API KEY';
+            if (input) input.placeholder = provider.placeholder;
+            if (note) note.innerText = provider.note;
+            if (tooltipContent) tooltipContent.innerHTML = provider.tooltip;
+        }
+
+        function saveCurrentAPIKey(showMessage = true) {
+            let input = document.getElementById('ai-api-key');
+            if (!input) return '';
+
+            let provider = getAIProviderConfig();
+            let apiKey = input.value.trim();
+            localStorage.setItem(provider.storageKey, apiKey);
+            localStorage.setItem('win_ai_provider', provider.id);
+
+            if (showMessage) {
+                let msg = document.getElementById('api-saved-msg');
+                if (msg) {
+                    msg.classList.add('show');
+                    clearTimeout(apiSaveTimeout);
+                    apiSaveTimeout = setTimeout(() => {
+                        msg.classList.remove('show');
+                    }, 1500);
+                }
+            }
+
+            return apiKey;
+        }
+
+        function switchAIProvider() {
+            saveCurrentAPIKey(false);
+
+            let providerSelect = document.getElementById('ai-provider-select');
+            activeAIProvider = providerSelect ? providerSelect.value : 'groq';
+            localStorage.setItem('win_ai_provider', activeAIProvider);
+            loadAPIKeyForCurrentProvider();
+            updateAPIProviderUI();
+        }
+
         window.onload = function() {
-            let savedKey = localStorage.getItem('win_groq_api_key');
-            if (savedKey) document.getElementById('groq-api-key').value = savedKey;
+            let providerSelect = document.getElementById('ai-provider-select');
+            if (!AI_PROVIDERS[activeAIProvider]) activeAIProvider = 'groq';
+            if (providerSelect) providerSelect.value = activeAIProvider;
+            loadAPIKeyForCurrentProvider();
+            updateAPIProviderUI();
             
             let urlParams = new URLSearchParams(window.location.search);
             let testParam = urlParams.get('test');
@@ -230,16 +331,7 @@
 
         let apiSaveTimeout;
         function autoSaveAPI() {
-            let apiKey = document.getElementById('groq-api-key').value.trim();
-            localStorage.setItem('win_groq_api_key', apiKey);
-            
-            let msg = document.getElementById('api-saved-msg');
-            msg.classList.add('show');
-            
-            clearTimeout(apiSaveTimeout);
-            apiSaveTimeout = setTimeout(() => {
-                msg.classList.remove('show');
-            }, 1500);
+            saveCurrentAPIKey(true);
         }
     </script>
 
@@ -402,8 +494,7 @@
                 let modeSelect = document.getElementById('sw-mode-select');
                 currentMode = modeSelect ? modeSelect.value : "practice"; 
                 
-                let apiKey = document.getElementById('groq-api-key').value.trim();
-                if (apiKey) localStorage.setItem('win_groq_api_key', apiKey);
+                saveCurrentAPIKey(false);
 
                 let skillsToFetch = currentSkill === 'B' ? ['S', 'W'] : [currentSkill];
                 
@@ -486,8 +577,7 @@
             document.getElementById('q-counter').innerText = `Câu ${currentQIndex + 1} / ${totalQuestions}`;
             
             // Kiểm tra và lưu API Key
-            let apiKey = document.getElementById('groq-api-key').value.trim();
-            if (apiKey) localStorage.setItem('win_groq_api_key', apiKey);
+            saveCurrentAPIKey(false);
 
             // 2. Cập nhật nội dung Cột Trái (Media + Chữ)
             let mediaHtml = "";
@@ -1047,11 +1137,15 @@
             }
         }
 
-        // HÀM 7: GỌI API ĐÁNH GIÁ BẰNG GROQ (WHISPER & LLAMA3)
+        // HÀM 7: GỌI API ĐÁNH GIÁ BẰNG AI (GROQ/DEEPSEEK)
         async function getFeedback(skillType) {
-            let apiKey = localStorage.getItem('win_groq_api_key');
+            let provider = getAIProviderConfig();
+            let typedKey = document.getElementById('ai-api-key') ? document.getElementById('ai-api-key').value.trim() : '';
+            if (typedKey) localStorage.setItem(provider.storageKey, typedKey);
+
+            let apiKey = typedKey || localStorage.getItem(provider.storageKey);
             if (!apiKey) {
-                alert("Vui lòng nhập Groq API Key ở màn hình chọn đề!");
+                alert(`Vui lòng nhập ${provider.name} API Key ở màn hình chọn đề!`);
                 return;
             }
 
@@ -1073,13 +1167,17 @@
                     if (!studentAnswer) throw new Error("Bạn chưa viết câu trả lời!");
                 } else {
                     if (!window.currentAudioBlob) throw new Error("Chưa có file ghi âm! Hãy làm bài trước.");
+                    if (!provider.supportsAudioTranscription) {
+                        throw new Error(`${provider.name} chưa hỗ trợ bóc băng file ghi âm trong trang này. Hãy chọn Groq để chấm Speaking có ghi âm; DeepSeek dùng tốt cho Writing/text.`);
+                    }
+
                     resBox.innerHTML = "<i>⏳ AI đang nghe và bóc băng ghi âm (Whisper)...</i>";
                     
                     let formData = new FormData();
                     formData.append("file", window.currentAudioBlob, "audio.webm");
                     formData.append("model", "whisper-large-v3");
 
-                    let whisperRes = await fetch("https://api.groq.com/openai/v1/audio/transcriptions", {
+                    let whisperRes = await fetch(provider.transcriptionUrl, {
                         method: "POST",
                         headers: { "Authorization": `Bearer ${apiKey}` },
                         body: formData
@@ -1163,41 +1261,52 @@ TRẢ VỀ ĐÚNG ĐỊNH DẠNG HTML SAU (TUYỆT ĐỐI KHÔNG BỌC TRONG MAR
 <div style="color:#111; margin-top:8px;"><b>Nhận xét chi tiết:</b> [Chỉ ra lỗi sai ngữ pháp, từ vựng, độ liên kết hoặc sự liên quan đến đề bài bằng tiếng Việt]</div>
 ${suggestionFormat}`;
 
-                // TỰ ĐỘNG HỎI GROQ DANH SÁCH MODEL ĐANG CÒN SỐNG
-                let modelsRes = await fetch("https://api.groq.com/openai/v1/models", {
-                    method: "GET",
-                    headers: { "Authorization": `Bearer ${apiKey}` }
-                });
-                if (!modelsRes.ok) throw new Error("Lỗi xác thực API Key Groq. Hãy kiểm tra lại Key!");
-                
-                let modelsData = await modelsRes.json();
-                let availableModels = modelsData.data.map(m => m.id);
-                
-                // Thuật toán ưu tiên tìm model mạnh nhất (Llama 3.3 -> 3.1 -> 3), bỏ qua model âm thanh (whisper)
-                let textModels = availableModels.filter(m => !m.includes('whisper'));
-                let selectedModel = textModels.find(m => m.includes('llama-3.3-70b'))
-                                 || textModels.find(m => m.includes('llama-3.1-70b'))
-                                 || textModels.find(m => m.includes('llama3-70b'))
-                                 || textModels.find(m => m.includes('llama3-8b'))
-                                 || textModels.find(m => m.includes('mixtral'))
-                                 || textModels[0]; // Bí quá thì bốc đại model đầu tiên
+                let selectedModel = provider.defaultModel || "";
+                let requestBody = {
+                    model: selectedModel,
+                    messages: [{ role: "user", content: prompt }],
+                    temperature: 0.1,
+                    stream: false
+                };
 
-                let chatRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+                if (provider.id === 'groq') {
+                    // TỰ ĐỘNG HỎI GROQ DANH SÁCH MODEL ĐANG CÒN SỐNG
+                    let modelsRes = await fetch(provider.modelsUrl, {
+                        method: "GET",
+                        headers: { "Authorization": `Bearer ${apiKey}` }
+                    });
+                    if (!modelsRes.ok) throw new Error("Lỗi xác thực API Key Groq. Hãy kiểm tra lại Key!");
+
+                    let modelsData = await modelsRes.json();
+                    let availableModels = modelsData.data.map(m => m.id);
+
+                    // Thuật toán ưu tiên tìm model mạnh nhất (Llama 3.3 -> 3.1 -> 3), bỏ qua model âm thanh (whisper)
+                    let textModels = availableModels.filter(m => !m.includes('whisper'));
+                    selectedModel = textModels.find(m => m.includes('llama-3.3-70b'))
+                                     || textModels.find(m => m.includes('llama-3.1-70b'))
+                                     || textModels.find(m => m.includes('llama3-70b'))
+                                     || textModels.find(m => m.includes('llama3-8b'))
+                                     || textModels.find(m => m.includes('mixtral'))
+                                     || textModels[0]; // Bí quá thì bốc đại model đầu tiên
+                    requestBody.model = selectedModel;
+                }
+
+                if (provider.id === 'deepseek') {
+                    requestBody.thinking = { type: "disabled" };
+                }
+
+                let chatRes = await fetch(provider.chatUrl, {
                     method: "POST",
                     headers: {
                         "Authorization": `Bearer ${apiKey}`,
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({
-                        model: selectedModel, 
-                        messages: [{ role: "user", content: prompt }],
-                        temperature: 0.1 
-                    })
+                    body: JSON.stringify(requestBody)
                 });
 
                 if (!chatRes.ok) {
                     let errText = await chatRes.text();
-                    throw new Error("Lỗi khi gọi Model: " + selectedModel + ". Chi tiết: " + errText);
+                    throw new Error("Lỗi khi gọi " + provider.name + " model " + selectedModel + ". Chi tiết: " + errText);
                 }
                 let chatData = await chatRes.json();
                 
