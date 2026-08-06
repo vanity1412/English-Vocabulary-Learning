@@ -1,7 +1,7 @@
 // ============================================
 // DONATION MODAL SYSTEM
-// Chỉ mở khi người dùng bấm nút "Ủng hộ".
-// Không tự bật popup giữa lúc học để tránh gián đoạn.
+// Tự nhắc sau một khoảng thời gian học.
+// Nếu người dùng bấm "Đã ủng hộ", popup sẽ không tự hiện nữa.
 // ============================================
 
 class DonationModal {
@@ -9,7 +9,7 @@ class DonationModal {
         this.studyStartTime = Date.now();
         this.lastShownTime = Date.now();
         this.intervalMinutes = 10;
-        this.autoPopupEnabled = false;
+        this.autoPopupEnabled = true;
         this.supportedKey = 'vvt_donation_supported';
         this.isShowing = false;
 
@@ -84,7 +84,7 @@ class DonationModal {
                     <div class="donation-footer">
                         <div class="donation-actions">
                             <button class="btn-supported" onclick="donationModal.markSupported()">
-                                Đã chuyển / Không hiện nữa ✅
+                                Đã ủng hộ / Không hiện nữa ✅
                             </button>
                             <button class="btn-continue" onclick="donationModal.close()">
                                 Tiếp Tục Học 📚
@@ -100,8 +100,8 @@ class DonationModal {
     }
 
     startTracking() {
-        // Tắt tự động hiện popup để không làm gián đoạn học/thi/nghe audio.
-        // Nếu sau này muốn bật lại, đổi autoPopupEnabled = true.
+        // Vẫn tự nhắc sau mỗi intervalMinutes phút.
+        // Nếu đã bấm "Đã ủng hộ", không tự hiện nữa.
         if (!this.autoPopupEnabled || this.hasSupported()) return;
 
         setInterval(() => {
