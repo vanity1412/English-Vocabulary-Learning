@@ -1193,6 +1193,449 @@
             .btn-modal-blue,
             .btn-modal-red { width: 100%; }
         }
+
+        /* Header refresh: clearer exam-room controls and resilient logo. */
+        :root {
+            --test-header-height: 74px;
+            --test-subheader-height: 66px;
+        }
+
+        .test-header {
+            padding: 10px clamp(18px, 2.4vw, 34px);
+            border-bottom: 1px solid #dfe8f1;
+            background:
+                linear-gradient(90deg, rgba(15, 118, 110, .12), transparent 30%, rgba(37, 99, 235, .10)),
+                #ffffff !important;
+            color: var(--ui-ink);
+            box-shadow: 0 10px 28px rgba(18, 32, 52, .10);
+        }
+
+        .header-left {
+            flex: 1 1 auto;
+            gap: 12px;
+            min-width: 280px;
+            color: var(--ui-ink);
+        }
+
+        .header-mode-tools {
+            display: inline-flex;
+            gap: 8px;
+            padding: 4px;
+            border: 1px solid #dbe5ef;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+
+        .brand-card {
+            display: inline-flex;
+            align-items: center;
+            min-width: 0;
+            gap: 11px;
+            padding: 6px 13px 6px 7px;
+            border: 1px solid rgba(15, 118, 110, .20);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .90);
+            box-shadow: 0 8px 20px rgba(18, 32, 52, .08);
+        }
+
+        .brand-logo-wrap {
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            overflow: hidden;
+            border: 1px solid rgba(15, 118, 110, .24);
+            border-radius: 8px;
+            background: #02140d;
+        }
+
+        .brand-logo-wrap img {
+            width: 100% !important;
+            height: 100% !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            object-fit: cover;
+            background: transparent !important;
+            display: block;
+        }
+
+        .toeic-logo-fallback {
+            color: #75ff8a;
+            font-size: 15px;
+            font-weight: 900;
+            text-shadow: 0 0 8px rgba(117, 255, 138, .60);
+        }
+
+        .brand-copy {
+            display: grid;
+            min-width: 0;
+            line-height: 1.12;
+        }
+
+        .brand-copy strong {
+            color: #0f172a;
+            font-size: 16px;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        .brand-copy span {
+            color: #667085;
+            font-size: 11px;
+            font-weight: 750;
+            text-transform: none;
+            white-space: nowrap;
+        }
+
+        .header-controls {
+            flex: 0 1 auto;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        #practice-tools {
+            gap: 6px !important;
+            padding: 4px;
+            border: 1px solid #dbe5ef;
+            background: #f8fafc;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72);
+        }
+
+        .theme-btn,
+        .btn-grid,
+        .shortcut-tooltip {
+            width: 40px;
+            height: 40px;
+            border-color: #d5e0ea;
+            background: #ffffff;
+            color: #102033;
+            box-shadow: 0 5px 12px rgba(18, 32, 52, .07);
+        }
+
+        .theme-btn:hover,
+        .btn-grid:hover,
+        .shortcut-tooltip:hover {
+            border-color: rgba(15, 118, 110, .35);
+            background: #f0fdfa;
+            color: #115e59;
+        }
+
+        .session-actions {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .btn-exit,
+        .btn-submit,
+        .timer-box {
+            min-height: 42px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .btn-exit {
+            border: 1px solid rgba(220, 38, 38, .22);
+            background: #ef4444;
+            color: #fff;
+        }
+
+        .btn-exit:hover { background: #dc2626; }
+
+        .btn-submit {
+            border: 1px solid rgba(15, 118, 110, .24);
+            background: #0f766e;
+            color: #fff;
+        }
+
+        .btn-submit:hover { background: #115e59; }
+
+        .timer-box {
+            min-width: 86px;
+            justify-content: center;
+            border: 1px solid rgba(245, 158, 11, .28);
+            background: #fff7ed;
+            color: #7c2d12;
+            font-size: 15px;
+            font-weight: 900;
+            box-shadow: none;
+        }
+
+        .user-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 42px;
+            padding: 0 12px;
+            border: 1px solid #dbe5ef;
+            border-radius: 8px;
+            background: #f8fafc;
+            color: #344054;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .user-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, .14);
+        }
+
+        .guest-text {
+            color: inherit;
+            font-size: 13px;
+        }
+
+        .nav-menu-btn {
+            color: #ffffff;
+            border-color: #1d4ed8;
+            background: #2563eb;
+        }
+
+        .nav-menu-btn:hover {
+            border-color: #1d4ed8;
+            background: #1d4ed8;
+            color: #ffffff;
+        }
+
+        .sub-header {
+            display: grid;
+            grid-template-columns: minmax(140px, auto) minmax(180px, 1fr) minmax(112px, auto);
+            gap: 14px;
+            min-height: var(--test-subheader-height);
+            padding: 10px clamp(18px, 2.4vw, 34px);
+            background: rgba(248, 250, 252, .95);
+        }
+
+        .part-context {
+            display: grid;
+            gap: 2px;
+            min-width: 0;
+        }
+
+        .part-eyebrow,
+        .progress-label {
+            color: #667085;
+            font-size: 11px;
+            font-weight: 850;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        #current-part-label {
+            min-width: 0;
+            color: #115e59;
+            font-size: 21px;
+            line-height: 1.08;
+        }
+
+        .nav-buttons {
+            justify-content: center;
+            min-width: 0;
+        }
+
+        .nav-btn {
+            min-width: 118px;
+            border-color: #d8e2ec !important;
+            background: #ffffff !important;
+            color: #142033 !important;
+            box-shadow: 0 5px 12px rgba(18, 32, 52, .06) !important;
+            backdrop-filter: none;
+        }
+
+        .sub-header .nav-btn:hover:not(:disabled) {
+            border-color: rgba(15, 118, 110, .35) !important;
+            background: #ecfdf5 !important;
+            color: #115e59 !important;
+        }
+
+        .sub-header .nav-btn:disabled {
+            opacity: .58;
+            background: #f8fafc !important;
+            color: #667085 !important;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .progress-box {
+            display: grid;
+            gap: 2px;
+            justify-items: center;
+            min-width: 112px;
+            padding: 8px 14px;
+            border: 1px solid rgba(15, 118, 110, .18);
+            background: #ecfdf5;
+            color: #115e59;
+            line-height: 1;
+        }
+
+        .progress-box strong {
+            font-size: 20px;
+            font-weight: 950;
+        }
+
+        body.dark-mode .test-header {
+            border-bottom-color: rgba(148, 163, 184, .22);
+            background:
+                linear-gradient(90deg, rgba(45, 212, 191, .12), transparent 32%, rgba(96, 165, 250, .10)),
+                #0f172a !important;
+        }
+
+        body.dark-mode .brand-card,
+        body.dark-mode .header-mode-tools,
+        body.dark-mode #practice-tools,
+        body.dark-mode .user-pill,
+        body.dark-mode .theme-btn,
+        body.dark-mode .btn-grid,
+        body.dark-mode .shortcut-tooltip {
+            border-color: rgba(148, 163, 184, .22);
+            background: rgba(30, 41, 59, .88);
+            color: #e5edf6;
+        }
+
+        body.dark-mode .brand-copy strong { color: #f8fafc; }
+        body.dark-mode .brand-copy span,
+        body.dark-mode .part-eyebrow,
+        body.dark-mode .progress-label { color: #94a3b8; }
+
+        body.dark-mode .nav-menu-btn {
+            border-color: #60a5fa;
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        @media (max-width: 1220px) {
+            .brand-copy span { display: none; }
+            .user-pill { display: none; }
+            .session-actions { gap: 6px; }
+            .btn-exit,
+            .btn-submit { padding: 0 11px; }
+        }
+
+        @media (max-width: 860px) {
+            :root {
+                --test-header-height: 118px;
+                --test-subheader-height: 64px;
+            }
+
+            .test-header {
+                grid-template-columns: 1fr;
+                padding: 9px 12px;
+            }
+
+            .header-left {
+                flex: 1 1 100%;
+                min-width: 0;
+                padding-right: 46px;
+                gap: 8px;
+            }
+
+            .header-mode-tools {
+                gap: 5px;
+                padding: 3px;
+            }
+
+            .theme-btn,
+            .btn-grid,
+            .shortcut-tooltip {
+                width: 36px;
+                height: 36px;
+            }
+
+            .brand-card {
+                min-width: 0;
+                flex: 1;
+                gap: 8px;
+                padding: 5px 8px 5px 5px;
+            }
+
+            .brand-logo-wrap {
+                width: 38px;
+                height: 38px;
+                flex: 0 0 38px;
+            }
+
+            .brand-copy strong {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 14px;
+            }
+
+            .header-controls {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                align-items: center;
+            }
+
+            #practice-tools {
+                order: 3;
+                grid-column: 1 / -1;
+                width: 100%;
+            }
+
+            .session-actions {
+                min-width: 0;
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+
+            .session-actions::-webkit-scrollbar { display: none; }
+
+            .btn-exit,
+            .btn-submit,
+            .timer-box {
+                flex: 0 0 auto;
+                min-height: 38px;
+                white-space: nowrap;
+            }
+
+            .nav-menu-btn {
+                position: absolute !important;
+                top: 10px !important;
+                right: 12px !important;
+            }
+
+            .sub-header {
+                grid-template-columns: minmax(92px, 1fr) auto auto;
+                gap: 8px;
+                padding: 8px 12px;
+            }
+
+            .part-eyebrow,
+            .progress-label { display: none; }
+
+            #current-part-label { font-size: 18px; }
+
+            .nav-buttons { gap: 6px; }
+
+            .nav-btn {
+                min-width: 40px;
+                width: 40px;
+                flex-basis: 40px;
+                padding: 0 !important;
+                font-size: 0 !important;
+            }
+
+            .sub-header .nav-btn::before {
+                color: inherit;
+                font-size: 18px !important;
+                line-height: 1;
+            }
+
+            #btn-prev::before { content: "<"; }
+            #btn-next::before { content: ">"; }
+
+            .progress-box {
+                min-width: 78px;
+                padding: 7px 10px;
+            }
+
+            .progress-box strong { font-size: 17px; }
+        }
     </style>
 </head>
 <body>
@@ -1271,10 +1714,20 @@
     <div id="test-screen" class="hidden">
         <header class="test-header" id="main-banner" style="background-size: cover; background-position: center; transition: background 0.3s;">
             <div class="header-left">
-                <button class="theme-btn" onclick="toggleThemePanel()" style="margin-right: 10px;" title="Đổi màu nền">🎨</button>
-                <button class="theme-btn" id="dark-mode-btn-thi" onclick="toggleDarkMode()" style="margin-right: 10px;" title="Bật/Tắt Chế độ tối">🌙</button>
-                <img src="toeic-logo.png" alt="VVT TOEIC" style="height: 40px; border-radius: 4px; background: white; padding: 2px;">
-                VVT TOEIC
+                <div class="header-mode-tools">
+                    <button class="theme-btn" onclick="toggleThemePanel()" title="Đổi màu nền" aria-label="Đổi màu nền">🎨</button>
+                    <button class="theme-btn" id="dark-mode-btn-thi" onclick="toggleDarkMode()" title="Bật/Tắt Chế độ tối" aria-label="Bật/Tắt Chế độ tối">🌙</button>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo-wrap">
+                        <img src="toeic-logo.png?v=20260807-header" alt="VVT TOEIC" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+                        <span class="toeic-logo-fallback" hidden>VVT</span>
+                    </div>
+                    <div class="brand-copy">
+                        <strong>VVT TOEIC</strong>
+                        <span>Phòng thi mô phỏng</span>
+                    </div>
+                </div>
             </div>
             
             <div id="theme-panel" class="theme-panel">
@@ -1312,21 +1765,32 @@
                     <button class="btn-grid" onclick="clearCanvas()" title="Xóa toàn bộ nét vẽ và chữ">🧽</button>
                 </div>
                 
-                <button class="btn-exit" onclick="saveAndExit()">Thoát & Lưu</button>
-                <button class="btn-submit" id="btn-submit" onclick="submitTest()">Nộp Bài</button>
-                <div class="timer-box" id="timer-display">00:00:00</div>
-                <div class="guest-text">Guest (Khách)</div>
-                <button class="btn-grid" onclick="toggleNav()">&#9776;</button>
+                <div class="session-actions">
+                    <button class="btn-exit" onclick="saveAndExit()">Thoát & Lưu</button>
+                    <button class="btn-submit" id="btn-submit" onclick="submitTest()">Nộp Bài</button>
+                    <div class="timer-box" id="timer-display">00:00:00</div>
+                </div>
+                <div class="user-pill">
+                    <span class="user-dot"></span>
+                    <span class="guest-text">Guest (Khách)</span>
+                </div>
+                <button class="btn-grid nav-menu-btn" onclick="toggleNav()" title="Danh sách câu hỏi" aria-label="Danh sách câu hỏi">&#9776;</button>
             </div>
         </header>
         
         <div class="sub-header">
-            <div id="current-part-label">PART</div>
+            <div class="part-context">
+                <span class="part-eyebrow">Đang làm</span>
+                <div id="current-part-label">PART</div>
+            </div>
             <div class="nav-buttons">
                 <button class="nav-btn" id="btn-prev" onclick="navigateQuestion(-1)">&#8592; Câu trước</button>
                 <button class="nav-btn" id="btn-next" onclick="navigateQuestion(1)">Câu tiếp &#8594;</button>
             </div>
-            <div class="progress-box"><span id="answered-count">0</span>/<span id="total-count">0</span></div>
+            <div class="progress-box">
+                <span class="progress-label">Tiến độ</span>
+                <strong><span id="answered-count">0</span>/<span id="total-count">0</span></strong>
+            </div>
         </div>
 
         <div class="test-body">
