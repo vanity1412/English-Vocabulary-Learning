@@ -193,6 +193,20 @@
     background: linear-gradient(145deg, #fbfaff 0%, #f5f2ff 100%);
 }
 
+.donation-video-offer {
+    margin: 0 0 12px;
+    padding: 12px 14px;
+    border: 2px solid #f4b63f;
+    border-radius: 12px;
+    color: #7a3b00;
+    background: linear-gradient(135deg, #fff7d6 0%, #ffe7a6 100%);
+    box-shadow: 0 8px 18px rgba(244, 182, 63, .18);
+    font-size: clamp(16px, 2vw, 21px);
+    font-weight: 900;
+    line-height: 1.35;
+    text-align: center;
+}
+
 .donation-message p { margin: 0 0 8px; color: #3d3564; font-size: 14px; font-weight: 800; }
 .donation-benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 10px; padding: 0; margin: 0; list-style: none; }
 .donation-benefits li { color: #5e6279; font-size: 12px; line-height: 1.35; }
@@ -238,6 +252,76 @@
 .btn-supported:hover { box-shadow: 0 10px 19px rgba(34, 197, 94, .32); transform: translateY(-2px); }
 .thank-you-text { margin: 0; color: #777c92; font-size: 13px; font-style: italic; text-align: right; }
 
+.support-unlock {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #d8f0df;
+    border-radius: 12px;
+    background: #f1fff5;
+}
+
+.support-unlock.hidden { display: none; }
+
+.support-unlock label {
+    display: block;
+    margin-bottom: 8px;
+    color: #245b35;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.support-unlock a {
+    color: #087c2c;
+    text-decoration: underline;
+}
+
+.support-unlock-row {
+    display: flex;
+    gap: 8px;
+}
+
+.support-unlock-row input {
+    min-width: 0;
+    flex: 1;
+    min-height: 40px;
+    padding: 0 12px;
+    border: 1px solid #b7d9c1;
+    border-radius: 9px;
+    color: #143820;
+    font: inherit;
+    outline: none;
+}
+
+.support-unlock-row input:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, .15);
+}
+
+.support-unlock-row button {
+    min-height: 40px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 9px;
+    color: white;
+    background: #16a34a;
+    font-weight: 850;
+    cursor: pointer;
+}
+
+.support-unlock-status {
+    min-height: 18px;
+    margin-top: 7px;
+    color: #4e6155;
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.4;
+}
+
+.support-unlock-status.success { color: #087c2c; }
+.support-unlock-status.error { color: #c2410c; }
+.support-unlock-status.loading { color: #4f46e5; }
+
 @media (max-width: 720px) {
     .donation-modal { padding: 10px; }
     .donation-modal-content { width: min(560px, 100%); max-height: calc(100vh - 20px); overflow-y: auto; }
@@ -253,6 +337,8 @@
     .donation-actions { width: 100%; }
     .btn-continue,
     .btn-supported { flex: 1 1 190px; }
+    .support-unlock-row { flex-direction: column; }
+    .support-unlock-row button { width: 100%; }
 }
 
 @media (max-width: 400px) {
