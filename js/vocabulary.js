@@ -32,8 +32,16 @@ const STORAGE_KEYS = {
     LEARNED_WORDS: 'toeic_learned_words',
     SPEECH_RATE: 'toeic_speech_rate',
     AUTO_SPEAK: 'toeic_auto_speak',
-    DARK_MODE: 'toeic_dark_mode'
+    DARK_MODE: 'toeic_dark_mode',
+    PERSONAL_VOCAB: 'toeic_personal_vocab',
+    PERSONAL_VOCAB_META: 'toeic_personal_vocab_meta',
+    DEEPSEEK_API_KEY: 'toeic_deepseek_api_key_v1'
 };
+
+const PERSONAL_VOCAB_VALUE = 'custom:personal';
+const LOCAL_SECRET_PASSPHRASE = 'VVT';
+const DEEPSEEK_CHAT_URL = 'https://api.deepseek.com/chat/completions';
+const DEEPSEEK_MODEL = 'deepseek-chat';
 
 // ============================================
 // INITIALIZATION
@@ -46,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function initializeApp() {
     loadSettings();
     loadProgress();
+    initializePersonalVocabUI();
     initializeEventListeners();
     initializeSpeech();
     await loadVocabulary(currentVocabList);
@@ -107,6 +116,17 @@ function initializeEventListeners() {
         loadVocabulary(currentVocabList);
     });
 
+    // Personal vocabulary
+    document.getElementById('togglePersonalPanel')?.addEventListener('click', togglePersonalPanel);
+    document.getElementById('saveDeepseekKey')?.addEventListener('click', saveDeepSeekKeyFromInput);
+    document.getElementById('clearDeepseekKey')?.addEventListener('click', clearDeepSeekKey);
+    document.getElementById('loadPersonalRawUrl')?.addEventListener('click', loadPersonalRawUrl);
+    document.getElementById('personalFileInput')?.addEventListener('change', handlePersonalFileUpload);
+    document.getElementById('generatePersonalVocab')?.addEventListener('click', generatePersonalVocabulary);
+    document.getElementById('usePersonalVocab')?.addEventListener('click', () => loadVocabulary(PERSONAL_VOCAB_VALUE));
+    document.getElementById('exportPersonalVocab')?.addEventListener('click', exportPersonalVocabulary);
+    document.getElementById('clearPersonalVocab')?.addEventListener('click', clearPersonalVocabulary);
+
     // Settings
     document.getElementById('shortcutsToggle').addEventListener('click', toggleShortcutsPanel);
     document.getElementById('settingsBtn').addEventListener('click', openSettings);
@@ -131,14 +151,22 @@ function initializeEventListeners() {
 
 async function loadVocabulary(listPath) {
     try {
-        const response = await fetch(listPath);
-        const data = await response.json();
-        vocabulary = data.vocabulary;
         currentVocabList = listPath;
-        
-        // Update images folder based on list number
-        const listNumber = listPath.match(/vocab_(\d+)/)[1];
-        currentImagesFolder = `images/images_${listNumber}`;
+
+        if (listPath === PERSONAL_VOCAB_VALUE) {
+            const personalData = loadPersonalVocabularyData();
+            vocabulary = personalData.vocabulary;
+            currentImagesFolder = '';
+            updatePersonalOptionLabel();
+        } else {
+            const response = await fetch(listPath);
+            const data = await response.json();
+            vocabulary = Array.isArray(data.vocabulary) ? data.vocabulary : [];
+
+            // Update images folder based on list number
+            const listNumber = listPath.match(/vocab_(\d+)/)?.[1];
+            currentImagesFolder = listNumber ? `images/images_${listNumber}` : '';
+        }
         
         currentIndex = 0;
         updateProgress();
@@ -153,6 +181,7 @@ async function loadVocabulary(listPath) {
     } catch (error) {
         console.error('Error loading vocabulary:', error);
         alert('Không thể tải danh sách từ vựng!');
+        showEmptyVocabularyState('Không thể tải danh sách từ vựng.');
     }
 }
 
@@ -183,7 +212,7 @@ function saveProgress() {
 
 function updateProgress() {
     const total = vocabulary.length;
-    const learned = learnedWords.size;
+    const learned = vocabulary.filter(word => learnedWords.has(word.word)).length;
     const percentage = total > 0 ? (learned / total) * 100 : 0;
     
     document.getElementById('progressFill').style.width = percentage + '%';
@@ -234,25 +263,35 @@ function switchMode(mode) {
 // ============================================
 
 function showFlashcard() {
-    if (vocabulary.length === 0) return;
+    if (vocabulary.length === 0) {
+        showEmptyVocabularyState('Chưa có từ vựng trong danh sách này.');
+        return;
+    }
 
     const word = vocabulary[currentIndex];
-    document.getElementById('word').textContent = word.word;
-    document.getElementById('phonetic').textContent = word.phonetic;
-    document.getElementById('meaning').textContent = word.meaning;
-    document.getElementById('exampleEn').textContent = word.example_en;
-    document.getElementById('exampleVi').textContent = word.example_vi;
-    document.getElementById('memoryTip').textContent = `💡 ${word.memory_tip}`;
+    document.getElementById('word').textContent = word.word || '';
+    document.getElementById('phonetic').textContent = word.phonetic || '';
+    document.getElementById('meaning').textContent = word.meaning || '';
+    document.getElementById('exampleEn').textContent = word.example_en || '';
+    document.getElementById('exampleVi').textContent = word.example_vi || '';
+    document.getElementById('memoryTip').textContent = word.memory_tip ? `💡 ${word.memory_tip}` : '';
 
     // Set images
-    const imagePath = `${currentImagesFolder}/${word.word}.png`;
+    const imagePath = getWordImagePath(word);
     const wordImageFront = document.getElementById('wordImage');
     const wordImageBack = document.getElementById('wordImageBack');
-    
-    wordImageFront.src = imagePath;
-    wordImageBack.src = imagePath;
-    wordImageFront.style.display = 'block';
-    wordImageBack.style.display = 'block';
+
+    if (imagePath) {
+        wordImageFront.src = imagePath;
+        wordImageBack.src = imagePath;
+        wordImageFront.style.display = 'block';
+        wordImageBack.style.display = 'block';
+    } else {
+        wordImageFront.removeAttribute('src');
+        wordImageBack.removeAttribute('src');
+        wordImageFront.style.display = 'none';
+        wordImageBack.style.display = 'none';
+    }
     
     // Hide image if it fails to load
     wordImageFront.onerror = function() {
@@ -311,6 +350,7 @@ function markAsLearned() {
 }
 
 function speakWord() {
+    if (!vocabulary[currentIndex]) return;
     const word = vocabulary[currentIndex].word;
     speak(word);
 }
@@ -334,25 +374,51 @@ function renderVocabularyList() {
         const isLearned = learnedWords.has(word.word);
         const wordCard = document.createElement('div');
         wordCard.className = `vocab-card ${isLearned ? 'learned' : ''}`;
-        wordCard.innerHTML = `
-            <div class="vocab-card-header">
-                <h3>${word.word}</h3>
-                <span class="vocab-phonetic">${word.phonetic}</span>
-                <button class="vocab-speak-btn" onclick="speakText('${word.word}')">🔊</button>
-            </div>
-            <div class="vocab-card-body">
-                <p class="vocab-meaning"><strong>Nghĩa:</strong> ${word.meaning}</p>
-                <p class="vocab-example"><strong>Ví dụ:</strong> ${word.example_en}</p>
-                <p class="vocab-example-vi">${word.example_vi}</p>
-                ${word.memory_tip ? `<p class="vocab-tip">💡 ${word.memory_tip}</p>` : ''}
-            </div>
-            <div class="vocab-card-footer">
-                <button class="btn btn-sm ${isLearned ? 'btn-secondary' : 'btn-primary'}" 
-                        onclick="toggleLearnedFromList(${index})">
-                    ${isLearned ? '✅ Đã nhớ' : '📝 Đánh dấu'}
-                </button>
-            </div>
-        `;
+
+        const header = document.createElement('div');
+        header.className = 'vocab-card-header';
+
+        const title = document.createElement('h3');
+        title.textContent = word.word || '';
+        const phonetic = document.createElement('span');
+        phonetic.className = 'vocab-phonetic';
+        phonetic.textContent = word.phonetic || '';
+        const speakBtn = document.createElement('button');
+        speakBtn.className = 'vocab-speak-btn';
+        speakBtn.type = 'button';
+        speakBtn.textContent = '🔊';
+        speakBtn.addEventListener('click', () => speakText(word.word || ''));
+        header.append(title, phonetic, speakBtn);
+
+        const body = document.createElement('div');
+        body.className = 'vocab-card-body';
+        body.append(
+            createTextLine('vocab-meaning', 'Nghĩa:', word.meaning || ''),
+            createTextLine('vocab-example', 'Ví dụ:', word.example_en || '')
+        );
+
+        const exampleVi = document.createElement('p');
+        exampleVi.className = 'vocab-example-vi';
+        exampleVi.textContent = word.example_vi || '';
+        body.appendChild(exampleVi);
+
+        if (word.memory_tip) {
+            const tip = document.createElement('p');
+            tip.className = 'vocab-tip';
+            tip.textContent = `💡 ${word.memory_tip}`;
+            body.appendChild(tip);
+        }
+
+        const footer = document.createElement('div');
+        footer.className = 'vocab-card-footer';
+        const markButton = document.createElement('button');
+        markButton.className = `btn btn-sm ${isLearned ? 'btn-secondary' : 'btn-primary'}`;
+        markButton.type = 'button';
+        markButton.textContent = isLearned ? '✅ Đã nhớ' : '📝 Đánh dấu';
+        markButton.addEventListener('click', () => toggleLearnedFromList(index));
+        footer.appendChild(markButton);
+
+        wordCard.append(header, body, footer);
         vocabList.appendChild(wordCard);
     });
 }
@@ -435,9 +501,7 @@ function showMeaningQuiz(question) {
     document.getElementById('quizWord').textContent = question.word;
     document.getElementById('quizPhonetic').textContent = question.phonetic;
     
-    const imagePath = `${currentImagesFolder}/${question.word}.png`;
-    document.getElementById('quizImage').src = imagePath;
-    document.getElementById('quizImage').style.display = 'block';
+    setOptionalImage(document.getElementById('quizImage'), getWordImagePath(question));
     
     const options = generateQuizOptions(question);
     const optionsContainer = document.getElementById('quizOptions');
@@ -455,14 +519,12 @@ function showMeaningQuiz(question) {
 function showFillBlankQuiz(question) {
     document.getElementById('fillBlankQuiz').classList.remove('hidden');
     
-    const imagePath = `${currentImagesFolder}/${question.word}.png`;
-    document.getElementById('fillBlankImage').src = imagePath;
-    document.getElementById('fillBlankImage').style.display = 'block';
+    setOptionalImage(document.getElementById('fillBlankImage'), getWordImagePath(question));
     
     document.getElementById('fillBlankHint').textContent = `${question.phonetic} - ${question.meaning}`;
     
     // Create sentence with blank
-    const sentence = question.example_en.replace(new RegExp(question.word, 'gi'), '<span class="blank">______</span>');
+    const sentence = (question.example_en || '').replace(new RegExp(escapeRegExp(question.word || ''), 'gi'), '<span class="blank">______</span>');
     document.getElementById('fillBlankSentence').innerHTML = sentence;
     
     const input = document.getElementById('fillBlankInput');
@@ -749,16 +811,32 @@ function handleSearch(e) {
     results.forEach(word => {
         const resultCard = document.createElement('div');
         resultCard.className = 'search-result-card';
-        resultCard.innerHTML = `
-            <div class="search-result-header">
-                <h3>${word.word}</h3>
-                <span class="search-phonetic">${word.phonetic}</span>
-                <button class="search-speak-btn" onclick="speakText('${word.word}')">🔊</button>
-            </div>
-            <p class="search-meaning">${word.meaning}</p>
-            <p class="search-example">${word.example_en}</p>
-            <p class="search-example-vi">${word.example_vi}</p>
-        `;
+
+        const header = document.createElement('div');
+        header.className = 'search-result-header';
+        const title = document.createElement('h3');
+        title.textContent = word.word || '';
+        const phonetic = document.createElement('span');
+        phonetic.className = 'search-phonetic';
+        phonetic.textContent = word.phonetic || '';
+        const speakBtn = document.createElement('button');
+        speakBtn.className = 'search-speak-btn';
+        speakBtn.type = 'button';
+        speakBtn.textContent = '🔊';
+        speakBtn.addEventListener('click', () => speakText(word.word || ''));
+        header.append(title, phonetic, speakBtn);
+
+        const meaning = document.createElement('p');
+        meaning.className = 'search-meaning';
+        meaning.textContent = word.meaning || '';
+        const example = document.createElement('p');
+        example.className = 'search-example';
+        example.textContent = word.example_en || '';
+        const exampleVi = document.createElement('p');
+        exampleVi.className = 'search-example-vi';
+        exampleVi.textContent = word.example_vi || '';
+
+        resultCard.append(header, meaning, example, exampleVi);
         resultsContainer.appendChild(resultCard);
     });
 }
@@ -769,7 +847,7 @@ function handleSearch(e) {
 
 function showReviewStats() {
     const totalWords = vocabulary.length;
-    const learned = learnedWords.size;
+    const learned = vocabulary.filter(word => learnedWords.has(word.word)).length;
     const unlearned = totalWords - learned;
     
     document.getElementById('totalWords').textContent = totalWords;
@@ -794,10 +872,15 @@ function renderLearnedWordsList() {
     learnedWordsArray.forEach(word => {
         const wordItem = document.createElement('div');
         wordItem.className = 'learned-word-item';
-        wordItem.innerHTML = `
-            <span class="learned-word-text">${word.word} - ${word.meaning}</span>
-            <button class="btn btn-sm btn-secondary" onclick="speakText('${word.word}')">🔊</button>
-        `;
+        const wordText = document.createElement('span');
+        wordText.className = 'learned-word-text';
+        wordText.textContent = `${word.word || ''} - ${word.meaning || ''}`;
+        const speakBtn = document.createElement('button');
+        speakBtn.className = 'btn btn-sm btn-secondary';
+        speakBtn.type = 'button';
+        speakBtn.textContent = '🔊';
+        speakBtn.addEventListener('click', () => speakText(word.word || ''));
+        wordItem.append(wordText, speakBtn);
         listContainer.appendChild(wordItem);
     });
 }
@@ -850,6 +933,489 @@ function reviewUnlearnedWords() {
         });
         observer.observe(document.getElementById('flashcard-mode'), { attributes: true });
     }, 100);
+}
+
+// ============================================
+// PERSONAL VOCABULARY
+// ============================================
+
+function initializePersonalVocabUI() {
+    updatePersonalOptionLabel();
+    hydrateDeepSeekKeyInput();
+
+    const meta = getPersonalVocabMeta();
+    const nameInput = document.getElementById('personalListName');
+    if (nameInput && meta.name) nameInput.value = meta.name;
+
+    const personalData = loadPersonalVocabularyData();
+    if (personalData.vocabulary.length > 0) {
+        setPersonalStatus(`Đã có ${personalData.vocabulary.length} từ trong list cá nhân. Chọn "Từ cá nhân" để học.`, 'success');
+    }
+}
+
+function updatePersonalOptionLabel() {
+    const option = document.querySelector(`#vocabListSelect option[value="${PERSONAL_VOCAB_VALUE}"]`);
+    if (!option) return;
+
+    const data = loadPersonalVocabularyData();
+    const meta = getPersonalVocabMeta();
+    option.textContent = data.vocabulary.length
+        ? `⭐ ${meta.name || 'Từ cá nhân'} (${data.vocabulary.length})`
+        : '⭐ Từ cá nhân';
+}
+
+function loadPersonalVocabularyData() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEYS.PERSONAL_VOCAB);
+        if (!saved) return { vocabulary: [] };
+
+        const parsed = JSON.parse(saved);
+        const list = Array.isArray(parsed.vocabulary) ? parsed.vocabulary : [];
+        return { vocabulary: normalizePersonalVocabulary(list) };
+    } catch (error) {
+        console.error('Cannot load personal vocabulary:', error);
+        return { vocabulary: [] };
+    }
+}
+
+function getPersonalVocabMeta() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEYS.PERSONAL_VOCAB_META);
+        return saved ? JSON.parse(saved) : {};
+    } catch (error) {
+        return {};
+    }
+}
+
+function savePersonalVocabularyData(words, name) {
+    const normalized = normalizePersonalVocabulary(words);
+    const meta = {
+        name: String(name || 'Từ cá nhân của tôi').trim() || 'Từ cá nhân của tôi',
+        updatedAt: new Date().toISOString(),
+        count: normalized.length
+    };
+
+    localStorage.setItem(STORAGE_KEYS.PERSONAL_VOCAB, JSON.stringify({ vocabulary: normalized }));
+    localStorage.setItem(STORAGE_KEYS.PERSONAL_VOCAB_META, JSON.stringify(meta));
+    updatePersonalOptionLabel();
+    return { vocabulary: normalized, meta };
+}
+
+function normalizePersonalVocabulary(words) {
+    const seen = new Set();
+    return (Array.isArray(words) ? words : [])
+        .map((item, index) => normalizePersonalWord(item, index + 1))
+        .filter(item => {
+            if (!item.word) return false;
+            const key = item.word.toLowerCase();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        })
+        .map((item, index) => ({ ...item, id: index + 1 }));
+}
+
+function normalizePersonalWord(item, id) {
+    const word = cleanVocabText(item?.word || item?.term || item?.english || '');
+    const meaning = cleanVocabText(item?.meaning || item?.definition_vi || item?.vietnamese || item?.definition || '');
+    const exampleEn = cleanVocabText(item?.example_en || item?.example || item?.sentence || '');
+    const exampleVi = cleanVocabText(item?.example_vi || item?.translation || '');
+
+    return {
+        id,
+        word,
+        phonetic: cleanVocabText(item?.phonetic || item?.ipa || ''),
+        meaning: meaning || 'Chưa có nghĩa tiếng Việt',
+        example_en: exampleEn || `I want to remember the word "${word}".`,
+        example_vi: exampleVi || 'Tôi muốn ghi nhớ từ này.',
+        category: cleanVocabText(item?.category || 'personal'),
+        difficulty: cleanVocabText(item?.difficulty || 'intermediate'),
+        memory_tip: cleanVocabText(item?.memory_tip || item?.tip || `Liên hệ "${word}" với một tình huống quen thuộc.`),
+        image: cleanVocabText(item?.image || '')
+    };
+}
+
+function cleanVocabText(value) {
+    return String(value || '')
+        .replace(/\s+/g, ' ')
+        .replace(/[\u0000-\u001f\u007f]/g, '')
+        .trim()
+        .slice(0, 700);
+}
+
+function togglePersonalPanel() {
+    const body = document.getElementById('personalVocabBody');
+    const button = document.getElementById('togglePersonalPanel');
+    if (!body || !button) return;
+
+    body.classList.toggle('hidden');
+    button.textContent = body.classList.contains('hidden') ? 'Mở rộng' : 'Thu gọn';
+}
+
+async function hydrateDeepSeekKeyInput() {
+    const input = document.getElementById('deepseekApiKey');
+    if (!input) return;
+
+    const saved = localStorage.getItem(STORAGE_KEYS.DEEPSEEK_API_KEY);
+    if (!saved) {
+        input.value = '';
+        return;
+    }
+
+    try {
+        input.value = await decryptLocalSecret(saved);
+        setPersonalStatus('DeepSeek key đã được nạp từ trình duyệt này.', 'success');
+    } catch (error) {
+        input.value = '';
+        setPersonalStatus('Không đọc được DeepSeek key đã lưu. Hãy nhập lại key.', 'warning');
+    }
+}
+
+async function saveDeepSeekKeyFromInput() {
+    const input = document.getElementById('deepseekApiKey');
+    const key = input?.value.trim() || '';
+
+    if (!key) {
+        setPersonalStatus('Bạn chưa nhập DeepSeek API key.', 'warning');
+        return;
+    }
+
+    if (!key.startsWith('sk-')) {
+        setPersonalStatus('Key DeepSeek thường bắt đầu bằng "sk-". Hãy kiểm tra lại trước khi dùng.', 'warning');
+    }
+
+    try {
+        const encrypted = await encryptLocalSecret(key);
+        localStorage.setItem(STORAGE_KEYS.DEEPSEEK_API_KEY, encrypted);
+        setPersonalStatus('Đã lưu DeepSeek key trong trình duyệt này.', 'success');
+    } catch (error) {
+        setPersonalStatus(`Không thể lưu key: ${error.message}`, 'error');
+    }
+}
+
+function clearDeepSeekKey() {
+    localStorage.removeItem(STORAGE_KEYS.DEEPSEEK_API_KEY);
+    const input = document.getElementById('deepseekApiKey');
+    if (input) input.value = '';
+    setPersonalStatus('Đã xóa DeepSeek key khỏi trình duyệt này.', 'success');
+}
+
+async function getDeepSeekKey() {
+    const typedKey = document.getElementById('deepseekApiKey')?.value.trim();
+    if (typedKey) return typedKey;
+
+    const saved = localStorage.getItem(STORAGE_KEYS.DEEPSEEK_API_KEY);
+    return saved ? decryptLocalSecret(saved) : '';
+}
+
+async function handlePersonalFileUpload(event) {
+    const files = Array.from(event.target.files || []);
+    const hint = document.getElementById('personalFileHint');
+    if (!files.length) {
+        if (hint) hint.textContent = 'Chưa chọn file';
+        return;
+    }
+
+    if (hint) hint.textContent = `${files.length} file đã chọn`;
+    setPersonalStatus('Đang đọc file...', 'loading');
+
+    try {
+        const chunks = [];
+        for (const file of files) {
+            const text = await readFileAsText(file);
+            chunks.push(`\n\n--- File: ${file.name} ---\n${text}`);
+        }
+
+        const textArea = document.getElementById('personalSourceText');
+        if (textArea) {
+            textArea.value = `${textArea.value.trim()}\n${chunks.join('\n')}`.trim();
+        }
+        setPersonalStatus(`Đã đọc ${files.length} file. Bạn có thể bấm "Tạo list bằng DeepSeek".`, 'success');
+    } catch (error) {
+        setPersonalStatus(`Không đọc được file: ${error.message}`, 'error');
+    } finally {
+        event.target.value = '';
+    }
+}
+
+function readFileAsText(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result || ''));
+        reader.onerror = () => reject(reader.error || new Error('FileReader error'));
+        reader.readAsText(file);
+    });
+}
+
+async function loadPersonalRawUrl() {
+    const input = document.getElementById('personalRawUrl');
+    const url = input?.value.trim();
+
+    if (!url) {
+        setPersonalStatus('Hãy nhập raw URL trước.', 'warning');
+        return;
+    }
+
+    setPersonalStatus('Đang tải raw URL...', 'loading');
+
+    try {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const text = await response.text();
+        const textArea = document.getElementById('personalSourceText');
+        if (textArea) {
+            textArea.value = `${textArea.value.trim()}\n\n--- URL: ${url} ---\n${text}`.trim();
+        }
+        setPersonalStatus(`Đã tải ${text.length.toLocaleString('vi-VN')} ký tự từ raw URL.`, 'success');
+    } catch (error) {
+        setPersonalStatus(`Không tải được URL. Raw host cần cho phép CORS. Lỗi: ${error.message}`, 'error');
+    }
+}
+
+async function generatePersonalVocabulary() {
+    const sourceText = document.getElementById('personalSourceText')?.value.trim() || '';
+    const listName = document.getElementById('personalListName')?.value.trim() || 'Từ cá nhân của tôi';
+    const wordLimit = clampNumber(parseInt(document.getElementById('personalWordLimit')?.value || '40'), 4, 200);
+
+    if (!sourceText) {
+        setPersonalStatus('Hãy dán nội dung, tải raw URL hoặc chọn file trước.', 'warning');
+        return;
+    }
+
+    const directJson = tryParseVocabularyJson(sourceText);
+    if (directJson.length > 0) {
+        const saved = savePersonalVocabularyData(directJson.slice(0, wordLimit), listName);
+        await loadVocabulary(PERSONAL_VOCAB_VALUE);
+        document.getElementById('vocabListSelect').value = PERSONAL_VOCAB_VALUE;
+        setPersonalStatus(`Đã nhập trực tiếp ${saved.vocabulary.length} từ từ JSON.`, 'success');
+        return;
+    }
+
+    let apiKey = '';
+    try {
+        apiKey = await getDeepSeekKey();
+    } catch (error) {
+        setPersonalStatus('Không đọc được DeepSeek key đã lưu. Hãy nhập lại key.', 'error');
+        return;
+    }
+
+    if (!apiKey) {
+        setPersonalStatus('Hãy nhập DeepSeek API key trước khi tạo list tự động.', 'warning');
+        return;
+    }
+
+    setPersonalStatus('DeepSeek đang phân tích và tạo list từ vựng...', 'loading');
+    setPersonalControlsDisabled(true);
+
+    try {
+        const words = await requestDeepSeekVocabulary(apiKey, sourceText, wordLimit);
+        const saved = savePersonalVocabularyData(words, listName);
+        await saveDeepSeekKeyFromInput();
+        document.getElementById('vocabListSelect').value = PERSONAL_VOCAB_VALUE;
+        await loadVocabulary(PERSONAL_VOCAB_VALUE);
+        setPersonalStatus(`Đã tạo ${saved.vocabulary.length} từ cho "${saved.meta.name}". Bạn có thể học/quiz ngay.`, 'success');
+    } catch (error) {
+        setPersonalStatus(`Không tạo được list: ${error.message}`, 'error');
+    } finally {
+        setPersonalControlsDisabled(false);
+    }
+}
+
+async function requestDeepSeekVocabulary(apiKey, sourceText, wordLimit) {
+    const compactSource = sourceText.slice(0, 24000);
+    const body = {
+        model: DEEPSEEK_MODEL,
+        temperature: 0.2,
+        response_format: { type: 'json_object' },
+        messages: [
+            {
+                role: 'system',
+                content: [
+                    'You convert study material into TOEIC-style vocabulary JSON.',
+                    'Return only valid JSON with this exact shape: {"vocabulary":[...]}',
+                    'Each item must have: word, phonetic, meaning, example_en, example_vi, category, difficulty, memory_tip.',
+                    'Use Vietnamese for meaning, example_vi, and memory_tip.',
+                    'Use concise practical TOEIC/business examples. No markdown. No HTML.'
+                ].join(' ')
+            },
+            {
+                role: 'user',
+                content: `Create up to ${wordLimit} useful English vocabulary items from this material:\n\n${compactSource}`
+            }
+        ]
+    };
+
+    const response = await fetch(DEEPSEEK_CHAT_URL, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    });
+
+    const responseText = await response.text();
+    if (!response.ok) {
+        throw new Error(`DeepSeek HTTP ${response.status}: ${responseText.slice(0, 180)}`);
+    }
+
+    let data;
+    try {
+        data = JSON.parse(responseText);
+    } catch (error) {
+        throw new Error('DeepSeek trả về dữ liệu không phải JSON.');
+    }
+
+    const content = data?.choices?.[0]?.message?.content || '';
+    const parsed = parseDeepSeekVocabularyContent(content);
+    const normalized = normalizePersonalVocabulary(parsed).slice(0, wordLimit);
+
+    if (normalized.length < 4) {
+        throw new Error('DeepSeek tạo dưới 4 từ, chưa đủ để quiz. Hãy đưa thêm nội dung nguồn.');
+    }
+
+    return normalized;
+}
+
+function parseDeepSeekVocabularyContent(content) {
+    const cleaned = String(content || '')
+        .replace(/^```(?:json)?/i, '')
+        .replace(/```$/i, '')
+        .trim();
+
+    let parsed;
+    try {
+        parsed = JSON.parse(cleaned);
+    } catch (error) {
+        const match = cleaned.match(/\{[\s\S]*\}/);
+        if (!match) throw new Error('Không tìm thấy JSON trong phản hồi DeepSeek.');
+        parsed = JSON.parse(match[0]);
+    }
+
+    if (Array.isArray(parsed)) return parsed;
+    if (Array.isArray(parsed.vocabulary)) return parsed.vocabulary;
+    if (Array.isArray(parsed.words)) return parsed.words;
+    throw new Error('JSON DeepSeek không có mảng vocabulary.');
+}
+
+function tryParseVocabularyJson(sourceText) {
+    try {
+        const parsed = JSON.parse(sourceText);
+        if (Array.isArray(parsed)) return parsed;
+        if (Array.isArray(parsed.vocabulary)) return parsed.vocabulary;
+        if (Array.isArray(parsed.words)) return parsed.words;
+    } catch (error) {
+        return [];
+    }
+    return [];
+}
+
+async function exportPersonalVocabulary() {
+    const data = loadPersonalVocabularyData();
+    const meta = getPersonalVocabMeta();
+
+    if (data.vocabulary.length === 0) {
+        setPersonalStatus('Chưa có list cá nhân để xuất.', 'warning');
+        return;
+    }
+
+    const payload = {
+        vocabulary: data.vocabulary,
+        meta,
+        exportDate: new Date().toISOString()
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `vvt-personal-vocab-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    setPersonalStatus('Đã xuất list cá nhân thành file JSON.', 'success');
+}
+
+async function clearPersonalVocabulary() {
+    if (!confirm('Bạn có chắc muốn xóa list từ vựng cá nhân khỏi trình duyệt này?')) return;
+
+    localStorage.removeItem(STORAGE_KEYS.PERSONAL_VOCAB);
+    localStorage.removeItem(STORAGE_KEYS.PERSONAL_VOCAB_META);
+    updatePersonalOptionLabel();
+
+    if (currentVocabList === PERSONAL_VOCAB_VALUE) {
+        await loadVocabulary('vocab/vocab_1.json');
+        document.getElementById('vocabListSelect').value = 'vocab/vocab_1.json';
+    }
+
+    setPersonalStatus('Đã xóa list từ vựng cá nhân.', 'success');
+}
+
+function setPersonalStatus(message, type = 'info') {
+    const status = document.getElementById('personalVocabStatus');
+    if (!status) return;
+
+    status.textContent = message;
+    status.className = `personal-status ${type}`;
+}
+
+function setPersonalControlsDisabled(disabled) {
+    ['generatePersonalVocab', 'loadPersonalRawUrl', 'usePersonalVocab', 'exportPersonalVocab', 'clearPersonalVocab'].forEach(id => {
+        const element = document.getElementById(id);
+        if (element) element.disabled = disabled;
+    });
+}
+
+async function encryptLocalSecret(secret) {
+    if (!window.crypto?.subtle) {
+        return `b64.${textToBase64(secret)}`;
+    }
+
+    const salt = crypto.getRandomValues(new Uint8Array(16));
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const key = await deriveLocalCryptoKey(salt);
+    const cipherBuffer = await crypto.subtle.encrypt(
+        { name: 'AES-GCM', iv },
+        key,
+        new TextEncoder().encode(secret)
+    );
+
+    return `aesgcm.${bytesToBase64(salt)}.${bytesToBase64(iv)}.${bytesToBase64(new Uint8Array(cipherBuffer))}`;
+}
+
+async function decryptLocalSecret(payload) {
+    if (payload.startsWith('b64.')) {
+        return base64ToText(payload.slice(4));
+    }
+
+    const [version, salt64, iv64, cipher64] = payload.split('.');
+    if (version !== 'aesgcm' || !salt64 || !iv64 || !cipher64) {
+        throw new Error('Unsupported encrypted payload');
+    }
+
+    const salt = base64ToBytes(salt64);
+    const iv = base64ToBytes(iv64);
+    const cipher = base64ToBytes(cipher64);
+    const key = await deriveLocalCryptoKey(salt);
+    const plainBuffer = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, cipher);
+    return new TextDecoder().decode(plainBuffer);
+}
+
+async function deriveLocalCryptoKey(salt) {
+    const material = await crypto.subtle.importKey(
+        'raw',
+        new TextEncoder().encode(LOCAL_SECRET_PASSPHRASE),
+        'PBKDF2',
+        false,
+        ['deriveKey']
+    );
+
+    return crypto.subtle.deriveKey(
+        { name: 'PBKDF2', salt, iterations: 120000, hash: 'SHA-256' },
+        material,
+        { name: 'AES-GCM', length: 256 },
+        false,
+        ['encrypt', 'decrypt']
+    );
 }
 
 // ============================================
@@ -1010,6 +1576,89 @@ function shuffleArray(array) {
         [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
     return newArray;
+}
+
+function createTextLine(className, label, value) {
+    const line = document.createElement('p');
+    line.className = className;
+
+    const strong = document.createElement('strong');
+    strong.textContent = label ? `${label} ` : '';
+    line.appendChild(strong);
+    line.appendChild(document.createTextNode(value || ''));
+    return line;
+}
+
+function showEmptyVocabularyState(message) {
+    document.getElementById('word').textContent = 'Chưa có từ vựng';
+    document.getElementById('phonetic').textContent = '';
+    document.getElementById('meaning').textContent = message || '';
+    document.getElementById('exampleEn').textContent = '';
+    document.getElementById('exampleVi').textContent = '';
+    document.getElementById('memoryTip').textContent = '';
+
+    ['wordImage', 'wordImageBack'].forEach(id => {
+        const image = document.getElementById(id);
+        if (!image) return;
+        image.removeAttribute('src');
+        image.style.display = 'none';
+    });
+
+    document.querySelector('.card-front')?.classList.remove('hidden');
+    document.querySelector('.card-back')?.classList.add('hidden');
+}
+
+function getWordImagePath(word) {
+    if (word?.image) return word.image;
+    if (!currentImagesFolder || !word?.word) return '';
+    return `${currentImagesFolder}/${word.word}.png`;
+}
+
+function setOptionalImage(image, src) {
+    if (!image) return;
+
+    if (!src) {
+        image.removeAttribute('src');
+        image.style.display = 'none';
+        return;
+    }
+
+    image.src = src;
+    image.style.display = 'block';
+}
+
+function escapeRegExp(value) {
+    return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function clampNumber(value, min, max) {
+    if (Number.isNaN(value)) return min;
+    return Math.max(min, Math.min(max, value));
+}
+
+function bytesToBase64(bytes) {
+    let binary = '';
+    bytes.forEach(byte => {
+        binary += String.fromCharCode(byte);
+    });
+    return btoa(binary);
+}
+
+function base64ToBytes(base64) {
+    const binary = atob(base64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) {
+        bytes[i] = binary.charCodeAt(i);
+    }
+    return bytes;
+}
+
+function textToBase64(text) {
+    return bytesToBase64(new TextEncoder().encode(text));
+}
+
+function base64ToText(base64) {
+    return new TextDecoder().decode(base64ToBytes(base64));
 }
 
 // ============================================

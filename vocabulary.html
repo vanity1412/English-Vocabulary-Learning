@@ -118,6 +118,7 @@
         <div class="list-selector">
             <label>📚 Chọn danh sách:</label>
             <select id="vocabListSelect">
+                <option value="custom:personal">⭐ Từ cá nhân</option>
                 <option value="vocab/vocab_1.json">List 1</option>
                 <option value="vocab/vocab_2.json">List 2</option>
                 <option value="vocab/vocab_3.json">List 3</option>
@@ -145,6 +146,66 @@
             <button class="btn-reload" id="reloadList">🔄 Tải lại</button>
         </div>
 
+        <section class="personal-vocab-panel" id="personalVocabPanel">
+            <div class="personal-vocab-header">
+                <div>
+                    <h2>⭐ Từ vựng cá nhân</h2>
+                    <p>Dán văn bản, nhập raw URL hoặc tải file lên để DeepSeek tự tạo list học/quiz giống các list có sẵn.</p>
+                </div>
+                <button class="btn btn-secondary btn-sm" id="togglePersonalPanel" type="button">Thu gọn</button>
+            </div>
+            <div class="personal-vocab-body" id="personalVocabBody">
+                <div class="personal-vocab-grid">
+                    <div class="personal-field personal-field-wide">
+                        <label for="deepseekApiKey">DeepSeek API Key</label>
+                        <div class="personal-inline">
+                            <input type="password" id="deepseekApiKey" placeholder="Nhập key DeepSeek của bạn" autocomplete="off">
+                            <button class="btn btn-secondary" id="saveDeepseekKey" type="button">Lưu key</button>
+                            <button class="btn btn-secondary" id="clearDeepseekKey" type="button">Xóa key</button>
+                        </div>
+                        <small>Key chỉ lưu trong trình duyệt này, không được đưa vào mã nguồn GitHub.</small>
+                    </div>
+                    <div class="personal-field">
+                        <label for="personalListName">Tên list</label>
+                        <input type="text" id="personalListName" value="Từ cá nhân của tôi" maxlength="80">
+                    </div>
+                    <div class="personal-field">
+                        <label for="personalWordLimit">Số từ tối đa</label>
+                        <input type="number" id="personalWordLimit" min="4" max="200" value="40">
+                    </div>
+                </div>
+
+                <div class="personal-field">
+                    <label for="personalRawUrl">Raw URL</label>
+                    <div class="personal-inline">
+                        <input type="url" id="personalRawUrl" placeholder="https://raw.githubusercontent.com/.../words.txt">
+                        <button class="btn btn-secondary" id="loadPersonalRawUrl" type="button">Tải URL</button>
+                    </div>
+                </div>
+
+                <div class="personal-field">
+                    <label for="personalSourceText">Nội dung nguồn</label>
+                    <textarea id="personalSourceText" rows="8" placeholder="Dán danh sách từ, đoạn văn, CSV, JSON hoặc transcript cần biến thành từ vựng..."></textarea>
+                </div>
+
+                <div class="personal-import-row">
+                    <label class="personal-file-picker">
+                        <input type="file" id="personalFileInput" multiple>
+                        <span>📎 Chọn file bất kỳ</span>
+                    </label>
+                    <span id="personalFileHint">Chưa chọn file</span>
+                </div>
+
+                <div class="personal-actions">
+                    <button class="btn btn-primary" id="generatePersonalVocab" type="button">✨ Tạo list bằng DeepSeek</button>
+                    <button class="btn btn-secondary" id="usePersonalVocab" type="button">Dùng list cá nhân</button>
+                    <button class="btn btn-secondary" id="exportPersonalVocab" type="button">Xuất JSON</button>
+                    <button class="btn btn-secondary" id="clearPersonalVocab" type="button">Xóa list</button>
+                </div>
+                <div class="personal-status" id="personalVocabStatus">Bạn có thể dùng text thường, file .txt/.csv/.md/.json hoặc raw URL có bật CORS.</div>
+            </div>
+        </section>
+
         <nav class="mode-selector">
             <button class="mode-btn active" data-mode="flashcard">🎴 Flashcard</button>
             <button class="mode-btn" data-mode="vocabulary">📖 Xem từ vựng</button>
@@ -158,7 +219,7 @@
         <div class="mode-content active" id="flashcard-mode">
             <div class="flashcard" id="flashcard">
                 <div class="card-front">
-                    <img id="wordImage" class="word-image" src="" alt="">
+                    <img id="wordImage" class="word-image" alt="">
                     <h2 class="word" id="word"></h2>
                     <p class="phonetic" id="phonetic"></p>
                     <button class="speak-btn" id="speakBtn">🔊 Phát âm</button>
@@ -168,7 +229,7 @@
                     </div>
                 </div>
                 <div class="card-back hidden">
-                    <img id="wordImageBack" class="word-image" src="" alt="">
+                    <img id="wordImageBack" class="word-image" alt="">
                     <p class="meaning" id="meaning"></p>
                     <div class="example">
                         <p class="example-en" id="exampleEn"></p>
@@ -222,7 +283,7 @@
                 
                 <!-- Meaning Quiz Type -->
                 <div class="quiz-question" id="meaningQuiz">
-                    <img id="quizImage" class="quiz-image" src="" alt="" onerror="this.style.display='none'">
+                    <img id="quizImage" class="quiz-image" alt="" onerror="this.style.display='none'">
                     <h3 id="quizWord"></h3>
                     <p id="quizPhonetic" class="quiz-phonetic"></p>
                     <button class="speak-btn" id="quizSpeakBtn">🔊 Phát âm</button>
@@ -232,7 +293,7 @@
                 
                 <!-- Fill Blank Quiz Type -->
                 <div class="quiz-question hidden" id="fillBlankQuiz">
-                    <img id="fillBlankImage" class="quiz-image" src="" alt="" onerror="this.style.display='none'">
+                    <img id="fillBlankImage" class="quiz-image" alt="" onerror="this.style.display='none'">
                     <p class="quiz-hint">💡 <span id="fillBlankHint"></span></p>
                     <p class="quiz-sentence" id="fillBlankSentence"></p>
                     <input type="text" id="fillBlankInput" class="fill-blank-input" placeholder="Nhập từ tiếng Anh..." autocomplete="off">
