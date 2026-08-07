@@ -2,7 +2,7 @@
 
 /* Main Header */
 .main-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(90deg, #0f172a 0%, #0f766e 52%, #1d4ed8 100%);
     color: white;
     padding: 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -12,7 +12,7 @@
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 16px 24px;
     display: flex;
@@ -42,13 +42,31 @@
 }
 
 .header-logo {
-    font-size: 32px;
-    animation: bounce 2s infinite;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.14);
+    font-size: 24px;
+    animation: none;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+.header-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
+    border-radius: 7px;
+    background: white;
+}
+
+.header-logo-fallback {
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0;
 }
 
 .header-title {
@@ -74,6 +92,8 @@
     display: flex;
     gap: 8px;
     align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .nav-btn {
@@ -88,8 +108,11 @@
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     backdrop-filter: blur(10px);
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .nav-btn:hover {
@@ -108,11 +131,11 @@
 
 /* Donation Button in Header */
 .donate-btn {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    background: #f97316;
     color: white;
     border: none;
     padding: 10px 24px;
-    border-radius: 25px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 700;
@@ -121,12 +144,13 @@
     align-items: center;
     gap: 8px;
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-    animation: pulse-glow 2s infinite;
+    animation: none;
 }
 
 .donate-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+    background: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.36);
 }
 
 .donate-btn:active {

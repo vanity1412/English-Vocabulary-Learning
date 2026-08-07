@@ -15,21 +15,24 @@
     <!-- Header -->
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="header-logo-link">
-                <div class="header-logo">📚</div>
+            <a href="index.html" class="header-logo-link" aria-label="Về trang chủ VVT">
+                <div class="header-logo">
+                    <img class="header-logo-img" src="toeic-logo.png" alt="VVT TOEIC" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+                    <span class="header-logo-fallback" hidden>VVT</span>
+                </div>
                 <div class="header-title">
                     <h1>VVT - Cùng Học TOEIC</h1>
                     <div class="header-subtitle">Chinh phục TOEIC một cách dễ dàng</div>
                 </div>
             </a>
-            <div class="header-nav">
+            <nav class="header-nav" aria-label="Điều hướng chính">
                 <button class="nav-btn active" onclick="window.location.href='vocabulary.html'">📖 Từ vựng</button>
                 <button class="nav-btn" onclick="window.location.href='grammar.html'">📝 Ngữ pháp</button>
                 <button class="nav-btn" onclick="window.location.href='parts.html'">🎯 Parts</button>
-                <button class="donate-btn" onclick="if(typeof donationModal !== 'undefined') donationModal.forceShow()">
-                    💝 Ủng hộ Admin
-                </button>
-            </div>
+                <button class="nav-btn" onclick="window.location.href='toeic-tests.html'">💻 Thi thử</button>
+                <button class="nav-btn" onclick="window.location.href='stats.html'">📊 Thống kê</button>
+                <button class="donate-btn" onclick="if(window.donationModal) donationModal.forceShow()">💝 Ủng hộ Admin</button>
+            </nav>
         </div>
     </header>
 

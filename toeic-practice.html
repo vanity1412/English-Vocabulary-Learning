@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VVT TOEIC – Phòng thi mô phỏng</title>
     <link rel="icon" href="toeic-logo.png" type="image/png">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/donation-modal.css?v=auto-supported-20260806">
     <link rel="stylesheet" href="css/ui-refresh.css?v=20260806-global">
     <script src="js/toeic-media-hosts.js?v=20260805-media-retry2"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -1651,6 +1653,30 @@
 </head>
 <body>
 
+    <!-- Header -->
+    <header class="main-header setup-site-header" id="setup-site-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo-link" aria-label="Về trang chủ VVT">
+                <div class="header-logo">
+                    <img class="header-logo-img" src="toeic-logo.png" alt="VVT TOEIC" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+                    <span class="header-logo-fallback" hidden>VVT</span>
+                </div>
+                <div class="header-title">
+                    <h1>VVT - Cùng Học TOEIC</h1>
+                    <div class="header-subtitle">Chinh phục TOEIC một cách dễ dàng</div>
+                </div>
+            </a>
+            <nav class="header-nav" aria-label="Điều hướng chính">
+                <button class="nav-btn" onclick="window.location.href='vocabulary.html'">📖 Từ vựng</button>
+                <button class="nav-btn" onclick="window.location.href='grammar.html'">📝 Ngữ pháp</button>
+                <button class="nav-btn" onclick="window.location.href='parts.html'">🎯 Parts</button>
+                <button class="nav-btn active" onclick="window.location.href='toeic-tests.html'">💻 Thi thử</button>
+                <button class="nav-btn" onclick="window.location.href='stats.html'">📊 Thống kê</button>
+                <button class="donate-btn" onclick="if(window.donationModal) donationModal.forceShow()">💝 Ủng hộ Admin</button>
+            </nav>
+        </div>
+    </header>
+
     <div id="setup-screen">
         <div class="setup-header">
             <h1 id="setup-title">Đang tải dữ liệu...</h1>
@@ -1740,7 +1766,14 @@
                     </div>
                 </div>
             </div>
-            
+            <nav class="practice-site-nav" aria-label="Điều hướng chính">
+                <a class="practice-site-link" href="vocabulary.html">📖 Từ vựng</a>
+                <a class="practice-site-link" href="grammar.html">📝 Ngữ pháp</a>
+                <a class="practice-site-link" href="parts.html">🎯 Parts</a>
+                <a class="practice-site-link active" href="toeic-tests.html">💻 Thi thử</a>
+                <a class="practice-site-link" href="stats.html">📊 Thống kê</a>
+                <button class="practice-site-link practice-donate-link" type="button" onclick="if(window.donationModal) donationModal.forceShow()">💝 Ủng hộ</button>
+            </nav>
             <div id="theme-panel" class="theme-panel">
                 <span style="font-size: 13px; font-weight: 600;">Chọn màu nền:</span>
                 <div class="color-grid">
@@ -2677,6 +2710,7 @@
             // ------------------------------------
 
             document.getElementById('setup-screen').classList.add('hidden');
+            document.getElementById('setup-site-header')?.classList.add('hidden');
             document.getElementById('test-screen').classList.remove('hidden');
             // Màn hình thiết lập có thể đã được cuộn xuống trước khi bấm bắt đầu.
             // Luôn đưa phòng thi trở lại đầu trang để câu đầu không bị thanh tiêu đề che mất.
@@ -4748,5 +4782,6 @@
             document.body.classList.toggle('focus-active');
         }
     </script>
+    <script src="js/donation-modal.js?v=auto-supported-20260806"></script>
 </body>
 </html>

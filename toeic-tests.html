@@ -250,6 +250,8 @@
             .tip-list { grid-template-columns: 1fr; }
         }
     </style>
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/donation-modal.css?v=auto-supported-20260806">
     <link rel="stylesheet" href="css/ui-refresh.css?v=20260806-global">
     <style>
         :root {
@@ -519,20 +521,28 @@
     </style>
 </head>
 <body>
-    <header class="topbar">
-        <a class="brand" href="index.html" aria-label="Về trang chủ VVT">
-            <span class="brand-icon" aria-hidden="true">📚</span>
-            <span>
-                <strong>VVT</strong>
-                <small>Cùng Học TOEIC</small>
-            </span>
-        </a>
-        <nav class="nav-links" aria-label="Điều hướng chính">
-            <a class="nav-link" href="vocabulary.html">📖 Từ vựng</a>
-            <a class="nav-link" href="grammar.html">📝 Ngữ pháp</a>
-            <a class="nav-link" href="parts.html">🎯 Parts</a>
-            <a class="nav-link active" href="toeic-tests.html" aria-current="page">💻 Thi thử</a>
-        </nav>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo-link" aria-label="Về trang chủ VVT">
+                <div class="header-logo">
+                    <img class="header-logo-img" src="toeic-logo.png" alt="VVT TOEIC" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+                    <span class="header-logo-fallback" hidden>VVT</span>
+                </div>
+                <div class="header-title">
+                    <h1>VVT - Cùng Học TOEIC</h1>
+                    <div class="header-subtitle">Chinh phục TOEIC một cách dễ dàng</div>
+                </div>
+            </a>
+            <nav class="header-nav" aria-label="Điều hướng chính">
+                <button class="nav-btn" onclick="window.location.href='vocabulary.html'">📖 Từ vựng</button>
+                <button class="nav-btn" onclick="window.location.href='grammar.html'">📝 Ngữ pháp</button>
+                <button class="nav-btn" onclick="window.location.href='parts.html'">🎯 Parts</button>
+                <button class="nav-btn active" onclick="window.location.href='toeic-tests.html'">💻 Thi thử</button>
+                <button class="nav-btn" onclick="window.location.href='stats.html'">📊 Thống kê</button>
+                <button class="donate-btn" onclick="if(window.donationModal) donationModal.forceShow()">💝 Ủng hộ Admin</button>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -701,5 +711,6 @@
         searchInput.addEventListener('input', applyFilters);
         renderCollections();
     </script>
+    <script src="js/donation-modal.js?v=auto-supported-20260806"></script>
 </body>
 </html>

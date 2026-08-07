@@ -145,16 +145,34 @@
             .mic-status { font-size: 14px !important; width: auto !important;}
         }
     </style>
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/donation-modal.css?v=auto-supported-20260806">
     <link rel="stylesheet" href="css/ui-refresh.css?v=20260806-global">
 </head>
 <body>
 
-    <header class="test-header">
-        <div class="header-left">
-            <img src="toeic-logo.png" alt="VVT TOEIC" style="height: 30px; background: white; border-radius: 4px; padding: 2px;">
-            WINDY TOEIC - SPEAKING & WRITING
+    <!-- Header -->
+    <header class="main-header setup-site-header" id="setup-site-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo-link" aria-label="Về trang chủ VVT">
+                <div class="header-logo">
+                    <img class="header-logo-img" src="toeic-logo.png" alt="VVT TOEIC" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+                    <span class="header-logo-fallback" hidden>VVT</span>
+                </div>
+                <div class="header-title">
+                    <h1>VVT - Cùng Học TOEIC</h1>
+                    <div class="header-subtitle">Chinh phục TOEIC một cách dễ dàng</div>
+                </div>
+            </a>
+            <nav class="header-nav" aria-label="Điều hướng chính">
+                <button class="nav-btn" onclick="window.location.href='vocabulary.html'">📖 Từ vựng</button>
+                <button class="nav-btn" onclick="window.location.href='grammar.html'">📝 Ngữ pháp</button>
+                <button class="nav-btn" onclick="window.location.href='parts.html'">🎯 Parts</button>
+                <button class="nav-btn active" onclick="window.location.href='toeic-tests.html'">💻 Thi thử</button>
+                <button class="nav-btn" onclick="window.location.href='stats.html'">📊 Thống kê</button>
+                <button class="donate-btn" onclick="if(window.donationModal) donationModal.forceShow()">💝 Ủng hộ Admin</button>
+            </nav>
         </div>
-        <button class="btn-exit" onclick="window.location.href='index.html'">Thoát</button>
     </header>
 
     <!-- MÀN HÌNH CHỌN ĐỀ -->
@@ -443,8 +461,29 @@
 
     <!-- MÀN HÌNH THI -->
     <div id="test-screen" class="hidden">
-        
-        <div class="timer-bar" style="display: flex; justify-content: space-between; align-items: center;">
+        <header class="test-header sw-room-header">
+            <a class="practice-brand" href="index.html" aria-label="Về trang chủ VVT">
+                <span class="practice-brand-logo">
+                    <img src="toeic-logo.png" alt="VVT TOEIC" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+                    <span class="practice-brand-fallback" hidden>VVT</span>
+                </span>
+                <span class="practice-brand-text">
+                    <strong>VVT TOEIC</strong>
+                    <small>Speaking & Writing</small>
+                </span>
+            </a>
+            <nav class="practice-site-nav" aria-label="Điều hướng chính">
+                <a class="practice-site-link" href="vocabulary.html">📖 Từ vựng</a>
+                <a class="practice-site-link" href="grammar.html">📝 Ngữ pháp</a>
+                <a class="practice-site-link" href="parts.html">🎯 Parts</a>
+                <a class="practice-site-link active" href="toeic-tests.html">💻 Thi thử</a>
+                <a class="practice-site-link" href="stats.html">📊 Thống kê</a>
+                <button class="practice-site-link practice-donate-link" type="button" onclick="if(window.donationModal) donationModal.forceShow()">💝 Ủng hộ</button>
+            </nav>
+            <button class="btn-exit" onclick="window.location.href='index.html'">Thoát</button>
+        </header>
+
+<div class="timer-bar" style="display: flex; justify-content: space-between; align-items: center;">
             <div class="part-title" id="part-title" style="flex: 1;">TOEIC SPEAKING</div>
             
             <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex: 2;">
@@ -634,6 +673,7 @@
                         currentQIndex = 0;
                         
                         document.getElementById('setup-screen').classList.add('hidden');
+                        document.getElementById('setup-site-header')?.classList.add('hidden');
                         
                         // KIỂM TRA: Nếu có thi Speaking thì bung bảng xin quyền Mic chuyên nghiệp trước khi vào thi
                         // NẾU ĐÃ CẤP QUYỀN LẦN ĐẦU RỒI THÌ KHÔNG HIỆN BẢNG NỮA
@@ -1670,5 +1710,6 @@ ${suggestionFormat}`;
             window.location.href = "index.html";
         }
     </script>
+    <script src="js/donation-modal.js?v=auto-supported-20260806"></script>
 </body>
 </html>
