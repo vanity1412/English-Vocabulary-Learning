@@ -746,6 +746,17 @@
             background: var(--ui-brand);
             color: #fff;
         }
+        .audio-seek-btn {
+            border-color: rgba(37, 99, 235, .22);
+            background: #eff6ff;
+            color: #1d4ed8;
+            font-weight: 850;
+        }
+        .audio-seek-btn:hover {
+            border-color: rgba(37, 99, 235, .38);
+            background: #dbeafe;
+            color: #1e40af;
+        }
 
         .q-block {
             margin: 0 !important;
@@ -3153,6 +3164,7 @@
                     }
                 }
 
+                ensureAudioSeekControls();
                 document.getElementById('right-panel').scrollTop = 0;
             } // Hết khối Render
 
@@ -3485,6 +3497,38 @@
             
             let leftTVi = document.getElementById('left-transcript-vi');
             if(leftTVi) leftTVi.classList.toggle('hidden');
+        }
+
+        function ensureAudioSeekControls() {
+            if (currentMode === 'exam' && !isSubmitted) return;
+
+            document.querySelectorAll('.speed-controls').forEach(controls => {
+                const existingSeekButtons = controls.querySelectorAll('[data-audio-seek], button[onclick*="seekAudio"]');
+                if (existingSeekButtons.length > 0) {
+                    existingSeekButtons.forEach(button => button.classList.add('audio-seek-btn'));
+                    return;
+                }
+
+                const rewindButton = document.createElement('button');
+                rewindButton.type = 'button';
+                rewindButton.className = 'speed-btn audio-seek-btn';
+                rewindButton.dataset.audioSeek = 'rewind';
+                rewindButton.title = 'Tua lại 5 giây (Ctrl)';
+                rewindButton.textContent = '-5s';
+                rewindButton.addEventListener('click', () => seekAudio(-5));
+
+                const forwardButton = document.createElement('button');
+                forwardButton.type = 'button';
+                forwardButton.className = 'speed-btn audio-seek-btn';
+                forwardButton.dataset.audioSeek = 'forward';
+                forwardButton.title = 'Tua tới 5 giây';
+                forwardButton.textContent = '+5s';
+                forwardButton.addEventListener('click', () => seekAudio(5));
+
+                const speedLabel = Array.from(controls.children).find(child => child.tagName === 'SPAN');
+                controls.insertBefore(forwardButton, speedLabel || controls.firstChild);
+                controls.insertBefore(rewindButton, forwardButton);
+            });
         }
 
         function setSpeed(rate) {

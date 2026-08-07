@@ -46,6 +46,12 @@
         .saved-text { color: #28a745; font-size: 13px; font-weight: bold; opacity: 0; transition: opacity 0.3s; }
         .saved-text.show { opacity: 1; }
         .api-provider-note { font-size: 13px; color: #666; margin-top: 6px; line-height: 1.45; }
+        .api-key-row { display: flex; gap: 8px; align-items: stretch; }
+        .api-key-row input { flex: 1; min-width: 0; }
+        .btn-api-key { border: none; border-radius: 6px; padding: 0 14px; background: #0037f4; color: white; font-weight: 800; white-space: nowrap; }
+        .btn-api-key:hover { background: #0026a3; }
+        .btn-api-clear { background: #eef2f7; color: #344054; border: 1px solid #d7dee8; }
+        .btn-api-clear:hover { background: #e2e8f0; }
         
         /* Main Content 2 Columns */
         .content-area { display: flex; gap: 20px; min-height: 50vh; align-items: stretch;}
@@ -81,6 +87,11 @@
         .sw-textarea { width: 100%; flex: 1; min-height: 300px; padding: 15px; font-size: 16px; border: 2px solid #ccc; border-radius: 6px; resize: vertical; font-family: inherit; outline: none; transition: 0.2s; line-height: 1.5;}
         .sw-textarea:focus { border-color: #5ba4e5; box-shadow: 0 0 0 3px rgba(91,164,229,0.2);}
         .word-count { width: 100%; text-align: right; font-size: 14px; color: #666; font-weight: bold; margin-top: 10px; }
+        .speaking-transcript-wrap { width: 100%; margin: 12px 0 14px; }
+        .speaking-transcript-wrap label { display: block; margin-bottom: 6px; color: #003366; font-weight: 800; }
+        .speaking-transcript-input { width: 100%; min-height: 96px; padding: 12px; border: 1px solid #cfd7e3; border-radius: 6px; resize: vertical; font: inherit; line-height: 1.5; outline: none; }
+        .speaking-transcript-input:focus { border-color: #5ba4e5; box-shadow: 0 0 0 3px rgba(91,164,229,0.2); }
+        .speaking-transcript-hint { display: block; margin-top: 5px; color: #667085; font-size: 12px; line-height: 1.4; }
         
         .mic-container { display: flex; align-items: center; gap: 10px; }
         .record-btn { background: #dc3545; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(220,53,69,0.4); transition: 0.3s; pointer-events: none; opacity: 0.5;}
@@ -123,6 +134,8 @@
             
             /* Tối ưu chữ, khung hiển thị và Audio */
             .api-tooltip-box { left: auto; right: -10px; transform: none; width: 90vw; }
+            .api-key-row { flex-direction: column; }
+            .btn-api-key { min-height: 40px; }
             .sw-zoom-btn { display: none !important; } /* Ẩn nút zoom chữ trên mobile */
             #intro-box { font-size: 15px !important; }
             #intro-box strong { font-size: 17px !important; }
@@ -171,26 +184,22 @@
             </select>
         </div>
         
-        <div class="form-group">
-            <label>Nhà cung cấp AI:</label>
-            <select id="ai-provider-select" onchange="switchAIProvider()">
-                <option value="groq">Groq - Speaking + Writing</option>
-                <option value="deepseek">DeepSeek - Writing/Text</option>
-            </select>
-            <div class="api-provider-note" id="ai-provider-note"></div>
-        </div>
-
         <div class="form-group" style="position: relative; margin-bottom: 35px;">
             <label style="display: flex; align-items: center;">
-                <span id="api-provider-label">Groq API KEY</span> <span style="color: #dc3545; font-size: 14px; font-weight: bold; margin-left: 8px;">* Bắt buộc</span>
+                <span id="api-provider-label">DeepSeek API KEY</span> <span style="color: #dc3545; font-size: 14px; font-weight: bold; margin-left: 8px;">* Bắt buộc khi chấm AI</span>
                 <div class="api-tooltip" id="api-tooltip-btn" onclick="toggleApiTooltip(event)">?
                     <div class="api-tooltip-box" id="api-tooltip-box" onclick="event.stopPropagation()">
                         <div id="api-tooltip-content"></div>
                     </div>
                 </div>
             </label>
-            <input type="text" autocomplete="off" spellcheck="false" id="ai-api-key" placeholder="Nhập API Key..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-size: 15px; outline: none; -webkit-text-security: disc;" oninput="autoSaveAPI()">
-            <div style="display: flex; justify-content: flex-end; margin-top: 5px; position: absolute; width: 100%;">
+            <div class="api-key-row">
+                <input type="password" autocomplete="off" spellcheck="false" id="ai-api-key" placeholder="Nhập DeepSeek API key của bạn" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-size: 15px; outline: none;">
+                <button type="button" class="btn-api-key" onclick="saveCurrentAPIKey()">Lưu key</button>
+                <button type="button" class="btn-api-key btn-api-clear" onclick="clearCurrentAPIKey()">Xóa key</button>
+            </div>
+            <div class="api-provider-note" id="ai-provider-note">Key chỉ lưu trong trình duyệt này ở dạng mã hóa local, không đưa vào mã nguồn GitHub.</div>
+            <div style="display: flex; justify-content: flex-end; margin-top: 5px; width: 100%;">
                 <span id="api-saved-msg" class="saved-text">Đã lưu ✔</span>
             </div>
         </div>
@@ -200,49 +209,56 @@
     
     <script>
         const AI_PROVIDERS = {
-            groq: {
-                id: 'groq',
-                name: 'Groq',
-                storageKey: 'win_groq_api_key',
-                placeholder: 'Nhập Groq API Key bắt đầu bằng gsk_...',
-                note: 'Khuyên dùng cho Speaking vì Groq có Whisper để bóc băng file ghi âm.',
-                tooltip: `<div style="font-weight: bold; color: #ff6b6b; margin-bottom: 5px;">HƯỚNG DẪN LẤY GROQ API KEY</div>
-                        1. Đăng ký: <a href="https://console.groq.com/login" target="_blank">console.groq.com/login</a><br>
-                        2. Vào trang: <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a><br>
-                        3. Bấm Create API key, nhập tên, Submit.<br>
-                        4. Copy dãy mã bắt đầu bằng gsk_ dán vào ô bên dưới.`,
-                chatUrl: 'https://api.groq.com/openai/v1/chat/completions',
-                modelsUrl: 'https://api.groq.com/openai/v1/models',
-                transcriptionUrl: 'https://api.groq.com/openai/v1/audio/transcriptions',
-                supportsAudioTranscription: true
-            },
             deepseek: {
                 id: 'deepseek',
                 name: 'DeepSeek',
-                storageKey: 'win_deepseek_api_key',
+                storageKey: 'toeic_sw_deepseek_api_key_v1',
                 placeholder: 'Nhập DeepSeek API Key bắt đầu bằng sk-...',
-                note: 'Dùng tốt cho Writing/text. Speaking ghi âm vẫn cần Groq để bóc băng audio.',
+                note: 'Dùng để chấm Writing và Speaking dựa trên transcript. Key được mã hóa local giống phần vocab.',
                 tooltip: `<div style="font-weight: bold; color: #ff6b6b; margin-bottom: 5px;">HƯỚNG DẪN LẤY DEEPSEEK API KEY</div>
                         1. Đăng nhập: <a href="https://platform.deepseek.com/" target="_blank">platform.deepseek.com</a><br>
                         2. Vào mục API keys và tạo key mới.<br>
                         3. Copy dãy mã bắt đầu bằng sk- dán vào ô bên dưới.<br>
                         4. Key chỉ lưu trong trình duyệt của bạn, không lưu vào mã nguồn.`,
                 chatUrl: 'https://api.deepseek.com/chat/completions',
-                defaultModel: 'deepseek-v4-flash',
-                supportsAudioTranscription: false
+                defaultModel: 'deepseek-chat'
             }
         };
-        let activeAIProvider = localStorage.getItem('win_ai_provider') || 'groq';
+        const SW_LOCAL_SECRET_PASSPHRASE = 'VVT';
+        const SW_DEEPSEEK_LEGACY_STORAGE_KEY = 'win_deepseek_api_key';
+        let activeAIProvider = 'deepseek';
 
-        function getAIProviderConfig(providerId = activeAIProvider) {
-            return AI_PROVIDERS[providerId] || AI_PROVIDERS.groq;
+        function getAIProviderConfig() {
+            return AI_PROVIDERS.deepseek;
         }
 
-        function loadAPIKeyForCurrentProvider() {
+        async function loadAPIKeyForCurrentProvider() {
             let input = document.getElementById('ai-api-key');
             if (!input) return;
+
             let provider = getAIProviderConfig();
-            input.value = localStorage.getItem(provider.storageKey) || '';
+            let saved = localStorage.getItem(provider.storageKey);
+            let legacy = localStorage.getItem(SW_DEEPSEEK_LEGACY_STORAGE_KEY);
+
+            if (!saved && legacy) {
+                input.value = legacy;
+                try {
+                    localStorage.setItem(provider.storageKey, await encryptSWLocalSecret(legacy));
+                    localStorage.removeItem(SW_DEEPSEEK_LEGACY_STORAGE_KEY);
+                } catch (error) {}
+                return;
+            }
+
+            if (!saved) {
+                input.value = '';
+                return;
+            }
+
+            try {
+                input.value = await decryptSWLocalSecret(saved);
+            } catch (error) {
+                input.value = '';
+            }
         }
 
         function updateAPIProviderUI() {
@@ -258,14 +274,22 @@
             if (tooltipContent) tooltipContent.innerHTML = provider.tooltip;
         }
 
-        function saveCurrentAPIKey(showMessage = true) {
+        async function saveCurrentAPIKey(showMessage = true) {
             let input = document.getElementById('ai-api-key');
             if (!input) return '';
 
             let provider = getAIProviderConfig();
             let apiKey = input.value.trim();
-            localStorage.setItem(provider.storageKey, apiKey);
-            localStorage.setItem('win_ai_provider', provider.id);
+            if (!apiKey) return '';
+
+            try {
+                localStorage.setItem(provider.storageKey, await encryptSWLocalSecret(apiKey));
+                localStorage.setItem('win_ai_provider', provider.id);
+                localStorage.removeItem(SW_DEEPSEEK_LEGACY_STORAGE_KEY);
+            } catch (error) {
+                alert("Không thể lưu DeepSeek key trên trình duyệt này: " + error.message);
+                return apiKey;
+            }
 
             if (showMessage) {
                 let msg = document.getElementById('api-saved-msg');
@@ -281,21 +305,102 @@
             return apiKey;
         }
 
-        function switchAIProvider() {
-            saveCurrentAPIKey(false);
+        function clearCurrentAPIKey() {
+            localStorage.removeItem(getAIProviderConfig().storageKey);
+            localStorage.removeItem(SW_DEEPSEEK_LEGACY_STORAGE_KEY);
+            let input = document.getElementById('ai-api-key');
+            if (input) input.value = '';
+            let msg = document.getElementById('api-saved-msg');
+            if (msg) {
+                msg.innerText = 'Đã xóa key ✔';
+                msg.classList.add('show');
+                clearTimeout(apiSaveTimeout);
+                apiSaveTimeout = setTimeout(() => {
+                    msg.classList.remove('show');
+                    msg.innerText = 'Đã lưu ✔';
+                }, 1500);
+            }
+        }
 
-            let providerSelect = document.getElementById('ai-provider-select');
-            activeAIProvider = providerSelect ? providerSelect.value : 'groq';
+        async function getCurrentAPIKey() {
+            let typedKey = document.getElementById('ai-api-key') ? document.getElementById('ai-api-key').value.trim() : '';
+            if (typedKey) return typedKey;
+
+            let saved = localStorage.getItem(getAIProviderConfig().storageKey);
+            return saved ? decryptSWLocalSecret(saved) : '';
+        }
+
+        function switchAIProvider() {
+            activeAIProvider = 'deepseek';
             localStorage.setItem('win_ai_provider', activeAIProvider);
-            loadAPIKeyForCurrentProvider();
             updateAPIProviderUI();
         }
 
-        window.onload = function() {
-            let providerSelect = document.getElementById('ai-provider-select');
-            if (!AI_PROVIDERS[activeAIProvider]) activeAIProvider = 'groq';
-            if (providerSelect) providerSelect.value = activeAIProvider;
-            loadAPIKeyForCurrentProvider();
+        async function encryptSWLocalSecret(secret) {
+            if (!window.crypto?.subtle) return `b64.${swTextToBase64(secret)}`;
+
+            const salt = crypto.getRandomValues(new Uint8Array(16));
+            const iv = crypto.getRandomValues(new Uint8Array(12));
+            const key = await deriveSWLocalCryptoKey(salt);
+            const cipherBuffer = await crypto.subtle.encrypt(
+                { name: 'AES-GCM', iv },
+                key,
+                new TextEncoder().encode(secret)
+            );
+            return `aesgcm.${swBytesToBase64(salt)}.${swBytesToBase64(iv)}.${swBytesToBase64(new Uint8Array(cipherBuffer))}`;
+        }
+
+        async function decryptSWLocalSecret(payload) {
+            if (payload.startsWith('b64.')) return swBase64ToText(payload.slice(4));
+            const [version, salt64, iv64, cipher64] = payload.split('.');
+            if (version !== 'aesgcm' || !salt64 || !iv64 || !cipher64) throw new Error('Unsupported encrypted payload');
+            const key = await deriveSWLocalCryptoKey(swBase64ToBytes(salt64));
+            const plainBuffer = await crypto.subtle.decrypt(
+                { name: 'AES-GCM', iv: swBase64ToBytes(iv64) },
+                key,
+                swBase64ToBytes(cipher64)
+            );
+            return new TextDecoder().decode(plainBuffer);
+        }
+
+        async function deriveSWLocalCryptoKey(salt) {
+            const material = await crypto.subtle.importKey(
+                'raw',
+                new TextEncoder().encode(SW_LOCAL_SECRET_PASSPHRASE),
+                'PBKDF2',
+                false,
+                ['deriveKey']
+            );
+            return crypto.subtle.deriveKey(
+                { name: 'PBKDF2', salt, iterations: 120000, hash: 'SHA-256' },
+                material,
+                { name: 'AES-GCM', length: 256 },
+                false,
+                ['encrypt', 'decrypt']
+            );
+        }
+
+        function swBytesToBase64(bytes) {
+            let binary = '';
+            bytes.forEach(byte => { binary += String.fromCharCode(byte); });
+            return btoa(binary);
+        }
+
+        function swBase64ToBytes(base64) {
+            return Uint8Array.from(atob(base64), char => char.charCodeAt(0));
+        }
+
+        function swTextToBase64(text) {
+            return swBytesToBase64(new TextEncoder().encode(text));
+        }
+
+        function swBase64ToText(base64) {
+            return new TextDecoder().decode(swBase64ToBytes(base64));
+        }
+
+        window.onload = async function() {
+            localStorage.setItem('win_ai_provider', 'deepseek');
+            await loadAPIKeyForCurrentProvider();
             updateAPIProviderUI();
             
             let urlParams = new URLSearchParams(window.location.search);
@@ -386,6 +491,11 @@
                 <!-- Giao diện Feedback Speaking (Đã dời sang cột phải) -->
                 <div id="practice-feedback-speaking" class="hidden" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 0;">
                     <audio id="student-audio-playback" controls style="width: 100%; max-width: 400px; margin-bottom: 20px;"></audio>
+                    <div class="speaking-transcript-wrap">
+                        <label for="speaking-transcript-input">Transcript để DeepSeek chấm Speaking</label>
+                        <textarea id="speaking-transcript-input" class="speaking-transcript-input" placeholder="Nếu trình duyệt tự nhận giọng được, transcript sẽ hiện ở đây. Nếu chưa có, hãy gõ/dán lại câu bạn vừa nói để DeepSeek chấm."></textarea>
+                        <small class="speaking-transcript-hint" id="speaking-transcript-hint">DeepSeek chấm phần nói dựa trên transcript text; file ghi âm vẫn dùng để bạn nghe lại.</small>
+                    </div>
                     <div id="eval-result-speaking" style="display: none; width: 100%; background: #fff; border: 1px solid #5ba4e5; border-radius: 6px; padding: 20px; text-align: left; font-size: 16px; line-height: 1.6; overflow-y: auto; max-height: 50vh;"></div>
                 </div>
 
@@ -559,6 +669,7 @@
             if(spEvalBtn) spEvalBtn.classList.add('hidden');
             let spEval = document.getElementById('eval-result-speaking');
             if(spEval) { spEval.style.display = 'none'; spEval.innerHTML = ''; }
+            resetSpeakingTranscript();
             
             let wrEvalBtn = document.getElementById('btn-eval-writing');
             if(wrEvalBtn) wrEvalBtn.classList.add('hidden');
@@ -1066,6 +1177,58 @@
         let mediaRecorder;
         let audioChunks = [];
         let audioStream;
+        let speechRecognition;
+        let speakingTranscriptFinal = "";
+
+        function resetSpeakingTranscript() {
+            speakingTranscriptFinal = "";
+            let transcriptInput = document.getElementById('speaking-transcript-input');
+            let hint = document.getElementById('speaking-transcript-hint');
+            if (transcriptInput) transcriptInput.value = "";
+            if (hint) hint.innerText = "DeepSeek chấm phần nói dựa trên transcript text; file ghi âm vẫn dùng để bạn nghe lại.";
+        }
+
+        function startSpeakingTranscriptCapture() {
+            let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            let transcriptInput = document.getElementById('speaking-transcript-input');
+            let hint = document.getElementById('speaking-transcript-hint');
+
+            if (!SpeechRecognition || !transcriptInput) {
+                if (hint) hint.innerText = "Trình duyệt chưa hỗ trợ tự nhận giọng. Hãy gõ/dán lại câu bạn đã nói để DeepSeek chấm.";
+                return;
+            }
+
+            try {
+                speakingTranscriptFinal = transcriptInput.value.trim();
+                speechRecognition = new SpeechRecognition();
+                speechRecognition.lang = 'en-US';
+                speechRecognition.continuous = true;
+                speechRecognition.interimResults = true;
+                speechRecognition.onresult = event => {
+                    let interim = "";
+                    for (let i = event.resultIndex; i < event.results.length; i++) {
+                        let text = event.results[i][0].transcript;
+                        if (event.results[i].isFinal) speakingTranscriptFinal += text + " ";
+                        else interim += text;
+                    }
+                    transcriptInput.value = (speakingTranscriptFinal + interim).trim();
+                };
+                speechRecognition.onerror = () => {
+                    if (hint) hint.innerText = "Nếu transcript chưa hiện đủ, bạn có thể sửa/gõ thêm trước khi bấm chấm điểm.";
+                };
+                speechRecognition.start();
+                if (hint) hint.innerText = "Đang thử tự nhận giọng nói. Bạn có thể sửa transcript trước khi chấm.";
+            } catch (error) {
+                if (hint) hint.innerText = "Không bật được nhận giọng tự động. Hãy gõ/dán transcript để DeepSeek chấm.";
+            }
+        }
+
+        function stopSpeakingTranscriptCapture() {
+            if (speechRecognition) {
+                try { speechRecognition.stop(); } catch (error) {}
+                speechRecognition = null;
+            }
+        }
 
         function startRecording() {
             console.log("--- BẮT ĐẦU YÊU CẦU QUYỀN MICRO ---");
@@ -1113,6 +1276,7 @@
                     };
                     
                     mediaRecorder.start();
+                    startSpeakingTranscriptCapture();
                     console.log("--- ĐÃ RA LỆNH START RECORDER ---");
                     
                     document.getElementById('record-btn').classList.add('recording');
@@ -1131,6 +1295,7 @@
         function stopRecording() {
             if (typeof mediaRecorder !== 'undefined' && mediaRecorder && mediaRecorder.state !== 'inactive') {
                 mediaRecorder.stop();
+                stopSpeakingTranscriptCapture();
                 // KHÔNG TẮT MIC Ở ĐÂY NỮA VÌ SẼ LÀM FILE BỊ RỖNG RUỘT. ĐÃ DỜI VÀO HÀM onstop Ở TRÊN.
                 document.getElementById('record-btn').classList.remove('recording');
                 document.getElementById('mic-status').innerText = "Hoàn thành!";
@@ -1138,16 +1303,17 @@
             }
         }
 
-        // HÀM 7: GỌI API ĐÁNH GIÁ BẰNG AI (GROQ/DEEPSEEK)
+        // HÀM 7: GỌI API ĐÁNH GIÁ BẰNG DEEPSEEK
         async function getFeedback(skillType) {
             let provider = getAIProviderConfig();
-            let typedKey = document.getElementById('ai-api-key') ? document.getElementById('ai-api-key').value.trim() : '';
-            if (typedKey) localStorage.setItem(provider.storageKey, typedKey);
-
-            let apiKey = typedKey || localStorage.getItem(provider.storageKey);
+            let apiKey = await getCurrentAPIKey();
             if (!apiKey) {
                 alert(`Vui lòng nhập ${provider.name} API Key ở màn hình chọn đề!`);
                 return;
+            }
+
+            if (document.getElementById('ai-api-key')?.value.trim()) {
+                await saveCurrentAPIKey(false);
             }
 
             let resBox = document.getElementById(skillType === 'S' ? 'eval-result-speaking' : 'eval-result-writing');
@@ -1167,29 +1333,14 @@
                     studentAnswer = document.getElementById('writing-input').value.trim();
                     if (!studentAnswer) throw new Error("Bạn chưa viết câu trả lời!");
                 } else {
-                    if (!window.currentAudioBlob) throw new Error("Chưa có file ghi âm! Hãy làm bài trước.");
-                    if (!provider.supportsAudioTranscription) {
-                        throw new Error(`${provider.name} chưa hỗ trợ bóc băng file ghi âm trong trang này. Hãy chọn Groq để chấm Speaking có ghi âm; DeepSeek dùng tốt cho Writing/text.`);
+                    stopSpeakingTranscriptCapture();
+                    let transcriptInput = document.getElementById('speaking-transcript-input');
+                    studentAnswer = transcriptInput ? transcriptInput.value.trim() : "";
+                    if (!studentAnswer) {
+                        throw new Error("DeepSeek chấm Speaking bằng transcript text. Hãy gõ/dán lại câu bạn vừa nói vào ô transcript rồi bấm chấm điểm.");
                     }
 
-                    resBox.innerHTML = "<i>⏳ AI đang nghe và bóc băng ghi âm (Whisper)...</i>";
-                    
-                    let formData = new FormData();
-                    formData.append("file", window.currentAudioBlob, "audio.webm");
-                    formData.append("model", "whisper-large-v3");
-
-                    let whisperRes = await fetch(provider.transcriptionUrl, {
-                        method: "POST",
-                        headers: { "Authorization": `Bearer ${apiKey}` },
-                        body: formData
-                    });
-                    
-                    if (!whisperRes.ok) throw new Error("Không thể gọi API Whisper. Hãy kiểm tra lại API Key!");
-                    let whisperData = await whisperRes.json();
-                    studentAnswer = whisperData.text.trim();
-                    if (!studentAnswer) throw new Error("AI không nghe rõ bạn nói gì. Vui lòng ghi âm lại to và rõ hơn!");
-                    
-                    resBox.innerHTML = `<i>⏳ <b>Bản dịch bóc băng:</b> "${studentAnswer}"<br><br>Đang chấm điểm...</i>`;
+                    resBox.innerHTML = `<i>⏳ <b>Transcript Speaking:</b> "${studentAnswer}"<br><br>DeepSeek đang chấm điểm...</i>`;
                 }
 
                 // --- TÍCH HỢP GROUND TRUTH (MÔ TẢ ẢNH) TỪ FILE descriptions.txt ---
@@ -1270,32 +1421,6 @@ ${suggestionFormat}`;
                     stream: false
                 };
 
-                if (provider.id === 'groq') {
-                    // TỰ ĐỘNG HỎI GROQ DANH SÁCH MODEL ĐANG CÒN SỐNG
-                    let modelsRes = await fetch(provider.modelsUrl, {
-                        method: "GET",
-                        headers: { "Authorization": `Bearer ${apiKey}` }
-                    });
-                    if (!modelsRes.ok) throw new Error("Lỗi xác thực API Key Groq. Hãy kiểm tra lại Key!");
-
-                    let modelsData = await modelsRes.json();
-                    let availableModels = modelsData.data.map(m => m.id);
-
-                    // Thuật toán ưu tiên tìm model mạnh nhất (Llama 3.3 -> 3.1 -> 3), bỏ qua model âm thanh (whisper)
-                    let textModels = availableModels.filter(m => !m.includes('whisper'));
-                    selectedModel = textModels.find(m => m.includes('llama-3.3-70b'))
-                                     || textModels.find(m => m.includes('llama-3.1-70b'))
-                                     || textModels.find(m => m.includes('llama3-70b'))
-                                     || textModels.find(m => m.includes('llama3-8b'))
-                                     || textModels.find(m => m.includes('mixtral'))
-                                     || textModels[0]; // Bí quá thì bốc đại model đầu tiên
-                    requestBody.model = selectedModel;
-                }
-
-                if (provider.id === 'deepseek') {
-                    requestBody.thinking = { type: "disabled" };
-                }
-
                 let chatRes = await fetch(provider.chatUrl, {
                     method: "POST",
                     headers: {
@@ -1321,7 +1446,7 @@ ${suggestionFormat}`;
                 }
                 
                 if (skillType === 'S') {
-                    feedbackHtml = `<div style="background:#f4f6f9; padding:10px; border-radius:4px; margin-bottom:15px; font-style:italic; border-left: 3px solid #555;"><b>Bản dịch bóc băng của bạn:</b> "${studentAnswer}"</div>` + feedbackHtml;
+                    feedbackHtml = `<div style="background:#f4f6f9; padding:10px; border-radius:4px; margin-bottom:15px; font-style:italic; border-left: 3px solid #555;"><b>Transcript Speaking của bạn:</b> "${studentAnswer}"</div>` + feedbackHtml;
                 }
                 
                 resBox.innerHTML = feedbackHtml;

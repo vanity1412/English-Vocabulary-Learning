@@ -251,6 +251,272 @@
         }
     </style>
     <link rel="stylesheet" href="css/ui-refresh.css?v=20260806-global">
+    <style>
+        :root {
+            --hub-ink: #102033;
+            --hub-muted: #5f6b7a;
+            --hub-line: #dce6ef;
+            --hub-teal: #0f766e;
+            --hub-blue: #2563eb;
+            --hub-amber: #f59e0b;
+            --hub-rose: #e11d48;
+            --hub-bg: #edf5f8;
+        }
+
+        body {
+            color: var(--hub-ink);
+            background:
+                linear-gradient(135deg, rgba(15, 118, 110, .08) 0 25%, transparent 25% 50%, rgba(37, 99, 235, .07) 50% 75%, transparent 75%) 0 0 / 34px 34px,
+                linear-gradient(180deg, #f8fbff 0%, var(--hub-bg) 46%, #f7fafc 100%);
+        }
+
+        .topbar {
+            min-height: 68px;
+            border-bottom: 1px solid rgba(255,255,255,.16);
+            background: linear-gradient(90deg, #0f172a 0%, #0f766e 54%, #1d4ed8 100%);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, .18);
+        }
+
+        .brand-icon,
+        .summary-icon,
+        .collection-symbol {
+            border-radius: 8px;
+        }
+
+        .nav-link {
+            border-radius: 8px !important;
+        }
+
+        .hero {
+            padding-top: clamp(34px, 5vw, 60px);
+            padding-bottom: 66px;
+            background:
+                repeating-linear-gradient(135deg, rgba(255,255,255,.08) 0 1px, transparent 1px 16px),
+                linear-gradient(110deg, #0f172a 0%, #115e59 52%, #1d4ed8 100%);
+        }
+
+        .hero::before,
+        .hero::after {
+            display: none;
+        }
+
+        .eyebrow,
+        .button-primary,
+        .button-secondary,
+        .exam-window,
+        .summary-card,
+        .test-collection,
+        .tip-card,
+        .notice-card,
+        .empty-state {
+            border-radius: 8px;
+        }
+
+        .hero h1 {
+            max-width: 780px;
+            letter-spacing: 0;
+        }
+
+        .exam-window {
+            transform: rotate(.6deg);
+            border-color: rgba(255,255,255,.32);
+        }
+
+        .content-wrap {
+            margin-top: -28px;
+        }
+
+        .summary-card {
+            overflow: hidden;
+            border-color: rgba(220, 230, 239, .95);
+            box-shadow: 0 18px 42px rgba(15, 23, 42, .10);
+        }
+
+        .summary-icon {
+            background: #ecfdf5;
+        }
+
+        .catalog {
+            padding-top: 42px;
+        }
+
+        .section-heading {
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-heading h2 {
+            letter-spacing: 0;
+        }
+
+        .catalog-count {
+            border: 1px solid rgba(15, 118, 110, .18);
+            border-radius: 8px;
+            color: #115e59;
+            background: #ecfdf5;
+        }
+
+        .catalog-controls {
+            position: sticky;
+            top: 10px;
+            z-index: 10;
+            padding: 12px;
+            border: 1px solid rgba(220, 230, 239, .95);
+            border-radius: 8px;
+            background: rgba(255,255,255,.92);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, .08);
+            backdrop-filter: blur(12px);
+        }
+
+        .search-box input {
+            border-radius: 8px;
+            border-color: var(--hub-line);
+        }
+
+        .filter-button {
+            border-radius: 8px;
+            color: #475467;
+        }
+
+        .filter-button.active {
+            border-color: #0f766e;
+            background: #0f766e;
+            color: white;
+            box-shadow: 0 8px 16px rgba(15, 118, 110, .20);
+        }
+
+        .test-collections {
+            gap: 16px;
+        }
+
+        .test-collection {
+            --accent: var(--hub-teal);
+            --accent-soft: #ecfdf5;
+            overflow: hidden;
+            border-color: rgba(220, 230, 239, .95);
+            background: rgba(255,255,255,.96);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, .07);
+        }
+
+        .test-collection:nth-of-type(2n) {
+            --accent: var(--hub-blue);
+            --accent-soft: #eff6ff;
+        }
+
+        .test-collection:nth-of-type(3n) {
+            --accent: var(--hub-amber);
+            --accent-soft: #fff7ed;
+        }
+
+        .test-collection[data-filter="hackers"] {
+            --accent: #7c3aed;
+            --accent-soft: #f5f3ff;
+        }
+
+        .test-collection[data-filter="sw"] {
+            --accent: var(--hub-rose);
+            --accent-soft: #fff1f2;
+        }
+
+        .collection-header {
+            padding: 16px 18px;
+            border-bottom-color: rgba(220, 230, 239, .95);
+            background:
+                linear-gradient(90deg, var(--accent-soft), #ffffff 72%);
+        }
+
+        .collection-symbol {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, .12);
+        }
+
+        .collection-title h3 {
+            color: var(--hub-ink);
+            letter-spacing: 0;
+        }
+
+        .collection-badge {
+            border: 1px solid color-mix(in srgb, var(--accent) 24%, white);
+            border-radius: 8px;
+            color: var(--accent);
+            background: #ffffff;
+        }
+
+        .test-grid {
+            grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+            gap: 10px;
+            padding: 16px 18px 18px;
+        }
+
+        .test-card {
+            min-height: 104px;
+            border-radius: 8px;
+            border-color: rgba(220, 230, 239, .95);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.94), #ffffff),
+                var(--accent-soft);
+            box-shadow: none;
+        }
+
+        .test-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto;
+            height: 5px;
+            background: var(--accent);
+        }
+
+        .test-card::after {
+            content: "→";
+            right: 13px;
+            bottom: 12px;
+            color: var(--accent);
+        }
+
+        .test-card:hover {
+            border-color: color-mix(in srgb, var(--accent) 45%, white);
+            box-shadow: 0 14px 28px rgba(15, 23, 42, .12);
+            transform: translateY(-3px);
+        }
+
+        .test-number {
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .test-meta {
+            color: var(--hub-muted);
+        }
+
+        .test-card.sw .test-number {
+            color: var(--hub-rose);
+        }
+
+        .preparation {
+            margin-top: 32px;
+        }
+
+        .tip-card {
+            background:
+                linear-gradient(120deg, rgba(245, 158, 11, .22), transparent 44%),
+                linear-gradient(120deg, #0f766e, #1d4ed8);
+        }
+
+        .notice-card {
+            border-color: rgba(220, 230, 239, .95);
+        }
+
+        @media (max-width: 720px) {
+            .catalog-controls {
+                position: static;
+            }
+
+            .test-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="topbar">
@@ -317,7 +583,6 @@
                         <button class="filter-button active" data-filter="all" type="button">Tất cả</button>
                         <button class="filter-button" data-filter="ets" type="button">ETS</button>
                         <button class="filter-button" data-filter="hackers" type="button">Hackers</button>
-                        <button class="filter-button" data-filter="placement" type="button">Đầu vào</button>
                         <button class="filter-button" data-filter="sw" type="button">S&amp;W</button>
                     </div>
                 </div>
@@ -355,7 +620,6 @@
             { key: 'ets-2018', filter: 'ets', icon: '📓', title: 'ETS 2018', detail: '5 đề Listening & Reading', badge: '5 đề', prefix: 'ets-2018', tests: range(1, 5) },
             { key: 'hackers-3', filter: 'hackers', icon: '📚', title: 'Hackers 3', detail: '10 đề Listening & Reading', badge: '10 đề', prefix: 'hacker-3', tests: range(1, 10) },
             { key: 'hackers-2', filter: 'hackers', icon: '📒', title: 'Hackers 2', detail: '10 đề Listening & Reading', badge: '10 đề', prefix: 'hacker-2', tests: range(1, 10) },
-            { key: 'placement', filter: 'placement', icon: '🎯', title: 'Kiểm tra đầu vào', detail: '3 đề xác định trình độ', badge: '3 đề', prefix: 'test-dau-vao', tests: range(1, 3), shortMeta: 'Kiểm tra đầu vào' },
             { key: 'sw', filter: 'sw', icon: '✍️', title: 'Speaking & Writing', detail: '10 bài thi nói và viết', badge: '10 đề', type: 'sw', tests: range(1, 10) }
         ];
 
@@ -367,7 +631,6 @@
 
         function testHref(collection, number) {
             if (collection.type === 'sw') return `toeic-practice-sw.html?test=${encodeURIComponent(`test ${number}`)}`;
-            if (collection.filter === 'placement') return `toeic-practice.html?test=${collection.prefix}-${number}`;
             return `toeic-practice.html?test=${collection.prefix}-test-${number}`;
         }
 
