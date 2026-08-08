@@ -8,7 +8,7 @@ class DonationModal {
     constructor() {
         this.studyStartTime = Date.now();
         this.lastShownTime = Date.now();
-        this.intervalMinutes = 10;
+        this.intervalMinutes = 30;
         this.autoPopupEnabled = true;
         this.supportedKey = 'vvt_donation_supported';
         this.supportUnlockHash = 'qOTI0xkq5Nw41LA0881EvjYikfCnfG89KrkMPwnftAk=';
